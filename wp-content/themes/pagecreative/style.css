@@ -1,0 +1,22 @@
+/*!
+Theme Name: pagecreative
+Theme URI: https://pagecreative.co.uk/
+Author: Shah Zaib
+Author URI: https://pagecreative.co.uk/
+Description: Description
+Version: 1.1.0
+Tested up to: 8.0
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: pagecreative
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the pagecreative.
+Use it to make something cool, have fun, and share what you've learned.
+
+*/
+
+
+
+@import "include/global.css";
