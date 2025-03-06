@@ -31,7 +31,7 @@
 				<?php esc_html_e('Skip to content', 'pagecreative'); ?>
 			</a>
 
-			<header id="masthead" class="site-header">
+			<header id="masthead" class="site-header max-60 mx-auto">
 				<div class="site-branding">
 					<?php
 					the_custom_logo();
@@ -53,7 +53,7 @@
 					<?php endif; ?>
 				</div><!-- .site-branding -->
 
-				<nav id="site-navigation" class="main-navigation">
+				<nav id="site-navigation" class="main-navigation ">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 						<?php esc_html_e('Primary Menu', 'pagecreative'); ?>
 					</button>
