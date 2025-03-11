@@ -178,35 +178,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 
-function pagecreative_theme_setup() {
-    add_theme_support( 'block-template-parts' );
+function pagecreative_block_categories($categories) {
+    return array_merge($categories, [
+        [
+            'slug'  => 'pagecreative',
+            'title' => __('PageCreative Blocks', 'pagecreative'),
+        ]
+    ]);
 }
-add_action( 'after_setup_theme', 'pagecreative_theme_setup' );
+add_filter('block_categories_all', 'pagecreative_block_categories');
 
-
-function pagecreative_enqueue_block_assets() {
-    // Enqueue block editor assets
-    wp_enqueue_script(
-        'pagecreative-blocks',
-        get_template_directory_uri() . '/src/blocks/custom-block/index.js',
-        array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-        filemtime( get_template_directory() . '/src/blocks/custom-block/index.js' )
-    );
-
-    // Enqueue block editor styles
-    wp_enqueue_style(
-        'pagecreative-block-editor-styles',
-        get_template_directory_uri() . '/src/blocks/custom-block/editor.css',
-        array(),
-        filemtime( get_template_directory() . '/src/blocks/custom-block/editor.css' )
-    );
-
-    // Enqueue front-end styles
-    wp_enqueue_style(
-        'pagecreative-block-styles',
-        get_template_directory_uri() . '/src/blocks/custom-block/style.css',
-        array(),
-        filemtime( get_template_directory() . '/src/blocks/custom-block/style.css' )
-    );
+function register_pagecreative_blocks() {
+    register_block_type(__DIR__ . '/blocks/custom-section');
 }
-add_action( 'enqueue_block_assets', 'pagecreative_enqueue_block_assets' );
+add_action('init', 'register_pagecreative_blocks');

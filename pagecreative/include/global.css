@@ -1142,3 +1142,8 @@ Custom CSS start here
 }
 
 /* End of BS4 custom classes here*/
+/* Custom Section Block */
+.wp-block-pagecreative-custom-section {
+    background: #f0f0f0;
+    padding: 2rem;
+}
