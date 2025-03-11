@@ -177,53 +177,57 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 
+
 function register_dynamic_blocks() {
     $blocks_dir = get_template_directory() . '/template-parts/';
     $block_folders = glob($blocks_dir . '*', GLOB_ONLYDIR);
+
+    // Register shared assets
+    wp_register_script(
+        'pagecreative-blocks-js',
+        get_template_directory_uri() . '/js/common.js',
+        ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components'],
+        filemtime(get_template_directory() . '/js/common.js')
+    );
+
+    wp_register_style(
+        'pagecreative-global-css',
+        get_template_directory_uri() . '/include/style.css',
+        [],
+        filemtime(get_template_directory() . '/include/style.css')
+    );
 
     foreach ($block_folders as $block_folder) {
         $block_name = basename($block_folder);
         $block_path = $block_folder . '/block.php';
 
+        // Debugging: Check if file exists
+        error_log("Checking block: {$block_name} at path: {$block_path}");
+
         if (file_exists($block_path)) {
-            register_block_type("your-namespace/{$block_name}", [
+            $block_namespace = 'pagecreative'; 
+            $full_block_name = "{$block_namespace}/{$block_name}";
+            
+            register_block_type($full_block_name, [
                 'render_callback' => function($attributes, $content) use ($block_path) {
                     ob_start();
                     include $block_path;
                     return ob_get_clean();
                 },
-                'editor_script' => 'block-editor-js',
-                'editor_style'  => 'block-editor-css',
-                'style'         => 'block-frontend-css',
+                'editor_script' => 'pagecreative-blocks-js',
+                'style' => 'pagecreative-global-css',
+                'editor_style' => 'pagecreative-global-css',
+                'category' => 'pagecreative-blocks', // Optional: Create custom category
             ]);
+
+            error_log("Successfully registered block: {$full_block_name}");
         }
     }
 }
-add_action('init', 'register_dynamic_blocks');
+add_action('init', 'register_dynamic_blocks', 10); // Increased priority
 
-function enqueue_block_assets() {
-    // Shared editor assets for all blocks
-    wp_register_script(
-        'block-editor-js',
-        get_template_directory_uri() . '/js/block-editor.js',
-        ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components'],
-        filemtime(get_template_directory() . '/js/block-editor.js')
-    );
-
-    // Shared editor styles
-    wp_register_style(
-        'block-editor-css',
-        get_template_directory_uri() . '/css/block-editor.css',
-        ['wp-edit-blocks'],
-        filemtime(get_template_directory() . '/css/block-editor.css')
-    );
-
-    // Shared frontend styles
-    wp_register_style(
-        'block-frontend-css',
-        get_template_directory_uri() . '/css/blocks.css',
-        [],
-        filemtime(get_template_directory() . '/css/blocks.css')
-    );
+// Enqueue global styles
+function enqueue_global_styles() {
+    wp_enqueue_style('pagecreative-global-css');
 }
-add_action('init', 'enqueue_block_assets');
+add_action('wp_enqueue_scripts', 'enqueue_global_styles');
