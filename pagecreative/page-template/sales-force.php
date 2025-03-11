@@ -5,10 +5,10 @@
 
 get_header(); ?>
 
-<div>
+<div class="">
     <?php the_content(); ?>
 </div>
-
+<test></test>
 
 
 <?php get_footer(); ?>
