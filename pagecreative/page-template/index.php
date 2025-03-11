@@ -5,6 +5,6 @@
 
 get_header(); ?>
 
-<h1 class="text-dark">Home page</h1>
+<h1 class="text-dark">Home page HEAD</h1>
 
 <?php get_footer(); ?>
