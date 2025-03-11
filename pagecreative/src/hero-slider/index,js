@@ -1,0 +1,24 @@
+import { registerBlockType } from '@wordpress/blocks';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
+
+registerBlockType('pagecreative/hero-slider', {
+  edit({ attributes, setAttributes }) {
+    return (
+      <div {...useBlockProps()}>
+        <RichText
+          tagName="p"
+          value={attributes.content}
+          onChange={(content) => setAttributes({ content })}
+          placeholder="Enter text..."
+        />
+      </div>
+    );
+  },
+  save({ attributes }) {
+    return (
+      <div {...useBlockProps.save()}>
+        <RichText.Content tagName="p" value={attributes.content} />
+      </div>
+    );
+  },
+});

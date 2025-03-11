@@ -178,56 +178,29 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 
-function register_dynamic_blocks() {
-    $blocks_dir = get_template_directory() . '/template-parts/';
-    $block_folders = glob($blocks_dir . '*', GLOB_ONLYDIR);
-
-    // Register shared assets
-    wp_register_script(
-        'pagecreative-blocks-js',
-        get_template_directory_uri() . '/js/common.js',
-        ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components'],
-        filemtime(get_template_directory() . '/js/common.js')
+function your_theme_enqueue_block_assets() {
+    // Editor Script
+    wp_enqueue_script(
+        'your-theme-hero-slider',
+        get_template_directory_uri() . '/build/hero-slider.js',
+        array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+        filemtime( get_template_directory() . '/build/hero-slider.js' )
     );
 
-    wp_register_style(
-        'pagecreative-global-css',
-        get_template_directory_uri() . '/include/style.css',
-        [],
-        filemtime(get_template_directory() . '/include/style.css')
+    // Editor Styles
+    wp_enqueue_style(
+        'your-theme-hero-slider-editor',
+        get_template_directory_uri() . '/src/hero-slider/editor.css',
+        array( 'wp-edit-blocks' ),
+        filemtime( get_template_directory() . '/src/hero-slider/editor.css' )
     );
 
-    foreach ($block_folders as $block_folder) {
-        $block_name = basename($block_folder);
-        $block_path = $block_folder . '/block.php';
-
-        // Debugging: Check if file exists
-        error_log("Checking block: {$block_name} at path: {$block_path}");
-
-        if (file_exists($block_path)) {
-            $block_namespace = 'pagecreative'; 
-            $full_block_name = "{$block_namespace}/{$block_name}";
-            
-            register_block_type($full_block_name, [
-                'render_callback' => function($attributes, $content) use ($block_path) {
-                    ob_start();
-                    include $block_path;
-                    return ob_get_clean();
-                },
-                'editor_script' => 'pagecreative-blocks-js',
-                'style' => 'pagecreative-global-css',
-                'editor_style' => 'pagecreative-global-css',
-                'category' => 'pagecreative-blocks', // Optional: Create custom category
-            ]);
-
-            error_log("Successfully registered block: {$full_block_name}");
-        }
-    }
+    // Frontend Styles
+    wp_enqueue_style(
+        'your-theme-hero-slider',
+        get_template_directory_uri() . '/src/hero-slider/style.css',
+        array(),
+        filemtime( get_template_directory() . '/src/hero-slider/style.css' )
+    );
 }
-add_action('init', 'register_dynamic_blocks', 10); // Increased priority
-
-// Enqueue global styles
-function enqueue_global_styles() {
-    wp_enqueue_style('pagecreative-global-css');
-}
-add_action('wp_enqueue_scripts', 'enqueue_global_styles');
+add_action( 'enqueue_block_assets', 'your_theme_enqueue_block_assets' );
