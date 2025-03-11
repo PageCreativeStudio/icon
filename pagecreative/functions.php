@@ -178,29 +178,35 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 
-function your_theme_enqueue_block_assets() {
-    // Editor Script
+function pagecreative_theme_setup() {
+    add_theme_support( 'block-template-parts' );
+}
+add_action( 'after_setup_theme', 'pagecreative_theme_setup' );
+
+
+function pagecreative_enqueue_block_assets() {
+    // Enqueue block editor assets
     wp_enqueue_script(
-        'your-theme-hero-slider',
-        get_template_directory_uri() . '/build/hero-slider.js',
+        'pagecreative-blocks',
+        get_template_directory_uri() . '/src/blocks/custom-block/index.js',
         array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-        filemtime( get_template_directory() . '/build/hero-slider.js' )
+        filemtime( get_template_directory() . '/src/blocks/custom-block/index.js' )
     );
 
-    // Editor Styles
+    // Enqueue block editor styles
     wp_enqueue_style(
-        'your-theme-hero-slider-editor',
-        get_template_directory_uri() . '/src/hero-slider/editor.css',
-        array( 'wp-edit-blocks' ),
-        filemtime( get_template_directory() . '/src/hero-slider/editor.css' )
-    );
-
-    // Frontend Styles
-    wp_enqueue_style(
-        'your-theme-hero-slider',
-        get_template_directory_uri() . '/src/hero-slider/style.css',
+        'pagecreative-block-editor-styles',
+        get_template_directory_uri() . '/src/blocks/custom-block/editor.css',
         array(),
-        filemtime( get_template_directory() . '/src/hero-slider/style.css' )
+        filemtime( get_template_directory() . '/src/blocks/custom-block/editor.css' )
+    );
+
+    // Enqueue front-end styles
+    wp_enqueue_style(
+        'pagecreative-block-styles',
+        get_template_directory_uri() . '/src/blocks/custom-block/style.css',
+        array(),
+        filemtime( get_template_directory() . '/src/blocks/custom-block/style.css' )
     );
 }
-add_action( 'enqueue_block_assets', 'your_theme_enqueue_block_assets' );
+add_action( 'enqueue_block_assets', 'pagecreative_enqueue_block_assets' );
