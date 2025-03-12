@@ -175,20 +175,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-
-
-function pagecreative_block_categories($categories) {
-    return array_merge($categories, [
-        [
-            'slug'  => 'pagecreative',
-            'title' => __('PageCreative Blocks', 'pagecreative'),
-        ]
-    ]);
-}
-add_filter('block_categories_all', 'pagecreative_block_categories');
-
-function register_pagecreative_blocks() {
-    register_block_type(__DIR__ . '/blocks/custom-section');
-}
-add_action('init', 'register_pagecreative_blocks');
