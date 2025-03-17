@@ -10,19 +10,22 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 
-		<section class="error-404 not-found text-center ">
-			<header class="page-header">
-				<h1 class="page-title">Oops! That page can't be found.				</h1>
-			</header>
+	<section class="error-404 not-found text-center ">
+		<header class="page-header">
+			<h1 class="page-title font-50 font-mb-25">Oops! That page can't be found. </h1>
+		</header>
 
-			<div class="page-content text-center">
-				<p class="font-20 font-400">It looks like nothing was found at this location. Maybe try one of the links below or a search?</p>
-			</div>
-		</section>
+		<div class="page-content text-center">
+			<p class="font-18 font-300 max-30 mx-auto">It looks like nothing was found at this location. Maybe try one
+				of the links below or a search?</p>
+		</div>
+	</section>
 
-	</main>
+	
+
+</main>
 
 <?php
 get_footer();

@@ -63,7 +63,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
- html {
+html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 }
@@ -385,7 +385,7 @@ template {
 
 html {
 	box-sizing: border-box;
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 /*--------------------------------------------------------------
@@ -493,8 +493,8 @@ ol {
 	list-style: decimal;
 }
 
-li > ul,
-li > ol {
+li>ul,
+li>ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
@@ -703,8 +703,8 @@ textarea {
 	top: 0;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation ul ul li:hover>ul,
+.main-navigation ul ul li.focus>ul {
 	display: block;
 	left: auto;
 }
@@ -713,8 +713,8 @@ textarea {
 	width: 200px;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+.main-navigation ul li:hover>ul,
+.main-navigation ul li.focus>ul {
 	left: auto;
 }
 
@@ -745,10 +745,8 @@ textarea {
 }
 
 .site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
-.post-navigation {
+.site-main .posts-navigation,
+.site-main .post-navigation {
 	margin: 0 0 1.5em;
 }
 
@@ -1037,8 +1035,9 @@ Custom CSS start here
 .bg-lightgray {
 	background-color: var(--lightgray) !important;
 }
-.border-ter{
-    border:solid 1px var(--tertiary)!important;
+
+.border-ter {
+	border: solid 1px var(--tertiary) !important;
 }
 
 .text-pri {
@@ -1056,89 +1055,172 @@ Custom CSS start here
 .d-grid {
 	display: grid;
 }
+
 .max-width {
 	max-width: 90rem;
 }
+
 .max-10 {
 	max-width: 10rem;
 }
+
 .max-15 {
 	max-width: 15rem;
 }
+
 .max-18 {
 	max-width: 18rem;
 }
+
 .max-20 {
 	max-width: 20rem;
 }
+
 .max-25 {
 	max-width: 25rem;
 }
+
 .max-30 {
 	max-width: 30rem;
 }
+
 .max-35 {
 	max-width: 35rem;
 }
+
 .max-40 {
 	max-width: 40rem;
 }
+
 .max-45 {
 	max-width: 45rem;
 }
+
 .max-50 {
 	max-width: 50rem;
 }
+
 .max-55 {
 	max-width: 55rem;
 }
+
 .max-60 {
 	max-width: 60rem;
 }
+
 .max-65 {
 	max-width: 65rem;
 }
+
 .max-70 {
 	max-width: 70rem;
 }
+
 .font-200 {
 	font-weight: 200;
 }
+
 .font-300 {
 	font-weight: 300;
 }
+
 .font-400 {
 	font-weight: 400;
 }
+
 .font-500 {
 	font-weight: 500;
 }
+
 .font-600 {
 	font-weight: 600;
 }
+
 .font-700 {
 	font-weight: 700;
 }
+
 .font-800 {
 	font-weight: 800;
 }
+
 .font-13 {
-	font-size: 13px!important;
+	font-size: 13px !important;
 }
+
 .font-15 {
 	font-size: 15px;
 }
+
 .font-18 {
 	font-size: 18px;
 }
+
 .font-20 {
 	font-size: 20px;
 }
+
+.font-22 {
+	font-size: 22px;
+}
+
 .font-25 {
 	font-size: 25px;
 }
+
 .font-30 {
 	font-size: 30px;
 }
 
+.font-35 {
+	font-size: 35px;
+}
+
+.font-40 {
+	font-size: 40px;
+}
+
+.font-45 {
+	font-size: 45px;
+}
+
+.font-50 {
+	font-size: 50px;
+}
+
 /* End of BS4 custom classes here*/
+@media (min-width:991px) {}
+
+@media (max-width:991px) {
+	.font-mb-13 {
+		font-size: 13px !important;
+	}
+
+	.font-mb-15 {
+		font-size: 15px;
+	}
+
+	.font-mb-18 {
+		font-size: 18px;
+	}
+
+	.font-mb-20 {
+		font-size: 20px;
+	}
+
+	.font-mb-22 {
+		font-size: 22px;
+	}
+
+	.font-mb-25 {
+		font-size: 25px;
+	}
+
+	.font-mb-30 {
+		font-size: 30px;
+	}
+
+	.font-mb-35 {
+		font-size: 35px;
+	}
+}
