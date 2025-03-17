@@ -14,7 +14,7 @@ get_header();
 
 	<section class="error-404 not-found text-center ">
 		<header class="page-header">
-			<h1 class="page-title font-50 font-mb-25">Oops! That page can't be found. </h1>
+			<h1 class="font-50 font-mb-25">Oops! That page can't be found. </h1>
 		</header>
 
 		<div class="page-content text-center">
@@ -23,7 +23,7 @@ get_header();
 		</div>
 	</section>
 
-	
+
 
 </main>
 
