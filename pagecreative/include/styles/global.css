@@ -66,18 +66,18 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
  @font-face {
     font-family: 'SuisseRegular';
-    src: url('/wp-content/themes/pagecreative/assets/include/fonts/SuisseIntl-Regular.woff2') format('woff2'),
-         url('/wp-content/themes/your-theme/assets/fonts/SuisseIntl-Regular.woff') format('woff'),
-         url('/wp-content/themes/your-theme/assets/fonts/SuisseIntl-Regular.otf') format('opentype');
+    src: url('../fonts/SuisseIntl-Regular.woff2') format('woff2'),
+         url('../fonts/fonts/SuisseIntl-Regular.woff') format('woff'),
+         url('../fonts/SuisseIntl-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SuisseMedium';
-    src: url('/wp-content/themes/pagecreative/assets/include/fonts/SuisseIntl-Medium.woff2') format('woff2'),
-         url('/wp-content/themes/your-theme/assets/fonts/SuisseIntl-Medium.woff') format('woff'),
-         url('/wp-content/themes/your-theme/assets/fonts/SuisseIntl-Medium.otf') format('opentype');
+    src: url('../fonts/SuisseIntl-Medium.woff2') format('woff2'),
+         url('../fonts/SuisseIntl-Medium.woff') format('woff'),
+         url('../fonts/SuisseIntl-Medium.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
