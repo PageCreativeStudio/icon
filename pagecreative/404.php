@@ -12,7 +12,7 @@ get_header();
 
 <main id="primary" class="site-main">
 
-	<section class="error-404 not-found text-center ">
+	<section class="error-404 not-found text-center py-5">
 		<header class="page-header">
 			<h1 class="font-50 font-mb-25 px-2">Oops! That page can't be found. </h1>
 		</header>
