@@ -1053,8 +1053,8 @@ Custom CSS start here
 	border: solid 1px var(--tertiary) !important;
 }
 
-.text-dark {
-	color: black!important;
+.text-darkgray {
+	color: rgb(89, 89, 89)!important;
 }
 
 .text-pri {
