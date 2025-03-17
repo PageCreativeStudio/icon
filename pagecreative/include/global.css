@@ -1188,6 +1188,10 @@ Custom CSS start here
 	font-size: 50px;
 }
 
+.uppercase{
+	text-transform: uppercase;
+}
+
 /* End of BS4 custom classes here*/
 @media (min-width:991px) {}
 
