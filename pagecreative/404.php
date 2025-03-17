@@ -14,7 +14,7 @@ get_header();
 
 	<section class="error-404 not-found text-center py-5">
 		<header class="page-header">
-			<h1 class="font-50 font-mb-25 px-2">Oops! That page can't be found. </h1>
+			<h1 class="font-40 font-mb-25 px-2">Oops! That page can't be found. </h1>
 		</header>
 
 		<div class="page-content text-center max-30 mx-auto px-3">
