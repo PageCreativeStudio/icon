@@ -1040,6 +1040,10 @@ Custom CSS start here
 	border: solid 1px var(--tertiary) !important;
 }
 
+.text-dark {
+	color: black!important;
+}
+
 .text-pri {
 	color: var(--primary) !important;
 }
