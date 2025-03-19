@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <div class="container max-60 mx-auto text-center py-5">
-    <h1 class="text-dark font-20">Home</h1>
+    <h1 class="text-dark font-25">Home</h1>
 
     <!--<?php
     $form_shortcode = '[sync_customers_to_salesforce]';
