@@ -22,7 +22,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> class="px-2 px-md-3">
 	<?php wp_body_open(); ?>
 
 	<main id="primary" class="site-main">
