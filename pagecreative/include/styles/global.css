@@ -64,20 +64,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- @font-face {
-    font-family: 'SuisseRegular';
-    src: url('../fonts/SuisseIntl-Regular.woff2') format('woff2'),
-         url('../fonts/SuisseIntl-Regular.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
+@font-face {
+	font-family: 'SuisseRegular';
+	src: url('../fonts/SuisseIntl-Regular.woff2') format('woff2'),
+		url('../fonts/SuisseIntl-Regular.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'SuisseMedium';
-    src: url('../fonts/SuisseIntl-Medium.woff2') format('woff2'),
-         url('../fonts/SuisseIntl-Medium.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
+	font-family: 'SuisseMedium';
+	src: url('../fonts/SuisseIntl-Medium.woff2') format('woff2'),
+		url('../fonts/SuisseIntl-Medium.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
 }
 
 
@@ -419,7 +419,7 @@ select,
 optgroup,
 textarea {
 	color: rgb(89, 89, 89);
-	font-family: 'SuisseRegular', sans-serif;	
+	font-family: 'SuisseRegular', sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -432,7 +432,7 @@ h5,
 h6 {
 	clear: both;
 	color: black;
-	font-family: 'SuisseRegular', sans-serif;	
+	font-family: 'SuisseRegular', sans-serif;
 }
 
 p {
@@ -746,16 +746,7 @@ textarea {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
 
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: flex;
-	}
-}
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -1054,7 +1045,7 @@ Custom CSS start here
 }
 
 .text-darkgray {
-	color: rgb(89, 89, 89)!important;
+	color: rgb(89, 89, 89) !important;
 }
 
 .text-pri {
@@ -1205,12 +1196,11 @@ Custom CSS start here
 	font-size: 50px;
 }
 
-.uppercase{
+.uppercase {
 	text-transform: uppercase;
 }
 
 /* End of BS4 custom classes here*/
-@media (min-width:991px) {}
 
 @media (max-width:991px) {
 	.font-mb-13 {
@@ -1243,5 +1233,15 @@ Custom CSS start here
 
 	.font-mb-35 {
 		font-size: 35px;
+	}
+}
+@media (min-width:991px) {
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+		gap: 19px;
 	}
 }
