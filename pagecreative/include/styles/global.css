@@ -543,6 +543,14 @@ table {
 
 /* Links
 --------------------------------------------- */
+
+a:hover,
+a:focus,
+a:active,
+a {
+	color: black;
+}
+
 a:focus {
 	outline: thin dotted;
 }
