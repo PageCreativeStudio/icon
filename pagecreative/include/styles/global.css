@@ -1199,6 +1199,9 @@ Custom CSS start here
 .uppercase {
 	text-transform: uppercase;
 }
+.place-items-center{
+	place-items: center;
+}
 
 /* End of BS4 custom classes here*/
 
