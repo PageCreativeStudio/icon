@@ -1069,7 +1069,7 @@ Custom CSS start here
 }
 
 .max-10 {
-	max-width: 10rem;
+	max-width: 10rem!important;
 }
 
 .max-15 {
