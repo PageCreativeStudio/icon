@@ -31,10 +31,10 @@
 				<?php esc_html_e('Skip to content', 'pagecreative'); ?>
 			</a>
 
-			<header id="masthead" class="site-header max-60 mx-auto">
-				<div class="site-branding">
+			<header id="masthead" class="site-header max-60 mx-auto text-center ">
+				<div class="site-branding pb-4">
 					<a href="<?php echo home_url(); ?>">
-						<img class="w-100 max-15"
+						<img class="w-100 max-10 py-2"
 							src="<?php echo esc_url(get_template_directory_uri() . '/include/images/svg-logo.svg'); ?>"
 							alt="icon printing">
 					</a>
