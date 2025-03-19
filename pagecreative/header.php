@@ -35,7 +35,7 @@
 				<div class="site-branding">
 					<a href="<?php echo home_url(); ?>">
 						<img class="w-100 max-15"
-							src="<?php echo esc_url(get_template_directory_uri() . '/includes/images/svg-logo.svg'); ?>"
+							src="<?php echo esc_url(get_template_directory_uri() . '/include/images/svg-logo.svg'); ?>"
 							alt="icon printing">
 					</a>
 				</div>
