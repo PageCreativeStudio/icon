@@ -40,7 +40,7 @@
 					</a>
 				</div>
 
-				<nav id="site-navigation" class="main-navigation">
+				<nav id="site-navigation" class="main-navigation justify-content-between">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 						<?php esc_html_e('Primary Menu', 'pagecreative'); ?>
 					</button>
