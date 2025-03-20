@@ -20,13 +20,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 	<!-- Google Analytics (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2HPK0BN5HS"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S0WFV5P8PN"></script>
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
-		gtag('config', 'G-2HPK0BN5HS');
+	gtag('config', 'G-S0WFV5P8PN');
 	</script>
 
 	<!-- Google tag manager (gtag.js) -->
