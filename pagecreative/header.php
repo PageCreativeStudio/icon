@@ -19,7 +19,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-	<!-- Google Analytics (gtag.js) -->
+	<!-- Google Analytics 4 (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S0WFV5P8PN"></script>
 	<script>
 	window.dataLayer = window.dataLayer || [];
@@ -39,7 +39,6 @@
 					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-K9NTKGT');
 	</script>
-
 
 	<?php wp_head(); ?>
 </head>
