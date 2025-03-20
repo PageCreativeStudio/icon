@@ -176,3 +176,34 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+// Custom functions start here
+
+function my_custom_gutenberg_blocks() {
+    if (function_exists('acf_register_block_type')) {
+
+        // Hero Section
+        acf_register_block_type(array(
+            'name'              => 'hero_section',
+            'title'             => __('Hero Section', 'text-domain'),
+            'description'       => __('Page creative hero.', 'text-domain'),
+            'render_template'   => get_template_directory() . '/template-parts/blocks/hero-section.php',
+            'category'          => 'layout',
+            'icon'              => 'admin-site',
+            'keywords'          => array('hero', 'banner'),
+        ));
+
+        // About Section
+        acf_register_block_type(array(
+            'name'              => 'about_section',
+            'title'             => __('About Section', 'text-domain'),
+            'description'       => __('A custom about section block.', 'text-domain'),
+            'render_template'   => get_template_directory() . '/template-parts/blocks/about-section.php',
+            'category'          => 'layout',
+            'icon'              => 'admin-users',
+            'keywords'          => array('about', 'team', 'bio'),
+        ));
+    }
+}
+add_action('acf/init', 'my_custom_gutenberg_blocks');
+

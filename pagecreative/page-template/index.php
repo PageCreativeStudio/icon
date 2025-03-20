@@ -1,18 +1,17 @@
 <?php
 /**
- *    Template Name: Index
+ * Template Name: Index
  */
 
 get_header(); ?>
 
-<div class="container max-60 mx-auto text-center py-5">
-    <h1 class="text-dark font-25">Home</h1>
+<div class="container max-70 mx-auto text-center py-5">
+    <?php the_content(); ?>
 
-    <!--<?php
-    $form_shortcode = '[sync_customers_to_salesforce]';
-    $form_html = do_shortcode($form_shortcode);
-    echo $form_html;
-    ?>-->
+    <?php 
+    // Uncomment this only if needed
+    // echo do_shortcode('[sync_customers_to_salesforce]'); 
+    ?>
 </div>
 
 <?php get_footer(); ?>
