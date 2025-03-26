@@ -76,7 +76,7 @@
 						<div class="site-branding col-4 col-lg-2 pl-lg-1 pr-lg-4 align-self-center">
 							<a href="<?php echo home_url(); ?>">
 								<img class="w-100 max-7"
-									src="<?php echo esc_url(get_template_directory_uri() . '/images/svg-logo.svg'); ?>"
+									src="<?php echo esc_url(get_template_directory_uri() . '/include/images/svg-logo.svg'); ?>"
 									alt="icon printing">
 							</a>
 						</div>
@@ -131,7 +131,7 @@
 										</svg>
 									</a>
 									<img class="w-100 max-7"
-										src="<?php echo esc_url(get_template_directory_uri() . '/images/svg-logo.svg'); ?>"
+										src="<?php echo esc_url(get_template_directory_uri() . '/include/images//svg-logo.svg'); ?>"
 										alt="icon printing">
 								</div>
 							</div>
