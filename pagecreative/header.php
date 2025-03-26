@@ -56,7 +56,7 @@
 				<div class="container max-width mx-auto">
 					<div class="row py-3 py-lg-0">
 						<nav
-							class="main-navigation order-3 order-lg-2 d-flex place-items-center col-2 col-lg align-self-center px-3 text-right justify-content-end text-lg-right">
+							class="main-navigation d-flex place-items-center col-6 col-lg-5 order-2 order-lg-1 align-self-center px-3 text-right justify-content-end text-lg-right">
 							<button class="menu-toggle float-right text-white" id="toggle-menu" aria-label="menu">
 								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9"
 									fill="none">
@@ -73,14 +73,14 @@
 							);
 							?>
 						</nav>
-						<div class="site-branding col-4 col-lg-2 pl-lg-1 pr-lg-4 align-self-center">
+						<div class="site-branding order-1 order-lg-2 col-6 col-lg-5 pl-lg-1 pr-lg-4 align-self-center">
 							<a href="<?php echo home_url(); ?>">
 								<img class="w-100 max-7"
 									src="<?php echo esc_url(get_template_directory_uri() . '/include/images/svg-logo.svg'); ?>"
 									alt="icon printing">
 							</a>
 						</div>
-						<div class="col-6 col-lg-2 order-2 order-lg-3 align-self-center">
+						<div class="col-6 col-lg-2 align-self-center d-none d-lg-block">
 							<div class="d-flex flex-wrap justify-content-end">
 								<a href="#">Sign in</a>
 								<a class="btna" href="#">Get a quote</a>
