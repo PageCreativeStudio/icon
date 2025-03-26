@@ -54,7 +54,7 @@
 
 			<header id="masthead" class="site-header mx-auto text-center ">
 				<div class="container-fluid mx-auto">
-					<div class="row py-3 py-lg-0">
+					<div class="row  py-3 py-lg-0">
 						<nav
 							class="main-navigation d-flex place-items-center col-6 col-lg-5 order-2 order-lg-1 align-self-center px-3 text-right justify-content-end text-lg-right">
 							<button class="menu-toggle float-right text-white" id="toggle-menu" aria-label="menu">
