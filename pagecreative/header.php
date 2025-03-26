@@ -55,8 +55,7 @@
 			<header id="masthead" class="site-header mx-auto text-center ">
 				<div class="container-fluid mx-auto">
 					<div class="row py-3 py-lg-0">
-						<nav
-							class="main-navigation d-flex place-items-center col-6 col-lg-5 order-2 order-lg-1 align-self-center px-3 text-right justify-content-end text-lg-right">
+						<nav class="main-navigation d-flex justify-content-center place-items-center col-6 col-lg-5 order-2 order-lg-1 ">
 							<button class="menu-toggle float-right text-white" id="toggle-menu" aria-label="menu">
 								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9"
 									fill="none">
