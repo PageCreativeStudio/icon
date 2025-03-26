@@ -53,7 +53,7 @@
 			</a>
 
 			<header id="masthead" class="site-header max-60 mx-auto text-center ">
-				<div class="container max-width mx-auto">
+				<div class="container-fluid mx-auto">
 					<div class="row py-3 py-lg-0">
 						<nav
 							class="main-navigation d-flex place-items-center col-6 col-lg-5 order-2 order-lg-1 align-self-center px-3 text-right justify-content-end text-lg-right">
