@@ -185,7 +185,7 @@ function my_custom_gutenberg_blocks() {
         // Hero Section
         acf_register_block_type(array(
             'name'              => 'hero_section',
-            'title'             => __('Hero Section', 'text-domain'),
+            'title'             => __('Hero PAGE SECTION', 'text-domain'),
             'description'       => __('Page creative hero.', 'text-domain'),
             'render_template'   => get_template_directory() . '/template-parts/blocks/hero-section.php',
             'category'          => 'layout',
@@ -207,3 +207,20 @@ function my_custom_gutenberg_blocks() {
 }
 add_action('acf/init', 'my_custom_gutenberg_blocks');
 
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Header',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+}

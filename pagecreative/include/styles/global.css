@@ -64,7 +64,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-@font-face {
+ @font-face {
 	font-family: 'SuisseRegular';
 	src: url('../fonts/SuisseIntl-Regular.woff2') format('woff2'),
 		url('../fonts/SuisseIntl-Regular.woff') format('woff');
@@ -80,6 +80,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	font-style: normal;
 }
 
+:root {
+	--black: #000000;
+	--white: #ffffff;
+	--gray: #7B7B7B;
+}
 
 html {
 	line-height: 1.15;
@@ -1005,6 +1010,7 @@ Custom CSS start here
 	border-radius: 5px;
 }
 
+
 .bg-pri {
 	background-color: var(--primary) !important;
 }
@@ -1025,29 +1031,17 @@ Custom CSS start here
 	background-color: var(--black) !important;
 }
 
-.bg-lightgray {
-	background-color: var(--lightgray) !important;
+.text-gray{
+    color:var(--gray);
+}
+.text-white{
+    color:var(--white);
 }
 
-.border-ter {
-	border: solid 1px var(--tertiary) !important;
+.text-black{
+    color:var(--black);
 }
 
-.text-darkgray {
-	color: rgb(89, 89, 89) !important;
-}
-
-.text-pri {
-	color: var(--primary) !important;
-}
-
-.text-sec {
-	color: var(--secondary) !important;
-}
-
-.text-ter {
-	color: var(--tertiary) !important;
-}
 
 .d-grid {
 	display: grid;
@@ -1206,9 +1200,10 @@ Custom CSS start here
 	align-content: center;
 }
 
-.main-navigation a {
-	font-size: 17px;
-	color: var(--dark);
+.main-navigation a,
+header a{
+	font-size: 14px;
+	color: var(--black);
 	font-weight: 500;
 }
 
@@ -1218,10 +1213,9 @@ Custom CSS start here
 }
 
 .menu-toggle svg {
-	border: solid 1px black;
-	padding: 7px 6px;
-	width: 31px;
-	height: 27px;
+    padding: 4px 5px;
+    width: 29px;
+    height: 21px;
 }
 
 .mobmenu {
@@ -1295,8 +1289,31 @@ Custom CSS start here
 	max-height: 100% !important;
 	transition: 0.3s ease-in-out;
 }
+.main-navigation li.menu-item-has-children{
+    margin-right: 15px;
+}
 
-
+.main-navigation li.menu-item-has-children::after{
+    content:"";
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%228%22%20viewBox%3D%220%200%2012%208%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M11%201.54492L6%206.54492L1%201.54492%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: contain;
+    height: 14px;
+    width: 14px;
+    top: 50%;
+    margin-left: 5px;
+    margin-top: -4px;
+    right: -22px;
+}
+.cartbtn{
+    border: 1px solid #D6D6D6;
+    padding: 8px 8px;
+}
+.btna{
+    border: 1px solid rgba(51, 51, 51, 0.20);
+    padding: 10px 20px;
+}
 
 
 @media (max-width:991px) {
@@ -1349,7 +1366,7 @@ Custom CSS start here
 
 	.main-navigation ul {
 		display: flex;
-		gap: 1.5rem;
+		gap: 1.2rem;
 		align-items: center;
 	}
 }

@@ -52,7 +52,7 @@
 				<?php esc_html_e('Skip to content', 'pagecreative'); ?>
 			</a>
 
-			<header id="masthead" class="site-header mx-auto text-center ">
+			<header id="masthead" class="site-header mx-auto text-center pt-2 pt-lg-3 pb-2 pb-lg-4 px-md-4">
 				<div class="container-fluid mx-auto">
 					<div class="row py-3 py-lg-0">
 						<nav class="main-navigation d-flex justify-content-end justify-content-lg-start place-items-center col-6 col-lg-5 order-2 order-lg-1 ">
@@ -80,9 +80,9 @@
 							</a>
 						</div>
 						<div class="col-6 col-lg-5 align-self-center order-lg-3 d-none d-lg-block">
-							<div class="d-flex flex-wrap justify-content-end">
-								<a href="#">Sign in</a>
-								<a class="btna" href="#">Get a quote</a>
+							<div class="d-flex flex-wrap justify-content-end align-items-center">
+								<a class="mr-4" href="#">Sign in</a>
+								<a class="btna mr-4" href="#">Get a quote</a>
 								<a class="cartbtn" href="<?php echo home_url(); ?>/cart">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25"
 										fill="none">
@@ -155,14 +155,42 @@
 							</div>
 
 							<div class="sm__header d-flex px-2 py-4">
-								<a class="mr-2" href="https://www.instagram.com/whiteandwhitelc/" target="_blank">
+								<a class="mr-2" href="" target="_blank">
 
 								</a>
-								<a href="https://en-gb.facebook.com/WhiteandWhiteLondonContracts/" target="_blank">
+								<a href="/" target="_blank">
 
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>
+				
+				
+				<section class="bg-white py-5 megamenu__container" id="wood-products">
+					<div class="container-fluid px-3">
+						<div class="row justify-content-between">
+						     <?php if (have_rows('mega_menu', 'options')) { ?>
+                                <?php while (have_rows('mega_menu', 'options')) { the_row(); ?>
+                                    <div class="col-12 col-md-3 col-lg-2 mt-5 text-left">
+        								<h2 class="text-black font-bold font-18 mb-1 mt-2 pb-3"><?php echo get_sub_field('sub_menu_title', 'options'); ?></h2>
+        								<ul class="m-0 p-0 list-unstyled">
+        								    <?php if (have_rows('list_repeater', 'options')) { ?>
+                                                <?php while (have_rows('list_repeater', 'options')) { the_row(); ?>
+                                                    <li class="pb-2"><a class="text-gray font-15 mb-0" href="<?php echo get_sub_field('list_link', 'options'); ?>"><?php echo get_sub_field('list_title', 'options'); ?></a></li>
+                                                    <!--Get repeater sub fields here...--> 
+                                                <?php } ?>
+                                            <?php } ?>  
+        									
+        								</ul>
+        							</div>
+                                    <!--Get repeater sub fields here...--> 
+                                <?php } ?>
+                            <?php } ?>  
+							<div class="col-12 col-md-3 col-lg-2 promo__col mt-5 text-left" style="background: linear-gradient(0deg, rgba(51, 51, 51, 0.70) 0%, rgba(51, 51, 51, 0.70) 100%), url(<path-to-image>) lightgray -104.911px 0px / 254.545% 100% no-repeat;">
+							    <img src="" alt="">
+							</div>
+						</div>
+					</div>
+				</section>
 			</header>
