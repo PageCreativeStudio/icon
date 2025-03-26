@@ -79,7 +79,7 @@
 									alt="icon printing">
 							</a>
 						</div>
-						<div class="col-6 col-lg-2 align-self-center order-lg-4 d-none d-lg-block">
+						<div class="col-6 col-lg-4 align-self-center order-lg-3 d-none d-lg-block">
 							<div class="d-flex flex-wrap justify-content-end">
 								<a href="#">Sign in</a>
 								<a class="btna" href="#">Get a quote</a>
