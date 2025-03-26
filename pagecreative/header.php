@@ -167,28 +167,31 @@
 				</div>
 				
 				
-				<section class="bg-white py-5 megamenu__container" id="wood-products">
+				<section class="bg-white py-5 megamenu__container" id="services__mega-menu">
 					<div class="container-fluid px-3">
 						<div class="row justify-content-between">
 						     <?php if (have_rows('mega_menu', 'options')) { ?>
                                 <?php while (have_rows('mega_menu', 'options')) { the_row(); ?>
-                                    <div class="col-12 col-md-3 col-lg-2 mt-5 text-left">
-        								<h2 class="text-black font-bold font-18 mb-1 mt-2 pb-3"><?php echo get_sub_field('sub_menu_title', 'options'); ?></h2>
-        								<ul class="m-0 p-0 list-unstyled">
-        								    <?php if (have_rows('list_repeater', 'options')) { ?>
-                                                <?php while (have_rows('list_repeater', 'options')) { the_row(); ?>
-                                                    <li class="pb-2"><a class="text-gray font-15 mb-0" href="<?php echo get_sub_field('list_link', 'options'); ?>"><?php echo get_sub_field('list_title', 'options'); ?></a></li>
-                                                    <!--Get repeater sub fields here...--> 
-                                                <?php } ?>
-                                            <?php } ?>  
-        									
-        								</ul>
+                                    <div class="col-12 col-md-3 col-lg-3 col-xl-2 mt-5 text-left px-3">
+        								<div class="mx-3 megamenu__col ">
+        								    <h2 class="text-black font-bold font-18 mb-1 mt-2 pb-3"><?php echo get_sub_field('sub_menu_title', 'options'); ?></h2>
+            								<ul class="m-0 p-0 list-unstyled">
+            								    <?php if (have_rows('list_repeater', 'options')) { ?>
+                                                    <?php while (have_rows('list_repeater', 'options')) { the_row(); ?>
+                                                        <li class="pb-2"><a class="text-gray font-15 mb-0" href="<?php echo get_sub_field('list_link', 'options'); ?>"><?php echo get_sub_field('list_title', 'options'); ?></a></li>
+                                                    <?php } ?>
+                                                <?php } ?>  
+            									
+            								</ul>
+        								</div>
         							</div>
-                                    <!--Get repeater sub fields here...--> 
                                 <?php } ?>
                             <?php } ?>  
-							<div class="col-12 col-md-3 col-lg-2 promo__col mt-5 text-left" style="background: linear-gradient(0deg, rgba(51, 51, 51, 0.70) 0%, rgba(51, 51, 51, 0.70) 100%), url(<path-to-image>) lightgray -104.911px 0px / 254.545% 100% no-repeat;">
-							    <img src="" alt="">
+							<div class="col-12 col-md-3 col-lg-3 col-xl-2 promo__col mt-5 text-left px-4 py-5" style="max-height:22rem; background: linear-gradient(0deg, rgba(51, 51, 51, 0.70) 0%, rgba(51, 51, 51, 0.70) 100%), url(<?php echo get_field('promo_image', 'options'); ?>) lightgray -104.911px 0px / 254.545% 100% no-repeat;background-size: cover; background-position-x: left;">
+							    <a class="h-100 d-block" href="#">
+							        <img class="d-block" src="<?php echo esc_url(get_template_directory_uri() . '/include/images/logo-white.svg'); ?>" alt="icon printing white logo">
+							        <span class="text-white arrow-white font-15 d-inline-block mt-3">View all products</span>
+							    </a>
 							</div>
 						</div>
 					</div>
