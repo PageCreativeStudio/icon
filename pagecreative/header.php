@@ -72,7 +72,7 @@
 							);
 							?>
 						</nav>
-						<div class="site-branding order-1 order-lg-2 col-6 col-lg-2 pl-lg-1 pr-lg-4 text-left text-lg-right align-self-center">
+						<div class="site-branding order-1 order-lg-2 col-6 col-lg-2 pl-lg-1 pr-lg-4 text-left text-lg-center align-self-center">
 							<a href="<?php echo home_url(); ?>">
 								<img class="w-100 max-6"
 									src="<?php echo esc_url(get_template_directory_uri() . '/include/images/svg-logo.svg'); ?>"
