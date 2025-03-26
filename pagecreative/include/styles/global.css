@@ -1058,7 +1058,7 @@ Custom CSS start here
 }
 
 .max-10 {
-	max-width: 10rem!important;
+	max-width: 10rem !important;
 }
 
 .max-15 {
@@ -1188,7 +1188,8 @@ Custom CSS start here
 .uppercase {
 	text-transform: uppercase;
 }
-.place-items-center{
+
+.place-items-center {
 	place-items: center;
 }
 
@@ -1323,6 +1324,7 @@ Custom CSS start here
 		font-size: 35px;
 	}
 }
+
 @media (min-width:991px) {
 	.menu-toggle {
 		display: none;
@@ -1331,5 +1333,15 @@ Custom CSS start here
 	.main-navigation ul {
 		display: flex;
 		gap: 19px;
+	}
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+		gap: 1.5rem;
+		align-items: center;
 	}
 }
