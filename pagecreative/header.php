@@ -55,7 +55,7 @@
 			<header id="masthead" class="site-header mx-auto text-center ">
 				<div class="container-fluid mx-auto">
 					<div class="row py-3 py-lg-0">
-						<nav class="main-navigation d-flex justify-content-start place-items-center col-6 col-lg-4 order-2 order-lg-1 ">
+						<nav class="main-navigation d-flex justify-content-end justify-content-lg-end place-items-center col-6 col-lg-4 order-2 order-lg-1 ">
 							<button class="menu-toggle float-right text-white" id="toggle-menu" aria-label="menu">
 								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9"
 									fill="none">
@@ -72,7 +72,7 @@
 							);
 							?>
 						</nav>
-						<div class="site-branding order-1 order-lg-2 col-6 col-lg-4 pl-lg-1 pr-lg-4 align-self-center">
+						<div class="site-branding order-1 order-lg-2 col-6 col-lg-4 pl-lg-1 pr-lg-4 text-left text-lg-right align-self-center">
 							<a href="<?php echo home_url(); ?>">
 								<img class="w-100 max-7"
 									src="<?php echo esc_url(get_template_directory_uri() . '/include/images/svg-logo.svg'); ?>"
