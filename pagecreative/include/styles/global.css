@@ -1193,6 +1193,102 @@ Custom CSS start here
 }
 
 /* End of BS4 custom classes here*/
+.menu-menu-1-container {
+	align-content: center;
+}
+
+.main-navigation a {
+	font-size: 17px;
+	color: var(--dark);
+	font-weight: 500;
+}
+
+.menu-toggle {
+	background: none;
+	border: none;
+}
+
+.menu-toggle svg {
+	border: solid 1px black;
+	padding: 7px 6px;
+	width: 31px;
+	height: 27px;
+}
+
+.mobmenu {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	z-index: 999;
+	width: 300px;
+	height: 100vh;
+	background-color: var(--white);
+	transition: transform 0.4s ease;
+	transform: translateX(100%);
+	overflow: auto;
+}
+
+.mobmenu.menu-open {
+	transform: translateX(0) !important;
+	right: 0;
+}
+
+.mobmenu.menu-close {
+	transform: translateX(100%);
+	right: 0;
+}
+
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+.closebtn svg {
+	height: 17px;
+	width: 17px;
+}
+
+.closebtn {
+	cursor: pointer;
+	position: relative;
+	left: 3px;
+}
+
+.mobmain_menu a {
+	color: var(--dark);
+	font-weight: 500;
+	padding: 0 0px;
+	font-size: 21px;
+	display: block;
+}
+
+.mobmain_menu>div>ul {
+	padding: 0;
+	margin: 0;
+}
+
+.mobmain_menu .sub-menu a {
+	font-weight: 300;
+	font-size: 18px;
+}
+
+.mobmain_menu .sub-menu {
+	margin: 0;
+	padding: 0.5rem 0.5rem 0.4rem 0.8rem;
+	display: none;
+	overflow: hidden;
+	transition: 0.3s ease-in-out;
+	max-height: 0;
+}
+
+.mobmain_menu .sub-menu.show {
+	display: block;
+	max-height: 100% !important;
+	transition: 0.3s ease-in-out;
+}
+
+
+
 
 @media (max-width:991px) {
 	.font-mb-13 {
