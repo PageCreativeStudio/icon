@@ -52,7 +52,7 @@
 				<?php esc_html_e('Skip to content', 'pagecreative'); ?>
 			</a>
 
-			<header id="masthead" class="site-header max-60 mx-auto text-center ">
+			<header id="masthead" class="site-header mx-auto text-center ">
 				<div class="container-fluid mx-auto">
 					<div class="row py-3 py-lg-0">
 						<nav
