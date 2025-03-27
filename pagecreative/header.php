@@ -55,7 +55,7 @@
 			<header id="masthead" class="site-header mx-auto text-center pt-2 pt-lg-3 pb-2 pb-lg-4 px-md-4">
 				<div class="container-fluid mx-auto">
 					<div class="row py-3 py-lg-0">
-						<nav class="main-navigation d-flex justify-content-end justify-content-lg-start place-items-center col-6 col-lg-5 order-2 order-lg-1 ">
+						<nav class="main-navigation d-flex justify-content-end justify-content-lg-start place-items-center col-6 col-lg-5 order-2 order-lg-1 px-0 px-lg">
 							<button class="menu-toggle float-right text-white" id="toggle-menu" aria-label="menu">
 								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9"
 									fill="none">
@@ -108,8 +108,8 @@
 
 					<div class="mobmenu container w-100 py-2">
 						<div class="row px-3 pt-2">
-							<div class="col-6 mob_logo align-self-center">
-								<div class="d-flex">
+							<div class="col-9 mob_logo align-self-center px-0">
+								<div class="d-flex flex-wrap">
 									<a class="cartbtn" href="<?php echo home_url(); ?>/cart">
 										<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25"
 											viewBox="0 0 26 25" fill="none">
@@ -129,12 +129,14 @@
 											</defs>
 										</svg>
 									</a>
-									<img class="w-100 max-7"
+									<div class="align-self-center pl-4">
+									    <img class="w-100 max-7"
 										src="<?php echo esc_url(get_template_directory_uri() . '/include/images//svg-logo.svg'); ?>"
 										alt="icon printing">
+									</div>
 								</div>
 							</div>
-							<div class="col-6 align-self-center text-right pt-4">
+							<div class="col-3 align-self-center text-right px-0">
 								<a class="closebtn text-white font-400">
 									<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"
 										fill="none">
@@ -143,7 +145,7 @@
 									</svg>
 								</a>
 							</div>
-							<div class="mobmain_menu col-12 py-3 px-2">
+							<div class="mobmain_menu col-12 py-4 px-0">
 								<?php
 								wp_nav_menu(
 									array(
@@ -165,7 +167,6 @@
 						</div>
 					</div>
 				</div>
-				
 				
 				<section class="bg-white py-5 megamenu__container" id="services__mega-menu">
 					<div class="container-fluid px-3">

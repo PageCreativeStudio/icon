@@ -84,6 +84,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--black: #000000;
 	--white: #ffffff;
 	--gray: #7B7B7B;
+	--lightgray:#fbfbfb;
 }
 
 html {
@@ -500,22 +501,17 @@ hr {
 }
 
 ul,
-ol {
-	margin: 0 0 1.5em 3em;
+ol,
+li{
+    margin: 0 0 0 0em;
+    list-style: none;
+    padding: 0 0 8px 0;
+    font-size: 15px;
 }
 
-ul {
-	list-style: disc;
-}
 
 ol {
 	list-style: decimal;
-}
-
-li>ul,
-li>ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
 }
 
 dt {
@@ -703,13 +699,21 @@ textarea {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    float: left;
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    z-index: 99999;
+    display: block;
+    text-align: left;
+    min-width: 11rem;
+    background-color: white;
+    width: 100%;
+    padding: 1.5rem 1.5rem 1.5rem 1rem;
+    border-radius: 0 6px 6px 6px;
 }
+
 
 .main-navigation ul ul ul {
 	left: -999em;
@@ -723,7 +727,10 @@ textarea {
 }
 
 .main-navigation ul ul a {
-	width: 200px;
+	width: 100%;
+    padding-bottom: 8px;
+    border-bottom: solid 1px gray;
+    margin-bottom: 8px;
 }
 
 .main-navigation ul li:hover>ul,
@@ -1032,6 +1039,10 @@ Custom CSS start here
 	background-color: var(--black) !important;
 }
 
+.bg-lightgray {
+	background-color: var(--lightgray);
+}
+
 .text-gray{
     color:var(--gray);
 }
@@ -1148,8 +1159,16 @@ Custom CSS start here
 	font-size: 13px !important;
 }
 
+.font-14 {
+	font-size: 14px;
+}
+
 .font-15 {
 	font-size: 15px;
+}
+
+.font-16 {
+	font-size: 16px;
 }
 
 .font-18 {
@@ -1203,7 +1222,7 @@ Custom CSS start here
 
 .main-navigation a,
 header a{
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--black);
 	font-weight: 500;
 }
@@ -1224,7 +1243,8 @@ header a{
 	top: 0;
 	right: -100%;
 	z-index: 999;
-	width: 300px;
+	width: 100% !important;
+	max-width: 450px;
 	height: 100vh;
 	background-color: var(--white);
 	transition: transform 0.4s ease;
@@ -1259,16 +1279,18 @@ header a{
 }
 
 .mobmain_menu a {
-	color: var(--dark);
+	color: var(--black);
 	font-weight: 500;
 	padding: 0 0px;
-	font-size: 21px;
+	font-size: 17px;
 	display: block;
 }
 
 .mobmain_menu>div>ul {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: left;
 }
 
 .mobmain_menu .sub-menu a {
@@ -1291,7 +1313,7 @@ header a{
 	transition: 0.3s ease-in-out;
 }
 .main-navigation li.menu-item-has-children{
-    margin-right: 15px;
+    padding-right: 15px;
 }
 
 .main-navigation li.menu-item-has-children::after{
@@ -1304,8 +1326,9 @@ header a{
     width: 14px;
     top: 50%;
     margin-left: 5px;
-    margin-top: -4px;
-    right: -22px;
+    margin-top: -8px;
+    right: -4px;
+    cursor:pointer;
 }
 .cartbtn{
     border: 1px solid #D6D6D6;
@@ -1333,10 +1356,33 @@ header a{
     padding-top: 1rem;
     border-top: solid 1px #a7a7a7;
 } 
+.site-footer a,
+.site-footer li{
+    color:var(--gray);
+}
+
+.arrowup{
+    position:relative;
+}
+.arrowup::after{
+    content: "";
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%229%22%20height%3D%229%22%20viewBox%3D%220%200%209%209%22%20fill%3D%22none%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M7.54494%202.56639L1.50928%208.60205L0.801779%207.89455L6.83744%201.85889L3.54217%201.85721L3.54258%200.857807L7.83655%200.858364L7.87191%200.823009L7.90728%200.858384L8.54384%200.858572L8.54403%201.49513L8.57941%201.53051L8.54405%201.56586L8.5441%201.71298L8.54532%205.86054L7.54521%205.86024L7.54494%202.56639Z%22%20fill%3D%22%23333333%22%2F%3E%3C%2Fsvg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 11px;
+    width: 11px;
+    position: absolute;
+    margin: 5px 0 0 8px;
+}
 
 @media (max-width:991px) {
 	.font-mb-13 {
 		font-size: 13px !important;
+	}
+	
+	.font-mb-12 {
+		font-size: 12px;
 	}
 
 	.font-mb-15 {
@@ -1370,6 +1416,40 @@ header a{
 	.megamenu__container {
 		display: none !important;
 	}
+	.footermenu h2 {
+        margin-bottom: 11px !important;
+        cursor: pointer;
+        text-align: left;
+        position: relative;
+        border-bottom: solid 1px #dbdbdb;
+	}
+
+	.footermenu ul {
+		max-height: 0;
+		overflow: hidden;
+		text-align: left;
+		transition: max-height 0.3s ease-out;
+		padding: 0;
+	}
+
+	.footermenu h2::after {
+		content: "";
+        background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211%22%20height%3D%2211%22%20viewBox%3D%220%200%2011%2011%22%20fill%3D%22none%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M6.20833%204.36296H10.375V6.02962H6.20833V10.1963H4.54167V6.02962H0.375V4.36296H4.54167V0.196289H6.20833V4.36296Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E');
+        position: absolute;
+        right: 0px;
+        height: 13px;
+        width: 13px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: 3px;
+        transform: rotate(0deg);
+        transition:transform 0.3s ease-in;
+	}
+	.footermenu h2.active::after{
+	   transform: rotate(135deg);
+	   transition:transform 0.3s ease-in;
+	}
+
 }
 
 @media (min-width:991px) {
@@ -1409,6 +1489,7 @@ header a{
 		opacity: 0;
 		visibility: hidden;
 		position: absolute;
+		overflow: auto;
 		top:3rem;
 		left: 0;
 		height: 100%;
@@ -1418,4 +1499,10 @@ header a{
 		transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 		transform: translateY(-10px);
 	}
+	.newsletterarea {
+      display: flex;
+      justify-content: flex-end;
+      text-align: left;
+      padding-left: 20px;
+    }
 }
