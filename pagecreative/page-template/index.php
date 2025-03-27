@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<div class="container-fluid px-0 mx-auto text-center py-5">
+<div class="container-fluid px-0 mx-auto text-center">
     <?php the_content(); ?>
 
     <?php 
