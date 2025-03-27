@@ -1358,7 +1358,8 @@ header a{
 } 
 .site-footer a,
 .site-footer li{
-    color:var(--gray);
+	color: var(--gray);
+    display: list-item;
 }
 
 .arrowup{
