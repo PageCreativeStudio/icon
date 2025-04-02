@@ -168,7 +168,7 @@
 					</div>
 				</div>
 				
-				<section class="bg-white py-5 megamenu__container" id="services__mega-menu">
+				<section class="bg-white pb-5 pt-0 megamenu__container" id="services__mega-menu">
 					<div class="container-fluid px-3">
 						<div class="row justify-content-between">
 						     <?php if (have_rows('mega_menu', 'options')) { ?>

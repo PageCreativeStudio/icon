@@ -195,13 +195,13 @@ function my_custom_gutenberg_blocks() {
 
         // About Section
         acf_register_block_type(array(
-            'name'              => 'about_section',
-            'title'             => __('About Section', 'text-domain'),
-            'description'       => __('A custom about section block.', 'text-domain'),
-            'render_template'   => get_template_directory() . '/template-parts/blocks/about-section.php',
+            'name'              => 'social_proof',
+            'title'             => __('Social Proof Section', 'text-domain'),
+            'description'       => __('Social proof logo list', 'text-domain'),
+            'render_template'   => get_template_directory() . '/template-parts/blocks/social-logos.php',
             'category'          => 'layout',
             'icon'              => 'admin-users',
-            'keywords'          => array('about', 'team', 'bio'),
+            'keywords'          => array('logos', 'social'),
         ));
     }
 }
