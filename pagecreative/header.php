@@ -179,7 +179,7 @@
             								<ul class="m-0 p-0 list-unstyled">
             								    <?php if (have_rows('list_repeater', 'options')) { ?>
                                                     <?php while (have_rows('list_repeater', 'options')) { the_row(); ?>
-                                                        <li class="pb-2"><a class="text-gray font-15 mb-0" href="<?php echo get_sub_field('list_link', 'options'); ?>"><?php echo get_sub_field('list_title', 'options'); ?></a></li>
+                                                        <li class="pb-1"><a class="text-gray font-14 mb-0" href="<?php echo get_sub_field('list_link', 'options'); ?>"><?php echo get_sub_field('list_title', 'options'); ?></a></li>
                                                     <?php } ?>
                                                 <?php } ?>  
             									
