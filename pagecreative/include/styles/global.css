@@ -1376,7 +1376,12 @@ header a{
     position: absolute;
     margin: 5px 0 0 8px;
 }
+.btna{
 
+}
+.heroarea__inner > div{
+
+}
 @media (max-width:991px) {
 	.font-mb-13 {
 		font-size: 13px !important;

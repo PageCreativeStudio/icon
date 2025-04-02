@@ -185,8 +185,8 @@ function my_custom_gutenberg_blocks() {
         // Hero Section
         acf_register_block_type(array(
             'name'              => 'hero_section',
-            'title'             => __('Hero PAGE SECTION', 'text-domain'),
-            'description'       => __('Page creative hero.', 'text-domain'),
+            'title'             => __('Hero Section', 'text-domain'),
+            'description'       => __('Hero title with image.', 'text-domain'),
             'render_template'   => get_template_directory() . '/template-parts/blocks/hero-section.php',
             'category'          => 'layout',
             'icon'              => 'admin-site',
