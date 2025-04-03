@@ -1330,7 +1330,10 @@ Custom CSS start here
 .owl-carousel .owl-dot.active {
 	background: black !important;
 }
-
+.gstars img{
+	width: 20px;
+    object-fit: contain;
+}
 
 @media (max-width:991px) {
 	.socialarea__container img {
