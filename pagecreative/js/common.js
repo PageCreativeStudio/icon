@@ -257,4 +257,13 @@ jQuery(document).ready(function ($) {
             }
         }
     });
+}); 
+
+jQuery(document).ready(function ($) {
+    $('.testimonials__slider').owlCarousel({
+        loop: true,
+        nav: false,
+        margin: 15,
+        dots: true,
+    });
 });

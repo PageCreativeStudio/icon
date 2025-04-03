@@ -215,6 +215,16 @@ function my_custom_gutenberg_blocks()
 			'icon' => 'admin-users',
 			'keywords' => array('case studies', 'slider'),
 		));
+
+		acf_register_block_type(array(
+			'name' => 'testimonials',
+			'title' => __('Testimonial Slider', 'text-domain'),
+			'description' => __('Google reviews with testimonials', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/testimonials.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('reviews', 'testimonials'),
+		));
 	}
 }
 add_action('acf/init', 'my_custom_gutenberg_blocks');
@@ -238,6 +248,12 @@ if (function_exists('acf_add_options_page')) {
 	acf_add_options_sub_page(array(
 		'page_title' => 'Footer',
 		'menu_title' => 'Footer',
+		'parent_slug' => 'theme-general-settings',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' => 'Testimonials',
+		'menu_title' => 'Testimonials',
 		'parent_slug' => 'theme-general-settings',
 	));
 
