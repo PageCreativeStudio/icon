@@ -19,7 +19,7 @@
             </div>
             <p class="mb-0 align-self-center text-dark pt-1 pr-2">50</p>
             <p class="mb-0 align-self-center text-dark pt-1 pr-2">reviews</p>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+            <svg class="pt-2 align-self-center" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                 id="Layer_1" x="0px" y="0px" viewBox="0 0 255.2 80.3"
                 style="width:92px;enable-background:new 0 0 255.2 80.3;" xml:space="preserve">
                 <g id="XMLID_11_">
