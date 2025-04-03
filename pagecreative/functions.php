@@ -183,37 +183,16 @@ if (defined('JETPACK__VERSION')) {
 
 // Custom functions start here
 
-function custom_breadcrumbs_shortcode()
-{
-	if (function_exists('yoast_breadcrumb')) {
-		return yoast_breadcrumb('<nav class="breadcrumbs">', '</nav>', false);
-	}
-}
-add_shortcode('custom_breadcrumbs', 'custom_breadcrumbs_shortcode');
-
-function custom_yoast_breadcrumb_trail($links) {
-    // Check if we are on a single "case-studies" post
-    if (is_singular('case-studies')) {
-        // Get the archive URL for the "case-studies" custom post type
-        $cpt_archive_url = get_post_type_archive_link('case-studies');
-        
-        // Check if the archive URL exists
-        if ($cpt_archive_url) {
-            // Insert the "Case Studies" breadcrumb after "Home"
-            array_splice($links, 1, 0, array(
-                array(
-                    'url' => esc_url($cpt_archive_url), // The correct URL for the custom post type archive
-                    'text' => 'Case Studies' // Label for the CPT
-                )
-            ));
-        }
+function custom_yoast_breadcrumb_for_cpt($breadcrumb) {
+    if (is_singular('your_custom_post_type')) {
+        $breadcrumb[1] = array( 
+            'url' => get_post_type_archive_link('your_custom_post_type'),
+            'text' => 'Case Studies' // Change "Case Studies" to whatever you want
+        );
     }
-
-    return $links; // Return the modified breadcrumbs
+    return $breadcrumb;
 }
-add_filter('wpseo_breadcrumb_links', 'custom_yoast_breadcrumb_trail');
-
-
+add_filter('wpseo_breadcrumb_links', 'custom_yoast_breadcrumb_for_cpt');
 
 function my_custom_gutenberg_blocks()
 {
