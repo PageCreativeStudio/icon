@@ -1158,11 +1158,6 @@ Custom CSS start here
 	position: relative;
     display: inline-block!important;
 }
-.arrowup:hover::after{
-	right: -20px;
-	top: -1px;
-	transition: all 0.3s ease-in-out;
-}
 
 .arrowup::after {
 	content: "";
