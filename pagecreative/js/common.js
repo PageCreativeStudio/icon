@@ -118,7 +118,7 @@ $(document).ready(function () {
         resetMenu();
     });
     function setupResponsiveMenu() {
-        if (window.matchMedia('(max-width: 991px)').matches) {
+        if (window.matchMedia('(max-width: 3999px)').matches) {
             document.body.classList.add('mobile-menu-active');
         } else {
             document.body.classList.remove('mobile-menu-active');
