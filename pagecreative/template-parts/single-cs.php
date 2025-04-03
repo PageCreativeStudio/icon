@@ -14,6 +14,8 @@ get_header(); ?>
         <h1 class="text-dark"><?php the_title(); ?></h1>
     </header>
 
+    <?php echo do_shortcode('[custom_breadcrumbs]'); ?>
+
     <?php pagecreative_post_thumbnail(); ?>
 
     <div class="entry-content py-5">

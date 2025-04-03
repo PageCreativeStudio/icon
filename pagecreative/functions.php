@@ -183,6 +183,14 @@ if (defined('JETPACK__VERSION')) {
 
 // Custom functions start here
 
+function custom_breadcrumbs_shortcode() {
+    if (function_exists('yoast_breadcrumb')) {
+        return yoast_breadcrumb('<nav class="breadcrumbs">', '</nav>', false);
+    }
+}
+add_shortcode('custom_breadcrumbs', 'custom_breadcrumbs_shortcode');
+
+
 function my_custom_gutenberg_blocks()
 {
 	if (function_exists('acf_register_block_type')) {
