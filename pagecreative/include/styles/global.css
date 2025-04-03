@@ -1537,7 +1537,7 @@ header a {
     height: 11px;
     width: 11px;
     border-radius: 50px;
-    margin-right: 4px;
+    margin-right: 6px;
 }
 .owl-carousel .owl-dot.active{
 	background: black !important;
