@@ -1158,7 +1158,7 @@ Custom CSS start here
 	position: relative;
 }
 .arrowup:hover::after{
-	margin: 1px 0 0 12px;
+	margin: 5px 0 0 12px;
 	transition: 0.3s ease-in;
 }
 
