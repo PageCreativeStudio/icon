@@ -141,11 +141,11 @@ jQuery(document).ready(function ($) {
             },
             1280: {
                 items: 3,
-                stagePadding: 20
+                stagePadding: 35
             },
             1380: {
                 items: 3,
-                stagePadding:35,
+                stagePadding:50,
                 center: false
             }
         }
