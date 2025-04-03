@@ -184,7 +184,6 @@ header a {
 }
 
 @media (max-width: 991px) {
-
     .megamenu__container {
         display: none !important;
     }
@@ -192,10 +191,6 @@ header a {
 }
 
 @media (min-width:991px) {
-    .sliding-menu-container {
-        display: none;
-    }
-
     .menu-toggle {
         display: none;
     }
