@@ -1,7 +1,7 @@
 <section class="pb-5">
     <div class="container-fluid px-0 mx-auto mx-0 text-center">
         <h2 class="font-18 text-dark mb-0 pb-2"><?php echo get_field('case_studies_title'); ?></h2>
-        <a href="<?php echo home_url(); ?>/case-studies/" class="text-dark font-14 arrowblack mb-4 pb-2"><?php echo get_field('case_studies_sub_title'); ?></a>
+        <a href="<?php echo home_url(); ?>/case-studies/" class="text-dark d-inline-block font-14 arrowblack mb-4 pb-2"><?php echo get_field('case_studies_sub_title'); ?></a>
         <div class="casestudies__slider owl-carousel owl-theme">
             <?php
             $args = array(
