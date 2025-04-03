@@ -1431,6 +1431,11 @@ header a {
 .arrowwhite {
 	position: relative;
 }
+.arrowblack:hover::after,
+.arrowwhite:hover::after{
+	right:-27px;
+	transition: right 0.3 ease-in;
+}
 
 .arrowblack::after {
 	content: "";
@@ -1443,7 +1448,8 @@ header a {
 	right: -21px;
 	height: 16px;
 	width: 16px;
-	margin: 4px 0 0 0px;
+	margin: 3px 0 0 0px;
+	transition: right 0.3 ease-in;
 }
 
 .arrowwhite::after {
@@ -1457,7 +1463,8 @@ header a {
 	right: -21px;
 	height: 16px;
 	width: 16px;
-	margin: 4px 0 0 0px;
+	margin: 3px 0 0 0px;
+	transition: right 0.3 ease-in;
 }
 
 .socialarea__container img {
