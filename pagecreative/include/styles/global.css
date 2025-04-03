@@ -1424,12 +1424,12 @@ header a{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-	display: inline-block;
-	position: absolute;
-	right: 0;
-	height: 12px;
-	width: 12px;
-	margin: 2px 0 0 4px;
+    display: inline-block;
+    position: absolute;
+    right: -21px;
+    height: 16px;
+    width: 16px;
+    margin: 4px 0 0 0px;
 }
 .socialarea__container img{
     max-width: 7rem;
@@ -1445,11 +1445,8 @@ header a{
 .casestudy-wrapper {
     position: relative;
     display: inline-block;
-}
-
-.casestudy-wrapper img {
     width: 100%;
-    display: block;
+    max-width: 100%;
 }
 
 .item_content {
