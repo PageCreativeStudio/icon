@@ -17,11 +17,12 @@
                 <img src="<?php echo home_url(); ?>/wp-content/themes/pagecreative/include/images/g-star.svg"
                     alt="Google star review icon">
             </div>
-            <p class="mb-0 align-self-center text-dark pt-1 font-500 pr-2">50</p>
+            <?php $reviews_count = get_google_reviews_count(); ?>
+            <p class="mb-0 align-self-center text-dark pt-1 font-500 pr-2"><?php echo $reviews_count; ?></p>
             <p class="mb-0 align-self-center text-dark pt-1 font-500 pr-2">reviews</p>
-            <svg class="pt-2 align-self-center" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-                id="Layer_1" x="0px" y="0px" viewBox="0 0 255.2 80.3"
-                style="width:92px;enable-background:new 0 0 255.2 80.3;" xml:space="preserve">
+            <svg class="pt-2 align-self-center" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
+                viewBox="0 0 255.2 80.3" style="width:92px;enable-background:new 0 0 255.2 80.3;" xml:space="preserve">
                 <g id="XMLID_11_">
                     <path id="XMLID_10_" style="fill: #4285F4;"
                         d="M31.9,28.6v8.6h20.5c-0.6,4.8-2.2,8.3-4.7,10.8c-3,3-7.7,6.3-15.8,6.3 c-12.6,0-22.5-10.2-22.5-22.8S19.2,8.6,31.9,8.6c6.8,0,11.8,2.7,15.5,6.1l6-6C48.3,3.8,41.4,0,31.9,0C14.6,0,0,14.1,0,31.4 s14.6,31.4,31.9,31.4c9.4,0,16.4-3.1,21.9-8.8c5.7-5.7,7.4-13.6,7.4-20.1c0-2-0.1-3.8-0.5-5.4H31.9z">

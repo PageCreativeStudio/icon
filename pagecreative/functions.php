@@ -272,3 +272,24 @@ function custom_product_template($single_template)
 	return $single_template;
 }
 add_filter('single_template', 'custom_product_template');
+
+function get_google_reviews_count()
+{
+	$api_key = 'AIzaSyAVTya-j7CmUz053hQr4O7KsaGcxrKb1bo';
+	$place_id = 'ChIJ34vu87ocdkgR3OaqQhyJJus';
+	$url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=$place_id&fields=review,user_ratings_total&key=$api_key";
+
+	$response = wp_remote_get($url);
+	if (is_wp_error($response)) {
+		return 'N/A';
+	}
+
+	$body = wp_remote_retrieve_body($response);
+	$data = json_decode($body, true);
+
+	if (!empty($data['result']['user_ratings_total'])) {
+		return $data['result']['user_ratings_total'];
+	}
+
+	return 'N/A';
+}
