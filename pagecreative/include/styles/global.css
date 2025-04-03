@@ -1495,7 +1495,19 @@ header a {
 .casestudy-wrapper:hover .item_content {
 	opacity: 1;
 }
+.owl-carousel .owl-next{
+	position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translate(0%, -50%);
+}
 
+.owl-carousel .owl-prev{
+	position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translate(0%, -50%);
+}
 
 
 @media (max-width:991px) {
