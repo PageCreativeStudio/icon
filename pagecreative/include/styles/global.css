@@ -1431,9 +1431,10 @@ header a {
 .arrowwhite {
 	position: relative;
 }
+
 .arrowblack:hover::after,
-.arrowwhite:hover::after{
-	right:-27px;
+.arrowwhite:hover::after {
+	right: -27px;
 	transition: right 0.3 ease-in;
 }
 
@@ -1502,25 +1503,35 @@ header a {
 .casestudy-wrapper:hover .item_content {
 	opacity: 1;
 }
-.owl-carousel .owl-next{
+
+.owl-carousel .owl-next {
 	position: absolute;
-    top: 50%;
-    right: 2%;
-    transform: translate(0%, -50%);
-}
-.owl-carousel .owl-nav svg{
-	background: #ffffffab !important;
-    border-radius: 50px;
-    height: 40px;
-    padding: 11px;
-    width: 40px;
+	top: 50%;
+	right: 2%;
+	transform: translate(0%, -50%);
 }
 
-.owl-carousel .owl-prev{
+.owl-carousel .owl-nav svg {
+	background: #ffffffab !important;
+	border-radius: 50px;
+	height: 40px;
+	padding: 11px;
+	width: 40px;
+}
+
+.owl-carousel .owl-prev {
 	position: absolute;
-    top: 50%;
-    left: 2%;
-    transform: translate(0%, -50%);
+	top: 50%;
+	left: 2%;
+	transform: translate(0%, -50%);
+}
+
+.owl-carousel .owl-dots {
+
+}
+
+.owl-carousel .owl-dot {
+	
 }
 
 
