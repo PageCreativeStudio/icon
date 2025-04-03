@@ -5,7 +5,7 @@
             href="https://www.google.com/search?q=uk+caravan+center&amp;rlz=1C1CHBF_enGB1029GB1029&amp;oq=uk+carava&amp;gs_lcrp=EgZjaHJvbWUqDAgBECMYJxiABBiKBTIGCAAQRRg5MgwIARAjGCcYgAQYigUyDAgCECMYJxiABBiKBTIHCAMQABiABDIKCAQQABixAxiABDIHCAUQABiABDIGCAYQRRg8MgYIBxBFGDzSAQgyMjEwajBqN6gCALACAA&amp;sourceid=chrome&amp;ie=UTF-8#lrd=0x47d8c0b951fe196b:0x33fae75ca171648e,1,,,,"
             target="_blank">
             <p class="mb-0 align-self-center text-dark pt-1 uppercase">excellent</p>
-            <div class="d-flex gstars px-3">
+            <div class="d-flex gstars px-2">
                 <img src="<?php echo home_url(); ?>/wp-content/themes/pagecreative/include/images/g-star.svg"
                     alt="Google star review icon">
                 <img src="<?php echo home_url(); ?>/wp-content/themes/pagecreative/include/images/g-star.svg"
@@ -17,8 +17,8 @@
                 <img src="<?php echo home_url(); ?>/wp-content/themes/pagecreative/include/images/g-star.svg"
                     alt="Google star review icon">
             </div>
-            <p class="mb-0 align-self-center text-dark pt-1 px-2">50</p>
-            <p class="mb-0 align-self-center text-dark pt-1 px=2">reviews</p>
+            <p class="mb-0 align-self-center text-dark pt-1 pr-2">50</p>
+            <p class="mb-0 align-self-center text-dark pt-1 pr-2">reviews</p>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                 id="Layer_1" x="0px" y="0px" viewBox="0 0 255.2 80.3"
                 style="width:92px;enable-background:new 0 0 255.2 80.3;" xml:space="preserve">
