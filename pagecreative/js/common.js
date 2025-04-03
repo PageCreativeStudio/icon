@@ -152,13 +152,13 @@ jQuery(document).ready(function ($) {
                 items: 4,
                 stagePadding: 40,
                 center: true,
-                dotsEach: 4
+                dotsEach: 2
             },
             2000: {
                 items: 5,
                 stagePadding: 80,
                 center: true,
-                dotsEach: 5
+                dotsEach: 2
             }
         }
     });
