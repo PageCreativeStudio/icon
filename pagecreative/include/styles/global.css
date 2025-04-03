@@ -1222,7 +1222,6 @@ Custom CSS start here
 
 /* End of BS4 custom classes here*/
 
-
 .cartbtn {
 	border: 1px solid #D6D6D6;
 	padding: 8px 8px;
@@ -1292,7 +1291,7 @@ Custom CSS start here
 }
 
 .heroarea__container .hero__image {
-	height: 35rem;
+	height: 38rem;
 	object-fit: cover;
 }
 
