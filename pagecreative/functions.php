@@ -182,7 +182,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 function my_custom_gutenberg_blocks() {
     if (function_exists('acf_register_block_type')) {
 
-        // Hero Section
         acf_register_block_type(array(
             'name'              => 'hero_section',
             'title'             => __('Hero Section', 'text-domain'),
@@ -193,7 +192,6 @@ function my_custom_gutenberg_blocks() {
             'keywords'          => array('hero', 'banner'),
         ));
 
-        // About Section
         acf_register_block_type(array(
             'name'              => 'social_proof',
             'title'             => __('Social Proof Section', 'text-domain'),
@@ -202,6 +200,16 @@ function my_custom_gutenberg_blocks() {
             'category'          => 'layout',
             'icon'              => 'admin-users',
             'keywords'          => array('logos', 'social'),
+        ));
+
+		acf_register_block_type(array(
+            'name'              => 'case-studies',
+            'title'             => __('Case studies slider', 'text-domain'),
+            'description'       => __('Case studies slider with all case studies', 'text-domain'),
+            'render_template'   => get_template_directory() . '/template-parts/blocks/case-studies.php',
+            'category'          => 'layout',
+            'icon'              => 'admin-users',
+            'keywords'          => array('case studies', 'slider'),
         ));
     }
 }

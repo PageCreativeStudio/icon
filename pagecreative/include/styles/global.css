@@ -1421,6 +1421,38 @@ header a{
     object-fit: contain;
 }
 
+.casestudy__item {
+    position: relative;
+    overflow: hidden;
+}
+
+.casestudy-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.casestudy-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+.item_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.casestudy-wrapper:hover .item_content {
+    opacity: 1;
+}
+
+
 
 @media (max-width:991px) {
     .socialarea__container img{
