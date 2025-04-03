@@ -144,8 +144,8 @@ jQuery(document).ready(function ($) {
                 stagePadding: 35
             },
             1380: {
-                items: 4.8,
-                stagePadding:50,
+                items: 4,
+                stagePadding:40,
                 center: true
             }
         }
