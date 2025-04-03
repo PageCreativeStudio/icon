@@ -184,9 +184,9 @@ if (defined('JETPACK__VERSION')) {
 // Custom functions start here
 
 function custom_yoast_breadcrumb_for_cpt($breadcrumb) {
-    if (is_singular('your_custom_post_type')) {
+    if (is_singular('case-studies')) {
         $breadcrumb[1] = array( 
-            'url' => get_post_type_archive_link('your_custom_post_type'),
+            'url' => get_post_type_archive_link('case-studies'),
             'text' => 'Case Studies' // Change "Case Studies" to whatever you want
         );
     }
