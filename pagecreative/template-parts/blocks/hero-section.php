@@ -1,4 +1,4 @@
-<section class="pb-lg-4">
+<section class="pb-3 pb-lg-5">
     <div class="heroarea pb-5 d-none d-lg-block">
         <div class="heroarea__container position-relative d-block">
             <img class="w-100 hero__image" src="<?php echo get_field('hero_image'); ?>"
