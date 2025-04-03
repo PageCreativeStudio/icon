@@ -1156,9 +1156,11 @@ Custom CSS start here
 
 .arrowup {
 	position: relative;
+    display: inline-block!important;
 }
 .arrowup:hover::after{
-	margin: 1px 0 0 8px;
+	right: -22px;
+	top: -6px;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -1171,8 +1173,10 @@ Custom CSS start here
 	height: 11px;
 	width: 11px;
 	position: absolute;
-	margin: 5px 0 0 8px;
-	transition: all 0.3s ease-in-out;
+    margin: 5px 0 0 0px;
+    transition: all 0.3s ease-in-out;
+    right: -18px;
+	top: 0px;
 }
 .btna{
 	border: 1px solid rgba(51, 51, 51, 0.20);
