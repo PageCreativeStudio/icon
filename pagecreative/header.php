@@ -161,11 +161,11 @@
 								</div>
 
 								<div class="sm__header d-flex px-2 py-4">
-									<a class="mr-2" href="" target="_blank">
-
+									<a class="btnc bg-dark font-15 text-white mb-5" href="#">
+										Get a Quote
 									</a>
-									<a href="/" target="_blank">
-
+									<a class="btna bg-dark font-15 text-white mb-5" href="#">
+										Sign In 
 									</a>
 								</div>
 							</div>
@@ -182,7 +182,8 @@
 									<div class="col-12 col-md-3 col-lg-3 col-xl-2 mt-5 text-left px-3">
 										<div class="mx-3 megamenu__col ">
 											<h2 class="text-black font-bold font-18 mb-1 mt-2 pb-3">
-												<?php echo get_sub_field('sub_menu_title', 'options'); ?></h2>
+												<?php echo get_sub_field('sub_menu_title', 'options'); ?>
+											</h2>
 											<ul class="m-0 p-0 list-unstyled">
 												<?php if (have_rows('list_repeater', 'options')) { ?>
 													<?php while (have_rows('list_repeater', 'options')) {
