@@ -182,18 +182,6 @@ if (defined('JETPACK__VERSION')) {
 
 
 // Custom functions start here
-
-function custom_yoast_breadcrumb_for_cpt($breadcrumb) {
-    if (is_singular('case-studies')) {
-        $breadcrumb[1] = array( 
-            'url' => get_post_type_archive_link('case-studies'),
-            'text' => 'Case Studies' // Change "Case Studies" to whatever you want
-        );
-    }
-    return $breadcrumb;
-}
-add_filter('wpseo_breadcrumb_links', 'custom_yoast_breadcrumb_for_cpt');
-
 function my_custom_gutenberg_blocks()
 {
 	if (function_exists('acf_register_block_type')) {
