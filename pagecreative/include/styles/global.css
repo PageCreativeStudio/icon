@@ -1228,11 +1228,6 @@ Custom CSS start here
 	padding: 8px 8px;
 }
 
-.btna {
-	border: 1px solid rgba(51, 51, 51, 0.20);
-	padding: 10px 20px;
-}
-
 .arrow-white {
 	position: relative;
 }
@@ -1271,7 +1266,11 @@ Custom CSS start here
 	position: absolute;
 	margin: 5px 0 0 8px;
 }
-
+.btna{
+	border: 1px solid rgba(51, 51, 51, 0.20);
+	padding: 16px 24px 15px 24px;
+	display: inline-block;
+}
 .btnb {
 	border: solid 1px white;
 	padding: 16px 24px 15px 24px;
@@ -1474,7 +1473,8 @@ Custom CSS start here
 	}
 
 	.btnc,
-	.btnb {
+	.btnb,
+	.btna {
 		padding: 12px 24px 11px 24px;
 	}
 	.footermenu h2 {

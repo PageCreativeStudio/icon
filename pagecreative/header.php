@@ -160,11 +160,11 @@
 									?>
 								</div>
 
-								<div class="sm__header d-flex px-2 py-4">
-									<a class="btnc bg-dark font-15 text-white mb-5" href="#">
+								<div class="cta_menu">
+									<a class="btnc bg-dark font-15 text-white" href="#">
 										Get a Quote
 									</a>
-									<a class="btna bg-dark font-15 text-white mb-5" href="#">
+									<a class="btna" href="#">
 										Sign In 
 									</a>
 								</div>
