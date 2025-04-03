@@ -96,7 +96,7 @@ $(document).ready(function () {
     }
 
     function toggleElementsVisibility(hide) {
-        const elements = document.querySelectorAll('.close-on-sliding-active, cta_menu');
+        document.querySelectorAll('.close-on-sliding-active, .cta_menu');
         elements.forEach(function (element) {
             if (hide) {
                 element.style.display = 'none';
