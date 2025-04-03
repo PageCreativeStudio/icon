@@ -1449,7 +1449,7 @@ header a {
 	height: 16px;
 	width: 16px;
 	margin: 3px 0 0 0px;
-	transition: right 0.3 ease-in;
+	transition: right 0.3s ease-in;
 }
 
 .arrowwhite::after {
@@ -1464,7 +1464,7 @@ header a {
 	height: 16px;
 	width: 16px;
 	margin: 3px 0 0 0px;
-	transition: right 0.3 ease-in;
+	transition: right 0.3s ease-in;
 }
 
 .socialarea__container img {
