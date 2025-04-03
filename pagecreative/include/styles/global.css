@@ -1502,9 +1502,10 @@ header a {
     transform: translate(0%, -50%);
 }
 .owl-carousel .owl-nav svg{
-    background: #ffffffab !important;
+	background: #ffffffab !important;
     border-radius: 50px;
     height: 40px;
+    padding: 11px;
     width: 40px;
 }
 
