@@ -148,7 +148,7 @@ jQuery(document).ready(function ($) {
                 stagePadding:40,
                 center: true
             },
-            1770: {
+            1860: {
                 items: 5,
                 stagePadding:80,
                 center: true
