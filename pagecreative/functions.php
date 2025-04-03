@@ -183,32 +183,6 @@ if (defined('JETPACK__VERSION')) {
 
 // Custom functions start here
 
-function custom_breadcrumbs_shortcode()
-{
-	if (function_exists('yoast_breadcrumb')) {
-		return yoast_breadcrumb('<nav class="breadcrumbs">', '</nav>', false);
-	}
-}
-add_shortcode('custom_breadcrumbs', 'custom_breadcrumbs_shortcode');
-
-function custom_yoast_breadcrumb_trail($links) {
-    if (is_singular('case-studies')) { // Check if on a single case study post
-        $cpt_archive_url = get_post_type_archive_link('case-studies'); // Get the archive page URL
-
-        if ($cpt_archive_url) {
-            $archive_breadcrumb = array(
-                'url'  => esc_url($cpt_archive_url), // Ensure safe and correct URL
-                'text' => 'Case Studies',
-                'allow_html' => true // Allow links inside Yoast breadcrumbs
-            );
-
-            array_splice($links, 1, 0, array($archive_breadcrumb)); // Insert after "Home"
-        }
-    }
-    return $links;
-}
-add_filter('wpseo_breadcrumb_links', 'custom_yoast_breadcrumb_trail');
-
 
 function my_custom_gutenberg_blocks()
 {
