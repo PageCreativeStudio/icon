@@ -1509,6 +1509,7 @@ header a {
 	top: 50%;
 	right: 2%;
 	transform: translate(0%, -50%);
+	margin-top: -1.5rem;
 }
 
 .owl-carousel .owl-nav svg {
@@ -1524,14 +1525,22 @@ header a {
 	top: 50%;
 	left: 2%;
 	transform: translate(0%, -50%);
+	margin-top: -1.5rem;
 }
 
 .owl-carousel .owl-dots {
-
+    margin-top: 1.5rem;
 }
 
 .owl-carousel .owl-dot {
-	
+	border: solid 1px black !important;
+    height: 11px;
+    width: 11px;
+    border-radius: 50px;
+    margin-right: 8px;
+}
+.owl-carousel .owl-dot.active{
+	background: black !important;
 }
 
 
