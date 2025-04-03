@@ -14,7 +14,7 @@
                     <div class="casestudy__item">
                         <div class="casestudy-wrapper">
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="<?php the_title(); ?>">
-                            <div class="item_content text-center">
+                            <div class="item_content text-center px-2 px-md-3">
                                 <h3 class="text-dark font-20 mb-0 pb-1">
                                     <?php the_title(); ?>
                                 </h3>
