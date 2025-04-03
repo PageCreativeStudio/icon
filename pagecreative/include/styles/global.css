@@ -1160,7 +1160,7 @@ Custom CSS start here
 }
 .arrowup:hover::after{
 	right: -20px;
-	top: -3px;
+	top: -1px;
 	transition: all 0.3s ease-in-out;
 }
 
