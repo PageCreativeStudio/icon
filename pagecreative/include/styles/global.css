@@ -747,6 +747,9 @@ textarea {
 	display: block;
 	text-decoration: none;
 }
+.main-navigation .menu-item-has-children>a{
+	padding: 18px 0;
+}
 
 /* Small menu. */
 .menu-toggle,
