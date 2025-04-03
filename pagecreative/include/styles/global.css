@@ -1455,7 +1455,7 @@ header a{
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     background: #e1e5cfc7;
     padding: 20px;
     width: 100%;
