@@ -111,7 +111,7 @@
 					<div class="mobmenu container w-100 p-0">
 						<div class="h-100 bg-white py-2 px-2 mobmenu__container">
 							<div class="row px-3 pt-2 mx-0">
-								<div class="col-9 mob_logo align-self-center px-0 close-on-sliding-active">
+								<div class="col-9 pb-2 mob_logo align-self-center px-0 close-on-sliding-active">
 									<div class="d-flex flex-wrap">
 										<a class="cartbtn" href="<?php echo home_url(); ?>/cart">
 											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25"
