@@ -161,7 +161,7 @@
 								</div>
 
 								<div class="cta_menu">
-									<a class="btnc bg-dark font-15 text-white" href="#">
+									<a class="btnc bg-dark font-15 text-white mr-2" href="#">
 										Get a Quote
 									</a>
 									<a class="btna" href="#">
