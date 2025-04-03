@@ -1158,8 +1158,8 @@ Custom CSS start here
 	position: relative;
 }
 .arrowup:hover::after{
-	margin: 1px 0 0 10px;
-	transition: 0.2s ease-in;
+	margin: 1px 0 0 8px;
+	transition: all 0.3s ease-in-out;
 }
 
 .arrowup::after {
@@ -1172,7 +1172,7 @@ Custom CSS start here
 	width: 11px;
 	position: absolute;
 	margin: 5px 0 0 8px;
-	transition: 0.2s ease-in;
+	transition: all 0.3s ease-in-out;
 }
 .btna{
 	border: 1px solid rgba(51, 51, 51, 0.20);
