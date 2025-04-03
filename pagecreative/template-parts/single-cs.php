@@ -9,7 +9,21 @@
 get_header(); ?>
 
 
-<h1 class="text-dark">Case study test</h1>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <header class="entry-header py-5">
+        <h1 class="text-dark"><?php the_title(); ?></h1>
+    </header>
+
+    <?php pagecreative_post_thumbnail(); ?>
+
+    <div class="entry-content py-5">
+        <?php
+        the_content();
+        ?>
+    </div>
+
+</article><!-- #post-<?php the_ID(); ?> -->
+
 
 
 <?php get_footer(); ?>
