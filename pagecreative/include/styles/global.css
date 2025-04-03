@@ -1501,6 +1501,12 @@ header a {
     right: 2%;
     transform: translate(0%, -50%);
 }
+.owl-carousel .owl-nav svg{
+    background: #ffffffab !important;
+    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+}
 
 .owl-carousel .owl-prev{
 	position: absolute;
