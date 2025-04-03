@@ -15,10 +15,10 @@
                         <div class="casestudy-wrapper">
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="<?php the_title(); ?>">
                             <div class="item_content text-center px-2 px-md-3">
-                                <h3 class="text-dark font-22 font-mb-18 mb-0 pb-1">
+                                <h3 class="text-white font-22 font-mb-18 mb-0 pb-1">
                                     <?php the_title(); ?>
                                 </h3>
-                                <a class="text-dark font-15 mb-0 arrowblack" href="<?php the_permalink(); ?>">find out more</a>
+                                <a class="text-white font-15 mb-0 arrowblack" href="<?php the_permalink(); ?>">find out more</a>
                             </div>
                         </div>
                     </div>
