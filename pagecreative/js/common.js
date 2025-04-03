@@ -265,5 +265,6 @@ jQuery(document).ready(function ($) {
         nav: false,
         margin: 15,
         dots: true,
+        items: 1
     });
 });
