@@ -131,34 +131,28 @@ jQuery(document).ready(function ($) {
             0: {
                 items: 1,
                 stagePadding: 30,
-                dotsEach: 2 
             },
             768: {
                 items: 2,
                 stagePadding: 30,
-                dotsEach: 2
             },
             989: {
                 items: 2,
                 stagePadding: 0,
-                dotsEach: 2
             },
             1280: {
                 items: 3,
                 stagePadding: 35,
-                dotsEach: 3
             },
             1380: {
                 items: 4,
                 stagePadding: 40,
                 center: true,
-                dotsEach: 2
             },
             2000: {
                 items: 5,
                 stagePadding: 80,
                 center: true,
-                dotsEach: 2
             }
         }
     });
