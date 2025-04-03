@@ -1698,6 +1698,7 @@ header a {
 .back-button {
 	border-top: none !important;
 	margin-bottom: 1rem;
+	padding-top:0!important;
 }
 
 .back-button a {
