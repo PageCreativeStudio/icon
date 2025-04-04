@@ -339,3 +339,13 @@ header a {
         transform: translateY(-10px);
     }
 }
+
+@media (min-width:991px) and (max-width:1333px){
+    .main-navigation a, header a{
+        font-size: 13px!important;
+    }
+    .main-navigation ul{
+        gap: 0.8rem;
+    }
+
+}
