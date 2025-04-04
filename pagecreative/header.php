@@ -83,8 +83,8 @@
 						</div>
 						<div class="col-6 col-lg-5 align-self-center order-lg-3 d-none d-lg-block">
 							<div class="d-flex flex-wrap justify-content-end align-items-center">
-								<a class="mr-4" href="<?php echo home_url(); ?>/my-account/">Sign in</a>
-								<a class="btna mr-4" href="#">Get a quote</a>
+								<a class="mr-3" href="<?php echo home_url(); ?>/my-account/">Sign in</a>
+								<a class="btna mr-3" href="#">Get a quote</a>
 								<a class="cartbtn" href="<?php echo home_url(); ?>/cart">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25"
 										fill="none">
