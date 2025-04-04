@@ -1,4 +1,4 @@
-<section class="pb-lg-5">
+<section class="pb-5 pb-lg-5">
     <div class="testimonialsarea max-width mx-auto text-center pb-3 pb-lg-4 text-center">
 
         <a class="d-flex reviewarea justify-content-center flex-wrap mb-4 px-3"
