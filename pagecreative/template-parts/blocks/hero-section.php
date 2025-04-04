@@ -9,10 +9,10 @@
                         <h1 class="text-white font-35 font-mb-30 mb-0 pb-0 pt-0"><?php echo get_field('hero_title'); ?></h1>
                     <?php endif; ?>
                     <?php if (get_field("hero_description")): ?>
-                        <p class="text-white font-15 py-3 max-25 mx-auto mb-0"><?php echo get_field('hero_description'); ?>
+                        <p class="text-white font-15 pt-2 pb-3 max-25 mx-auto mb-0"><?php echo get_field('hero_description'); ?>
                         </p>
                     <?php endif; ?>
-                    <?php if (get_field("hero_description")): ?>
+                    <?php if (get_field("button_label")): ?>
                         <a class="btnb bg-white font-15 text-black" href="<?php echo get_field('button_link'); ?>">
                             <?php echo get_field('button_label'); ?>
                         </a>
@@ -27,9 +27,9 @@
                 <h1 class="text-dark font-mb-25 mb-0 pb-0 pt-0 max-20 mx-auto pt-3"><?php echo get_field('hero_title'); ?></h1>
             <?php endif; ?>
             <?php if (get_field("hero_description")): ?>
-                <p class="text-dark font-15 py-3 max-25 mx-auto mb-0 "><?php echo get_field('hero_description'); ?></p>
+                <p class="text-dark font-15 pt-2 pb-3 max-25 mx-auto mb-0 "><?php echo get_field('hero_description'); ?></p>
             <?php endif; ?>
-            <?php if (get_field("hero_description")): ?>
+            <?php if (get_field("button_label")): ?>
                 <a class="btnc bg-dark font-15 text-white mb-5" href="<?php echo get_field('button_link'); ?>">
                     <?php echo get_field('button_label'); ?>
                 </a>
