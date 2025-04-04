@@ -2,7 +2,7 @@
     <div class="testimonialsarea max-width mx-auto text-center pb-3 pb-lg-4 text-center">
 
         <a class="d-flex reviewarea justify-content-center flex-wrap pb-4 px-2"
-            href="https://www.google.com/search?q=uk+caravan+center&amp;rlz=1C1CHBF_enGB1029GB1029&amp;oq=uk+carava&amp;gs_lcrp=EgZjaHJvbWUqDAgBECMYJxiABBiKBTIGCAAQRRg5MgwIARAjGCcYgAQYigUyDAgCECMYJxiABBiKBTIHCAMQABiABDIKCAQQABixAxiABDIHCAUQABiABDIGCAYQRRg8MgYIBxBFGDzSAQgyMjEwajBqN6gCALACAA&amp;sourceid=chrome&amp;ie=UTF-8#lrd=0x47d8c0b951fe196b:0x33fae75ca171648e,1,,,,"
+            href=""
             target="_blank">
             <p class="mb-0 align-self-center text-dark pt-1 font-500 uppercase">excellent</p>
             <div class="d-flex gstars px-2">
