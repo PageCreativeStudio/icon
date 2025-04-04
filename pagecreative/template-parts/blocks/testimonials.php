@@ -1,7 +1,7 @@
 <section class="pb-lg-5">
     <div class="testimonialsarea max-width mx-auto text-center pb-3 pb-lg-4 text-center">
 
-        <a class="d-flex reviewarea justify-content-center flex-wrap pb-4 px-2"
+        <a class="d-flex reviewarea justify-content-center flex-wrap mb-4 px-3"
             href="https://g.co/kgs/rc56zQC"
             target="_blank">
             <p class="mb-0 align-self-center text-dark pt-1 font-500 uppercase">excellent</p>
