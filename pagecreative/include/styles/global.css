@@ -1222,7 +1222,7 @@ Custom CSS start here
 .arrowblack:hover::after,
 .arrowwhite:hover::after {
 	right: -27px;
-	transition: right 0.3 ease-in;
+	transition: right 0.2 ease-in;
 }
 
 .arrowblack::after {
@@ -1237,7 +1237,7 @@ Custom CSS start here
 	height: 16px;
 	width: 16px;
 	margin: 3px 0 0 0px;
-	transition: right 0.3s ease-in;
+	transition: right 0.2s ease-in;
 }
 
 .arrowwhite::after {
@@ -1252,7 +1252,7 @@ Custom CSS start here
 	height: 16px;
 	width: 16px;
 	margin: 4px 0 0 0px;
-	transition: right 0.3s ease-in;
+	transition: right 0.2s ease-in;
 }
 
 .socialarea__container img {
