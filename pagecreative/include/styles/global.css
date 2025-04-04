@@ -1199,7 +1199,7 @@ Custom CSS start here
 }
 
 .heroarea__container .hero__image {
-	height: 38rem;
+	min-height: 38rem;
 	object-fit: cover;
 }
 
