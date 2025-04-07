@@ -201,7 +201,7 @@
 							<?php } ?>
 							<div class="col-12 col-md-3 col-lg-3 col-xl-2 promo__col align-self-start mt-5 text-left px-3">
 								<div class="h-100 py-5 px-3"
-									style="min-height:18rem; max-height:22rem; background: linear-gradient(0deg, rgba(51, 51, 51, 0.70) 0%, rgba(51, 51, 51, 0.70) 100%), url(<?php echo get_field('promo_image', 'options'); ?>) lightgray -104.911px 0px / 254.545% 100% no-repeat;background-size: cover; background-position-x: left;">
+									style="min-height:20rem; max-height:22rem; background: linear-gradient(0deg, rgba(51, 51, 51, 0.70) 0%, rgba(51, 51, 51, 0.70) 100%), url(<?php echo get_field('promo_image', 'options'); ?>) lightgray -104.911px 0px / 254.545% 100% no-repeat;background-size: cover; background-position-x: left;">
 									<a class="h-100 d-block" href="#">
 										<img class="d-block"
 											src="<?php echo esc_url(get_template_directory_uri() . '/include/images/logo-white.svg'); ?>"
