@@ -283,6 +283,7 @@ header a {
     display: none;
 }
 
+
 @media (max-width: 991px) {
     .megamenu__container {
         display: none !important;
@@ -338,6 +339,12 @@ header a {
         padding-top: 10px;
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
         transform: translateY(-10px);
+    }
+    .site-header .btna{
+        
+    }
+    .site-header .cartbtn{
+
     }
 }
 
