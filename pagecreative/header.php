@@ -199,15 +199,17 @@
 									</div>
 								<?php } ?>
 							<?php } ?>
-							<div class="col-12 col-md-3 col-lg-3 col-xl-2 promo__col mt-5 text-left px-4 py-5"
-								style="min-height:18rem; max-height:22rem; background: linear-gradient(0deg, rgba(51, 51, 51, 0.70) 0%, rgba(51, 51, 51, 0.70) 100%), url(<?php echo get_field('promo_image', 'options'); ?>) lightgray -104.911px 0px / 254.545% 100% no-repeat;background-size: cover; background-position-x: left;">
-								<a class="h-100 d-block" href="#">
-									<img class="d-block"
-										src="<?php echo esc_url(get_template_directory_uri() . '/include/images/logo-white.svg'); ?>"
-										alt="icon printing white logo">
-									<span class="text-white arrow-white font-15 d-inline-block mt-3">View all
-										products</span>
-								</a>
+							<div class="col-12 col-md-3 col-lg-3 col-xl-2 promo__col mt-5 text-left px-3 py-5">
+								<div class=""
+									style="min-height:18rem; max-height:22rem; background: linear-gradient(0deg, rgba(51, 51, 51, 0.70) 0%, rgba(51, 51, 51, 0.70) 100%), url(<?php echo get_field('promo_image', 'options'); ?>) lightgray -104.911px 0px / 254.545% 100% no-repeat;background-size: cover; background-position-x: left;">
+									<a class="h-100 d-block" href="#">
+										<img class="d-block"
+											src="<?php echo esc_url(get_template_directory_uri() . '/include/images/logo-white.svg'); ?>"
+											alt="icon printing white logo">
+										<span class="text-white arrow-white font-15 d-inline-block mt-3">View all
+											products</span>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
