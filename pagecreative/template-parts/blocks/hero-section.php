@@ -9,7 +9,8 @@
                         <h1 class="text-white font-35 font-mb-30 mb-0 pb-0 pt-0"><?php echo get_field('hero_title'); ?></h1>
                     <?php endif; ?>
                     <?php if (get_field("hero_description")): ?>
-                        <p class="text-white font-15 pt-2 pb-3 max-25 mx-auto mb-1"><?php echo get_field('hero_description'); ?>
+                        <p class="text-white font-15 pt-2 pb-3 max-25 mx-auto mb-1">
+                            <?php echo get_field('hero_description'); ?>
                         </p>
                     <?php endif; ?>
                     <?php if (get_field("button_label")): ?>
@@ -24,7 +25,8 @@
     <div class="heroarea d-block d-lg-none pb-5">
         <div class="max-50 mx-auto w-100 px-3">
             <?php if (get_field("hero_title")): ?>
-                <h1 class="text-dark font-mb-25 mb-0 pb-0 pt-0 max-20 mx-auto pt-3"><?php echo get_field('hero_title'); ?></h1>
+                <h1 class="text-dark font-mb-25 mb-0 pb-0 pt-0 max-20 mx-auto pt-3"><?php echo get_field('hero_title'); ?>
+                </h1>
             <?php endif; ?>
             <?php if (get_field("hero_description")): ?>
                 <p class="text-dark font-15 pt-2 pb-3 max-25 mx-auto mb-1"><?php echo get_field('hero_description'); ?></p>
