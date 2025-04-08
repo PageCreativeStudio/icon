@@ -261,6 +261,17 @@ jQuery(document).ready(function ($) {
 
 
 jQuery(document).ready(function ($) {
+    $('.testimonials__slider').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 15,
+        dots: true,
+        items:1
+    });
+});
+
+
+jQuery(document).ready(function ($) {
     $('.product-gallery').owlCarousel({
         items: 5,
         margin: 10,
