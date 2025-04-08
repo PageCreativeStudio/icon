@@ -1,3 +1,8 @@
+<?php 
+// Get the passed product object
+$product = get_query_var('product');
+?>
+
 <div class="product-images-container">
     <div class="featured-image">
         <?php if (has_post_thumbnail()): ?>
@@ -33,11 +38,11 @@
                 ?>
                 <div class="gallery-item">
                     <img src="<?php echo esc_url($image_link); ?>" srcset="<?php echo esc_attr($image_srcset); ?>"
-                        alt="<?php echo esc_attr($image_alt); ?>">
+                         alt="<?php echo esc_attr($image_alt); ?>">
                 </div>
             <?php endforeach; ?>
 
-
+            <!-- Featured Image as Part of the Carousel -->
             <div class="gallery-item featured-image-item">
                 <?php
                 echo wp_get_attachment_image($thumbnail_id, 'full', false, array('srcset' => $srcset, 'sizes' => $sizes));

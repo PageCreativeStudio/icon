@@ -13,7 +13,11 @@ global $product;
     <div class="container-fluid mx-auto px-md-4">
         <div class="row">
             <div class="col-12 col-lg-6">
-                <?php get_template_part('woocommerce/image-gallery'); ?>
+                <?php
+                // Pass the $product object to the template part
+                set_query_var('product', $product);
+                get_template_part('woocommerce/image-gallery');
+                ?>
             </div>
         </div>
     </div>
