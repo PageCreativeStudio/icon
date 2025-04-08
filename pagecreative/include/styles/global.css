@@ -1424,7 +1424,10 @@ Custom CSS start here
 	align-items: center;
 	justify-content: center;
 }
-
+button{
+	background-color: none;
+	border: none;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
