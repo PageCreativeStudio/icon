@@ -48,39 +48,36 @@ global $product;
                 </div>
 
                 <div class="borderbottom py-4">
-    <div class="inneritem">
-        <p class="text-black font-14 mb-0 pb-2">Product description</p>
-        <?php
-        $product_description = get_the_content();
-        
-        if (!empty($product_description)) {
-            // Create a full description div
-            echo '<div class="product-description">';
-            
-            // Create a shortened description container
-            echo '<div class="short-description">';
-            $words = explode(' ', $product_description);
-            $shortened = implode(' ', array_slice($words, 0, 54));
-            echo $shortened;
-            if (count($words) > 54) {
-                echo '... ';
-                echo '<button class="toggle-description btn btn-link p-0" data-action="expand">Read more</button>';
-            }
-            echo '</div>';
-            
-            // Create a full description container (hidden by default)
-            if (count($words) > 54) {
-                echo '<div class="full-description" style="display: none;">';
-                echo $product_description;
-                echo ' <button class="toggle-description btn btn-link p-0" data-action="collapse">Read less</button>';
-                echo '</div>';
-            }
-            
-            echo '</div>';
-        }
-        ?>
-    </div>
-</div>
+                    <div class="inneritem">
+                        <p class="text-black font-14 mb-0 pb-2">Product description</p>
+                        <?php
+                        $product_description = get_the_content();
+
+                        if (!empty($product_description)) {
+                            echo '<div class="product-description">';
+
+                            echo '<div class="short-description">';
+                            $words = explode(' ', $product_description);
+                            $shortened = implode(' ', array_slice($words, 0, 54));
+                            echo $shortened;
+                            if (count($words) > 54) {
+                                echo '... ';
+                                echo '<button class="toggle-description d-block text-black p-0 mt-2" data-action="expand">Read more</button>';
+                            }
+                            echo '</div>';
+
+                            if (count($words) > 54) {
+                                echo '<div class="full-description" style="display: none;">';
+                                echo $product_description;
+                                echo ' <button class="toggle-description d-block text-black p-0 mt-2" data-action="collapse">Read less</button>';
+                                echo '</div>';
+                            }
+
+                            echo '</div>';
+                        }
+                        ?>
+                    </div>
+                </div>
 
                 <div class="colour-attributes borderbottom py-4 mt-1">
                     <?php
