@@ -319,36 +319,28 @@ jQuery(document).ready(function ($) {
     });
 });
 
-
-jQuery(document).ready(function($) {
-    // Handle color variant selection
-    $('.color-variant').on('click', function() {
-        // Remove active class from all colors
+// Color varinat update
+jQuery(document).ready(function ($) {
+    $('.color-variant').on('click', function () {
         $('.color-variant').removeClass('active');
         $('.color-variant').css('border-color', 'transparent');
         $('.color-variant .color-check').hide();
-        
-        // Add active class to selected color
+
         $(this).addClass('active');
-        $(this).css('border-color', '#000'); // Add border to selected color
+        //$(this).css('border-color', '#000');
         $(this).find('.color-check').show();
-        
-        // Update price
+
         var price = $(this).data('price');
         if (price) {
             $('.product-price').html('£' + parseFloat(price).toFixed(2) + '/unit');
         } else {
-            // Fallback if price is not available
             var priceHtml = $(this).data('price-html');
             if (priceHtml) {
                 $('.product-price').html(priceHtml);
             }
         }
-        
-        // Update hidden input with selected variation ID
+
         $('#selected-variation-id').val($(this).data('variation-id'));
-        
-        // Trigger change event for WooCommerce if needed
         $('#selected-variation-id').trigger('change');
     });
 });
