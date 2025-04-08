@@ -24,7 +24,7 @@ global $product;
                     <p class="font-15 mb-0">SKU25365</p>
                 </div>
                 <h1 class="font-30 font-mb-25 my-1"><?php the_title(); ?></h1>
-                <h2 class="font-18">From £4.80/unit</h2>
+                <h2 class="font-16">From £4.80/unit</h2>
             </div>
         </div>
     </div>
