@@ -5,7 +5,6 @@
  */
 
 defined('ABSPATH') || exit;
-
 global $product;
 ?>
 
@@ -130,14 +129,14 @@ global $product;
                             $variation_id = isset($variation_data[$slug]) ? $variation_data[$slug]['variation_id'] : '';
 
                             echo '<div class="color-variant mr-2 mb-2" 
-                        data-color="' . esc_attr($slug) . '" 
-                        data-price-html="' . esc_attr($price_html) . '" 
-                        data-price="' . esc_attr($display_price) . '"
-                        data-variation-id="' . esc_attr($variation_id) . '"
-                        style="background-color: ' . esc_attr($color_value) . '; "
-                        title="' . esc_attr($term->name) . '">
-                        <span class="color-check" style="display: none; color: white;">✓</span>
-                    </div>';
+                                data-color="' . esc_attr($slug) . '" 
+                                data-price-html="' . esc_attr($price_html) . '" 
+                                data-price="' . esc_attr($display_price) . '"
+                                data-variation-id="' . esc_attr($variation_id) . '"
+                                style="background-color: ' . esc_attr($color_value) . '; "
+                                title="' . esc_attr($term->name) . '">
+                                <span class="color-check" style="display: none; color: white;">✓</span>
+                            </div>';
                         }
 
                         echo '</div>';
@@ -145,6 +144,7 @@ global $product;
                     }
                     ?>
                 </div>
+                
                 <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
                     <?php if (have_rows('collaspsibles_repeater')): ?>
                         <div class="acf-collapsibles">
