@@ -1410,7 +1410,9 @@ Custom CSS start here
 	height: 35px;
 	width: 35px;
 }
-
+.borderbottom{
+	border-bottom: solid 1px #CCCCCC;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {

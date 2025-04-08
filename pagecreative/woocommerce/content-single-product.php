@@ -19,7 +19,7 @@ global $product;
                 ?>
             </div>
             <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0">
-                <div class="borderbottom">
+                <div class="borderbottom pb-3">
                     <div class="d-flex flex-wrap justify-content-between pb-0">
                         <p class="font-16 font-mb-14 mb-0">Continental ICP-01</p>
                         <p class="font-16 font-mb-14 mb-0">SKU25365</p>
@@ -28,7 +28,7 @@ global $product;
                     <h2 class="font-18">From £4.80/unit</h2>
                 </div>
 
-                <div class="colour-attributes borderbottom">
+                <div class="colour-attributes borderbottom pt-3">
                     <?php
                     $terms = get_the_terms(get_the_ID(), 'pa_colour');
                     if ($terms && !is_wp_error($terms)) {
