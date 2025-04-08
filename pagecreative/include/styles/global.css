@@ -1503,6 +1503,10 @@ button {
 		margin-top: 0;
 		left: 0;
 	}
+	.featured-image-arrows svg{
+		height: 29px;
+		width: 29px;
+	}
 }
 
 @media (max-width:991px) {
