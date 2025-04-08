@@ -45,7 +45,7 @@ global $product;
                                 ?>
                                 <div class="gallery-item">
                                     <img src="<?php echo esc_url($image_link); ?>"
-                                        srcset="<?php echo esc_attr($image_srcset); ?>" alt="Product Image">
+                                        srcset="<?php echo esc_attr($image_srcset); ?>" alt="<?php the_title(); ?>">
                                 </div>
                             <?php endforeach; ?>
 
