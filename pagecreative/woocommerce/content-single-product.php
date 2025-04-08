@@ -67,7 +67,7 @@ global $product;
                             echo '</div>';
 
                             if (count($words) > 54) {
-                                echo '<div class="full-description font-14" style="display: none;">';
+                                echo '<div class="full-description py-1 font-14" style="display: none;">';
                                 echo $product_description;
                                 echo ' <button class="toggle-description font-14 underline d-block text-black p-0 mt-3" data-action="collapse">Read less</button>';
                                 echo '</div>';
