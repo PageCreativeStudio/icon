@@ -17,6 +17,20 @@ global $product;
                 set_query_var('product', $product);
                 get_template_part('woocommerce/image-gallery');
                 ?>
+                <div class="product__toggle">
+                    <?php if (get_field("collaspsibles_repeater")): ?>
+                        <?php if (have_rows('collaspsibles_repeater')) { ?>
+                            <?php while (have_rows('collaspsibles_repeater')) {
+                                the_row(); ?>
+                                <h3 class="font-16"><?php echo get_sub_field('title'); ?></h3>
+                                <div class="togglecontent">
+                                    <?php echo get_sub_field('content'); ?>
+                                </div>
+                            <?php } ?>
+                        <?php } ?>
+                    <?php endif; ?>
+                </div>
+
             </div>
 
             <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0">
