@@ -18,16 +18,18 @@ global $product;
                 get_template_part('woocommerce/image-gallery');
                 ?>
                 <div class="product__toggle">
-                    <?php if (get_field("collaspsibles_repeater")): ?>
-                        <?php if (have_rows('collaspsibles_repeater')) { ?>
-                            <?php while (have_rows('collaspsibles_repeater')) {
+                    <?php if (have_rows('collaspsibles_repeater')): ?>
+                        <div class="acf-collapsibles">
+                            <?php while (have_rows('collaspsibles_repeater')):
                                 the_row(); ?>
-                                <h3 class="font-16"><?php echo get_sub_field('title'); ?></h3>
-                                <div class="togglecontent">
-                                    <?php echo get_sub_field('content'); ?>
+                                <div class="acf-toggle-item">
+                                    <h3 class="toggle-header font-16"><?php echo esc_html(get_sub_field('title')); ?></h3>
+                                    <div class="toggle-content">
+                                        <?php echo get_sub_field('content'); ?>
+                                    </div>
                                 </div>
-                            <?php } ?>
-                        <?php } ?>
+                            <?php endwhile; ?>
+                        </div>
                     <?php endif; ?>
                 </div>
 

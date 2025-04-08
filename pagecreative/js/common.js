@@ -265,8 +265,8 @@ jQuery(document).ready(function ($) {
         loop: true,
         nav: false,
         autoplay: true,
-        autoplayTimeout: 7000,   
-        autoplayHoverPause: true, 
+        autoplayTimeout: 7000,
+        autoplayHoverPause: true,
         smartSpeed: 1200,
         margin: 15,
         dots: true,
@@ -362,10 +362,10 @@ jQuery(document).ready(function ($) {
 
 
 ///Product description collapsible 
-jQuery(document).ready(function($) {
-    $('.toggle-description').on('click', function() {
+jQuery(document).ready(function ($) {
+    $('.toggle-description').on('click', function () {
         var action = $(this).data('action');
-        
+
         if (action === 'expand') {
             $('.short-description').hide();
             $('.full-description').show();
@@ -373,5 +373,15 @@ jQuery(document).ready(function($) {
             $('.full-description').hide();
             $('.short-description').show();
         }
+    });
+});
+
+
+///Collapsible faqs
+jQuery(document).ready(function ($) {
+    $('.toggle-header').click(function () {
+        const $item = $(this).closest('.acf-toggle-item');
+        $('.acf-toggle-item').not($item).removeClass('active');
+        $item.toggleClass('active');
     });
 });

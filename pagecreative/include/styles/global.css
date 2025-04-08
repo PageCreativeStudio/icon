@@ -1124,6 +1124,20 @@ Custom CSS start here
 	place-items: center;
 }
 
+button {
+	background: none;
+	border: none;
+}
+
+.underline {
+	text-decoration: underline;
+	text-underline-offset: 5px;
+}
+
+.borderbottom {
+	border-bottom: solid 1px #CCCCCC;
+}
+
 /* End of BS4 custom classes here*/
 
 .cartbtn {
@@ -1411,10 +1425,6 @@ Custom CSS start here
 	width: 35px;
 }
 
-.borderbottom {
-	border-bottom: solid 1px #CCCCCC;
-}
-
 .color-variant {
 	width: 34px;
 	height: 34px;
@@ -1424,14 +1434,20 @@ Custom CSS start here
 	align-items: center;
 	justify-content: center;
 }
-button{
-	background: none;
-	border: none;
+.acf-toggle-item .toggle-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
 }
-.underline{
-	text-decoration: underline;
-    text-underline-offset: 5px;
+.acf-toggle-item.active .toggle-content {
+    max-height: 1000px;
 }
+.toggle-header {
+    cursor: pointer;
+    user-select: none;
+}
+
+
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
