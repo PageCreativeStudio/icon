@@ -1339,7 +1339,8 @@ Custom CSS start here
     font-weight: 700;
 }
 .product-template-default .navigation.post-navigation,
-.product-template-default .entry-footer{
+.product-template-default .entry-footer,
+.product-template-default .entry-header{
 	display: none;
 }
 
