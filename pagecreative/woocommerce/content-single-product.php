@@ -54,7 +54,7 @@ global $product;
                         $product_description = get_the_content();
 
                         if (!empty($product_description)) {
-                            echo '<div class="product-description font-14 py-1">';
+                            echo '<div class="product-description font-14 py-0">';
 
                             echo '<div class="short-description font-14 py-1">';
                             $words = explode(' ', $product_description);
@@ -158,13 +158,13 @@ global $product;
 
                     <div class="product-price">
                         <?php
- //                       do_action('woocommerce_single_product_summary');
+                        //                       do_action('woocommerce_single_product_summary');
                         ?>
                     </div>
 
                     <div class="product-description mt-3">
                         <?php
-//                        echo wpautop($product->get_short_description());
+                        //                        echo wpautop($product->get_short_description());
                         ?>
                     </div>
 
