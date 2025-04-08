@@ -54,7 +54,7 @@ global $product;
                         $product_description = get_the_content();
 
                         if (!empty($product_description)) {
-                            echo '<div class="product-description font-14 py-0">';
+                            echo '<div class="product-description font-14 py-1">';
 
                             echo '<div class="short-description font-14 py-1">';
                             $words = explode(' ', $product_description);
