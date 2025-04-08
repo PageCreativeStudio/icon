@@ -267,6 +267,7 @@ jQuery(document).ready(function ($) {
         autoplay: true,
         autoplayTimeout: 5000,   
         autoplayHoverPause: true, 
+        smartSpeed: 1200,
         margin: 15,
         dots: true,
         items: 1
