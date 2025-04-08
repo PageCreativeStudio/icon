@@ -1434,19 +1434,39 @@ button {
 	align-items: center;
 	justify-content: center;
 }
+
 .acf-toggle-item .toggle-content {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s ease;
-}
-.acf-toggle-item.active .toggle-content {
-    max-height: 500px;
-}
-.toggle-header {
-    cursor: pointer;
-    user-select: none;
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.5s ease;
 }
 
+.acf-toggle-item.active .toggle-content {
+	max-height: 500px;
+}
+
+.toggle-header {
+	cursor: pointer;
+	user-select: none;
+	border-bottom: solid 1px #CCCCCC;
+	padding: 18px 1px;
+	margin: 0;
+	position: relative;
+}
+
+.toggle-header::after {
+	content: "";
+	background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211%22%20height%3D%2211%22%20viewBox%3D%220%200%2011%2011%22%20fill%3D%22none%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M6.20833%204.36296H10.375V6.02962H6.20833V10.1963H4.54167V6.02962H0.375V4.36296H4.54167V0.196289H6.20833V4.36296Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E);
+	position: absolute;
+	right: 0px;
+	height: 13px;
+	width: 13px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-top: 3px;
+	transform: rotate(0deg);
+	transition: transform 0.3s ease-in;
+}
 
 
 @media (min-width:767px) {
