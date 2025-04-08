@@ -12,7 +12,7 @@ global $product;
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('custom-product', $product); ?>>
     <div class="container-fluid mx-auto px-md-4">
         <div class="row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 max-45">
                 <?php
                 set_query_var('product', $product);
                 get_template_part('woocommerce/image-gallery');
