@@ -282,33 +282,39 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Function to change the featured image
-    function changeFeaturedImage(imageSrc) {
-        $('.main-image img').attr('src', imageSrc); // Update the featured image
+    // Function to change the featured image and its srcset
+    function changeFeaturedImage(imageSrc, imageSrcset) {
+        var $featuredImage = $('.main-image img');
+        $featuredImage.attr('src', imageSrc); // Update the featured image source
+        $featuredImage.attr('srcset', imageSrcset); // Update the srcset for responsive images
     }
 
     // Change featured image when clicking on a gallery image
     $('.product-gallery .gallery-item img').on('click', function() {
-        var new_image = $(this).attr('src');
-        changeFeaturedImage(new_image); // Update the featured image with clicked gallery image
+        var newImageSrc = $(this).attr('src');
+        var newImageSrcset = $(this).attr('srcset'); // Get the srcset for the gallery image
+        changeFeaturedImage(newImageSrc, newImageSrcset); // Update the featured image and srcset
     });
 
     // Update main image when clicking next or previous in the carousel
     $productGallery.on('changed.owl.carousel', function(event) {
         var currentImage = $('.product-gallery .owl-item.active img').attr('src');
-        changeFeaturedImage(currentImage); // Update the featured image to the active gallery image
+        var currentSrcset = $('.product-gallery .owl-item.active img').attr('srcset'); // Get the current srcset
+        changeFeaturedImage(currentImage, currentSrcset); // Update the featured image and srcset
     });
 
     // Custom Arrows for Featured Image Navigation
     $('.next-featured-image').on('click', function() {
         $productGallery.trigger('next.owl.carousel'); // Move the gallery to the next image
         var currentImage = $('.product-gallery .owl-item.active img').attr('src');
-        changeFeaturedImage(currentImage); // Update the featured image
+        var currentSrcset = $('.product-gallery .owl-item.active img').attr('srcset'); // Get the current srcset
+        changeFeaturedImage(currentImage, currentSrcset); // Update the featured image and srcset
     });
 
     $('.prev-featured-image').on('click', function() {
         $productGallery.trigger('prev.owl.carousel'); // Move the gallery to the previous image
         var currentImage = $('.product-gallery .owl-item.active img').attr('src');
-        changeFeaturedImage(currentImage); // Update the featured image
+        var currentSrcset = $('.product-gallery .owl-item.active img').attr('srcset'); // Get the current srcset
+        changeFeaturedImage(currentImage, currentSrcset); // Update the featured image and srcset
     });
 });
