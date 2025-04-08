@@ -270,7 +270,7 @@ jQuery(document).ready(function ($) {
         center: false,
         navText: [
             '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none"> <path d="M20.4113 0.893554L1.625 19.6799L20.4113 38.4662" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </svg>',
-            '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none"> <path d="M1.49443 1.03613L20.2808 19.8225L1.49443 38.6088" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </svg>'
+            '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none"> <path d="M1.55339 0.893554L20.3397 19.6799L1.55339 38.4662" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </svg>'
         ],
         responsive: {
             0: {

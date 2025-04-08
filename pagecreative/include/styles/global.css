@@ -1395,7 +1395,9 @@ Custom CSS start here
 }
 
 .product-gallery .owl-nav svg{
-
+	background-color: none;
+	height: 40px;
+    width: 40px;
 }
 
 .featured-image-arrows {
