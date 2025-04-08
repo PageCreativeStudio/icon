@@ -18,10 +18,10 @@ global $product;
                 get_template_part('woocommerce/image-gallery');
                 ?>
             </div>
-            <div class="col-12 col-lg pl-lg-5">
+            <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0">
                 <div class="d-flex flex-wrap justify-content-between pb-0">
-                    <p class="font-16 mb-0">Continental ICP-01</p>
-                    <p class="font-16 mb-0">SKU25365</p>
+                    <p class="font-16 font-mb-14 mb-0">Continental ICP-01</p>
+                    <p class="font-16 font-mb-14 mb-0">SKU25365</p>
                 </div>
                 <h1 class="font-30 font-mb-25 my-2"><?php the_title(); ?></h1>
                 <h2 class="font-18">From £4.80/unit</h2>
