@@ -1350,72 +1350,35 @@ Custom CSS start here
 	display: none;
 }
 
-/* Additional styles to ensure a clean look */
 .product-images-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .featured-image {
     position: relative;
+    width: 100%;
+    max-width: 600px;
     margin-bottom: 20px;
-    text-align: center;
 }
-
-.featured-image .main-image img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-}
-
-.product-gallery {
-    width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
-}
-
-.product-gallery .gallery-item img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-}
-
-.featured-image-arrows button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
+.featured-image img {width: 100%; height: auto;}
+.product-gallery {width: 100%; max-width: 600px; margin-top: 20px;}
+.product-gallery .gallery-item {cursor: pointer;}
+.featured-image-arrows {
     position: absolute;
     top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     transform: translateY(-50%);
 }
-
-.featured-image-arrows .prev-featured-image {
-    left: 10px;
+.featured-image-arrows button {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
 }
-
-.featured-image-arrows .next-featured-image {
-    right: 10px;
-}
-
-.featured-image-arrows button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-.featured-image .main-image img {
-    transition: opacity 0.3s ease;
-}
-
-.product-gallery .gallery-item img {
-    transition: transform 0.3s ease;
-}
-
-.product-gallery .gallery-item img:hover {
-    transform: scale(1.05); /* Optional zoom effect */
-}
-
 
 
 @media (max-width:991px) {

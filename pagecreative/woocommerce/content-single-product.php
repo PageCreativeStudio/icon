@@ -13,38 +13,36 @@ global $product;
     <div class="container-fluid mx-auto px-md-4">
         <div class="row">
             <div class="col-12 col-lg-6">
-
             <div class="product-images-container">
     <div class="featured-image">
-        <!-- Featured Image -->
-        <?php if ( has_post_thumbnail() ) : ?>
-            <div class="main-image">
-                <?php the_post_thumbnail('full'); // Display the main featured image ?>
+        <?php if (has_post_thumbnail()) : ?>
+            <div class="main-image" id="main-product-image">
+                <?php the_post_thumbnail('full'); ?>
             </div>
-        <?php else: ?>
-            <img src="path-to-default-image.jpg" alt="No gallery image" class="default-featured-image"> <!-- Fallback image if no gallery -->
         <?php endif; ?>
         
-        <!-- Arrows around Featured Image -->
         <div class="featured-image-arrows">
-            <button class="prev-featured-image" aria-label="Previous Featured Image">&#10094;</button>
-            <button class="next-featured-image" aria-label="Next Featured Image">&#10095;</button>
+            <button class="prev-featured-image">&#10094;</button>
+            <button class="next-featured-image">&#10095;</button>
         </div>
     </div>
 
-    <?php if ( $product->get_gallery_image_ids() ) : ?>
-        <!-- Product Gallery (Only show if gallery images exist) -->
+    <?php if ($product->get_gallery_image_ids()) : ?>
         <div class="product-gallery owl-carousel">
             <?php
-            // Get the product gallery images
-            $attachment_ids = $product->get_gallery_image_ids();
-            foreach ( $attachment_ids as $attachment_id ) :
-                $image_link = wp_get_attachment_url( $attachment_id ); // Get image URL
-                ?>
-                <div class="gallery-item">
-                    <img src="<?php echo esc_url( $image_link ); ?>" alt="Product Image">
-                </div>
-            <?php endforeach; ?>
+            // Add featured image to gallery
+            if (has_post_thumbnail()) : 
+                $post_thumbnail_id = get_post_thumbnail_id();
+                $gallery_html = wp_get_attachment_image($post_thumbnail_id, 'thumbnail');
+                echo '<div class="gallery-item" data-id="' . esc_attr($post_thumbnail_id) . '">' . $gallery_html . '</div>';
+            endif;
+            
+            // Add gallery images
+            foreach ($product->get_gallery_image_ids() as $attachment_id) :
+                $gallery_html = wp_get_attachment_image($attachment_id, 'thumbnail');
+                echo '<div class="gallery-item" data-id="' . esc_attr($attachment_id) . '">' . $gallery_html . '</div>';
+            endforeach;
+            ?>
         </div>
     <?php endif; ?>
 </div>

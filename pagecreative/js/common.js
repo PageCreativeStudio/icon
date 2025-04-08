@@ -259,69 +259,53 @@ jQuery(document).ready(function ($) {
     });
 }); 
 
-jQuery(document).ready(function($) {
-    // Initialize Owl Carousel for the product gallery
-    var $productGallery = $('.product-gallery');
 
-    $productGallery.owlCarousel({
+
+jQuery(document).ready(function($) {
+    // Initialize Owl Carousel
+    $('.product-gallery').owlCarousel({
         items: 4,
         margin: 10,
-        nav: true,  // Enable next/previous navigation
+        nav: true,
         dots: false,
-        loop: true, // Infinite loop
-        responsive: {
-            0: {
-                items: 2
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 4
-            }
-        }
+        loop: true,
+        responsive: {0:{items:2}, 600:{items:3}, 1000:{items:4}}
     });
 
-    // Function to change the featured image, srcset, and data-src
-    function changeFeaturedImage(imageSrc, imageSrcset, imageDataSrc) {
-        var $featuredImage = $('.main-image img');
-
-        // Update src, srcset, and data-src attributes
-        $featuredImage.attr('src', imageSrc); 
-        $featuredImage.attr('srcset', imageSrcset); // Update srcset for responsive images
-        $featuredImage.attr('data-src', imageDataSrc); // Update lazy-loaded image source
+    // Function to update main image with proper srcset
+    function updateMainImage(imageId) {
+        // Simple approach - replace entire image container
+        $.post('<?php echo admin_url('admin-ajax.php'); ?>', {
+            action: 'get_product_image',
+            image_id: imageId,
+            _ajax_nonce: '<?php echo wp_create_nonce('get_product_image'); ?>'
+        }, function(response) {
+            if(response.success) {
+                $('#main-product-image').html(response.data);
+            }
+        });
     }
 
-    // Change featured image when clicking on a gallery image
-    $('.product-gallery .gallery-item img').on('click', function() {
-        var newImageSrc = $(this).attr('src');
-        var newImageSrcset = $(this).attr('srcset'); // Get the srcset for the gallery image
-        var newImageDataSrc = $(this).attr('data-src'); // Get the data-src for lazy-loaded image
-        changeFeaturedImage(newImageSrc, newImageSrcset, newImageDataSrc); // Update the featured image and srcset
+    // Click on gallery image
+    $('.gallery-item').click(function() {
+        var imageId = $(this).data('id');
+        updateMainImage(imageId);
     });
 
-    // Update main image when clicking next or previous in the carousel
-    $productGallery.on('changed.owl.carousel', function(event) {
-        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
-        var currentSrcset = $('.product-gallery .owl-item.active img').attr('srcset'); // Get the current srcset
-        var currentDataSrc = $('.product-gallery .owl-item.active img').attr('data-src'); // Get the current data-src
-        changeFeaturedImage(currentImage, currentSrcset, currentDataSrc); // Update the featured image and srcset
+    // Next/prev buttons
+    $('.next-featured-image').click(function() {
+        $('.product-gallery').trigger('next.owl.carousel');
+        setTimeout(function() {
+            var activeId = $('.owl-item.active').first().find('.gallery-item').data('id');
+            updateMainImage(activeId);
+        }, 300);
     });
 
-    // Custom Arrows for Featured Image Navigation
-    $('.next-featured-image').on('click', function() {
-        $productGallery.trigger('next.owl.carousel'); // Move the gallery to the next image
-        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
-        var currentSrcset = $('.product-gallery .owl-item.active img').attr('srcset'); // Get the current srcset
-        var currentDataSrc = $('.product-gallery .owl-item.active img').attr('data-src'); // Get the current data-src
-        changeFeaturedImage(currentImage, currentSrcset, currentDataSrc); // Update the featured image and srcset
-    });
-
-    $('.prev-featured-image').on('click', function() {
-        $productGallery.trigger('prev.owl.carousel'); // Move the gallery to the previous image
-        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
-        var currentSrcset = $('.product-gallery .owl-item.active img').attr('srcset'); // Get the current srcset
-        var currentDataSrc = $('.product-gallery .owl-item.active img').attr('data-src'); // Get the current data-src
-        changeFeaturedImage(currentImage, currentSrcset, currentDataSrc); // Update the featured image and srcset
+    $('.prev-featured-image').click(function() {
+        $('.product-gallery').trigger('prev.owl.carousel');
+        setTimeout(function() {
+            var activeId = $('.owl-item.active').first().find('.gallery-item').data('id');
+            updateMainImage(activeId);
+        }, 300);
     });
 });
