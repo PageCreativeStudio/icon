@@ -1386,12 +1386,12 @@ Custom CSS start here
 
 .product-gallery .owl-next{
     margin-top: -9px;
-	right: -1.5rem;
+	right: -2.5rem;
 }
 
 .product-gallery .owl-prev{
     margin-top: -9px;
-	left: -1.5rem;
+	left: -2.5rem;
 }
 
 .product-gallery .owl-nav svg{
