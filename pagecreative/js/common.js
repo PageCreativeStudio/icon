@@ -257,18 +257,17 @@ jQuery(document).ready(function ($) {
             }
         }
     });
-}); 
+});
 
 
-jQuery(document).ready(function($) {
-    // Initialize Owl Carousel for the product gallery
+jQuery(document).ready(function ($) {
     $('.product-gallery').owlCarousel({
-        items: 5,  // Set to 5 so we have an odd number (middle image)
+        items: 5,
         margin: 10,
-        nav: true,  // Enable next/previous navigation
+        nav: true,
         dots: false,
-        loop: true, // Infinite loop
-        center: true, // Ensure the middle image is always active
+        loop: true,
+        center: true,
         responsive: {
             0: {
                 items: 2
@@ -277,52 +276,42 @@ jQuery(document).ready(function($) {
                 items: 3
             },
             1000: {
-                items: 5  // Show 5 images on larger screens
+                items: 4
             }
         }
     });
 
-    // Function to update the main image (Featured image) from the active gallery image
     function updateFeaturedImage() {
         var currentImage = $('.product-gallery .owl-item.active img').attr('src');
         var currentSrcset = $('.product-gallery .owl-item.active img').attr('srcset');
         var currentAlt = $('.product-gallery .owl-item.active img').attr('alt');
-        
-        // Update the featured image to the active gallery image
+
         $('.main-image img').attr('src', currentImage);
         $('.main-image img').attr('srcset', currentSrcset);
         $('.main-image img').attr('alt', currentAlt);
+        document.title = currentAlt;
     }
-
-    // Change featured image when clicking on a gallery image
-    $('.product-gallery .gallery-item img').on('click', function() {
+    $('.product-gallery .gallery-item img').on('click', function () {
         var new_image = $(this).attr('src');
         var new_srcset = $(this).attr('srcset');
         var new_alt = $(this).attr('alt');
-        
-        // Update the featured image (both src and srcset)
+
         $('.main-image img').attr('src', new_image);
-        $('.main-image img').attr('srcset', new_srcset);  // Update the srcset
-        $('.main-image img').attr('alt', new_alt);  // Update alt text
+        $('.main-image img').attr('srcset', new_srcset);
+        $('.main-image img').attr('alt', new_alt);
     });
 
-    // Update main image when clicking next or previous in the carousel
-    $('.product-gallery').on('changed.owl.carousel', function(event) {
-        // Always update the main image based on the active gallery image (bottom gallery)
+    $('.product-gallery').on('changed.owl.carousel', function (event) {
+        updateFeaturedImage();
+    });
+    $('.next-featured-image').on('click', function () {
+        $('.product-gallery').trigger('next.owl.carousel');
         updateFeaturedImage();
     });
 
-    // Custom Arrows for Featured Image (Next/Previous)
-    $('.next-featured-image').on('click', function() {
-        // Move the gallery to the next image and update the featured image
-        $('.product-gallery').trigger('next.owl.carousel');
-        updateFeaturedImage(); // Always update from the active gallery image
-    });
-
-    $('.prev-featured-image').on('click', function() {
-        // Move the gallery to the previous image and update the featured image
+    $('.prev-featured-image').on('click', function () {
         $('.product-gallery').trigger('prev.owl.carousel');
-        updateFeaturedImage(); // Always update from the active gallery image
+        updateFeaturedImage();
     });
 });
 
