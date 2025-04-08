@@ -1474,6 +1474,12 @@ button {
 .product__toggle p{
 	font-size: 14px;
 }
+.product__toggle h2,
+.product__toggle h3,
+.product__toggle h4,
+.product__toggle h5{
+	font-size: 21px;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
