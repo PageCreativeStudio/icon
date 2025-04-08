@@ -1428,6 +1428,10 @@ button{
 	background: none;
 	border: none;
 }
+.underline{
+	text-decoration: underline;
+    text-underline-offset: 5px;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
