@@ -22,11 +22,11 @@ global $product;
             <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0">
                 <div class="borderbottom pb-3">
                     <div class="d-flex flex-wrap justify-content-between pb-0">
-                        <p class="font-16 font-mb-14 mb-0">Continental ICP-01</p>
-                        <p class="font-16 font-mb-14 mb-0">SKU25365</p>
+                        <p class="font-15 font-mb-14 mb-0">Continental ICP-01</p>
+                        <p class="font-15 font-mb-14 mb-0">SKU25365</p>
                     </div>
                     <h1 class="font-30 font-mb-25 my-2"><?php the_title(); ?></h1>
-                    <h2 class="font-20 product-price">
+                    <h2 class="font-18 product-price">
                         <?php
                         $product = wc_get_product(get_the_ID());
                         $variations = $product->get_available_variations();
@@ -66,7 +66,7 @@ global $product;
                     }
 
                     if ($terms && !is_wp_error($terms)) {
-                        echo '<p class="font-16 mb-0 pb-2">Choose a colour:</p>';
+                        echo '<p class="text-black font-14 mb-0 pb-2">Choose a colour:</p>';
                         echo '<div class="d-flex flex-wrap color-variants-container">';
 
                         foreach ($terms as $term) {
