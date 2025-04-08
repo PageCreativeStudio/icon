@@ -20,26 +20,33 @@ global $product;
                             <div class="main-image">
                                 <?php the_post_thumbnail('full'); // Display the main featured image ?>
                             </div>
+                        <?php else: ?>
+                            <img src="path-to-default-image.jpg" alt="No gallery image" class="default-featured-image">
+                            <!-- Fallback image if no gallery -->
                         <?php endif; ?>
+
+                        <!-- Arrows around Featured Image -->
+                        <div class="featured-image-arrows">
+                            <button class="prev-featured-image" aria-label="Previous Featured Image">&#10094;</button>
+                            <button class="next-featured-image" aria-label="Next Featured Image">&#10095;</button>
+                        </div>
                     </div>
 
-                    <div class="product-gallery owl-carousel owl-theme">
-                        <!-- Gallery Images -->
-                        <?php
-                        // Get the product gallery images
-                        $attachment_ids = $product->get_gallery_image_ids();
-                        if ($attachment_ids):
+                    <?php if ($product->get_gallery_image_ids()): ?>
+                        <!-- Product Gallery (Only show if gallery images exist) -->
+                        <div class="product-gallery owl-carousel">
+                            <?php
+                            // Get the product gallery images
+                            $attachment_ids = $product->get_gallery_image_ids();
                             foreach ($attachment_ids as $attachment_id):
                                 $image_link = wp_get_attachment_url($attachment_id); // Get image URL
                                 ?>
                                 <div class="gallery-item">
                                     <img src="<?php echo esc_url($image_link); ?>" alt="Product Image">
                                 </div>
-                                <?php
-                            endforeach;
-                        endif;
-                        ?>
-                    </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

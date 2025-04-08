@@ -277,6 +277,7 @@ jQuery(document).ready(function($) {
         margin: 10,
         nav: true,  // Enable next/previous navigation
         dots: false,
+        loop: true, // Infinite loop
         responsive: {
             0: {
                 items: 2
@@ -294,5 +295,24 @@ jQuery(document).ready(function($) {
     $('.product-gallery .gallery-item img').on('click', function() {
         var new_image = $(this).attr('src');
         $('.main-image img').attr('src', new_image); // Update the featured image
+    });
+
+    // Update main image when clicking on next/previous on carousel
+    $('.product-gallery').on('changed.owl.carousel', function(event) {
+        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
+        $('.main-image img').attr('src', currentImage); // Update the featured image to the active gallery image
+    });
+
+    // Custom Arrows for Featured Image
+    $('.next-featured-image').on('click', function() {
+        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
+        $('.main-image img').attr('src', currentImage); // Update the main image when next is clicked
+        $('.product-gallery').trigger('next.owl.carousel'); // Move the gallery to the next image
+    });
+
+    $('.prev-featured-image').on('click', function() {
+        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
+        $('.main-image img').attr('src', currentImage); // Update the main image when previous is clicked
+        $('.product-gallery').trigger('prev.owl.carousel'); // Move the gallery to the previous image
     });
 });
