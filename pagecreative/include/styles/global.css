@@ -1372,7 +1372,8 @@ Custom CSS start here
 .product-gallery .gallery-item img {
 	cursor: pointer;
 	height: 9rem;
-	object-fit: cover;
+	object-fit: contain;
+	background: #F8F9F5;
 }
 
 .product-gallery .owl-nav {
@@ -1384,20 +1385,10 @@ Custom CSS start here
 	transform: translateY(-50%);
 }
 
-.product-gallery .owl-next{
-    margin-top: -9px;
-	right: -2.5rem;
-}
-
-.product-gallery .owl-prev{
-    margin-top: -9px;
-	left: -2.5rem;
-}
-
-.product-gallery .owl-nav svg{
-	background: none!important;
+.product-gallery .owl-nav svg {
+	background: none !important;
 	height: 40px;
-    width: 40px;
+	width: 40px;
 }
 
 .featured-image-arrows {
@@ -1410,17 +1401,30 @@ Custom CSS start here
 	z-index: 10;
 }
 
-.featured-image-arrows button{
+.featured-image-arrows button {
 	background: none;
-    border: none;
+	border: none;
 }
 
 .featured-image-arrows svg {
-    height: 35px;
-    width: 35px;
+	height: 35px;
+	width: 35px;
 }
 
 
+@media (min-width:767px) {
+	.product-gallery .owl-next {
+		margin-top: -9px;
+		right: -2.5rem;
+	}
+
+	.product-gallery .owl-prev {
+		margin-top: -9px;
+		left: -2.5rem;
+	}
+}
+
+@media (max-width:767px) {}
 
 @media (max-width:991px) {
 	.socialarea__container img {
