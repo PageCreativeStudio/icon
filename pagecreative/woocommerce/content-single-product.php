@@ -12,14 +12,15 @@ global $product;
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('custom-product', $product); ?>>
     <div class="container-fluid mx-auto px-md-4">
         <div class="row">
-            <div class="col-12 col-lg-6 max-45 pr-lg-5">
+            <div class="col-12 col-lg-6 max-50 pr-lg-5">
                 <?php
                 set_query_var('product', $product);
                 get_template_part('woocommerce/image-gallery');
                 ?>
             </div>
-            <div class="col-12 col-lg">
-                <h1 class="product-title"><?php the_title(); ?></h1>
+            <div class="col-12 col-lg pl-lg-5">
+                <h1 class="font-35 font-mb-30"><?php the_title(); ?></h1>
+
             </div>
         </div>
     </div>
