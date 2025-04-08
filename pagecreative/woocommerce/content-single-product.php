@@ -49,27 +49,36 @@ global $product;
 
                 <div class="borderbottom py-4">
     <div class="inneritem">
-        <p class="text-black font-14 mb-0 pb-2">Product Description</p>
-
-        <div id="product-description" class="product-description">
-            <?php 
-            // Get WooCommerce product description
-            $product_description = get_the_content();
+        <p class="text-black font-14 mb-0 pb-2">Product description</p>
+        <?php
+        $product_description = get_the_content();
+        
+        if (!empty($product_description)) {
+            // Create a full description div
+            echo '<div class="product-description">';
             
-            // Truncate to 54 words
+            // Create a shortened description container
+            echo '<div class="short-description">';
             $words = explode(' ', $product_description);
-            $short_description = implode(' ', array_splice($words, 0, 54)); 
-            $remaining_description = implode(' ', array_splice($words, 54)); 
-
-            // Display truncated description
-            echo '<span id="short-description">' . esc_html($short_description) . '</span>';
-
-            // Display remaining description (hidden initially)
-            echo '<span id="remaining-description" style="display:none;">' . esc_html($remaining_description) . '</span>';
-            ?>
-        </div>
-
-        <button id="toggle-description" class="btn btn-link text-black" onclick="toggleDescription()">Read More</button>
+            $shortened = implode(' ', array_slice($words, 0, 54));
+            echo $shortened;
+            if (count($words) > 54) {
+                echo '... ';
+                echo '<button class="toggle-description btn btn-link p-0" data-action="expand">Read more</button>';
+            }
+            echo '</div>';
+            
+            // Create a full description container (hidden by default)
+            if (count($words) > 54) {
+                echo '<div class="full-description" style="display: none;">';
+                echo $product_description;
+                echo ' <button class="toggle-description btn btn-link p-0" data-action="collapse">Read less</button>';
+                echo '</div>';
+            }
+            
+            echo '</div>';
+        }
+        ?>
     </div>
 </div>
 
