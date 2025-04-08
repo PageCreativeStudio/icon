@@ -54,7 +54,7 @@ global $product;
                         $product_description = get_the_content();
 
                         if (!empty($product_description)) {
-                            echo '<div class="product-description font-14">';
+                            echo '<div class="product-description font-14 pt-2">';
 
                             echo '<div class="short-description font-14 py-2">';
                             $words = explode(' ', $product_description);
@@ -62,14 +62,14 @@ global $product;
                             echo $shortened;
                             if (count($words) > 54) {
                                 echo '... ';
-                                echo '<button class="toggle-description font-14 underline d-block text-black p-0 mt-2" data-action="expand">Read more</button>';
+                                echo '<button class="toggle-description font-14 underline d-inline-block text-black p-0 mt-3" data-action="expand">Read more</button>';
                             }
                             echo '</div>';
 
                             if (count($words) > 54) {
                                 echo '<div class="full-description font-14" style="display: none;">';
                                 echo $product_description;
-                                echo ' <button class="toggle-description font-14 underline d-block text-black p-0 mt-2" data-action="collapse">Read less</button>';
+                                echo ' <button class="toggle-description font-14 underline d-inline-block text-black p-0 mt-3" data-action="collapse">Read less</button>';
                                 echo '</div>';
                             }
 
