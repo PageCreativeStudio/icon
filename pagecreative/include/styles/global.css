@@ -1338,7 +1338,8 @@ Custom CSS start here
 	font-family: sans-serif;
     font-weight: 700;
 }
-.product-template-default .navigation.post-navigation {
+.product-template-default .navigation.post-navigation,
+.product-template-default .entry-footer{
 	display: none;
 }
 
