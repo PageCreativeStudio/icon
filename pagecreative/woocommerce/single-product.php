@@ -5,10 +5,10 @@
  */
  
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
+    exit;
 }
 
-get_header( 'shop' ); // Shop header
+get_header( );
 
 // Trigger action before product content starts
 do_action( 'woocommerce_before_main_content' );
@@ -23,5 +23,4 @@ endwhile; // end of the loop
 // Trigger action after product content ends
 do_action( 'woocommerce_after_main_content' );
 
-get_footer( 'shop' ); // Shop footer
-?>
+get_footer(); ?>
