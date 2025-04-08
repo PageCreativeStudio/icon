@@ -52,6 +52,14 @@ global $product;
                     <img src="<?php echo esc_url( $image_link ); ?>" srcset="<?php echo esc_attr($image_srcset); ?>" alt="Product Image">
                 </div>
             <?php endforeach; ?>
+            
+            <!-- Featured Image as last gallery item -->
+            <div class="gallery-item featured-image-item">
+                <?php 
+                // Display the main featured image as the last item
+                echo wp_get_attachment_image($thumbnail_id, 'full', false, array('srcset' => $srcset, 'sizes' => $sizes)); 
+                ?>
+            </div>
         </div>
     <?php endif; ?>
 </div>

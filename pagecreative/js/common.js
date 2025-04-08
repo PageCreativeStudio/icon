@@ -264,11 +264,12 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function($) {
     // Initialize Owl Carousel for the product gallery
     $('.product-gallery').owlCarousel({
-        items: 4,
+        items: 5,  // Set to 5 so we have an odd number (middle image)
         margin: 10,
         nav: true,  // Enable next/previous navigation
         dots: false,
         loop: true, // Infinite loop
+        center: true, // Ensure the middle image is always active
         responsive: {
             0: {
                 items: 2
@@ -277,7 +278,7 @@ jQuery(document).ready(function($) {
                 items: 3
             },
             1000: {
-                items: 4
+                items: 5  // Show 5 images on larger screens
             }
         }
     });
