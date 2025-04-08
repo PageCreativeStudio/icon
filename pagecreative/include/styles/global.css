@@ -1413,22 +1413,15 @@ Custom CSS start here
 .borderbottom{
 	border-bottom: solid 1px #CCCCCC;
 }
-.colour-attributes .colour-option {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border: none;
-    cursor: pointer;
-    border-radius: 50%; /* Round button for colours */
-    transition: transform 0.3s ease;
-    color: #fff;
-    font-size: 14px;
-}
+.color-variant{
+	width: 40px; 
+	height: 40px; 
+	border-radius: 50%; 
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-.colour-attributes .colour-option:hover {
-    transform: scale(1.1); /* Slight hover effect */
 }
 
 @media (min-width:767px) {

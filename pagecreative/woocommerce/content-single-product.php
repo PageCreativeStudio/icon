@@ -18,7 +18,7 @@ global $product;
                 get_template_part('woocommerce/image-gallery');
                 ?>
             </div>
-            
+
             <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0">
     <div class="borderbottom pb-3">
         <div class="d-flex flex-wrap justify-content-between pb-0">
@@ -26,7 +26,29 @@ global $product;
             <p class="font-16 font-mb-14 mb-0">SKU25365</p>
         </div>
         <h1 class="font-30 font-mb-25 my-2"><?php the_title(); ?></h1>
-        <h2 class="font-18 product-price">From £4.80/unit</h2>
+        <h2 class="font-18 product-price">
+            <?php
+            // Get the product
+            $product = wc_get_product(get_the_ID());
+            $variations = $product->get_available_variations();
+            
+            // Find minimum price among variations
+            $min_price = false;
+            foreach ($variations as $variation) {
+                $variation_price = $variation['display_price'];
+                if ($min_price === false || $variation_price < $min_price) {
+                    $min_price = $variation_price;
+                }
+            }
+            
+            // Display minimum price if available
+            if ($min_price !== false) {
+                echo 'From £' . number_format($min_price, 2) . '/unit';
+            } else {
+                echo 'From £4.80/unit';
+            }
+            ?>
+        </h2>
     </div>
     <div class="colour-attributes borderbottom py-4 mt-1">
         <?php 
@@ -68,14 +90,7 @@ global $product;
                         data-price-html="' . esc_attr($price_html) . '" 
                         data-price="' . esc_attr($display_price) . '"
                         data-variation-id="' . esc_attr($variation_id) . '"
-                        style="background-color: ' . esc_attr($color_value) . '; 
-                               width: 40px; 
-                               height: 40px; 
-                               border-radius: 50%; 
-                               cursor: pointer;
-                               display: flex;
-                               align-items: center;
-                               justify-content: center;"
+                        style="background-color: ' . esc_attr($color_value) . '; "
                         title="' . esc_attr($term->name) . '">
                         <span class="color-check" style="display: none; color: white;">✓</span>
                     </div>';
@@ -89,6 +104,7 @@ global $product;
         ?>
     </div>
 </div>
+
 
         </div>
     </div>

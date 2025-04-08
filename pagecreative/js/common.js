@@ -325,21 +325,23 @@ jQuery(document).ready(function($) {
     $('.color-variant').on('click', function() {
         // Remove active class from all colors
         $('.color-variant').removeClass('active');
+        $('.color-variant').css('border-color', 'transparent');
         $('.color-variant .color-check').hide();
         
         // Add active class to selected color
         $(this).addClass('active');
+        $(this).css('border-color', '#000'); // Add border to selected color
         $(this).find('.color-check').show();
         
         // Update price
-        var priceHtml = $(this).data('price-html');
-        if (priceHtml) {
-            $('.product-price').html(priceHtml);
+        var price = $(this).data('price');
+        if (price) {
+            $('.product-price').html('£' + parseFloat(price).toFixed(2) + '/unit');
         } else {
-            // Fallback if price html is not available
-            var price = $(this).data('price');
-            if (price) {
-                $('.product-price').html('£' + parseFloat(price).toFixed(2) + '/unit');
+            // Fallback if price is not available
+            var priceHtml = $(this).data('price-html');
+            if (priceHtml) {
+                $('.product-price').html(priceHtml);
             }
         }
         
