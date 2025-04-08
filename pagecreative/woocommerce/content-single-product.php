@@ -80,6 +80,3 @@ global $product;
 
     </div>
 </div>
-
-<?php
-do_action( 'woocommerce_after_single_product' );  // Trigger any actions after the product.
