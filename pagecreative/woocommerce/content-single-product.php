@@ -62,14 +62,14 @@ global $product;
                             echo $shortened;
                             if (count($words) > 54) {
                                 echo '... ';
-                                echo '<button class="toggle-description font-14 underline d-inline-block text-black pt-2 mt-3" data-action="expand">Read more</button>';
+                                echo '<button class="toggle-description font-14 underline d-inline-block text-black p-0 mt-3" data-action="expand">Read more</button>';
                             }
                             echo '</div>';
 
                             if (count($words) > 54) {
                                 echo '<div class="full-description font-14" style="display: none;">';
                                 echo $product_description;
-                                echo ' <button class="toggle-description font-14 underline d-inline-block text-black pt-2 mt-3" data-action="collapse">Read less</button>';
+                                echo ' <button class="toggle-description font-14 underline d-inline-block text-black pt-0 mt-3" data-action="collapse">Read less</button>';
                                 echo '</div>';
                             }
 
