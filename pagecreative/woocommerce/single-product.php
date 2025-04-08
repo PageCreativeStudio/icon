@@ -21,6 +21,8 @@ if (!defined('ABSPATH')) {
 
 get_header('shop'); ?>
 
+<h1>New template</h1>
+
 <?php
 /**
  * woocommerce_before_main_content hook.
