@@ -344,3 +344,21 @@ jQuery(document).ready(function ($) {
         $('#selected-variation-id').trigger('change');
     });
 });
+
+
+///Product description collapsible 
+function toggleDescription() {
+    // Toggle between the short description and full description
+    var shortDescription = document.getElementById('short-description');
+    var remainingDescription = document.getElementById('remaining-description');
+    var toggleButton = document.getElementById('toggle-description');
+
+    // If the description is truncated, show the full description
+    if (remainingDescription.style.display === "none") {
+        remainingDescription.style.display = "inline";  // Show full description
+        toggleButton.textContent = "Collapse";  // Change button text
+    } else {
+        remainingDescription.style.display = "none";  // Show only truncated description
+        toggleButton.textContent = "Read More";  // Change button text back
+    }
+}

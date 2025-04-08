@@ -1424,6 +1424,19 @@ Custom CSS start here
 	align-items: center;
 	justify-content: center;
 }
+#product-description {
+	margin-top: 10px;
+}
+#toggle-description {
+	margin-top: 10px;
+	padding: 0;
+	text-decoration: underline;
+	font-size: 14px;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
