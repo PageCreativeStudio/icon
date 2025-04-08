@@ -282,25 +282,30 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Function to change the featured image and its srcset
-    function changeFeaturedImage(imageSrc, imageSrcset) {
+    // Function to change the featured image, srcset, and data-src
+    function changeFeaturedImage(imageSrc, imageSrcset, imageDataSrc) {
         var $featuredImage = $('.main-image img');
-        $featuredImage.attr('src', imageSrc); // Update the featured image source
-        $featuredImage.attr('srcset', imageSrcset); // Update the srcset for responsive images
+
+        // Update src, srcset, and data-src attributes
+        $featuredImage.attr('src', imageSrc); 
+        $featuredImage.attr('srcset', imageSrcset); // Update srcset for responsive images
+        $featuredImage.attr('data-src', imageDataSrc); // Update lazy-loaded image source
     }
 
     // Change featured image when clicking on a gallery image
     $('.product-gallery .gallery-item img').on('click', function() {
         var newImageSrc = $(this).attr('src');
         var newImageSrcset = $(this).attr('srcset'); // Get the srcset for the gallery image
-        changeFeaturedImage(newImageSrc, newImageSrcset); // Update the featured image and srcset
+        var newImageDataSrc = $(this).attr('data-src'); // Get the data-src for lazy-loaded image
+        changeFeaturedImage(newImageSrc, newImageSrcset, newImageDataSrc); // Update the featured image and srcset
     });
 
     // Update main image when clicking next or previous in the carousel
     $productGallery.on('changed.owl.carousel', function(event) {
         var currentImage = $('.product-gallery .owl-item.active img').attr('src');
         var currentSrcset = $('.product-gallery .owl-item.active img').attr('srcset'); // Get the current srcset
-        changeFeaturedImage(currentImage, currentSrcset); // Update the featured image and srcset
+        var currentDataSrc = $('.product-gallery .owl-item.active img').attr('data-src'); // Get the current data-src
+        changeFeaturedImage(currentImage, currentSrcset, currentDataSrc); // Update the featured image and srcset
     });
 
     // Custom Arrows for Featured Image Navigation
@@ -308,13 +313,15 @@ jQuery(document).ready(function($) {
         $productGallery.trigger('next.owl.carousel'); // Move the gallery to the next image
         var currentImage = $('.product-gallery .owl-item.active img').attr('src');
         var currentSrcset = $('.product-gallery .owl-item.active img').attr('srcset'); // Get the current srcset
-        changeFeaturedImage(currentImage, currentSrcset); // Update the featured image and srcset
+        var currentDataSrc = $('.product-gallery .owl-item.active img').attr('data-src'); // Get the current data-src
+        changeFeaturedImage(currentImage, currentSrcset, currentDataSrc); // Update the featured image and srcset
     });
 
     $('.prev-featured-image').on('click', function() {
         $productGallery.trigger('prev.owl.carousel'); // Move the gallery to the previous image
         var currentImage = $('.product-gallery .owl-item.active img').attr('src');
         var currentSrcset = $('.product-gallery .owl-item.active img').attr('srcset'); // Get the current srcset
-        changeFeaturedImage(currentImage, currentSrcset); // Update the featured image and srcset
+        var currentDataSrc = $('.product-gallery .owl-item.active img').attr('data-src'); // Get the current data-src
+        changeFeaturedImage(currentImage, currentSrcset, currentDataSrc); // Update the featured image and srcset
     });
 });
