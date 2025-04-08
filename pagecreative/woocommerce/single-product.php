@@ -24,5 +24,6 @@ endwhile; // end of the loop
 get_template_part('template-parts/blocks/social-logos');
 get_template_part('template-parts/blocks/testimonials');
 
+'<div style="background: #ffc; padding: 1rem;">✅ social-logos.php loaded</div>'
 
 get_footer(); ?>
