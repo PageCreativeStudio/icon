@@ -32,7 +32,7 @@ global $product;
                     <?php
                     $terms = get_the_terms(get_the_ID(), 'pa_colour');
                     if ($terms && !is_wp_error($terms)) {
-                        echo 'Choose a colour:<br>';
+                        echo '<p class="mb-0 pb-2">Choose a colour:</p>';
                         foreach ($terms as $term) {
                             echo '<span class="badge bg-primary mr-2">' . esc_html($term->name) . '</span>';
                         }
