@@ -1350,21 +1350,38 @@ Custom CSS start here
 	display: none;
 }
 
+/* Additional styles to ensure a clean look */
 .product-images-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .featured-image {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
     margin-bottom: 20px;
+    text-align: center;
+    position: relative;
 }
-.featured-image img {width: 100%; height: auto;}
-.product-gallery {width: 100%; max-width: 600px; margin-top: 20px;}
-.product-gallery .gallery-item {cursor: pointer;}
-.featured-image-arrows {
+
+.featured-image .main-image img {
+    width: 100%;
+    max-width: 600px;  /* Adjust this based on your design */
+    height: auto;
+}
+
+.product-gallery {
+    width: 100%;
+    max-width: 600px; /* Same width as the main image */
+    margin-top: 20px;
+}
+
+.product-gallery .gallery-item img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.product-gallery .owl-nav {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -1372,13 +1389,31 @@ Custom CSS start here
     justify-content: space-between;
     transform: translateY(-50%);
 }
+
+/* Custom Arrows for Featured Image */
+.featured-image-arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
 .featured-image-arrows button {
-    background: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
+    font-size: 24px;
     padding: 10px;
     cursor: pointer;
 }
+
+.featured-image-arrows button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 
 
 @media (max-width:991px) {

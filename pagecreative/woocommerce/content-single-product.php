@@ -13,39 +13,50 @@ global $product;
     <div class="container-fluid mx-auto px-md-4">
         <div class="row">
             <div class="col-12 col-lg-6">
+
             <div class="product-images-container">
     <div class="featured-image">
-        <?php if (has_post_thumbnail()) : ?>
-            <div class="main-image" id="main-product-image">
-                <?php the_post_thumbnail('full'); ?>
+        <!-- Featured Image -->
+        <?php if ( has_post_thumbnail() ) : ?>
+            <div class="main-image">
+                <?php 
+                // Display the main featured image with srcset for responsive images
+                $thumbnail_id = get_post_thumbnail_id();
+                $srcset = wp_get_attachment_image_srcset($thumbnail_id, 'full');
+                $sizes = wp_get_attachment_image_sizes($thumbnail_id, 'full');
+                echo wp_get_attachment_image($thumbnail_id, 'full', false, array('srcset' => $srcset, 'sizes' => $sizes)); 
+                ?>
             </div>
+        <?php else: ?>
+            <img src="path-to-default-image.jpg" alt="No gallery image" class="default-featured-image"> <!-- Fallback image if no gallery -->
         <?php endif; ?>
         
+        <!-- Arrows around Featured Image -->
         <div class="featured-image-arrows">
-            <button class="prev-featured-image">&#10094;</button>
-            <button class="next-featured-image">&#10095;</button>
+            <button class="prev-featured-image" aria-label="Previous Featured Image">&#10094;</button>
+            <button class="next-featured-image" aria-label="Next Featured Image">&#10095;</button>
         </div>
     </div>
 
-    <?php if ($product->get_gallery_image_ids()) : ?>
+    <?php if ( $product->get_gallery_image_ids() ) : ?>
+        <!-- Product Gallery (Only show if gallery images exist) -->
         <div class="product-gallery owl-carousel">
             <?php
-            // Add featured image to gallery
-            if (has_post_thumbnail()) : 
-                $post_thumbnail_id = get_post_thumbnail_id();
-                $gallery_html = wp_get_attachment_image($post_thumbnail_id, 'thumbnail');
-                echo '<div class="gallery-item" data-id="' . esc_attr($post_thumbnail_id) . '">' . $gallery_html . '</div>';
-            endif;
-            
-            // Add gallery images
-            foreach ($product->get_gallery_image_ids() as $attachment_id) :
-                $gallery_html = wp_get_attachment_image($attachment_id, 'thumbnail');
-                echo '<div class="gallery-item" data-id="' . esc_attr($attachment_id) . '">' . $gallery_html . '</div>';
-            endforeach;
-            ?>
+            // Get the product gallery images
+            $attachment_ids = $product->get_gallery_image_ids();
+            foreach ( $attachment_ids as $attachment_id ) :
+                $image_link = wp_get_attachment_url( $attachment_id ); // Get image URL
+                $image_srcset = wp_get_attachment_image_srcset($attachment_id, 'full'); // Get srcset for responsive images
+                ?>
+                <div class="gallery-item">
+                    <img src="<?php echo esc_url( $image_link ); ?>" srcset="<?php echo esc_attr($image_srcset); ?>" alt="Product Image">
+                </div>
+            <?php endforeach; ?>
         </div>
     <?php endif; ?>
 </div>
+
+
 
             
 
