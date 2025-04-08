@@ -1431,7 +1431,6 @@ Custom CSS start here
     transform: scale(1.1); /* Slight hover effect */
 }
 
-
 @media (min-width:767px) {
 	.product-gallery .owl-next {
 		margin-top: -9px;

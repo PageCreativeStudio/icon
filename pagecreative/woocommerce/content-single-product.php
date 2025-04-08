@@ -19,42 +19,46 @@ global $product;
                 ?>
             </div>
             <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0">
-                <div class="borderbottom pb-3">
-                    <div class="d-flex flex-wrap justify-content-between pb-0">
-                        <p class="font-16 font-mb-14 mb-0">Continental ICP-01</p>
-                        <p class="font-16 font-mb-14 mb-0">SKU25365</p>
-                    </div>
-                    <h1 class="font-30 font-mb-25 my-2"><?php the_title(); ?></h1>
-                    <h2 class="font-18">From £4.80/unit</h2>
-                </div>
+    <div class="borderbottom pb-3">
+        <div class="d-flex flex-wrap justify-content-between pb-0">
+            <p class="font-16 font-mb-14 mb-0">Continental ICP-01</p>
+            <p class="font-16 font-mb-14 mb-0">SKU25365</p>
+        </div>
+        <h1 class="font-30 font-mb-25 my-2"><?php the_title(); ?></h1>
+        <h2 class="font-18">From <span id="product-price">£4.80/unit</span></h2>
+    </div>
 
-                <!-- Colour Attributes (Clickable with background color) -->
-                <div class="colour-attributes borderbottom py-4 mt-1">
-                    <?php
-                    // Get the 'pa_colour' attribute terms
-                    $terms = get_the_terms(get_the_ID(), 'pa_colour');
-                    if ($terms && !is_wp_error($terms)) {
-                        echo '<p class="text-black mb-0 pb-2">Choose a colour:</p>';
-                        echo '<div class="d-flex flex-wrap">';
-                        foreach ($terms as $term) {
-                            // Get the term meta for background colour (you may have set this in your attributes)
-                            $colour = get_term_meta($term->term_id, 'pa_colour', true); // Assumes you have a custom field for the background color of the term
-                            ?>
-                            <!-- Color Variant Button (Clickable) -->
-                            <button class="colour-option btn mr-2 mb-2"
-                                style="background-color: <?php echo esc_attr($colour); ?>;"
-                                data-colour="<?php echo esc_attr($term->slug); ?>"
-                                aria-label="Choose Colour: <?php echo esc_attr($term->name); ?>"
-                                onclick="changeColour('<?php echo esc_js($term->slug); ?>')">
-                                <?php echo esc_html($term->name); ?>
-                            </button>
-                            <?php
-                        }
-                        echo '</div>';
-                    }
-                    ?>
-                </div>
-            </div>
+    <!-- Colour Attributes (Clickable with background color) -->
+    <div class="colour-attributes borderbottom py-4 mt-1">
+        <?php
+        // Get the 'pa_colour' attribute terms
+        $terms = get_the_terms(get_the_ID(), 'pa_colour');
+        if ($terms && !is_wp_error($terms)) {
+            echo '<p class="text-black mb-0 pb-2">Choose a colour:</p>';
+            echo '<div class="d-flex flex-wrap">';
+            foreach ($terms as $term) {
+                // Assuming you have a custom field for the background colour of each term
+                $colour = get_term_meta($term->term_id, 'background_color', true); // Change 'background_color' to the correct meta key
+                $colour = !empty($colour) ? $colour : '#000000'; // Default to black if not set
+                ?>
+                <!-- Color Variant Button (Clickable) -->
+                <button 
+                    class="colour-option btn mr-2 mb-2" 
+                    style="background-color: <?php echo esc_attr($colour); ?>;"
+                    data-colour="<?php echo esc_attr($term->slug); ?>"
+                    data-price="<?php echo esc_attr($term->price); ?>"  <!-- Assuming you store price in the term -->
+                    aria-label="Choose Colour: <?php echo esc_attr($term->name); ?>"
+                    onclick="changeColour('<?php echo esc_js($term->slug); ?>', '<?php echo esc_js($term->price); ?>')">
+                    <?php echo esc_html($term->name); ?>
+                </button>
+                <?php
+            }
+            echo '</div>';
+        }
+        ?>
+    </div>
+</div>
+
         </div>
     </div>
 </div>
