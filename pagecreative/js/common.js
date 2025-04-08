@@ -263,10 +263,13 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function ($) {
     $('.testimonials__slider').owlCarousel({
         loop: true,
-        nav: true,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 5000,   
+        autoplayHoverPause: true, 
         margin: 15,
         dots: true,
-        items:1
+        items: 1
     });
 });
 
