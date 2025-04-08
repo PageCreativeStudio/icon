@@ -1471,7 +1471,9 @@ button {
 	transition: transform 0.3s ease-in;
 	transform: rotate(170deg);
 }
-
+.product__toggle p{
+	font-size: 14px;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
