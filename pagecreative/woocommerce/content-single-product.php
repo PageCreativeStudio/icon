@@ -135,10 +135,10 @@ global $product;
 
 
 
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class('custom-product', $product); ?>>
+<!--<div id="product-<?php the_ID(); ?>" <?php wc_product_class('custom-product', $product); ?>>
     <div class="container py-5">
         <div class="row">
-            <!-- Left Column: Product Images -->
+            
             <div class="col-md-6">
                 <div class="product-images">
                     <?php
@@ -148,7 +148,6 @@ global $product;
                 </div>
             </div>
 
-            <!-- Right Column: Product Details -->
             <div class="col-md-6">
                 <div class="product-details">
                     <h1 class="product-title"><?php the_title(); ?></h1>
@@ -180,7 +179,7 @@ global $product;
             </div>
         </div>
 
-        <!-- Product Tabs (Additional Information, Reviews, etc.) -->
+    
         <div class="row mt-5">
             <div class="col-12">
                 <?php
@@ -191,4 +190,4 @@ global $product;
         </div>
 
     </div>
-</div>
+</div>-->
