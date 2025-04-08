@@ -18,8 +18,18 @@ $product = get_query_var('product');
         <?php endif; ?>
 
         <div class="featured-image-arrows">
-            <button class="prev-featured-image" aria-label="Previous Featured Image">&#10094;</button>
-            <button class="next-featured-image" aria-label="Next Featured Image">&#10095;</button>
+            <button class="prev-featured-image" aria-label="Previous Featured Image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="40" viewBox="0 0 21 40" fill="none">
+                    <path d="M20.165 1.03613L1.37866 19.8225L20.165 38.6088" stroke="#333333" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button class="next-featured-image" aria-label="Next Featured Image<svg xmlns=" http://www.w3.org/2000/svg"
+                width="22" height="40" viewBox="0 0 22 40" fill="none">
+                <path d="M1.49443 1.03613L20.2808 19.8225L1.49443 38.6088" stroke="#333333" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
         </div>
     </div>
 
