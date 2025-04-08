@@ -18,6 +18,7 @@ global $product;
                 get_template_part('woocommerce/image-gallery');
                 ?>
             </div>
+            
             <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0">
     <div class="borderbottom pb-3">
         <div class="d-flex flex-wrap justify-content-between pb-0">
@@ -25,63 +26,69 @@ global $product;
             <p class="font-16 font-mb-14 mb-0">SKU25365</p>
         </div>
         <h1 class="font-30 font-mb-25 my-2"><?php the_title(); ?></h1>
-        <h2 class="font-18">From <span id="product-price">£4.80/unit</span></h2>
+        <h2 class="font-18 product-price">From £4.80/unit</h2>
     </div>
-
-    <!-- Colour Attributes (Clickable with background color) -->
     <div class="colour-attributes borderbottom py-4 mt-1">
-        <?php
-        // Get the 'pa_colour' attribute terms
+        <?php 
         $terms = get_the_terms(get_the_ID(), 'pa_colour');
+        $product = wc_get_product(get_the_ID());
+        $variations = $product->get_available_variations();
+        $variation_data = array();
+        
+        // Prepare variation data
+        foreach ($variations as $variation) {
+            $attributes = $variation['attributes'];
+            $color_attribute = isset($attributes['attribute_pa_colour']) ? $attributes['attribute_pa_colour'] : '';
+            if ($color_attribute) {
+                $variation_data[$color_attribute] = array(
+                    'price_html' => $variation['price_html'],
+                    'display_price' => $variation['display_price'],
+                    'variation_id' => $variation['variation_id']
+                );
+            }
+        }
+        
         if ($terms && !is_wp_error($terms)) {
             echo '<p class="text-black mb-0 pb-2">Choose a colour:</p>';
-            echo '<div class="d-flex flex-wrap">';
+            echo '<div class="d-flex flex-wrap color-variants-container">';
+            
             foreach ($terms as $term) {
-                // Retrieve the term meta value for the background color of each term
-                $colour = get_term_meta($term->term_id, 'background_color', true); // Replace 'background_color' with your custom field key
-                $colour = !empty($colour) ? $colour : '#000000'; // Default to black if not set
-
-                // Retrieve the term price from term meta (if available)
-                $term_price = get_term_meta($term->term_id, 'price', true); // Replace 'price' with the correct meta key for the price
-                $term_price = !empty($term_price) ? $term_price : '4.80'; // Default price fallback if not set
-
-                ?>
-                <!-- Color Variant Button (Clickable) -->
-                <button 
-                    class="colour-option btn mr-2 mb-2" 
-                    style="background-color: <?php echo esc_attr($colour); ?>;"
-                    data-colour="<?php echo esc_attr($term->slug); ?>"
-                    data-price="<?php echo esc_attr($term_price); ?>"
-                    aria-label="Choose Colour: <?php echo esc_attr($term->name); ?>"
-                    onclick="changeColour('<?php echo esc_js($term->slug); ?>', '<?php echo esc_js($term_price); ?>')">
-                    <?php echo esc_html($term->name); ?>
-                </button>
-                <?php
+                $color_value = get_term_meta($term->term_id, 'color', true);
+                // Use the term name as fallback color if no specific color is set
+                $color_value = !empty($color_value) ? $color_value : $term->name;
+                $slug = $term->slug;
+                
+                // Get price for this variation if available
+                $price_html = isset($variation_data[$slug]) ? $variation_data[$slug]['price_html'] : '';
+                $display_price = isset($variation_data[$slug]) ? $variation_data[$slug]['display_price'] : '';
+                $variation_id = isset($variation_data[$slug]) ? $variation_data[$slug]['variation_id'] : '';
+                
+                echo '<div class="color-variant mr-2 mb-2" 
+                        data-color="' . esc_attr($slug) . '" 
+                        data-price-html="' . esc_attr($price_html) . '" 
+                        data-price="' . esc_attr($display_price) . '"
+                        data-variation-id="' . esc_attr($variation_id) . '"
+                        style="background-color: ' . esc_attr($color_value) . '; 
+                               width: 40px; 
+                               height: 40px; 
+                               border-radius: 50%; 
+                               cursor: pointer;
+                               display: flex;
+                               align-items: center;
+                               justify-content: center;"
+                        title="' . esc_attr($term->name) . '">
+                        <span class="color-check" style="display: none; color: white;">✓</span>
+                    </div>';
             }
+            
             echo '</div>';
+            
+            // Add hidden input to store selected variation
+            echo '<input type="hidden" name="variation_id" id="selected-variation-id" value="">';
         }
         ?>
     </div>
 </div>
-
-<script>
-// JavaScript to handle colour selection and update the main product image or variant
-function changeColour(colourSlug, newPrice) {
-    // Update the WooCommerce variation selection for colour (if you have product variations)
-    var productColour = jQuery('select[name="attribute_pa_colour"]'); // Select the colour attribute dropdown
-    if (productColour) {
-        productColour.val(colourSlug).trigger('change'); // Trigger the change to update the selection
-    }
-
-    // Update the price dynamically based on the selected variant price
-    var priceElement = document.getElementById('product-price');
-    if (priceElement && newPrice) {
-        priceElement.textContent = 'From £' + newPrice + '/unit'; // Update price text dynamically
-    }
-    
-    // Optionally update the featured image (if this is linked to the variation)
-    // jQuery('.product-gallery
-
 
         </div>
     </div>

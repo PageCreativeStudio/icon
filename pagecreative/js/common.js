@@ -320,22 +320,33 @@ jQuery(document).ready(function ($) {
 });
 
 
-// JavaScript to handle colour selection and update the main product image or variant
-function changeColour(colourSlug, newPrice) {
-    // Update the WooCommerce variation selection for colour (if you have product variations)
-    var productColour = jQuery('select[name="attribute_pa_colour"]'); // Select the colour attribute dropdown
-    if (productColour) {
-        productColour.val(colourSlug).trigger('change'); // Trigger the change to update the selection
-    }
-
-    // Update the price dynamically based on the selected variant price
-    var priceElement = document.getElementById('product-price');
-    if (priceElement && newPrice) {
-        priceElement.textContent = 'From £' + newPrice + '/unit'; // Update price text dynamically
-    }
-    
-    // Optionally update the featured image (if this is linked to the variation)
-    // jQuery('.product-gallery .slick-current').click();  // Trigger a click to change the image based on the new variation
-
-    console.log('Colour selected: ' + colourSlug + ' with price: ' + newPrice); // Debugging
-}
+jQuery(document).ready(function($) {
+    // Handle color variant selection
+    $('.color-variant').on('click', function() {
+        // Remove active class from all colors
+        $('.color-variant').removeClass('active');
+        $('.color-variant .color-check').hide();
+        
+        // Add active class to selected color
+        $(this).addClass('active');
+        $(this).find('.color-check').show();
+        
+        // Update price
+        var priceHtml = $(this).data('price-html');
+        if (priceHtml) {
+            $('.product-price').html(priceHtml);
+        } else {
+            // Fallback if price html is not available
+            var price = $(this).data('price');
+            if (price) {
+                $('.product-price').html('£' + parseFloat(price).toFixed(2) + '/unit');
+            }
+        }
+        
+        // Update hidden input with selected variation ID
+        $('#selected-variation-id').val($(this).data('variation-id'));
+        
+        // Trigger change event for WooCommerce if needed
+        $('#selected-variation-id').trigger('change');
+    });
+});
