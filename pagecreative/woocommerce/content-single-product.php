@@ -54,9 +54,9 @@ global $product;
                         $product_description = get_the_content();
 
                         if (!empty($product_description)) {
-                            echo '<div class="product-description font-14 pt-2">';
+                            echo '<div class="product-description font-14 pt-1">';
 
-                            echo '<div class="short-description font-14 py-2">';
+                            echo '<div class="short-description font-14 py-1">';
                             $words = explode(' ', $product_description);
                             $shortened = implode(' ', array_slice($words, 0, 54));
                             echo $shortened;
