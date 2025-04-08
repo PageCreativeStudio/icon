@@ -37,15 +37,13 @@ global $product;
             echo '<p class="text-black mb-0 pb-2">Choose a colour:</p>';
             echo '<div class="d-flex flex-wrap">';
             foreach ($terms as $term) {
-                // Assuming you have a custom field for the background colour of each term
-                $colour = get_term_meta($term->term_id, 'background_color', true); // Change 'background_color' to the correct meta key
+                // Retrieve the term meta value for the background color of each term
+                $colour = get_term_meta($term->term_id, 'background_color', true); // Replace 'background_color' with your custom field key
                 $colour = !empty($colour) ? $colour : '#000000'; // Default to black if not set
 
-                // Retrieve price from term meta (assuming you have a custom field for the price)
-                $term_price = get_term_meta($term->term_id, 'price', true); // Change 'price' to the correct meta key for the price
-
-                // If no price is set for the term, fall back to a default price
-                $term_price = !empty($term_price) ? $term_price : '4.80'; // Default price fallback
+                // Retrieve the term price from term meta (if available)
+                $term_price = get_term_meta($term->term_id, 'price', true); // Replace 'price' with the correct meta key for the price
+                $term_price = !empty($term_price) ? $term_price : '4.80'; // Default price fallback if not set
 
                 ?>
                 <!-- Color Variant Button (Clickable) -->
@@ -65,6 +63,25 @@ global $product;
         ?>
     </div>
 </div>
+
+<script>
+// JavaScript to handle colour selection and update the main product image or variant
+function changeColour(colourSlug, newPrice) {
+    // Update the WooCommerce variation selection for colour (if you have product variations)
+    var productColour = jQuery('select[name="attribute_pa_colour"]'); // Select the colour attribute dropdown
+    if (productColour) {
+        productColour.val(colourSlug).trigger('change'); // Trigger the change to update the selection
+    }
+
+    // Update the price dynamically based on the selected variant price
+    var priceElement = document.getElementById('product-price');
+    if (priceElement && newPrice) {
+        priceElement.textContent = 'From £' + newPrice + '/unit'; // Update price text dynamically
+    }
+    
+    // Optionally update the featured image (if this is linked to the variation)
+    // jQuery('.product-gallery
+
 
         </div>
     </div>

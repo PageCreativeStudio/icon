@@ -322,19 +322,20 @@ jQuery(document).ready(function ($) {
 
 // JavaScript to handle colour selection and update the main product image or variant
 function changeColour(colourSlug, newPrice) {
-    // Update the variant selection (e.g., update the WooCommerce product variation)
-    var product = document.querySelector('input[name="attribute_pa_colour"]');
-    if (product) {
-        product.value = colourSlug;  // Set the selected colour value
-        jQuery('form.cart').trigger('submit');  // Submit the form to update the product price and images based on selection
+    // Update the WooCommerce variation selection for colour (if you have product variations)
+    var productColour = jQuery('select[name="attribute_pa_colour"]'); // Select the colour attribute dropdown
+    if (productColour) {
+        productColour.val(colourSlug).trigger('change'); // Trigger the change to update the selection
     }
 
     // Update the price dynamically based on the selected variant price
     var priceElement = document.getElementById('product-price');
     if (priceElement && newPrice) {
-        priceElement.textContent = 'From £' + newPrice + '/unit'; // Update price text
+        priceElement.textContent = 'From £' + newPrice + '/unit'; // Update price text dynamically
     }
     
-    // You can also add custom code to change the image or other features when a colour is clicked
-    console.log('Colour selected: ' + colourSlug);  // Debugging
+    // Optionally update the featured image (if this is linked to the variation)
+    // jQuery('.product-gallery .slick-current').click();  // Trigger a click to change the image based on the new variation
+
+    console.log('Colour selected: ' + colourSlug + ' with price: ' + newPrice); // Debugging
 }
