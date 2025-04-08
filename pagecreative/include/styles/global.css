@@ -1474,10 +1474,10 @@ button {
 .product__toggle p{
 	font-size: 14px;
 }
-.product__toggle h2,
-.product__toggle h3,
-.product__toggle h4,
-.product__toggle h5{
+.toggle-content h2,
+.toggle-content h3,
+.toggle-content h4,
+.toggle-content h5{
 	font-size: 21px;
 }
 
