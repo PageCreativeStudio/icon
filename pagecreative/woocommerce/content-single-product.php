@@ -21,9 +21,6 @@ global $product;
 
 
 
-
-
-
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('custom-product', $product); ?>>
     <div class="container py-5">
         <div class="row">

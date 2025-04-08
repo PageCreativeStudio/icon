@@ -33,7 +33,7 @@
                 ?>
                 <div class="gallery-item">
                     <img src="<?php echo esc_url($image_link); ?>" srcset="<?php echo esc_attr($image_srcset); ?>"
-                        alt="<?php echo esc_attr($image_alt); ?>"> <!-- Use specific image alt text -->
+                        alt="<?php echo esc_attr($image_alt); ?>">
                 </div>
             <?php endforeach; ?>
 
