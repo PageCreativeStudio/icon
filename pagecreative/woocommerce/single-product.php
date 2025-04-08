@@ -21,9 +21,6 @@ endwhile; // end of the loop
 // Trigger action after product content ends
 // do_action( 'woocommerce_after_main_content' );
 
-get_template_part('template-parts/blocks/social-logos');
-get_template_part('template-parts/blocks/testimonials');
 
-'<div style="background: #ffc; padding: 1rem;">✅ social-logos.php loaded</div>'
 
 get_footer(); ?>

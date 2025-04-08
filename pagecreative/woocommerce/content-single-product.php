@@ -133,6 +133,8 @@ global $product;
     </div>
 </div>
 
+<?php get_template_part('template-parts/blocks/social-logos'); ?>
+<?php get_template_part('template-parts/blocks/testimonials'); ?>
 
 
 <!--<div id="product-<?php the_ID(); ?>" <?php wc_product_class('custom-product', $product); ?>>
