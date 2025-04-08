@@ -19,7 +19,7 @@ global $product;
                 ?>
             </div>
             <div class="col-12 col-lg pl-lg-5">
-                <h1 class="font-35 font-mb-30"><?php the_title(); ?></h1>
+                <h1 class="font-30 font-mb-25"><?php the_title(); ?></h1>
 
             </div>
         </div>
