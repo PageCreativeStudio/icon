@@ -271,13 +271,27 @@ jQuery(document).ready(function ($) {
 
 ///////// Product gallery
 jQuery(document).ready(function($) {
+    // Store all gallery images for reference
+    var galleryImages = [];
+    var currentIndex = 0;
+    var owlCarousel;
+    
+    // Collect all images from gallery including featured
+    function collectGalleryImages() {
+        galleryImages = [];
+        $('.product-gallery .gallery-item img').each(function(index) {
+            galleryImages.push($(this).attr('src'));
+        });
+    }
+    
     // Initialize Owl Carousel for the product gallery
-    $('.product-gallery').owlCarousel({
+    owlCarousel = $('.product-gallery').owlCarousel({
         items: 4,
         margin: 10,
-        nav: true,  // Enable next/previous navigation
+        nav: true,
+        navText: ['&#10094;', '&#10095;'],
         dots: false,
-        loop: true, // Infinite loop
+        loop: true,
         responsive: {
             0: {
                 items: 2
@@ -288,31 +302,61 @@ jQuery(document).ready(function($) {
             1000: {
                 items: 4
             }
+        },
+        onInitialized: function() {
+            collectGalleryImages();
         }
     });
-
+    
+    // Function to update the featured image
+    function updateFeaturedImage(imageUrl) {
+        $('.main-image img').attr('src', imageUrl);
+    }
+    
+    // Function to sync owl carousel position with our current index
+    function syncCarouselPosition(index) {
+        owlCarousel.trigger('to.owl.carousel', [index, 300]);
+    }
+    
     // Change featured image when clicking on a gallery image
-    $('.product-gallery .gallery-item img').on('click', function() {
-        var new_image = $(this).attr('src');
-        $('.main-image img').attr('src', new_image); // Update the featured image
+    $('.product-gallery').on('click', '.gallery-item img', function() {
+        var newImage = $(this).attr('src');
+        var clickedIndex = $(this).closest('.gallery-item').data('index');
+        
+        currentIndex = clickedIndex || 0;
+        updateFeaturedImage(newImage);
+        syncCarouselPosition(currentIndex);
     });
-
-    // Update main image when clicking next or previous in the carousel
-    $('.product-gallery').on('changed.owl.carousel', function(event) {
-        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
-        $('.main-image img').attr('src', currentImage); // Update the featured image to the active gallery image
-    });
-
+    
     // Custom Arrows for Featured Image
     $('.next-featured-image').on('click', function() {
-        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
-        $('.main-image img').attr('src', currentImage); // Update the main image when next is clicked
-        $('.product-gallery').trigger('next.owl.carousel'); // Move the gallery to the next image
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        updateFeaturedImage(galleryImages[currentIndex]);
+        syncCarouselPosition(currentIndex);
     });
-
+    
     $('.prev-featured-image').on('click', function() {
-        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
-        $('.main-image img').attr('src', currentImage); // Update the main image when previous is clicked
-        $('.product-gallery').trigger('prev.owl.carousel'); // Move the gallery to the previous image
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        updateFeaturedImage(galleryImages[currentIndex]);
+        syncCarouselPosition(currentIndex);
     });
+    
+    // Listen for Owl Carousel navigation events
+    $('.product-gallery').on('changed.owl.carousel', function(event) {
+        var element = event.target;
+        var currentItem = event.item.index;
+        
+        // Get the actual index considering the cloned items in loop mode
+        var actualIndex = $(element).find('.owl-item').eq(currentItem).find('.gallery-item').data('index');
+        
+        if (typeof actualIndex !== 'undefined') {
+            currentIndex = actualIndex;
+            updateFeaturedImage(galleryImages[currentIndex]);
+        }
+    });
+    
+    // Initialize with the first gallery image
+    if (galleryImages.length > 0) {
+        updateFeaturedImage(galleryImages[0]);
+    }
 });

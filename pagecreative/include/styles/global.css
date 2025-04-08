@@ -1360,12 +1360,14 @@ Custom CSS start here
     margin-bottom: 20px;
     text-align: center;
     position: relative;
+    width: 100%;
+    max-width: 600px;
 }
 
 .featured-image .main-image img {
     width: 100%;
-    max-width: 600px;  /* Adjust this based on your design */
     height: auto;
+    display: block;
 }
 
 .product-gallery {
@@ -1374,10 +1376,18 @@ Custom CSS start here
     margin-top: 20px;
 }
 
+.product-gallery .gallery-item {
+    cursor: pointer;
+}
+
 .product-gallery .gallery-item img {
     width: 100%;
     height: auto;
-    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.product-gallery .gallery-item img:hover {
+    opacity: 0.8;
 }
 
 .product-gallery .owl-nav {
@@ -1387,6 +1397,17 @@ Custom CSS start here
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+}
+
+.product-gallery .owl-nav button {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    color: white !important;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Custom Arrows for Featured Image */
@@ -1405,12 +1426,23 @@ Custom CSS start here
     color: white;
     border: none;
     font-size: 24px;
-    padding: 10px;
+    padding: 8px 12px;
     cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
 }
 
 .featured-image-arrows button:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Hide arrows if there's only one image */
+.product-gallery:only-child .owl-nav,
+.featured-image:only-child .featured-image-arrows {
+    display: none;
 }
 
 

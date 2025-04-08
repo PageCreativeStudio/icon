@@ -13,6 +13,7 @@ global $product;
     <div class="container-fluid mx-auto px-md-4">
         <div class="row">
             <div class="col-12 col-lg-6">
+
             <div class="product-images-container">
     <div class="featured-image">
         <!-- Featured Image -->
@@ -35,18 +36,36 @@ global $product;
         <!-- Product Gallery (Only show if gallery images exist) -->
         <div class="product-gallery owl-carousel">
             <?php
+            // Add the featured image as the first gallery item
+            if ( has_post_thumbnail() ) : 
+                $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            ?>
+                <div class="gallery-item" data-index="0">
+                    <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="Featured Product Image">
+                </div>
+            <?php endif; ?>
+            
+            <?php
             // Get the product gallery images
             $attachment_ids = $product->get_gallery_image_ids();
+            $index = 1;
             foreach ( $attachment_ids as $attachment_id ) :
                 $image_link = wp_get_attachment_url( $attachment_id ); // Get image URL
                 ?>
-                <div class="gallery-item">
+                <div class="gallery-item" data-index="<?php echo esc_attr( $index ); ?>">
                     <img src="<?php echo esc_url( $image_link ); ?>" alt="Product Image">
                 </div>
-            <?php endforeach; ?>
+            <?php 
+                $index++;
+                endforeach; 
+            ?>
         </div>
     <?php endif; ?>
 </div>
+
+
+            
+
             </div>
         </div>
     </div>
