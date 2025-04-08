@@ -259,17 +259,6 @@ jQuery(document).ready(function ($) {
     });
 }); 
 
-jQuery(document).ready(function ($) {
-    $('.testimonials__slider').owlCarousel({
-        loop: true,
-        nav: false,
-        margin: 15,
-        dots: true,
-        items: 1
-    });
-});
-
-///////// Product gallery
 jQuery(document).ready(function($) {
     // Initialize Owl Carousel for the product gallery
     var $productGallery = $('.product-gallery');
@@ -301,7 +290,7 @@ jQuery(document).ready(function($) {
     // Change featured image when clicking on a gallery image
     $('.product-gallery .gallery-item img').on('click', function() {
         var new_image = $(this).attr('src');
-        changeFeaturedImage(new_image); // Update the featured image
+        changeFeaturedImage(new_image); // Update the featured image with clicked gallery image
     });
 
     // Update main image when clicking next or previous in the carousel
@@ -310,12 +299,16 @@ jQuery(document).ready(function($) {
         changeFeaturedImage(currentImage); // Update the featured image to the active gallery image
     });
 
-    // Custom Arrows for Featured Image
+    // Custom Arrows for Featured Image Navigation
     $('.next-featured-image').on('click', function() {
         $productGallery.trigger('next.owl.carousel'); // Move the gallery to the next image
+        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
+        changeFeaturedImage(currentImage); // Update the featured image
     });
 
     $('.prev-featured-image').on('click', function() {
         $productGallery.trigger('prev.owl.carousel'); // Move the gallery to the previous image
+        var currentImage = $('.product-gallery .owl-item.active img').attr('src');
+        changeFeaturedImage(currentImage); // Update the featured image
     });
 });

@@ -1404,6 +1404,17 @@ Custom CSS start here
 .featured-image-arrows button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+.featured-image .main-image img {
+    transition: opacity 0.3s ease;
+}
+
+.product-gallery .gallery-item img {
+    transition: transform 0.3s ease;
+}
+
+.product-gallery .gallery-item img:hover {
+    transform: scale(1.05); /* Optional zoom effect */
+}
 
 
 
