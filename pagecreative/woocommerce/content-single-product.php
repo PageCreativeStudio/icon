@@ -42,12 +42,18 @@ global $product;
                             foreach ($attachment_ids as $attachment_id):
                                 $image_link = wp_get_attachment_url($attachment_id);
                                 $image_srcset = wp_get_attachment_image_srcset($attachment_id, 'full'); // Get srcset for responsive images
+                                $image_alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true); // Get alt text for the image
+                                if (empty($image_alt)) {
+                                    $image_alt = get_the_title(); // Fallback to product title if no alt text is set
+                                }
                                 ?>
                                 <div class="gallery-item">
                                     <img src="<?php echo esc_url($image_link); ?>"
-                                        srcset="<?php echo esc_attr($image_srcset); ?>" alt="<?php the_title(); ?>">
+                                        srcset="<?php echo esc_attr($image_srcset); ?>"
+                                        alt="<?php echo esc_attr($image_alt); ?>"> <!-- Use specific image alt text -->
                                 </div>
                             <?php endforeach; ?>
+
 
                             <div class="gallery-item featured-image-item">
                                 <?php
