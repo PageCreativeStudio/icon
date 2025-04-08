@@ -48,24 +48,28 @@ global $product;
                 </div>
 
                 <div class="borderbottom py-4">
-                    <div class="inneritem">
-                        <p class="text-black font-14 mb-0 pb-2">Product Description</p>
+    <div class="inneritem">
+        <p class="text-black font-14 mb-0 pb-2">Product Description</p>
 
-                        <div id="product-description" class="product-description">
-                            <?php
-                            $product_description = get_the_content();
-                            $words = explode(' ', $product_description);
-                            $short_description = implode(' ', array_splice($words, 0, 54));
-                            $remaining_description = implode(' ', array_splice($words, 54));
-                            echo '<span id="short-description">' . esc_html($short_description) . '</span>';
-                            echo '<span id="remaining-description" style="display:none;">' . esc_html($remaining_description) . '</span>';
-                            ?>
-                        </div>
+        <div id="product-description" class="product-description">
+            <?php 
+            // Get WooCommerce product description
+            $product_description = get_the_content();
+            
+            // Truncate to 54 words
+            $words = explode(' ', $product_description);
+            $short_description = implode(' ', array_splice($words, 0, 54)); 
+            $remaining_description = implode(' ', array_splice($words, 54)); 
 
-                        <button id="toggle-description" class="btn btn-link text-black"
-                            onclick="toggleDescription()">Read More</button>
-                    </div>
-                </div>
+            // Display truncated description
+            echo '<span id="short-description">' . esc_html($short_description) . '</span>';
+            echo '<span id="remaining-description" style="display:none;">' . esc_html($remaining_description) . '</span>';
+            ?>
+        </div>
+
+        <button id="toggle-description" class="btn btn-link text-black" onclick="toggleDescription()">Read More</button>
+    </div>
+</div>
 
                 <div class="colour-attributes borderbottom py-4 mt-1">
                     <?php

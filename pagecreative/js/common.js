@@ -348,12 +348,11 @@ jQuery(document).ready(function ($) {
 
 ///Product description collapsible 
 function toggleDescription() {
-    // Toggle between the short description and full description
     var shortDescription = document.getElementById('short-description');
     var remainingDescription = document.getElementById('remaining-description');
     var toggleButton = document.getElementById('toggle-description');
-
-    // If the description is truncated, show the full description
+    
+    // If the remaining description is hidden, show it
     if (remainingDescription.style.display === "none") {
         remainingDescription.style.display = "inline";  // Show full description
         toggleButton.textContent = "Collapse";  // Change button text
