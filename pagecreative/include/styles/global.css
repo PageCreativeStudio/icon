@@ -1467,6 +1467,10 @@ button {
 	transform: rotate(0deg);
 	transition: transform 0.3s ease-in;
 }
+.acf-toggle-item.active .toggle-header::after{
+	transition: transform 0.3s ease-in;
+	transform: rotate(90deg);
+}
 
 
 @media (min-width:767px) {

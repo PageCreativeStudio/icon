@@ -17,7 +17,7 @@ global $product;
                 set_query_var('product', $product);
                 get_template_part('woocommerce/image-gallery');
                 ?>
-                <div class="product__toggle">
+                <div class="product__toggle py-5">
                     <?php if (have_rows('collaspsibles_repeater')): ?>
                         <div class="acf-collapsibles">
                             <?php while (have_rows('collaspsibles_repeater')):
