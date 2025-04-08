@@ -63,6 +63,8 @@ global $product;
 
             // Display truncated description
             echo '<span id="short-description">' . esc_html($short_description) . '</span>';
+
+            // Display remaining description (hidden initially)
             echo '<span id="remaining-description" style="display:none;">' . esc_html($remaining_description) . '</span>';
             ?>
         </div>
