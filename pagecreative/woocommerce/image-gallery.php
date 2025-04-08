@@ -51,8 +51,6 @@ $product = get_query_var('product');
                         alt="<?php echo esc_attr($image_alt); ?>">
                 </div>
             <?php endforeach; ?>
-
-            <!-- Featured Image as Part of the Carousel -->
             <div class="gallery-item featured-image-item">
                 <?php
                 echo wp_get_attachment_image($thumbnail_id, 'full', false, array('srcset' => $srcset, 'sizes' => $sizes));

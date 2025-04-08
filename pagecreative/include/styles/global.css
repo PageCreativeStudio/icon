@@ -1394,7 +1394,13 @@ Custom CSS start here
 	z-index: 10;
 }
 
-.featured-image-arrows svg {}
+.featured-image-arrows button{
+	
+}
+
+.featured-image-arrows svg {
+
+}
 
 
 
