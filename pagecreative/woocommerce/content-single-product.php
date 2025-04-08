@@ -145,7 +145,7 @@ global $product;
                     }
                     ?>
                 </div>
-                <div class="product__toggle py-5 d-block d-lg-none">
+                <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
                     <?php if (have_rows('collaspsibles_repeater')): ?>
                         <div class="acf-collapsibles">
                             <?php while (have_rows('collaspsibles_repeater')):
