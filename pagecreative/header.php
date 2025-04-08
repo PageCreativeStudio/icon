@@ -81,7 +81,7 @@
 									alt="icon printing">
 							</a>
 						</div>
-						<div class="col-6 col-lg-5 align-self-center order-lg-3 d-none d-lg-block">
+						<div class="col-6 col-lg-5 align-self-center order-lg-3 d-none d-lg-block pr-lg-0">
 							<div class="d-flex flex-wrap justify-content-end align-items-center">
 								<a class="mr-3" href="<?php echo home_url(); ?>/my-account/">Sign in</a>
 								<a class="btna mr-3" href="#">Get a quote</a>
