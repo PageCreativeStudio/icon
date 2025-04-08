@@ -23,7 +23,7 @@ global $product;
                     <p class="font-15 mb-0">Continental ICP-01</p>
                     <p class="font-15 mb-0">SKU25365</p>
                 </div>
-                <h1 class="font-30 font-mb-25"><?php the_title(); ?></h1>
+                <h1 class="font-30 font-mb-25 my-2"><?php the_title(); ?></h1>
                 <h2 class="font-18">From £4.80/unit</h2>
             </div>
         </div>
