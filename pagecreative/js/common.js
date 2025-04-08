@@ -267,7 +267,7 @@ jQuery(document).ready(function ($) {
         nav: true,
         dots: false,
         loop: true,
-        center: true,
+        center: false,
         responsive: {
             0: {
                 items: 2

@@ -1360,18 +1360,19 @@ Custom CSS start here
     width: 100%;
     max-width: 100%;
     height: auto;
+	max-height: 45rem;
 }
 
 .product-gallery {
     width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
+    max-width: 33rem;
+    margin: 2rem auto;
 }
 
 .product-gallery .gallery-item img {
-    width: 100%;
-    height: auto;
     cursor: pointer;
+    height: 9rem;
+    object-fit: cover;
 }
 
 .product-gallery .owl-nav {
