@@ -24,7 +24,8 @@ $product = get_query_var('product');
                         stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </button>
-            <button class="next-featured-image" aria-label="Next Featured Image<svg xmlns=" http://www.w3.org/2000/svg"
+            <button class="next-featured-image" aria-label="Next Featured Image">
+                <svg xmlns=" http://www.w3.org/2000/svg"
                 width="22" height="40" viewBox="0 0 22 40" fill="none">
                 <path d="M1.49443 1.03613L20.2808 19.8225L1.49443 38.6088" stroke="#333333" stroke-width="1.5"
                     stroke-linecap="round" stroke-linejoin="round" />

@@ -1352,59 +1352,49 @@ Custom CSS start here
 
 
 .product-images-container {
-    display: inline-block;
+	display: inline-block;
 	width: 100%;
 }
 
 .featured-image .main-image img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
 	max-height: 45rem;
 }
 
 .product-gallery {
-    width: 100%;
-    max-width: 33rem;
-    margin: 2rem auto;
+	width: 100%;
+	max-width: 33rem;
+	margin: 2rem auto;
 }
 
 .product-gallery .gallery-item img {
-    cursor: pointer;
-    height: 9rem;
-    object-fit: cover;
+	cursor: pointer;
+	height: 9rem;
+	object-fit: cover;
 }
 
 .product-gallery .owl-nav {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	transform: translateY(-50%);
 }
+
 .featured-image-arrows {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    z-index: 10;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	transform: translateY(-50%);
+	z-index: 10;
 }
 
-.featured-image-arrows button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.featured-image-arrows button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
+.featured-image-arrows svg {}
 
 
 
