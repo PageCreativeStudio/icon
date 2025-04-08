@@ -14,7 +14,6 @@ global $product;
         <div class="row">
             <div class="col-12 col-lg-6">
                 <?php
-                // Pass the $product object to the template part
                 set_query_var('product', $product);
                 get_template_part('woocommerce/image-gallery');
                 ?>

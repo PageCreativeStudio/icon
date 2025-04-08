@@ -1,5 +1,4 @@
-<?php 
-// Get the passed product object
+<?php
 $product = get_query_var('product');
 ?>
 
@@ -38,7 +37,7 @@ $product = get_query_var('product');
                 ?>
                 <div class="gallery-item">
                     <img src="<?php echo esc_url($image_link); ?>" srcset="<?php echo esc_attr($image_srcset); ?>"
-                         alt="<?php echo esc_attr($image_alt); ?>">
+                        alt="<?php echo esc_attr($image_alt); ?>">
                 </div>
             <?php endforeach; ?>
 
