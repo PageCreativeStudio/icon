@@ -10,14 +10,14 @@ global $product;
 ?>
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('custom-product', $product); ?>>
-    <div class="container-fluid mx-auto px-md-4 pb-5 mb-5">
+    <div class="container-fluid mx-auto px-md-4 pb-lg-5 mb-lg-5">
         <div class="row pb-5 mb-5">
             <div class="col-12 col-lg-6 max-50 pr-lg-5">
                 <?php
                 set_query_var('product', $product);
                 get_template_part('woocommerce/image-gallery');
                 ?>
-                <div class="product__toggle py-5">
+                <div class="product__toggle py-5 d-none d-lg-block">
                     <?php if (have_rows('collaspsibles_repeater')): ?>
                         <div class="acf-collapsibles">
                             <?php while (have_rows('collaspsibles_repeater')):
@@ -144,6 +144,23 @@ global $product;
                         echo '<input type="hidden" name="variation_id" id="selected-variation-id" value="">';
                     }
                     ?>
+                </div>
+                <div class="product__toggle py-5 d-block d-lg-none">
+                    <?php if (have_rows('collaspsibles_repeater')): ?>
+                        <div class="acf-collapsibles">
+                            <?php while (have_rows('collaspsibles_repeater')):
+                                the_row(); ?>
+                                <div class="acf-toggle-item">
+                                    <h3 class="toggle-header font-16"><?php echo esc_html(get_sub_field('title')); ?></h3>
+                                    <div class="toggle-content">
+                                        <div class="pt-3 pb-4">
+                                            <?php echo get_sub_field('content'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
 
