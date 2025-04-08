@@ -40,15 +40,22 @@ global $product;
                 // Assuming you have a custom field for the background colour of each term
                 $colour = get_term_meta($term->term_id, 'background_color', true); // Change 'background_color' to the correct meta key
                 $colour = !empty($colour) ? $colour : '#000000'; // Default to black if not set
+
+                // Retrieve price from term meta (assuming you have a custom field for the price)
+                $term_price = get_term_meta($term->term_id, 'price', true); // Change 'price' to the correct meta key for the price
+
+                // If no price is set for the term, fall back to a default price
+                $term_price = !empty($term_price) ? $term_price : '4.80'; // Default price fallback
+
                 ?>
                 <!-- Color Variant Button (Clickable) -->
                 <button 
                     class="colour-option btn mr-2 mb-2" 
                     style="background-color: <?php echo esc_attr($colour); ?>;"
                     data-colour="<?php echo esc_attr($term->slug); ?>"
-                    data-price="<?php echo esc_attr($term->price); ?>"  <!-- Assuming you store price in the term -->
+                    data-price="<?php echo esc_attr($term_price); ?>"
                     aria-label="Choose Colour: <?php echo esc_attr($term->name); ?>"
-                    onclick="changeColour('<?php echo esc_js($term->slug); ?>', '<?php echo esc_js($term->price); ?>')">
+                    onclick="changeColour('<?php echo esc_js($term->slug); ?>', '<?php echo esc_js($term_price); ?>')">
                     <?php echo esc_html($term->name); ?>
                 </button>
                 <?php
