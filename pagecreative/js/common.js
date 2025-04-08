@@ -268,3 +268,31 @@ jQuery(document).ready(function ($) {
         items: 1
     });
 });
+
+///////// Product gallery
+jQuery(document).ready(function($) {
+    // Initialize Owl Carousel for the product gallery
+    $('.product-gallery').owlCarousel({
+        items: 4,
+        margin: 10,
+        nav: true,  // Enable next/previous navigation
+        dots: false,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
+
+    // Change featured image when clicking on a gallery image
+    $('.product-gallery .gallery-item img').on('click', function() {
+        var new_image = $(this).attr('src');
+        $('.main-image img').attr('src', new_image); // Update the featured image
+    });
+});
