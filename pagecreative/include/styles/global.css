@@ -1427,10 +1427,12 @@ Custom CSS start here
 @media (max-width:767px) {
 	.product-gallery .owl-next {
 		margin-top: 0;
+		right: 0;
 	}
 
 	.product-gallery .owl-prev {
 		margin-top:0;
+		left: 0;
 	}
 }
 
