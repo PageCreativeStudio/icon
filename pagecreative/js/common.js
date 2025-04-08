@@ -297,7 +297,7 @@ jQuery(document).ready(function($) {
         $('.main-image img').attr('src', new_image); // Update the featured image
     });
 
-    // Update main image when clicking on next/previous on carousel
+    // Update main image when clicking next or previous in the carousel
     $('.product-gallery').on('changed.owl.carousel', function(event) {
         var currentImage = $('.product-gallery .owl-item.active img').attr('src');
         $('.main-image img').attr('src', currentImage); // Update the featured image to the active gallery image
