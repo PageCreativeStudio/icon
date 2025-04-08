@@ -19,13 +19,28 @@ global $product;
                 ?>
             </div>
             <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0">
-                <div class="d-flex flex-wrap justify-content-between pb-0">
-                    <p class="font-16 font-mb-14 mb-0">Continental ICP-01</p>
-                    <p class="font-16 font-mb-14 mb-0">SKU25365</p>
+                <div class="borderbottom">
+                    <div class="d-flex flex-wrap justify-content-between pb-0">
+                        <p class="font-16 font-mb-14 mb-0">Continental ICP-01</p>
+                        <p class="font-16 font-mb-14 mb-0">SKU25365</p>
+                    </div>
+                    <h1 class="font-30 font-mb-25 my-2"><?php the_title(); ?></h1>
+                    <h2 class="font-18">From £4.80/unit</h2>
                 </div>
-                <h1 class="font-30 font-mb-25 my-2"><?php the_title(); ?></h1>
-                <h2 class="font-18">From £4.80/unit</h2>
+
+                <div class="colour-attributes borderbottom">
+                    <?php
+                    $terms = get_the_terms(get_the_ID(), 'pa_colour');
+                    if ($terms && !is_wp_error($terms)) {
+                        echo '<strong>Colour:</strong><br>';
+                        foreach ($terms as $term) {
+                            echo '<span class="badge bg-primary mr-2">' . esc_html($term->name) . '</span>';
+                        }
+                    }
+                    ?>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
