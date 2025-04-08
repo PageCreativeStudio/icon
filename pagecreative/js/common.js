@@ -319,3 +319,16 @@ jQuery(document).ready(function ($) {
     });
 });
 
+
+function changeColour(colourSlug) {
+    // Update the variant selection (e.g., update the WooCommerce product variation)
+    var product = document.querySelector('input[name="attribute_pa_colour"]');
+    if (product) {
+        product.value = colourSlug;  // Set the selected colour value
+        jQuery('form.cart').trigger('submit');  // Submit the form to update the product price and images based on selection
+    }
+    
+    // You can also add custom code to change the image or other features when a colour is clicked
+    // For example, if you have an image mapped to each colour, you can add a function to change the image
+    console.log('Colour selected: ' + colourSlug);  // Debugging
+}

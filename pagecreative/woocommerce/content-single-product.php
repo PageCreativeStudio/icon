@@ -28,19 +28,33 @@ global $product;
                     <h2 class="font-18">From £4.80/unit</h2>
                 </div>
 
+                <!-- Colour Attributes (Clickable with background color) -->
                 <div class="colour-attributes borderbottom py-4 mt-1">
                     <?php
+                    // Get the 'pa_colour' attribute terms
                     $terms = get_the_terms(get_the_ID(), 'pa_colour');
                     if ($terms && !is_wp_error($terms)) {
                         echo '<p class="text-black mb-0 pb-2">Choose a colour:</p>';
+                        echo '<div class="d-flex flex-wrap">';
                         foreach ($terms as $term) {
-                            echo '<span class="badge bg-primary mr-2">' . esc_html($term->name) . '</span>';
+                            // Get the term meta for background colour (you may have set this in your attributes)
+                            $colour = get_term_meta($term->term_id, 'pa_colour', true); // Assumes you have a custom field for the background color of the term
+                            ?>
+                            <!-- Color Variant Button (Clickable) -->
+                            <button class="colour-option btn mr-2 mb-2"
+                                style="background-color: <?php echo esc_attr($colour); ?>;"
+                                data-colour="<?php echo esc_attr($term->slug); ?>"
+                                aria-label="Choose Colour: <?php echo esc_attr($term->name); ?>"
+                                onclick="changeColour('<?php echo esc_js($term->slug); ?>')">
+                                <?php echo esc_html($term->name); ?>
+                            </button>
+                            <?php
                         }
+                        echo '</div>';
                     }
                     ?>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
