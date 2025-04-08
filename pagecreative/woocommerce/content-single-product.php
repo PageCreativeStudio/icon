@@ -28,7 +28,7 @@ global $product;
                     <h2 class="font-18">From £4.80/unit</h2>
                 </div>
 
-                <div class="colour-attributes borderbottom py-3 mt-1">
+                <div class="colour-attributes borderbottom py-4 mt-1">
                     <?php
                     $terms = get_the_terms(get_the_ID(), 'pa_colour');
                     if ($terms && !is_wp_error($terms)) {
