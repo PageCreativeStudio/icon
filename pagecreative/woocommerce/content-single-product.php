@@ -4,7 +4,7 @@
  * This is a completely custom layout for displaying product details.
  */
 
-defined( 'ABSPATH' ) || exit;  // Exit if accessed directly.
+defined( 'ABSPATH' ) || exit; 
 
 global $product;
 ?>
