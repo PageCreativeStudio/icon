@@ -1548,6 +1548,7 @@ button {
     padding: 7px 0 4px 0;
     max-width: 95px;
 	z-index: 999;
+	cursor: pointer;
 }
 
 .quickquote__opener {
