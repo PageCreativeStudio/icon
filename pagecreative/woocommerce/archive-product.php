@@ -36,13 +36,12 @@ get_header(); ?>
                             ?>
                             <div class="col-md-6 col-md-4 col-lg-3 pb-3">
                                 <div class="productcard__container text-center">
-                                    <?php if (has_post_thumbnail()): ?>
+                            
                                         <a href="<?php the_permalink(); ?>">
                                             <div class="product-image">
                                                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
                                             </div>
                                         </a>
-                                    <?php endif; ?>
 
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
