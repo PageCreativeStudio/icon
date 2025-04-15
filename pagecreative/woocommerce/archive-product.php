@@ -32,32 +32,53 @@ get_header(); ?>
                     if (have_posts()):
                         while (have_posts()):
                             the_post();
+                            global $product; // WooCommerce product object
                             ?>
-                            <div class="col-md-4 col-sm-6">
-                                <!-- Bootstrap Card for Product -->
-                                <div class="card">
-                                    <div class="card-body">
-                                        <?php if (has_post_thumbnail()): ?>
+                            <div class="col-md-6 col-md-4 col-lg-3">
+                                <div class="productcard__container">
+                                    <?php if (has_post_thumbnail()): ?>
+                                        <a href="<?php the_permalink(); ?>">
                                             <div class="product-image">
-                                                <?php the_post_thumbnail('medium'); ?>
+                                                <?php the_post_thumbnail('full'); ?>
                                             </div>
-                                        <?php endif; ?>
+                                        </a>
+                                    <?php endif; ?>
 
-                                        <h5 class="card-title"><?php the_title(); ?></h5>
-                                        <p class="card-text"><?php echo $product->get_price_html(); ?></p>
+                                    <h3 class="card-title"><?php the_title(); ?></h3>
 
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">View Product</a>
-                                    </div>
+                                    <!-- Excerpt with 5 words -->
+                                    <p class="product-excerpt">
+                                        <?php
+                                        $description = wp_strip_all_tags($product->get_short_description());
+                                        echo wp_trim_words($description, 5, '...');
+                                        ?>
+                                    </p>
+
+                                    <!-- Display minimum price if variable -->
+                                    <p>
+                                        From
+                                        <?php
+                                        if ($product->is_type('variable')) {
+                                            $prices = $product->get_variation_prices();
+                                            $min_price = min($prices['price']);
+                                            echo wc_price($min_price);
+                                        } else {
+                                            echo $product->get_price_html();
+                                        }
+                                        ?>
+                                        /unit
+                                    </p>
                                 </div>
                             </div>
-
                             <?php
                         endwhile;
 
                         the_posts_navigation();
                     else:
-                        echo 'No Products found.';
-                    endif; ?>
+                        echo 'No Product found.';
+                    endif;
+                    ?>
+
                 </div>
             </div>
         </div>
