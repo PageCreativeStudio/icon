@@ -1511,6 +1511,9 @@ button {
     color: white;
 	transition: 0.3s ease-in-out;
 }
+.productcard__container .product-image{
+
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {

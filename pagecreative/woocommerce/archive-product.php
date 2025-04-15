@@ -32,7 +32,7 @@ get_header(); ?>
                     if (have_posts()):
                         while (have_posts()):
                             the_post();
-                            global $product; // WooCommerce product object
+                            global $product;
                             ?>
                             <div class="col-md-6 col-md-4 col-lg-3">
                                 <div class="productcard__container">
@@ -44,9 +44,8 @@ get_header(); ?>
                                         </a>
                                     <?php endif; ?>
 
-                                    <h3 class="card-title"><?php the_title(); ?></h3>
+                                    <h3 class="font-15"><?php the_title(); ?></h3>
 
-                                    <!-- Excerpt with 5 words -->
                                     <p class="product-excerpt">
                                         <?php
                                         $description = wp_strip_all_tags($product->get_short_description());
@@ -54,7 +53,6 @@ get_header(); ?>
                                         ?>
                                     </p>
 
-                                    <!-- Display minimum price if variable -->
                                     <p>
                                         From
                                         <?php
