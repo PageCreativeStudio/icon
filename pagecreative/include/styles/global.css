@@ -1519,6 +1519,15 @@ button {
     object-fit: contain;
 }
 
+.color-dot {
+    cursor: default;
+    transition: transform 0.2s ease;
+}
+.color-dot:hover {
+    transform: scale(1.2);
+}
+
+
 @media (min-width:767px) {
 	.product-gallery .owl-next {
 		margin-top: -9px;

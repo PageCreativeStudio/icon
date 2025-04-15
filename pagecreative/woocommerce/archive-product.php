@@ -44,6 +44,38 @@ get_header(); ?>
                                         </a>
                                     <?php endif; ?>
 
+                                    <?php
+// Get global product object
+global $product;
+
+// Replace 'pa_color' with your actual attribute name
+$colors = $product->get_attribute('pa_color');
+
+// Convert attribute values to array
+$color_array = array_map('trim', explode('|', $colors));
+$max_display = 6;
+$displayed_colors = array_slice($color_array, 0, $max_display);
+$extra_count = count($color_array) - $max_display;
+?>
+
+<?php if (!empty($color_array) && $colors !== ''): ?>
+    <div class="product-colors d-flex align-items-center mt-2">
+        <?php foreach ($displayed_colors as $color): ?>
+            <div class="color-dot me-1 rounded-circle" title="<?php echo esc_attr($color); ?>" 
+                style="width: 16px; height: 16px; background-color: <?php echo esc_attr(strtolower($color)); ?>; border: 1px solid #ccc;">
+            </div>
+        <?php endforeach; ?>
+
+        <?php if ($extra_count > 0): ?>
+            <div class="color-dot more-colors ms-1 rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 16px; height: 16px; background-color: #f0f0f0; font-size: 10px; border: 1px solid #ccc;">
+                +<?php echo $extra_count; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
+
+
                                     <a href="<?php the_permalink(); ?>">
                                         <h3 class="font-16 mb-0 pb-1 pt-2"><?php the_title(); ?></h3>
                                     </a>
