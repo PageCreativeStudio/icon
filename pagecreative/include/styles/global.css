@@ -1551,6 +1551,7 @@ button {
 	top: 0;
 	left: 0;
 	object-fit: contain;
+	align-content: center;
 }
 
 .productcard__container .product-image {
