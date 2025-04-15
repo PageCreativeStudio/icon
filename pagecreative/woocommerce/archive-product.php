@@ -46,12 +46,14 @@ get_header(); ?>
 
                                     <h3 class="font-18"><?php the_title(); ?></h3>
 
-                                    <p class="product-excerpt">
-                                        <?php
-                                        $description = wp_strip_all_tags($product->get_short_description());
-                                        echo wp_trim_words($description, 5, '...');
-                                        ?>
-                                    </p>
+                                    <?php
+                                    $description = wp_strip_all_tags($product->get_short_description());
+                                    if (!empty($description)): ?>
+                                        <p class="product-excerpt text-gray">
+                                            <?php echo wp_trim_words($description, 5, '...'); ?>
+                                        </p>
+                                    <?php endif; ?>
+
 
                                     <p class="text-black font-15">
                                         From
