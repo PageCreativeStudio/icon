@@ -8,21 +8,21 @@ get_header(); ?>
 
 <div class="container-fluid mx-auto px-md-4 pb-lg-5 mb-lg-5">
     <div class="row">
-        
+
     </div>
 </div>
 
 <!-- Custom Bootstrap Layout for Shop Page -->
 <div class="container-fluid px-0 mx-auto text-center">
     <!-- Optional: Display Page Content if needed -->
-    <div class="page-content">
-        <?php
-        while (have_posts()):
-            the_post();
-            the_content(); // Displays the content of the page (e.g., any introductory text)
-        endwhile;
-        ?>
-    </div>
+    <!--<div class="page-content">
+                <?php
+                while (have_posts()):
+                    the_post();
+                    the_content();
+                endwhile;
+                ?>
+    </div>-->
 
     <!-- Custom Product Grid Layout with Bootstrap -->
     <div class="row">
