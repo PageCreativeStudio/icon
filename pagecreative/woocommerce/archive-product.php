@@ -44,41 +44,41 @@ get_header(); ?>
                                         </a>
                                     <?php endif; ?>
 
-                                    <?php
-global $product;
+                                    <div class="d-flex flex-wrap gap-1 justify-content-center pb-2">
+    <?php
+    $terms = get_the_terms($product->get_id(), 'pa_colour');
+    if ($terms && !is_wp_error($terms)) {
+        $max_to_show = 6;
+        $count = 0;
+        foreach ($terms as $term) {
+            if ($count >= $max_to_show) break;
 
-if ( ! $product instanceof WC_Product ) {
-    $product = wc_get_product( get_the_ID() );
-}
+            $name = strtolower($term->name);
+            // Map common colour names to basic CSS colours
+            $color_map = [
+                'black' => '#000000',
+                'white' => '#ffffff',
+                'light beige (sand)' => '#f5f5dc',
+                'burgundy' => '#800020',
+                'bright blue' => '#0096ff',
+                'dark navy' => '#000080',
+                'sage green' => '#9dc183',
+                'melange grey' => '#a9a9a9',
+            ];
 
-$attribute_name = 'pa_color'; // make sure this is the exact slug from Attributes
-$colors = wp_get_post_terms( $product->get_id(), $attribute_name );
+            // Default to grey if colour not found
+            $bg_color = $color_map[$name] ?? '#ccc';
 
-if ( ! empty( $colors ) && ! is_wp_error( $colors ) ) {
-    $max_display = 6;
-    $displayed_colors = array_slice( $colors, 0, $max_display );
-    $extra_count = count( $colors ) - $max_display;
+            echo '<div style="width:20px;height:20px;border-radius:50%;background:' . esc_attr($bg_color) . '; border:1px solid #999;"></div>';
+            $count++;
+        }
+
+        if (count($terms) > $max_to_show) {
+            echo '<div class="d-flex align-items-center justify-content-center" style="width:20px;height:20px;border-radius:50%;border:1px solid #999;font-size:14px;">+</div>';
+        }
+    }
     ?>
-    
-    <div class="product-colors d-flex align-items-center mt-2 flex-wrap">
-        <?php foreach ( $displayed_colors as $term ): 
-            $color_name = $term->name;
-        ?>
-            <div class="color-dot me-1 mb-1 rounded-circle" 
-                title="<?php echo esc_attr( $color_name ); ?>"
-                style="width: 16px; height: 16px; background-color: <?php echo esc_attr( strtolower( $color_name ) ); ?>; border: 1px solid #ccc;">
-            </div>
-        <?php endforeach; ?>
-
-        <?php if ( $extra_count > 0 ): ?>
-            <div class="color-dot more-colors ms-1 rounded-circle d-flex align-items-center justify-content-center"
-                style="width: 16px; height: 16px; background-color: #f0f0f0; font-size: 10px; border: 1px solid #ccc;">
-                +<?php echo $extra_count; ?>
-            </div>
-        <?php endif; ?>
-    </div>
-<?php } ?>
-
+</div>
 
 
                                     <a href="<?php the_permalink(); ?>">
@@ -119,7 +119,6 @@ if ( ! empty( $colors ) && ! is_wp_error( $colors ) ) {
                         echo 'No Product found.';
                     endif;
                     ?>
-
                 </div>
             </div>
         </div>
