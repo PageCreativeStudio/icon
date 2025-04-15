@@ -1481,6 +1481,11 @@ button {
 	font-size: 21px;
 }
 
+.category__filter form{
+	display: flex;
+	flex-wrap: wrap;
+}
+
 @media (min-width:767px) {
 	.product-gallery .owl-next {
 		margin-top: -9px;
