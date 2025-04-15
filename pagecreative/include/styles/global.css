@@ -1518,8 +1518,12 @@ button {
 	min-height: 14rem;
     object-fit: contain;
 }
-.available-colors{
-	
+.available-colors,
+.more-colour{
+	height: 13px;
+    width: 13px;
+    border-radius: 60px;
+    margin-right: 4px;
 }
 
 

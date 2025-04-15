@@ -44,7 +44,7 @@ get_header(); ?>
                                         </a>
                                     <?php endif; ?>
 
-                                    <div class="d-flex flex-wrap gap-1 justify-content-center pb-2">
+                                    <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
                                         <?php
                                         $attributes = $product->get_attributes();
                                         $max_to_show = 6;
@@ -75,7 +75,7 @@ get_header(); ?>
                                             }
 
                                             if (count($colour_values) > $max_to_show) {
-                                                echo '<div title="More Colours" class="d-flex align-items-center justify-content-center" style="width:20px;height:20px;border-radius:50%;border:1px solid #999;font-size:14px;">+</div>';
+                                                echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center" style="font-size:14px;">+</div>';
                                             }
                                         }
                                         ?>
