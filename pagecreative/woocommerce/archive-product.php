@@ -84,7 +84,7 @@ get_header(); ?>
                                     </div>
 
                                     <a href="<?php the_permalink(); ?>">
-                                        <h3 class="font-16 mb-0 pb-1 pt-2"><?php the_title(); ?></h3>
+                                        <h3 class="font-17 font-mb-16 mb-0 pb-1 pt-2"><?php the_title(); ?></h3>
                                     </a>
 
                                     <?php
