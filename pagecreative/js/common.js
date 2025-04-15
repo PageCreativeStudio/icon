@@ -388,14 +388,16 @@ jQuery(document).ready(function ($) {
 
 
 /// Quickquote drawer
-const openBtn = document.querySelector('.quickquote');
-const drawer = document.querySelector('.quickquote__opener');
-const closeBtn = document.querySelector('.quickquote__opener .closedrawer');
+jQuery(document).ready(function ($) {
+    const openBtn = document.querySelector('.quickquote');
+    const drawer = document.querySelector('.quickquote__opener');
+    const closeBtn = document.querySelector('.quickquote__opener .closedrawer');
 
-openBtn.addEventListener('click', () => {
-    drawer.classList.add('active');
-});
+    openBtn.addEventListener('click', () => {
+        drawer.classList.add('active');
+    });
 
-closeBtn.addEventListener('click', () => {
-    drawer.classList.remove('active');
+    closeBtn.addEventListener('click', () => {
+        drawer.classList.remove('active');
+    });
 });
