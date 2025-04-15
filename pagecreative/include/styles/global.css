@@ -1493,9 +1493,14 @@ button {
 	font-size: 14px;
 }
 .megafilter-group form > ul > li{
-
+    border-bottom: solid 1px #CCCCCC;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
-
+.searchandfilter h4 {
+    padding: 5px 0 4px;
+    font-size: 17px;
+}
 
 .category__filter form ul {
 	display: flex;
