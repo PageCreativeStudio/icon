@@ -1503,7 +1503,7 @@ button {
     font-size: 17px;
 }
 
-.category__filter form ul li label{
+.searchandfilter ul li label{
 	cursor: pointer;
 }
 
