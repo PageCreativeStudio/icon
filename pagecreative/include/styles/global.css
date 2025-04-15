@@ -1615,4 +1615,13 @@ button {
 		text-align: left;
 		padding-left: 20px;
 	}
+	.category__filter .sf-field-taxonomy-product_cat{
+		display: block!important;
+	}
+	.category__filter form > ul li{
+		display: none;
+	}
+	.megafilter-group .sf-field-taxonomy-product_cat{
+		display: none;
+	}
 }

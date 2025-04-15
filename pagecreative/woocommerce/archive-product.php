@@ -16,7 +16,7 @@ get_header(); ?>
     </div>
     <div class="row">
         <div class="col-12 col-lg-3">
-            <div class="filter-group">
+            <div class="megafilter-group">
                 <?php
                 $filter_shortcode = '[searchandfilter id="1102"]';
                 $filter_html = do_shortcode($filter_shortcode);
