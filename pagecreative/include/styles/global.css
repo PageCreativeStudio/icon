@@ -1566,11 +1566,11 @@ button {
 	right: 0;
   }
   .closedrawer{
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	font-size: 24px;
-	cursor: pointer;
+    right: 1rem;
+    position: absolute;
+    top: 10px;
+    font-size: 33px;
+    cursor: pointer;
   }
 
 @media (min-width:767px) {

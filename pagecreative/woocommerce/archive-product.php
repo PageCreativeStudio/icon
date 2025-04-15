@@ -126,7 +126,7 @@ get_header(); ?>
 </div>
 
 <div class="quickquote__opener">
-    <div class="max-40 bg-white">
+    <div class="max-40 bg-white py-4 px-4">
         <span class="closedrawer">&times;</span>
         <h2> this is heading 2</h2>
     </div>
