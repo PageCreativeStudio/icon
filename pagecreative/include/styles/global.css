@@ -1513,7 +1513,6 @@ button {
 }
 .productcard__container .product-image{
 	background: #f8f9f5;
-    margin-bottom: 16px;
 }
 
 @media (min-width:767px) {
