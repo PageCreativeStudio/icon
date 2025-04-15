@@ -38,13 +38,11 @@ get_header(); ?>
                                 <div class="productcard__container text-center">
 
                                     <a href="<?php the_permalink(); ?>">
-                                        <div class="product-image position-relative"
-                                            style="width: 100%; padding-bottom: 130%; background-color: rgba(51, 51, 51, 0.05); overflow: hidden;">
+                                        <div class="product-image position-relative">
                                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
                                                 class="" loading="lazy">
                                         </div>
                                     </a>
-
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
                                         <!-- <?php
