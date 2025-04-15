@@ -7,12 +7,13 @@ get_header(); ?>
 
 
 <div class="container-fluid mx-auto px-md-4 pb-lg-5 mb-lg-5">
-    
-    <?php
-    $filter_shortcode2 = '[searchandfilter id="1104"]';
-    $filter_html = do_shortcode($filter_shortcode2);
-    echo $filter_html;
-    ?>
+    <div class="d-flex flex-wrap">
+        <?php
+        $filter_shortcode2 = '[searchandfilter id="1104"]';
+        $filter_html = do_shortcode($filter_shortcode2);
+        echo $filter_html;
+        ?>
+    </div>
     <div class="row">
         <div class="col-12 col-lg-3">
             <div class="filter-group">
