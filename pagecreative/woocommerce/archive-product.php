@@ -8,7 +8,7 @@ get_header(); ?>
 
 <div class="container-fluid mx-auto px-md-4 pb-lg-5 mb-lg-5">
     <div class="row">
-
+        
     </div>
 </div>
 
