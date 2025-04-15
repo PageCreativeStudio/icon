@@ -1547,6 +1547,29 @@ button {
 	overflow: hidden;
 }
 
+.quickquote__opener {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 300px;
+	height: 100%;
+	background: #fff;
+	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+	transition: right 0.4s ease;
+	z-index: 9999;
+  }
+  
+  .quickquote__opener.active {
+	right: 0;
+  }
+  .closedrawer{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-size: 24px;
+	cursor: pointer;
+  }
+
 @media (min-width:767px) {
 	.product-gallery .owl-next {
 		margin-top: -9px;

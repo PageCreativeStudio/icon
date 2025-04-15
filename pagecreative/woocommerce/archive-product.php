@@ -6,6 +6,7 @@
 get_header(); ?>
 
 
+
 <div class="shop__container container-fluid mx-auto px-md-4 pt-3 pb-lg-5 mb-lg-5 ">
     <div class="bordertop">
         <div class="category__filter py-3 px-0">
@@ -119,6 +120,13 @@ get_header(); ?>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="quickquote__opener">
+    <div class="max-40 bg-white">
+        <span class="closedrawer">&times;</span>
+        <h2> this is heading 2</h2>
     </div>
 </div>
 

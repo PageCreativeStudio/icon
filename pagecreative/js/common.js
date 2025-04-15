@@ -385,3 +385,17 @@ jQuery(document).ready(function ($) {
         $item.toggleClass('active');
     });
 });
+
+
+/// Quickquote drawer
+const openBtn = document.querySelector('.quickquote');
+const drawer = document.querySelector('.quickquote__opener');
+const closeBtn = document.querySelector('.quickquote__opener .closedrawer');
+
+openBtn.addEventListener('click', () => {
+    drawer.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+    drawer.classList.remove('active');
+});
