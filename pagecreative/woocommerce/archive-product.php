@@ -51,13 +51,12 @@ get_header(); ?>
     $count = 0;
 
     if (isset($attributes['colour'])) {
-        $colour_string = $attributes['colour']->get_options()[0]; // Get the single string
-        $colour_values = explode('|', $colour_string);
+        $colour_values = $attributes['colour']->get_options(); // ✅ Get all values (as array)
 
         // Clean up values
         $colour_values = array_map('trim', $colour_values);
 
-        // Map name to basic colour hex
+        // Colour mapping
         $color_map = [
             'black' => '#000000',
             'white' => '#ffffff',
@@ -84,6 +83,7 @@ get_header(); ?>
     }
     ?>
 </div>
+
 
 
 
