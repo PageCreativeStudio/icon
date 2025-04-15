@@ -7,6 +7,12 @@ get_header(); ?>
 
 
 <div class="container-fluid mx-auto px-md-4 pb-lg-5 mb-lg-5">
+    
+    <?php
+    $filter_shortcode2 = '[searchandfilter id="1104"]';
+    $filter_html = do_shortcode($filter_shortcode2);
+    echo $filter_html;
+    ?>
     <div class="row">
         <div class="col-12 col-lg-3">
             <div class="filter-group">
@@ -41,14 +47,14 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-                      
-                        <?php
-                        endwhile;
 
-                        the_posts_navigation();
-                    else:
-                        echo 'No boats found.';
-                    endif; ?>
+                        <?php
+                    endwhile;
+
+                    the_posts_navigation();
+                else:
+                    echo 'No boats found.';
+                endif; ?>
             </div>
         </div>
     </div>
