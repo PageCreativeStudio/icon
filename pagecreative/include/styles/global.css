@@ -1514,6 +1514,10 @@ button {
 .productcard__container .product-image{
 	background: #f8f9f5;
 }
+.product-image img{
+	min-height: 14rem;
+    object-fit: contain;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
