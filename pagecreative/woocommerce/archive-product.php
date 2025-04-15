@@ -90,7 +90,7 @@ get_header(); ?>
                                     <?php
                                     $description = wp_strip_all_tags(get_the_content());
                                     if (!empty($description)): ?>
-                                        <p class="product-excerpt font-14 text-gray mb-0 pb-1">
+                                        <p class="product-excerpt font-14 text-gray mb-0 pb-2">
                                             <?php echo wp_trim_words($description, 5, '...'); ?>
                                         </p>
                                     <?php endif; ?>
@@ -116,7 +116,7 @@ get_header(); ?>
 
                         the_posts_navigation();
                     else:
-                        echo '';
+                        echo 'No product found.';
                     endif;
                     ?>
                 </div>
