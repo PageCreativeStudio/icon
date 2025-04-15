@@ -20,18 +20,9 @@ get_header(); ?>
         <div class="col-12 col-lg-9 postsrow">
             <div class="row">
                 <?php
-                // WP Query to fetch products manually
-                $args = array(
-                    'post_type' => 'product',
-                    'posts_per_page' => 12, // Change to the number of products you want to display
-                    'paged' => get_query_var('paged', 1),
-                );
-                $product_query = new WP_Query($args);
-
-                if ($product_query->have_posts()):
-                    while ($product_query->have_posts()):
-                        $product_query->the_post();
-                        global $product;
+                if (have_posts()):
+                    while (have_posts()):
+                        the_post();
                         ?>
                         <div class="col-md-4 col-sm-6">
                             <!-- Bootstrap Card for Product -->
@@ -50,13 +41,14 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
+                      
                         <?php
-                    endwhile;
-                    wp_reset_postdata();
-                else:
-                    echo '<p>No products found</p>';
-                endif;
-                ?>
+                        endwhile;
+
+                        the_posts_navigation();
+                    else:
+                        echo 'No boats found.';
+                    endif; ?>
             </div>
         </div>
     </div>
