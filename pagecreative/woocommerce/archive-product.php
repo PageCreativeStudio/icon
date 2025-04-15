@@ -39,13 +39,14 @@ get_header(); ?>
                                     <?php if (has_post_thumbnail()): ?>
                                         <a href="<?php the_permalink(); ?>">
                                             <div class="product-image">
-                                                <?php the_post_thumbnail('full'); ?>
+                                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
                                             </div>
                                         </a>
                                     <?php endif; ?>
 
+
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
-                                       <!-- <?php
+                                        <!-- <?php
                                         $attributes = $product->get_attributes();
                                         $max_to_show = 6;
                                         $count = 0;
