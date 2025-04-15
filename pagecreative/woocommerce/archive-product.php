@@ -8,7 +8,57 @@ get_header(); ?>
 
 <div class="container-fluid mx-auto px-md-4 pb-lg-5 mb-lg-5">
     <div class="row">
+        <div class="col-12 col-lg-3">
+            <div class="filter-group">
+                <?php
+                $filter_shortcode = '[searchandfilter id="1102"]';
+                $filter_html = do_shortcode($filter_shortcode);
+                echo $filter_html;
+                ?>
+            </div>
+        </div>
+        <div class="col-12 col-lg-9 postsrow">
+            <div class="row">
+                <?php
+                // WP Query to fetch products manually
+                $args = array(
+                    'post_type' => 'product',
+                    'posts_per_page' => 12, // Change to the number of products you want to display
+                    'paged' => get_query_var('paged', 1),
+                );
+                $product_query = new WP_Query($args);
 
+                if ($product_query->have_posts()):
+                    while ($product_query->have_posts()):
+                        $product_query->the_post();
+                        global $product;
+                        ?>
+                        <div class="col-md-4 col-sm-6">
+                            <!-- Bootstrap Card for Product -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <?php if (has_post_thumbnail()): ?>
+                                        <div class="product-image">
+                                            <?php the_post_thumbnail('medium'); ?>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <h5 class="card-title"><?php the_title(); ?></h5>
+                                    <p class="card-text"><?php echo $product->get_price_html(); ?></p>
+
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-primary">View Product</a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else:
+                    echo '<p>No products found</p>';
+                endif;
+                ?>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -25,46 +75,6 @@ get_header(); ?>
     </div>-->
 
     <!-- Custom Product Grid Layout with Bootstrap -->
-    <div class="row">
-        <?php
-        // WP Query to fetch products manually
-        $args = array(
-            'post_type' => 'product',
-            'posts_per_page' => 12, // Change to the number of products you want to display
-            'paged' => get_query_var('paged', 1),
-        );
-        $product_query = new WP_Query($args);
-
-        if ($product_query->have_posts()):
-            while ($product_query->have_posts()):
-                $product_query->the_post();
-                global $product;
-                ?>
-                <div class="col-md-4 col-sm-6">
-                    <!-- Bootstrap Card for Product -->
-                    <div class="card">
-                        <div class="card-body">
-                            <?php if (has_post_thumbnail()): ?>
-                                <div class="product-image">
-                                    <?php the_post_thumbnail('medium'); ?>
-                                </div>
-                            <?php endif; ?>
-
-                            <h5 class="card-title"><?php the_title(); ?></h5>
-                            <p class="card-text"><?php echo $product->get_price_html(); ?></p>
-
-                            <a href="<?php the_permalink(); ?>" class="btn btn-primary">View Product</a>
-                        </div>
-                    </div>
-                </div>
-                <?php
-            endwhile;
-            wp_reset_postdata();
-        else:
-            echo '<p>No products found</p>';
-        endif;
-        ?>
-    </div>
 
     <!-- Optional: Pagination (if needed) -->
     <div class="pagination">
