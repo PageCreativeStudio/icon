@@ -112,7 +112,7 @@ get_header(); ?>
 
                         the_posts_navigation();
                     else:
-                        echo 'No Product found.';
+                        echo 'No product found.';
                     endif;
                     ?>
                 </div>
@@ -121,28 +121,9 @@ get_header(); ?>
     </div>
 </div>
 
-<!-- Custom Bootstrap Layout for Shop Page -->
-<div class="container-fluid px-0 mx-auto text-center">
-    <!-- Optional: Display Page Content if needed -->
-    <!--<div class="page-content">
-                <?php
-                while (have_posts()):
-                    the_post();
-                    the_content();
-                endwhile;
-                ?>
-    </div>-->
+<?php get_template_part('template-parts/blocks/social-logos'); ?>
 
-    <!-- Custom Product Grid Layout with Bootstrap -->
+<?php get_template_part('template-parts/blocks/testimonials'); ?>
 
-    <!-- Optional: Pagination (if needed) -->
-    <div class="pagination">
-        <?php
-        echo paginate_links(array(
-            'total' => $product_query->max_num_pages
-        ));
-        ?>
-    </div>
-</div>
 
 <?php get_footer(); ?>
