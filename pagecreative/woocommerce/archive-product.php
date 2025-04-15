@@ -4,6 +4,8 @@
  * This page is responsible for calling the custom template for products.
  */
 
+ echo 'Custom Template Loaded';
+
 if (!defined('ABSPATH')) {
     exit;
 }

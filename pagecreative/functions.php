@@ -279,6 +279,15 @@ function custom_product_template($single_template)
 }
 add_filter('single_template', 'custom_product_template');
 
+function custom_woocommerce_template( $template, $template_name, $template_path ) {
+    if ( 'archive-product.php' === $template_name ) {
+        $template = get_stylesheet_directory() . '/woocommerce/archive-product.php';
+    }
+    return $template;
+}
+add_filter( 'template_include', 'custom_woocommerce_template', 10, 3 );
+
+
 function get_google_reviews_count()
 {
 	$api_key = 'AIzaSyAVTya-j7CmUz053hQr4O7KsaGcxrKb1bo';
