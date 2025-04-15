@@ -35,7 +35,7 @@ get_header(); ?>
                             global $product;
                             ?>
                             <div class="col-md-6 col-md-4 col-lg-3">
-                                <div class="productcard__container">
+                                <div class="productcard__container text-center">
                                     <?php if (has_post_thumbnail()): ?>
                                         <a href="<?php the_permalink(); ?>">
                                             <div class="product-image">
