@@ -53,7 +53,7 @@ get_header(); ?>
                                         ?>
                                     </p>
 
-                                    <p class="text-black">
+                                    <p class="text-black font-15">
                                         From
                                         <?php
                                         if ($product->is_type('variable')) {
