@@ -1495,7 +1495,7 @@ button {
 .megafilter-group form > ul > li{
     border-bottom: solid 1px #CCCCCC;
     padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom:0.7rem;
 }
 .searchandfilter h4 {
     padding: 5px 0 4px;
