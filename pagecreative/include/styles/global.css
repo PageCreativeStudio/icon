@@ -1481,7 +1481,7 @@ button {
 	font-size: 21px;
 }
 
-.category__filter form{
+.category__filter form ul{
 	display: flex;
 	flex-wrap: wrap;
 }
