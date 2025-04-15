@@ -9,7 +9,7 @@ get_header(); ?>
 <div class="container-fluid mx-auto px-md-4 pb-lg-5 mb-lg-5">
     <div class="category__filter">
         <?php
-        $filter_shortcode2 = '[searchandfilter id="1102" fields="product_cat"]';
+        $filter_shortcode2 = '[searchandfilter id="1102"]';
         $filter_html = do_shortcode($filter_shortcode2);
         echo $filter_html;
         ?>
@@ -18,7 +18,7 @@ get_header(); ?>
         <div class="col-12 col-lg-3">
             <div class="filter-group">
                 <?php
-                $filter_shortcode = '[searchandfilter id="1102" fields="pa_brand, orderby"]';
+                $filter_shortcode = '[searchandfilter id="1102"]';
                 $filter_html = do_shortcode($filter_shortcode);
                 echo $filter_html;
                 ?>
