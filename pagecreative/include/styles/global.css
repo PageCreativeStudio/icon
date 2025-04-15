@@ -1137,6 +1137,9 @@ button {
 .borderbottom {
 	border-bottom: solid 1px #CCCCCC;
 }
+.bordertop {
+	border-top: solid 1px #CCCCCC;
+}
 
 /* End of BS4 custom classes here*/
 

@@ -6,7 +6,7 @@
 get_header(); ?>
 
 
-<div class="container-fluid mx-auto px-md-4 pb-lg-5 mb-lg-5">
+<div class="container-fluid mx-auto px-md-4 pt-3 pb-lg-5 mb-lg-5 bordertop">
     <div class="category__filter py-3 px-0">
         <?php
         $filter_shortcode2 = '[searchandfilter id="1102"]';
@@ -17,7 +17,7 @@ get_header(); ?>
     <div class="row">
         <div class="col-12 col-lg-3">
             <div class="megafilter-group">
-                <h4 class="text-black font-15">Filter Products</h4>
+                <h4 class="text-black font-18">Filter Products</h4>
                 <?php
                 $filter_shortcode = '[searchandfilter id="1102"]';
                 $filter_html = do_shortcode($filter_shortcode);
