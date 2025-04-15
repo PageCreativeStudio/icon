@@ -1,71 +1,97 @@
 <?php
 /**
- * Template Name: Archive Product
+ * The Template for displaying product archives, including the main shop page which is a post type archive
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/archive-product.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 8.6.0
  */
 
-get_header(); ?>
+defined( 'ABSPATH' ) || exit;
 
-<!-- Custom Bootstrap Layout for Shop Page -->
-<div class="container-fluid px-0 mx-auto text-center">
-    <!-- Optional: Display Page Content if needed -->
-    <div class="page-content">
-        <?php
-        while ( have_posts() ) :
-            the_post();
-            the_content(); // Displays the content of the page (e.g., any introductory text)
-        endwhile;
-        ?>
-    </div>
+get_header( 'shop' );
 
-    <!-- Custom Product Grid Layout with Bootstrap -->
-    <div class="row">
-        <?php
-        // WP Query to fetch products manually
-        $args = array(
-            'post_type' => 'product',
-            'posts_per_page' => 12, // Change to the number of products you want to display
-            'paged' => get_query_var('paged', 1),
-        );
-        $product_query = new WP_Query( $args );
+/**
+ * Hook: woocommerce_before_main_content.
+ *
+ * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+ * @hooked woocommerce_breadcrumb - 20
+ * @hooked WC_Structured_Data::generate_website_data() - 30
+ */
+do_action( 'woocommerce_before_main_content' );
 
-        if ( $product_query->have_posts() ) :
-            while ( $product_query->have_posts() ) : $product_query->the_post();
-                global $product;
-                ?>
-                <div class="col-md-4 col-sm-6">
-                    <!-- Bootstrap Card for Product -->
-                    <div class="card">
-                        <div class="card-body">
-                            <?php if ( has_post_thumbnail() ) : ?>
-                                <div class="product-image">
-                                    <?php the_post_thumbnail( 'medium' ); ?>
-                                </div>
-                            <?php endif; ?>
+/**
+ * Hook: woocommerce_shop_loop_header.
+ *
+ * @since 8.6.0
+ *
+ * @hooked woocommerce_product_taxonomy_archive_header - 10
+ */
+do_action( 'woocommerce_shop_loop_header' );
 
-                            <h5 class="card-title"><?php the_title(); ?></h5>
-                            <p class="card-text"><?php echo $product->get_price_html(); ?></p>
+if ( woocommerce_product_loop() ) {
 
-                            <a href="<?php the_permalink(); ?>" class="btn btn-primary">View Product</a>
-                        </div>
-                    </div>
-                </div>
-                <?php
-            endwhile;
-            wp_reset_postdata();
-        else :
-            echo '<p>No products found</p>';
-        endif;
-        ?>
-    </div>
+	/**
+	 * Hook: woocommerce_before_shop_loop.
+	 *
+	 * @hooked woocommerce_output_all_notices - 10
+	 * @hooked woocommerce_result_count - 20
+	 * @hooked woocommerce_catalog_ordering - 30
+	 */
+	do_action( 'woocommerce_before_shop_loop' );
 
-    <!-- Optional: Pagination (if needed) -->
-    <div class="pagination">
-        <?php
-        echo paginate_links( array(
-            'total' => $product_query->max_num_pages
-        ) );
-        ?>
-    </div>
-</div>
+	woocommerce_product_loop_start();
 
-<?php get_footer(); ?>
+	if ( wc_get_loop_prop( 'total' ) ) {
+		while ( have_posts() ) {
+			the_post();
+
+			/**
+			 * Hook: woocommerce_shop_loop.
+			 */
+			do_action( 'woocommerce_shop_loop' );
+
+			wc_get_template_part( 'content', 'product' );
+		}
+	}
+
+	woocommerce_product_loop_end();
+
+	/**
+	 * Hook: woocommerce_after_shop_loop.
+	 *
+	 * @hooked woocommerce_pagination - 10
+	 */
+	do_action( 'woocommerce_after_shop_loop' );
+} else {
+	/**
+	 * Hook: woocommerce_no_products_found.
+	 *
+	 * @hooked wc_no_products_found - 10
+	 */
+	do_action( 'woocommerce_no_products_found' );
+}
+
+/**
+ * Hook: woocommerce_after_main_content.
+ *
+ * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+ */
+do_action( 'woocommerce_after_main_content' );
+
+/**
+ * Hook: woocommerce_sidebar.
+ *
+ * @hooked woocommerce_get_sidebar - 10
+ */
+do_action( 'woocommerce_sidebar' );
+
+get_footer( 'shop' );
