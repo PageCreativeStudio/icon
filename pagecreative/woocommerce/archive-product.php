@@ -45,48 +45,41 @@ get_header(); ?>
                                     <?php endif; ?>
 
                                     <div class="d-flex flex-wrap gap-1 justify-content-center pb-2">
-    <?php
-    $attributes = $product->get_attributes();
-    $max_to_show = 6;
-    $count = 0;
+                                        <?php
+                                        $attributes = $product->get_attributes();
+                                        $max_to_show = 6;
+                                        $count = 0;
 
-    if (isset($attributes['colour'])) {
-        $colour_values = $attributes['colour']->get_options(); // ✅ Get all values (as array)
+                                        if (isset($attributes['colour'])) {
+                                            $colour_values = $attributes['colour']->get_options();
+                                            $colour_values = array_map('trim', $colour_values);
+                                            $color_map = [
+                                                'black' => '#000000',
+                                                'white' => '#ffffff',
+                                                'light beige (sand)' => '#f5f5dc',
+                                                'burgundy' => '#800020',
+                                                'bright blue' => '#0096ff',
+                                                'dark navy' => '#000080',
+                                                'sage green' => '#9dc183',
+                                                'melange grey' => '#a9a9a9',
+                                            ];
 
-        // Clean up values
-        $colour_values = array_map('trim', $colour_values);
+                                            foreach ($colour_values as $colour_name) {
+                                                if ($count >= $max_to_show)
+                                                    break;
+                                                $slug = strtolower($colour_name);
+                                                $bg_color = $color_map[$slug] ?? '#ccc';
 
-        // Colour mapping
-        $color_map = [
-            'black' => '#000000',
-            'white' => '#ffffff',
-            'light beige (sand)' => '#f5f5dc',
-            'burgundy' => '#800020',
-            'bright blue' => '#0096ff',
-            'dark navy' => '#000080',
-            'sage green' => '#9dc183',
-            'melange grey' => '#a9a9a9',
-        ];
+                                                echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background:' . esc_attr($bg_color) . ';"></div>';
+                                                $count++;
+                                            }
 
-        foreach ($colour_values as $colour_name) {
-            if ($count >= $max_to_show) break;
-            $slug = strtolower($colour_name);
-            $bg_color = $color_map[$slug] ?? '#ccc';
-
-            echo '<div title="' . esc_attr($colour_name) . '" style="width:20px;height:20px;border-radius:50%;background:' . esc_attr($bg_color) . '; border:1px solid #999;"></div>';
-            $count++;
-        }
-
-        if (count($colour_values) > $max_to_show) {
-            echo '<div title="More Colours" class="d-flex align-items-center justify-content-center" style="width:20px;height:20px;border-radius:50%;border:1px solid #999;font-size:14px;">+</div>';
-        }
-    }
-    ?>
-</div>
-
-
-
-
+                                            if (count($colour_values) > $max_to_show) {
+                                                echo '<div title="More Colours" class="d-flex align-items-center justify-content-center" style="width:20px;height:20px;border-radius:50%;border:1px solid #999;font-size:14px;">+</div>';
+                                            }
+                                        }
+                                        ?>
+                                    </div>
 
                                     <a href="<?php the_permalink(); ?>">
                                         <h3 class="font-16 mb-0 pb-1 pt-2"><?php the_title(); ?></h3>
