@@ -1520,8 +1520,16 @@ button {
 	margin-right: 4px;
 }
 .quickquote{
-	position: absolute;
-    bottom: 0;
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translate(-124%, 0);
+    width: 100%;
+    font-size: 12px;
+    background: black;
+    color: white;
+    padding: 7px 0 4px 0;
+    max-width: 95px;
 }
 .product-image img {
 	width: 100%;
