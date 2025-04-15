@@ -42,6 +42,7 @@ get_header(); ?>
                                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
                                                 class="" loading="lazy">
                                         </div>
+                                        <span class="quickquote">Quick Quote</span>
                                     </a>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
