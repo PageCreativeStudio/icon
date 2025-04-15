@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Archive Product
+ * Template Name: Shop
  */
 
 get_header(); ?>
@@ -8,7 +8,7 @@ get_header(); ?>
 
 <div class="container-fluid mx-auto px-md-4 pb-lg-5 mb-lg-5">
     <div class="row">
-        
+
     </div>
 </div>
 

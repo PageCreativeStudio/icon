@@ -279,16 +279,6 @@ function custom_product_template($single_template)
 }
 add_filter('single_template', 'custom_product_template');
 
-function custom_woocommerce_shop_page_template($template) {
-    if ( is_shop() ) {
-        $custom_template = locate_template( 'woocommerce/archive-products.php' ); // Specify your template file location here
-        if ( !empty( $custom_template ) ) {
-            return $custom_template;
-        }
-    }
-    return $template;
-}
-add_filter( 'template_include', 'custom_woocommerce_shop_page_template' );
 
 
 function get_google_reviews_count()
