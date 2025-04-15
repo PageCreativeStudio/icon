@@ -1520,7 +1520,8 @@ button {
 	margin-right: 4px;
 }
 .quickquote{
-	
+	position: absolute;
+    bottom: 0;
 }
 .product-image img {
 	width: 100%;
