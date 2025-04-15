@@ -1496,10 +1496,15 @@ button {
     border-bottom: solid 1px #CCCCCC;
     padding-bottom: 1rem;
     margin-bottom:0.7rem;
+
 }
 .searchandfilter h4 {
     padding: 5px 0 4px;
     font-size: 17px;
+}
+
+.category__filter form ul li label{
+	cursor: pointer;
 }
 
 .category__filter form ul {
