@@ -1490,6 +1490,8 @@ button {
 }
 .category__filter .sf-field-taxonomy-product_cat li label{
 	cursor: pointer;
+    padding-left: 0;
+    margin-right: 22px;
 }
 
 @media (min-width:767px) {

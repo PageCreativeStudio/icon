@@ -7,7 +7,7 @@ get_header(); ?>
 
 
 <div class="container-fluid mx-auto px-md-4 pb-lg-5 mb-lg-5">
-    <div class="category__filter">
+    <div class="category__filter py-3 px-0">
         <?php
         $filter_shortcode2 = '[searchandfilter id="1102"]';
         $filter_html = do_shortcode($filter_shortcode2);
