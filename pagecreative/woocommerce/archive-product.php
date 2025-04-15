@@ -44,7 +44,7 @@ get_header(); ?>
                                         </a>
                                     <?php endif; ?>
 
-                                    <h3 class="font-15"><?php the_title(); ?></h3>
+                                    <h3 class="font-18"><?php the_title(); ?></h3>
 
                                     <p class="product-excerpt">
                                         <?php
@@ -53,7 +53,7 @@ get_header(); ?>
                                         ?>
                                     </p>
 
-                                    <p>
+                                    <p class="text-black">
                                         From
                                         <?php
                                         if ($product->is_type('variable')) {
@@ -64,7 +64,7 @@ get_header(); ?>
                                             echo $product->get_price_html();
                                         }
                                         ?>
-                                        /unit
+                                        /<span class="text-gray">unit</span>
                                     </p>
                                 </div>
                             </div>
