@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Custom Shop Page
+ * Template Name: Archive Product
  */
 
 get_header(); ?>
