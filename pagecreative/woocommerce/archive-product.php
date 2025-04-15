@@ -26,7 +26,7 @@ get_header(); ?>
                     ?>
                 </div>
             </div>
-            <div class="col-12 col-lg-9 postsrow">
+            <div class="col-12 col-lg postsrow">
                 <div class="row">
                     <?php
                     if (have_posts()):
