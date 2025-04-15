@@ -1488,6 +1488,11 @@ button {
 	font-size: 21px;
 }
 
+.searchandfilter label{
+	color: var(--black);
+	font-size: 14px;
+}
+
 .category__filter form ul {
 	display: flex;
 	flex-wrap: wrap;
@@ -1536,17 +1541,17 @@ button {
 	overflow: hidden;
 }
 
-.quickquote{
-    position: absolute;
-    left: 50%;
-    bottom: 1rem;
-    transform: translate(-50%, 0);
-    width: 100%;
-    font-size: 12px;
-    background: black;
-    color: white;
-    padding: 7px 0 4px 0;
-    max-width: 95px;
+.quickquote {
+	position: absolute;
+	left: 50%;
+	bottom: 1rem;
+	transform: translate(-50%, 0);
+	width: 100%;
+	font-size: 12px;
+	background: black;
+	color: white;
+	padding: 7px 0 4px 0;
+	max-width: 95px;
 	z-index: 999;
 	cursor: pointer;
 }
@@ -1562,18 +1567,19 @@ button {
 	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
 	transition: right 0.4s ease;
 	z-index: 9999;
-  }
-  
-  .quickquote__opener.active {
+}
+
+.quickquote__opener.active {
 	right: 0;
-  }
-  .closedrawer{
-    right: 1rem;
-    position: absolute;
-    top: 10px;
-    font-size: 33px;
-    cursor: pointer;
-  }
+}
+
+.closedrawer {
+	right: 1rem;
+	position: absolute;
+	top: 10px;
+	font-size: 33px;
+	cursor: pointer;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
