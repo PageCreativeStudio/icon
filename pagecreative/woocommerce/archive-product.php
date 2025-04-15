@@ -16,7 +16,7 @@ get_header(); ?>
             ?>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-lg-3 max-20">
                 <div class="megafilter-group">
                     <h4 class="text-black font-18">Filter Products</h4>
                     <?php
