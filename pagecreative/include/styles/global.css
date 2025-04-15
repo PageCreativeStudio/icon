@@ -1485,6 +1485,12 @@ button {
 	display: flex;
 	flex-wrap: wrap;
 }
+.category__filter .sf-field-taxonomy-product_cat li input{
+	display: none;
+}
+.category__filter .sf-field-taxonomy-product_cat li label{
+	cursor: pointer;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
