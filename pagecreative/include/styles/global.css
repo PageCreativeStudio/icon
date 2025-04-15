@@ -1511,19 +1511,16 @@ button {
     color: white;
 	transition: 0.3s ease-in-out;
 }
-.productcard__container .product-image{
-	background: #f8f9f5;
-}
-.product-image img{
-	min-height: 14rem;
-    object-fit: contain;
-}
 .available-colors,
 .more-colour{
 	height: 14px;
     width: 14px;
     border-radius: 60px;
     margin-right: 4px;
+}
+
+.productcard__container .product-image{
+	background: #f8f9f5;
 }
 
 
