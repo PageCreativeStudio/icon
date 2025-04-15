@@ -280,7 +280,6 @@ function custom_product_template($single_template)
 add_filter('single_template', 'custom_product_template');
 
 
-
 function get_google_reviews_count()
 {
 	$api_key = 'AIzaSyAVTya-j7CmUz053hQr4O7KsaGcxrKb1bo';
