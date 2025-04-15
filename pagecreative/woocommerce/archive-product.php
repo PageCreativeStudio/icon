@@ -63,8 +63,7 @@ get_header(); ?>
                                         } else {
                                             echo $product->get_price_html();
                                         }
-                                        ?>
-                                        /<span class="text-gray">unit</span>
+                                        ?>/<span class="text-gray">unit</span>
                                     </p>
                                 </div>
                             </div>
