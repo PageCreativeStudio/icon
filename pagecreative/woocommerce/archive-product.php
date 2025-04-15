@@ -34,7 +34,7 @@ get_header(); ?>
                             the_post();
                             global $product;
                             ?>
-                            <div class="col-md-6 col-md-4 col-lg-3 pb-3">
+                            <div class="col-6 col-md-4 col-lg-3 pb-3">
                                 <div class="productcard__container text-center">
 
                                     <a href="<?php the_permalink(); ?>">

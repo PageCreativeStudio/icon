@@ -1520,7 +1520,9 @@ button {
 	margin-right: 4px;
 }
 
-.productcard__container .product-image {}
+.productcard__container .product-image {
+	
+}
 
 .product-image img {
 	width: 100%;
