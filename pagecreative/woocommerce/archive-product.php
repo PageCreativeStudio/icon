@@ -44,7 +44,9 @@ get_header(); ?>
                                         </a>
                                     <?php endif; ?>
 
-                                    <h3 class="font-16 mb-0 pb-1 pt-2"><?php the_title(); ?></h3>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <h3 class="font-16 mb-0 pb-1 pt-2"><?php the_title(); ?></h3>
+                                    </a>
 
                                     <?php
                                     $description = wp_strip_all_tags(get_the_content());
@@ -56,18 +58,20 @@ get_header(); ?>
 
 
 
-                                    <p class="text-black font-15">
-                                        From
-                                        <?php
-                                        if ($product->is_type('variable')) {
-                                            $prices = $product->get_variation_prices();
-                                            $min_price = min($prices['price']);
-                                            echo wc_price($min_price);
-                                        } else {
-                                            echo $product->get_price_html();
-                                        }
-                                        ?>/<span class="text-gray font-14">unit</span>
-                                    </p>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <p class="text-black font-15">
+                                            From
+                                            <?php
+                                            if ($product->is_type('variable')) {
+                                                $prices = $product->get_variation_prices();
+                                                $min_price = min($prices['price']);
+                                                echo wc_price($min_price);
+                                            } else {
+                                                echo $product->get_price_html();
+                                            }
+                                            ?>/<span class="text-gray font-14">unit</span>
+                                        </p>
+                                    </a>
                                 </div>
                             </div>
                             <?php
