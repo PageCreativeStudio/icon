@@ -1499,12 +1499,14 @@ button {
 	margin-right: 22px;
 	color: var(--black);
 	padding: 3px 9px 1px 9px;
+	transition: 0.3s ease-in-out;
 }
 
 .category__filter .sf-field-taxonomy-product_cat 
 .sf-option-active label {
 	background: black;
     color: white;
+	transition: 0.3s ease-in-out;
 }
 
 @media (min-width:767px) {
