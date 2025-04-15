@@ -44,12 +44,12 @@ get_header(); ?>
                                         </a>
                                     <?php endif; ?>
 
-                                    <h3 class="font-18 mb-0 pb-2"><?php the_title(); ?></h3>
+                                    <h3 class="font-16 mb-0 pb-2"><?php the_title(); ?></h3>
 
                                     <?php
                                     $description = wp_strip_all_tags(get_the_content());
                                     if (!empty($description)): ?>
-                                        <p class="product-excerpt text-gray mb-0 pb-2">
+                                        <p class="product-excerpt font-14 text-gray mb-0 pb-2">
                                             <?php echo wp_trim_words($description, 5, '...'); ?>
                                         </p>
                                     <?php endif; ?>
@@ -66,7 +66,7 @@ get_header(); ?>
                                         } else {
                                             echo $product->get_price_html();
                                         }
-                                        ?>/<span class="text-gray">unit</span>
+                                        ?>/<span class="text-gray font-14">unit</span>
                                     </p>
                                 </div>
                             </div>
