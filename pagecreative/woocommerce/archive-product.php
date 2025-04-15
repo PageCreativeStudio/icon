@@ -38,13 +38,15 @@ get_header(); ?>
                             <div class="col-6 col-md-4 col-xl-3 pb-3">
                                 <div class="productcard__container text-center">
 
-                                    <a class="d-block position-relative" href="<?php the_permalink(); ?>">
+                                <div class=" position-relative">
+                                    <a class="d-block" href="<?php the_permalink(); ?>">
                                         <div class="product-image position-relative">
                                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
                                                 class="" loading="lazy">
                                         </div>
-                                        <span class="quickquote">Quick Quote</span>
                                     </a>
+                                    <span class="quickquote">Quick Quote</span>
+                                </div>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
                                         <!-- <?php
