@@ -1,32 +1,26 @@
 <?php
-defined( 'ABSPATH' ) || exit;
+/**
+ * Custom Shop Page
+ * This page is responsible for calling the custom template for products.
+ */
 
-get_header( 'shop' ); ?>
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-<main class="container my-5">
-    <h1 class="mb-4"><?php woocommerce_page_title(); ?></h1>
+get_header();
 
-    <?php do_action( 'woocommerce_before_main_content' ); ?>
+// Trigger action before product content starts
+//do_action( 'woocommerce_before_main_content' );
 
-    <?php if ( woocommerce_product_loop() ) : ?>
+while (have_posts()):
+    the_post();
+    wc_get_template_part('woocommerce/content', 'single-product');
+endwhile; // end of the loop
 
-        <?php do_action( 'woocommerce_before_shop_loop' ); ?>
+// Trigger action after product content ends
+// do_action( 'woocommerce_after_main_content' );
 
-        <div class="row">
-            <?php while ( have_posts() ) : the_post(); ?>
-                <div class="col-md-4 mb-4">
-                    <?php wc_get_template_part( 'content', 'product' ); ?>
-                </div>
-            <?php endwhile; ?>
-        </div>
 
-        <?php do_action( 'woocommerce_after_shop_loop' ); ?>
 
-    <?php else : ?>
-        <?php do_action( 'woocommerce_no_products_found' ); ?>
-    <?php endif; ?>
-
-    <?php do_action( 'woocommerce_after_main_content' ); ?>
-</main>
-
-<?php get_footer( 'shop' ); ?>
+get_footer(); ?>
