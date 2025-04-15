@@ -54,7 +54,7 @@ get_header(); ?>
 
                     the_posts_navigation();
                 else:
-                    echo 'No boats found.';
+                    echo 'No Products found.';
                 endif; ?>
             </div>
         </div>
