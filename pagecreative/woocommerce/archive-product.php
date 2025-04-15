@@ -46,39 +46,46 @@ get_header(); ?>
 
                                     <div class="d-flex flex-wrap gap-1 justify-content-center pb-2">
     <?php
-    $terms = get_the_terms($product->get_id(), 'pa_colour');
-    if ($terms && !is_wp_error($terms)) {
-        $max_to_show = 6;
-        $count = 0;
-        foreach ($terms as $term) {
+    $attributes = $product->get_attributes();
+    $max_to_show = 6;
+    $count = 0;
+
+    if (isset($attributes['colour'])) {
+        $colour_string = $attributes['colour']->get_options()[0]; // Get the single string
+        $colour_values = explode('|', $colour_string);
+
+        // Clean up values
+        $colour_values = array_map('trim', $colour_values);
+
+        // Map name to basic colour hex
+        $color_map = [
+            'black' => '#000000',
+            'white' => '#ffffff',
+            'light beige (sand)' => '#f5f5dc',
+            'burgundy' => '#800020',
+            'bright blue' => '#0096ff',
+            'dark navy' => '#000080',
+            'sage green' => '#9dc183',
+            'melange grey' => '#a9a9a9',
+        ];
+
+        foreach ($colour_values as $colour_name) {
             if ($count >= $max_to_show) break;
+            $slug = strtolower($colour_name);
+            $bg_color = $color_map[$slug] ?? '#ccc';
 
-            $name = strtolower($term->name);
-            // Map common colour names to basic CSS colours
-            $color_map = [
-                'black' => '#000000',
-                'white' => '#ffffff',
-                'light beige (sand)' => '#f5f5dc',
-                'burgundy' => '#800020',
-                'bright blue' => '#0096ff',
-                'dark navy' => '#000080',
-                'sage green' => '#9dc183',
-                'melange grey' => '#a9a9a9',
-            ];
-
-            // Default to grey if colour not found
-            $bg_color = $color_map[$name] ?? '#ccc';
-
-            echo '<div style="width:20px;height:20px;border-radius:50%;background:' . esc_attr($bg_color) . '; border:1px solid #999;"></div>';
+            echo '<div title="' . esc_attr($colour_name) . '" style="width:20px;height:20px;border-radius:50%;background:' . esc_attr($bg_color) . '; border:1px solid #999;"></div>';
             $count++;
         }
 
-        if (count($terms) > $max_to_show) {
-            echo '<div class="d-flex align-items-center justify-content-center" style="width:20px;height:20px;border-radius:50%;border:1px solid #999;font-size:14px;">+</div>';
+        if (count($colour_values) > $max_to_show) {
+            echo '<div title="More Colours" class="d-flex align-items-center justify-content-center" style="width:20px;height:20px;border-radius:50%;border:1px solid #999;font-size:14px;">+</div>';
         }
     }
     ?>
 </div>
+
+
 
 
                                     <a href="<?php the_permalink(); ?>">
