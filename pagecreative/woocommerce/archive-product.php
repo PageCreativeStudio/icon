@@ -45,35 +45,40 @@ get_header(); ?>
                                     <?php endif; ?>
 
                                     <?php
-// Get global product object
 global $product;
 
-// Replace 'pa_color' with your actual attribute name
-$colors = $product->get_attribute('pa_color');
+if ( ! $product instanceof WC_Product ) {
+    $product = wc_get_product( get_the_ID() );
+}
 
-// Convert attribute values to array
-$color_array = array_map('trim', explode('|', $colors));
-$max_display = 6;
-$displayed_colors = array_slice($color_array, 0, $max_display);
-$extra_count = count($color_array) - $max_display;
-?>
+$attribute_name = 'pa_color'; // make sure this is the exact slug from Attributes
+$colors = wp_get_post_terms( $product->get_id(), $attribute_name );
 
-<?php if (!empty($color_array) && $colors !== ''): ?>
-    <div class="product-colors d-flex align-items-center mt-2">
-        <?php foreach ($displayed_colors as $color): ?>
-            <div class="color-dot me-1 rounded-circle" title="<?php echo esc_attr($color); ?>" 
-                style="width: 16px; height: 16px; background-color: <?php echo esc_attr(strtolower($color)); ?>; border: 1px solid #ccc;">
+if ( ! empty( $colors ) && ! is_wp_error( $colors ) ) {
+    $max_display = 6;
+    $displayed_colors = array_slice( $colors, 0, $max_display );
+    $extra_count = count( $colors ) - $max_display;
+    ?>
+    
+    <div class="product-colors d-flex align-items-center mt-2 flex-wrap">
+        <?php foreach ( $displayed_colors as $term ): 
+            $color_name = $term->name;
+        ?>
+            <div class="color-dot me-1 mb-1 rounded-circle" 
+                title="<?php echo esc_attr( $color_name ); ?>"
+                style="width: 16px; height: 16px; background-color: <?php echo esc_attr( strtolower( $color_name ) ); ?>; border: 1px solid #ccc;">
             </div>
         <?php endforeach; ?>
 
-        <?php if ($extra_count > 0): ?>
+        <?php if ( $extra_count > 0 ): ?>
             <div class="color-dot more-colors ms-1 rounded-circle d-flex align-items-center justify-content-center"
                 style="width: 16px; height: 16px; background-color: #f0f0f0; font-size: 10px; border: 1px solid #ccc;">
                 +<?php echo $extra_count; ?>
             </div>
         <?php endif; ?>
     </div>
-<?php endif; ?>
+<?php } ?>
+
 
 
                                     <a href="<?php the_permalink(); ?>">
