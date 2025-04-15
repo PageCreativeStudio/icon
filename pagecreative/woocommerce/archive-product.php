@@ -45,11 +45,10 @@ get_header(); ?>
                                     <?php endif; ?>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
-                                        <?php
+                                       <!-- <?php
                                         $attributes = $product->get_attributes();
                                         $max_to_show = 6;
                                         $count = 0;
-
                                         if (isset($attributes['colour'])) {
                                             $colour_values = $attributes['colour']->get_options();
                                             $colour_values = array_map('trim', $colour_values);
@@ -63,7 +62,6 @@ get_header(); ?>
                                                 'sage green' => '#9dc183',
                                                 'melange grey' => '#a9a9a9',
                                             ];
-
                                             foreach ($colour_values as $colour_name) {
                                                 if ($count >= $max_to_show)
                                                     break;
@@ -78,7 +76,7 @@ get_header(); ?>
                                                 echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center" style="font-size:14px;">+</div>';
                                             }
                                         }
-                                        ?>
+                                        ?>-->
                                     </div>
 
                                     <a href="<?php the_permalink(); ?>">
@@ -92,8 +90,6 @@ get_header(); ?>
                                             <?php echo wp_trim_words($description, 5, '...'); ?>
                                         </p>
                                     <?php endif; ?>
-
-
 
                                     <a href="<?php the_permalink(); ?>">
                                         <p class="text-black font-15">
