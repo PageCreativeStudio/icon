@@ -388,7 +388,7 @@ jQuery(document).ready(function ($) {
 
 
 /// Quickquote drawer
-jQuery(document).ready(function ($) {
+document.addEventListener('DOMContentLoaded', function () {
     const openBtn = document.querySelector('.quickquote');
     const drawer = document.querySelector('.quickquote__opener');
     const closeBtn = document.querySelector('.closedrawer');
