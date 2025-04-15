@@ -37,7 +37,7 @@ get_header(); ?>
                             <div class="col-6 col-md-4 col-xl-3 pb-3">
                                 <div class="productcard__container text-center">
 
-                                    <a class="position-relative" href="<?php the_permalink(); ?>">
+                                    <a class="d-block position-relative" href="<?php the_permalink(); ?>">
                                         <div class="product-image position-relative">
                                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
                                                 class="" loading="lazy">
