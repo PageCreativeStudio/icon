@@ -1,6 +1,10 @@
 <?php
 /**
- * Template for overriding the WooCommerce shop page
+ * Custom Shop Page
+ * This page is responsible for calling the custom template for products.
  */
-echo '<!-- Custom Template Loaded: archive-product.php -->'; // This will show in the page's HTML source
-?>
+get_header(); ?>
+
+<h1>This is heading</h1>
+
+<?php get_footer(); ?>
