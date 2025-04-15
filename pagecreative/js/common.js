@@ -391,13 +391,13 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function ($) {
     const openBtn = document.querySelector('.quickquote');
     const drawer = document.querySelector('.quickquote__opener');
-    const closeBtn = document.querySelector('.quickquote__opener .closedrawer');
+    const closeBtn = document.querySelector('.closedrawer');
 
-    openBtn.addEventListener('click', () => {
+    openBtn.addEventListener('click', function () {
         drawer.classList.add('active');
     });
 
-    closeBtn.addEventListener('click', () => {
+    closeBtn.addEventListener('click', function () {
         drawer.classList.remove('active');
     });
 });
