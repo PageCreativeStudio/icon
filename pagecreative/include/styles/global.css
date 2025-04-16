@@ -1483,6 +1483,7 @@ button {
 
 .product__toggle p {
 	font-size: 14px;
+	margin-bottom: 0;
 }
 
 .toggle-content h2,
@@ -1599,11 +1600,6 @@ button {
 	top: 14px;
 	font-size: 33px;
 	cursor: pointer;
-}
-.acf-collapsibles-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
 }
 
 
