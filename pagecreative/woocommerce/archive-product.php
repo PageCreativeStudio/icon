@@ -141,8 +141,8 @@ $shop_page_id = wc_get_page_id('shop');
         <h2 class="font-30 font-mb-22 text-dark">Frequently asked questions</h2>
         <div class="product__toggle py-5 mb-4 mb-lg-0">
             <div class="acf-collapsibles faq-grid">
-                <?php if (have_rows('collaspsibles_repeater')): ?>
-                    <?php while (have_rows('collaspsibles_repeater')): the_row(); ?>
+                <?php if (have_rows('collaspsibles_repeater', $shop_page_id)): ?>
+                    <?php while (have_rows('collaspsibles_repeater', $shop_page_id)): the_row(); ?>
                         <div class="acf-toggle-item p-3 border rounded mb-4">
                             <h3 class="toggle-header font-16 mb-2"><?php echo get_sub_field('title'); ?></h3>
                             <div class="toggle-content">
