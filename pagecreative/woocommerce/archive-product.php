@@ -132,6 +132,29 @@ get_header(); ?>
     </div>
 </div>
 
+<div class="faq__container">
+    <div class="container-fluid mx-auto text-center px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5">
+        <h2 class="font-30 font-mb-25">Frequently asked questions</h2>
+        <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
+            <?php if (have_rows('collaspsibles_repeater')): ?>
+                <div class="acf-collapsibles">
+                    <?php while (have_rows('collaspsibles_repeater')):
+                        the_row(); ?>
+                        <div class="acf-toggle-item text-left">
+                            <h3 class="toggle-header font-16"><?php echo esc_html(get_sub_field('title')); ?></h3>
+                            <div class="toggle-content">
+                                <div class="pt-3 pb-4">
+                                    <?php echo get_sub_field('content'); ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
 <?php get_template_part('template-parts/blocks/social-logos'); ?>
 
 <?php get_template_part('template-parts/blocks/testimonials'); ?>
