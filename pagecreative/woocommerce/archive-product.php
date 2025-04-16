@@ -142,7 +142,7 @@ $shop_page_id = wc_get_page_id('shop');
             <div class="row acf-collapsibles">
                 <?php if (have_rows('collaspsibles_repeater', $shop_page_id)): ?>
                     <?php while (have_rows('collaspsibles_repeater', $shop_page_id)): the_row(); ?>
-                        <div class="col-md-6 mb-4">
+                        <div class="col-md-6 mb-2">
                             <div class="acf-toggle-item text-left">
                                 <h3 class="toggle-header font-16"><?php echo get_sub_field('title'); ?></h3>
                                 <div class="toggle-content">
