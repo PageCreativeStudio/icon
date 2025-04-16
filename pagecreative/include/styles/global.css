@@ -1601,7 +1601,14 @@ button {
 	font-size: 33px;
 	cursor: pointer;
 }
-
+.acf-collapsibles .col-md-6 {
+    display: flex;
+    flex-direction: column;
+}
+.acf-toggle-item {
+    flex-grow: 1;
+    height: auto;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
