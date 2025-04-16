@@ -140,21 +140,26 @@ $shop_page_id = wc_get_page_id('shop');
     <div class="container-fluid mx-auto text-center px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5">
         <h2 class="font-30 font-mb-22 text-dark">Frequently asked questions</h2>
         <div class="product__toggle py-5 mb-4 mb-lg-0">
-            <div class="acf-collapsibles acf-collapsibles-grid">
+            <div class="row acf-collapsibles">
                 <?php if (have_rows('collaspsibles_repeater', $shop_page_id)): ?>
                     <?php while (have_rows('collaspsibles_repeater', $shop_page_id)): the_row(); ?>
-                        <div class="acf-toggle-item text-left">
-                            <h3 class="toggle-header font-16"><?php echo get_sub_field('title'); ?></h3>
-                            <div class="toggle-content">
-                                <div class="pt-3 pb-4">
-                                    <?php echo get_sub_field('content'); ?>
+                        <div class="col-md-6 mb-4">
+                            <div class="acf-toggle-item text-left h-100">
+                                <h3 class="toggle-header font-16"><?php echo get_sub_field('title'); ?></h3>
+                                <div class="toggle-content">
+                                    <div class="pt-3 pb-4">
+                                        <?php echo get_sub_field('content'); ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     <?php endwhile; ?>
+                <?php else: ?>
+                    <div class="col-12"><p>No FAQs found.</p></div>
                 <?php endif; ?>
             </div>
         </div>
+
 
     </div>
 </div>
