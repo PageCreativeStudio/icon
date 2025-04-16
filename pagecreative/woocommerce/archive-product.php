@@ -84,13 +84,13 @@ get_header(); ?>
                                     </div>
 
                                     <a href="<?php the_permalink(); ?>">
-                                        <h3 class="font-17 font-mb-15 mb-0 pb-1 pt-2"><?php the_title(); ?></h3>
+                                        <h3 class="font-17 font-mb-15 mb-0 pb-0 pb-lg-1 pt-2"><?php the_title(); ?></h3>
                                     </a>
 
                                     <?php
                                     $description = wp_strip_all_tags(get_the_content());
                                     if (!empty($description)): ?>
-                                        <p class="product-excerpt font-14 font-mb-12 text-gray mb-0 pb-2">
+                                        <p class="product-excerpt font-14 font-mb-12 text-gray mb-0 pb-1 pb-lg-1">
                                             <?php echo wp_trim_words($description, 5, '...'); ?>
                                         </p>
                                     <?php endif; ?>
