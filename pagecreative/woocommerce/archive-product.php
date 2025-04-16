@@ -136,7 +136,7 @@ get_header(); ?>
 $shop_page_id = wc_get_page_id('shop');
 ?>
 <div class="faq__container">
-    <div class="container-fluid mx-auto text-center px-2 px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5">
+    <div class="container-fluid mx-auto text-center px-4 px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5">
         <h2 class="font-30 font-mb-22 text-dark">Frequently asked questions</h2>
         <div class="product__toggle pt-lg-5 pb-5 mb-4 mb-lg-0">
             <div class="row acf-collapsibles justify-content-between mx-0 px-0">
