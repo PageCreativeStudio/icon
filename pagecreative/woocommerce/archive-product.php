@@ -142,7 +142,7 @@ get_header(); ?>
                     <?php while (have_rows('collaspsibles_repeater')):
                         the_row(); ?>
                         <div class="acf-toggle-item text-left">
-                            <h3 class="toggle-header font-16"><?php echo esc_html(get_sub_field('title')); ?></h3>
+                            <h3 class="toggle-header font-16"><?php echo get_sub_field('title'); ?></h3>
                             <div class="toggle-content">
                                 <div class="pt-3 pb-4">
                                     <?php echo get_sub_field('content'); ?>
