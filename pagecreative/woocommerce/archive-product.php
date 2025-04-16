@@ -7,7 +7,7 @@ get_header(); ?>
 
 
 
-<div class="shop__container container-fluid mx-auto px-md-4 pt-3 pb-lg-5 mb-lg-5 ">
+<div class="shop__container container-fluid mx-auto px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5 ">
     <div class="bordertop">
         <div class="category__filter py-3 px-0">
             <?php
