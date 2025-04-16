@@ -140,7 +140,7 @@ $shop_page_id = wc_get_page_id('shop');
     <div class="container-fluid mx-auto text-center px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5">
         <h2 class="font-30 font-mb-22 text-dark">Frequently asked questions</h2>
         <div class="product__toggle py-5 mb-4 mb-lg-0">
-            <div class="acf-collapsibles">
+            <div class="acf-collapsibles acf-collapsibles-grid">
                 <?php if (have_rows('collaspsibles_repeater', $shop_page_id)): ?>
                     <?php while (have_rows('collaspsibles_repeater', $shop_page_id)): the_row(); ?>
                         <div class="acf-toggle-item text-left">
@@ -152,11 +152,10 @@ $shop_page_id = wc_get_page_id('shop');
                             </div>
                         </div>
                     <?php endwhile; ?>
-                <?php else: ?>
-                    <p>No FAQs found.</p>
                 <?php endif; ?>
             </div>
         </div>
+
     </div>
 </div>
 
