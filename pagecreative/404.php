@@ -14,13 +14,13 @@ get_header();
 
 	<section class="error-404 not-found text-center py-5">
 		<header class="page-header">
-			<h1 class="font-40 font-mb-25 px-2">Oops! That page can't be found. </h1>
+			<h1 class="font-35 font-mb-25 px-2">Oops! That page can't be found. </h1>
 		</header>
 
-		<div class="page-content text-center max-30 mx-auto px-3">
+		<div class="page-content text-center max-30 mx-auto px-3 pb-5">
 			<p class="font-18 font-300 text-darkgray">It looks like nothing was found at this location. Maybe try one
 				of the links below</p>
-			<a class="uppercase text-darkgray" href="<?php echo home_url(); ?>">back to home</a>
+			<a class="btnc bg-dark font-15 text-white mt-3" href="<?php echo home_url(); ?>">back to home</a>
 		</div>
 	</section>
 
