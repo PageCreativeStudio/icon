@@ -20,7 +20,7 @@ get_header();
 		<div class="page-content text-center max-30 mx-auto px-3 pb-5">
 			<p class="font-18 font-300 text-darkgray">It looks like nothing was found at this location. Maybe try one
 				of the links below</p>
-			<a class="btnc bg-dark font-15 text-white mt-3" href="<?php echo home_url(); ?>">back to home</a>
+			<a class="btnc bg-dark font-15 text-white mt-3" href="<?php echo home_url(); ?>">Back to Home</a>
 		</div>
 	</section>
 
