@@ -1746,4 +1746,8 @@ button {
 	.megafilter-group .sf-field-taxonomy-product_cat {
 		display: none;
 	}
+	.col-lg-55{
+		flex: 0 0 45.83%;
+		max-width: 45.83%;
+	}
 }
