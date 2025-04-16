@@ -128,7 +128,7 @@ get_header(); ?>
 <div class="quickquote__opener">
     <div class="max-40 bg-white py-4 px-4">
         <span class="closedrawer">&times;</span>
-        <h2 class="quote-title font-25 font-mb-20"><?php the_title(); ?></h2>
+        <h2 class="quote-title font-25 font-mb-20 mb-0"><?php the_title(); ?></h2>
     </div>
 </div>
 

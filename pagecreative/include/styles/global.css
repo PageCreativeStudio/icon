@@ -1596,7 +1596,7 @@ button {
 .closedrawer {
 	right: 1rem;
 	position: absolute;
-	top: 24px;
+	top: 14px;
 	font-size: 33px;
 	cursor: pointer;
 }
