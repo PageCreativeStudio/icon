@@ -45,7 +45,7 @@ get_header(); ?>
                                                 class="" loading="lazy">
                                         </div>
                                     </a>
-                                    <span class="quickquote">Quick Quote</span>
+                                    <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
                                 </div>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
@@ -128,7 +128,7 @@ get_header(); ?>
 <div class="quickquote__opener">
     <div class="max-40 bg-white py-4 px-4">
         <span class="closedrawer">&times;</span>
-        <h2> Product data</h2>
+        <h2 class="quote-title"><?php the_title(); ?></h2>
     </div>
 </div>
 

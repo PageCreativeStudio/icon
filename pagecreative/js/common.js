@@ -389,12 +389,12 @@ jQuery(document).ready(function ($) {
 
 /// Quickquote drawer
 jQuery(document).ready(function ($) {
-    // Open drawer
     $(document).on('click', '.quickquote', function () {
+        const title = $(this).data('title');
+        $('.quote-title').text(title);
         $('.quickquote__opener').addClass('active');
     });
 
-    // Close drawer
     $(document).on('click', '.closedrawer', function () {
         $('.quickquote__opener').removeClass('active');
     });
