@@ -135,8 +135,7 @@ get_header(); ?>
 <div class="faq__container">
     <div class="container-fluid mx-auto text-center px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5">
         <h2 class="font-30 font-mb-25">Frequently asked questions</h2>
-        <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
-
+        <div class="product__toggle py-5 mb-4 mb-lg-0">
             <div class="acf-collapsibles">
                 <?php if (have_rows('collaspsibles_repeater')): ?>
                     <?php while (have_rows('collaspsibles_repeater')):
