@@ -116,7 +116,7 @@ get_header(); ?>
 
                         the_posts_navigation();
                     else:
-                        echo 'No product found.';
+                        echo '';
                     endif;
                     ?>
                 </div>
