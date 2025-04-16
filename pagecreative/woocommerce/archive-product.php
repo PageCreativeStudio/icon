@@ -35,7 +35,7 @@ get_header(); ?>
                             the_post();
                             global $product;
                             ?>
-                            <div class="col-6 col-md-4 col-xl-3 pb-3 px-1 px-lg">
+                            <div class="col-6 col-md-4 col-xl-3 pb-3 px-1 px-lg-2">
                                 <div class="productcard__container text-center">
 
                                 <div class="d-block position-relative">
