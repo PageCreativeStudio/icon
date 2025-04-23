@@ -48,39 +48,39 @@ get_header(); ?>
                                     <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
                                 </div>
 
-                                    <div class="d-flex max-20 flex-wrap justify-content-center pb-1 pt-3">
-                                        <?php
-                                        $attributes = $product->get_attributes();
-                                        $max_to_show = 6;
-                                        $count = 0;
-                                        if (isset($attributes['colour'])) {
-                                            $colour_values = $attributes['colour']->get_options();
-                                            $colour_values = array_map('trim', $colour_values);
-                                            $color_map = [
-                                                'black' => '#000000',
-                                                'white' => '#ffffff',
-                                                'light beige (sand)' => '#f5f5dc',
-                                                'burgundy' => '#800020',
-                                                'bright blue' => '#0096ff',
-                                                'dark navy' => '#000080',
-                                                'sage green' => '#9dc183',
-                                                'melange grey' => '#a9a9a9',
-                                            ];
-                                            foreach ($colour_values as $colour_name) {
-                                                if ($count >= $max_to_show)
-                                                    break;
-                                                $slug = strtolower($colour_name);
-                                                $bg_color = $color_map[$slug] ?? '#ccc';
+                                    <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
+                                    <?php
+$attributes = $product->get_attributes();
+$max_to_show = 6;
+$count = 0;
 
-                                                echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background:' . esc_attr($bg_color) . ';"></div>';
-                                                $count++;
-                                            }
+// Check if 'Colours' attribute exists (case-insensitive)
+foreach ($attributes as $attr_name => $attr_value) {
+    if (strtolower($attr_name) === 'colours') {
+        $colour_values = $attr_value->get_options();
+        $colour_values = array_map('trim', $colour_values);
 
-                                            if (count($colour_values) > $max_to_show) {
-                                                echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center" style="font-size:14px;">+</div>';
-                                            }
-                                        }
-                                        ?>
+        foreach ($colour_values as $colour_name) {
+            if ($count >= $max_to_show)
+                break;
+
+            // Clean up and sanitise for use in inline styles
+            $css_color = strtolower($colour_name);
+            $css_color = str_replace(['(', ')', '.', ','], '', $css_color); // basic clean-up
+
+            echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background:' . esc_attr($css_color) . ';"></div>';
+            $count++;
+        }
+
+        if (count($colour_values) > $max_to_show) {
+            echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center" style="font-size:14px;">+</div>';
+        }
+
+        break; // Stop loop once 'Colours' is found and processed
+    }
+}
+?>
+
                                     </div>
 
                                     <a href="<?php the_permalink(); ?>">
