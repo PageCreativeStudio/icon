@@ -29,52 +29,48 @@ get_header(); ?>
             </div>
             <div class="col-12 col-lg postsrow">
                 <div class="row px-2 px-lg-0">
-                    <?php
-                    if (have_posts()):
-                        while (have_posts()):
-                            the_post();
-                            global $product;
-                            ?>
+                    <?php if (have_posts()): ?>
+                        <?php while (have_posts()):
+                            the_post(); ?>
+                            <?php global $product; ?>
+
                             <div class="col-6 col-md-4 col-xl-3 pb-3 px-1 px-lg-2">
                                 <div class="productcard__container text-center">
 
-                                <div class="d-block position-relative">
-                                    <a class="" href="<?php the_permalink(); ?>">
-                                        <div class="product-image position-relative">
-                                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
-                                                class="" loading="lazy">
-                                        </div>
-                                    </a>
-                                    <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
-                                </div>
+                                    <div class="d-block position-relative">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <div class="product-image position-relative">
+                                                <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+                                                    alt="<?php the_title(); ?>" class="" loading="lazy">
+                                            </div>
+                                        </a>
+                                        <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
+                                    </div>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
+                                        <?php
+                                        $max_to_show = 6;
+                                        $count = 0;
+                                        $terms = get_the_terms($product->get_id(), 'pa_colours');
 
-                                    <?php
-$max_to_show = 6;
-$count = 0;
+                                        if (!empty($terms) && !is_wp_error($terms)) {
+                                            foreach ($terms as $term) {
+                                                if ($count >= $max_to_show)
+                                                    break;
 
-// Fetch terms for 'pa_colours' attribute (created from 'Colours' attribute in admin)
-$terms = get_the_terms($product->get_id(), 'pa_colours');
+                                                $colour_name = $term->name;
+                                                $css_colour = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $colour_name));
 
-if (!empty($terms) && !is_wp_error($terms)) {
-    foreach ($terms as $term) {
-        if ($count >= $max_to_show) break;
+                                                echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background-color:' . esc_attr($css_colour) . '; width: 20px; height: 20px; border-radius: 50%; margin: 0 4px 4px 0;"></div>';
 
-        $colour_name = $term->name;
-        $css_colour = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $colour_name));
+                                                $count++;
+                                            }
 
-        echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background-color:' . esc_attr($css_colour) . '; "></div>';
-
-        $count++;
-    }
-
-    if (count($terms) > $max_to_show) {
-        echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center">+</div>';
-    }
-}
-?>
-
+                                            if (count($terms) > $max_to_show) {
+                                                echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 14px; background: #e0e0e0; border-radius: 50%;">+</div>';
+                                            }
+                                        }
+                                        ?>
                                     </div>
 
                                     <a href="<?php the_permalink(); ?>">
@@ -105,14 +101,91 @@ if (!empty($terms) && !is_wp_error($terms)) {
                                     </a>
                                 </div>
                             </div>
-                            <?php
-                        endwhile;
+                        <?php endwhile; ?>
 
-                        the_posts_navigation();
-                    else:
-                        echo '';
-                    endif;
-                    ?>
+                        <?php the_posts_navigation(); ?>
+                    <?php else: ?>
+                        <p>No products found.</p>
+                    <?php endif; ?>
+                    <?php if (have_posts()): ?>
+                        <?php while (have_posts()):
+                            the_post(); ?>
+                            <?php global $product; ?>
+
+                            <div class="col-6 col-md-4 col-xl-3 pb-3 px-1 px-lg-2">
+                                <div class="productcard__container text-center">
+
+                                    <div class="d-block position-relative">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <div class="product-image position-relative">
+                                                <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+                                                    alt="<?php the_title(); ?>" class="" loading="lazy">
+                                            </div>
+                                        </a>
+                                        <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
+                                    </div>
+
+                                    <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
+                                        <?php
+                                        $max_to_show = 6;
+                                        $count = 0;
+                                        $terms = get_the_terms($product->get_id(), 'pa_colours');
+
+                                        if (!empty($terms) && !is_wp_error($terms)) {
+                                            foreach ($terms as $term) {
+                                                if ($count >= $max_to_show)
+                                                    break;
+
+                                                $colour_name = $term->name;
+                                                $css_colour = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $colour_name));
+
+                                                echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background-color:' . esc_attr($css_colour) . ';"></div>';
+
+                                                $count++;
+                                            }
+
+                                            if (count($terms) > $max_to_show) {
+                                                echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center">+</div>';
+                                            }
+                                        }
+                                        ?>
+                                    </div>
+
+                                    <a href="<?php the_permalink(); ?>">
+                                        <h3 class="font-17 font-mb-15 mb-0 pb-0 pb-lg-1 pt-2"><?php the_title(); ?></h3>
+                                    </a>
+
+                                    <?php
+                                    $description = wp_strip_all_tags(get_the_content());
+                                    if (!empty($description)): ?>
+                                        <p class="product-excerpt font-14 font-mb-12 text-gray mb-0 pb-1 pb-lg-1">
+                                            <?php echo wp_trim_words($description, 5, '...'); ?>
+                                        </p>
+                                    <?php endif; ?>
+
+                                    <a href="<?php the_permalink(); ?>">
+                                        <p class="text-black font-15 font-mb-13">
+                                            From
+                                            <?php
+                                            if ($product->is_type('variable')) {
+                                                $prices = $product->get_variation_prices();
+                                                $min_price = min($prices['price']);
+                                                echo wc_price($min_price);
+                                            } else {
+                                                echo $product->get_price_html();
+                                            }
+                                            ?>/<span class="text-gray font-14">unit</span>
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+
+                        <?php the_posts_navigation(); ?>
+                    <?php else: ?>
+                        <p>No products found.</p>
+                    <?php endif; ?>
+
                 </div>
             </div>
         </div>
@@ -135,7 +208,8 @@ $shop_page_id = wc_get_page_id('shop');
         <div class="product__toggle pt-lg-5 pb-5 mb-4 mb-lg-0">
             <div class="row acf-collapsibles justify-content-between mx-0 px-0">
                 <?php if (have_rows('collaspsibles_repeater', $shop_page_id)): ?>
-                    <?php while (have_rows('collaspsibles_repeater', $shop_page_id)): the_row(); ?>
+                    <?php while (have_rows('collaspsibles_repeater', $shop_page_id)):
+                        the_row(); ?>
                         <div class="col-lg-55 mb-2">
                             <div class="acf-toggle-item text-left">
                                 <h3 class="toggle-header font-16"><?php echo get_sub_field('title'); ?></h3>
@@ -148,7 +222,9 @@ $shop_page_id = wc_get_page_id('shop');
                         </div>
                     <?php endwhile; ?>
                 <?php else: ?>
-                    <div class="col-12"><p>No FAQs found.</p></div>
+                    <div class="col-12">
+                        <p>No FAQs found.</p>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
