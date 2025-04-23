@@ -44,7 +44,23 @@ global $product;
                     </div>
                     <h1 class="font-30 font-mb-25 my-2 my-lg-3"><?php the_title(); ?></h1>
                     <h2 class="font-18 product-price">
-                        
+                        <!--<?php
+                        $product = wc_get_product(get_the_ID());
+                        $variations = $product->get_available_variations();
+                        $min_price = false;
+                        foreach ($variations as $variation) {
+                            $variation_price = $variation['display_price'];
+                            if ($min_price === false || $variation_price < $min_price) {
+                                $min_price = $variation_price;
+                            }
+                        }
+
+                        if ($min_price !== false) {
+                            echo 'From £' . number_format($min_price, 2) . '/unit';
+                        } else {
+                            echo 'From £4.80/unit';
+                        }
+                        ?>-->
                     </h2>
                 </div>
 
@@ -81,7 +97,7 @@ global $product;
                 </div>
 
                 <div class="colour-attributes borderbottom py-4 mt-1">
-                    <?php
+                   <!-- <?php
                     $terms = get_the_terms(get_the_ID(), 'pa_colour');
                     $product = wc_get_product(get_the_ID());
                     $variations = $product->get_available_variations();
@@ -126,7 +142,7 @@ global $product;
                         echo '</div>';
                         echo '<input type="hidden" name="variation_id" id="selected-variation-id" value="">';
                     }
-                    ?>
+                    ?>-->
                 </div>
                 
                 <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
