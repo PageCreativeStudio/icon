@@ -1539,8 +1539,8 @@ button {
 
 .available-colors,
 .more-colour {
-	height: 14px!important;
-	width: 14px!important;
+	height: 14px;
+	width: 14px;
 	border-radius: 60px;
 	margin-right: 4px;
 }
