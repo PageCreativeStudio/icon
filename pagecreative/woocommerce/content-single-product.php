@@ -44,23 +44,7 @@ global $product;
                     </div>
                     <h1 class="font-30 font-mb-25 my-2 my-lg-3"><?php the_title(); ?></h1>
                     <h2 class="font-18 product-price">
-                        <?php
-                        $product = wc_get_product(get_the_ID());
-                        $variations = $product->get_available_variations();
-                        $min_price = false;
-                        foreach ($variations as $variation) {
-                            $variation_price = $variation['display_price'];
-                            if ($min_price === false || $variation_price < $min_price) {
-                                $min_price = $variation_price;
-                            }
-                        }
-
-                        if ($min_price !== false) {
-                            echo 'From £' . number_format($min_price, 2) . '/unit';
-                        } else {
-                            echo 'From £4.80/unit';
-                        }
-                        ?>
+                        
                     </h2>
                 </div>
 
