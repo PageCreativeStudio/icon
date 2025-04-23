@@ -49,28 +49,23 @@ get_header(); ?>
                                 </div>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
+
                                     <?php
 $max_to_show = 6;
 $count = 0;
 
-// Get 'Colours' attribute — WooCommerce usually uses 'pa_' prefix
-$colour_attribute = 'pa_colours';
+// Fetch terms for 'pa_colours' attribute (created from 'Colours' attribute in admin)
+$terms = get_the_terms($product->get_id(), 'pa_colours');
 
-if ($product->has_attribute($colour_attribute)) {
-    $terms = wc_get_product_terms($product->get_id(), $colour_attribute, ['fields' => 'names']);
-    $terms = array_map('trim', $terms);
+if (!empty($terms) && !is_wp_error($terms)) {
+    foreach ($terms as $term) {
+        if ($count >= $max_to_show) break;
 
-    foreach ($terms as $colour_name) {
-        if ($count >= $max_to_show) {
-            break;
-        }
+        $colour_name = $term->name;
+        $css_colour = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $colour_name));
 
-        // Convert to lowercase CSS-friendly name
-        $css_colour = strtolower($colour_name);
-        $css_colour = str_replace(['(', ')', '.', ','], '', $css_colour); // basic clean-up
-        $css_colour = str_replace(' ', '', $css_colour); // remove spaces (e.g., 'light beige' becomes 'lightbeige')
+        echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background-color:' . esc_attr($css_colour) . '; width: 20px; height: 20px; border-radius: 50%; margin: 0 4px 4px 0;"></div>';
 
-        echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background-color:' . esc_attr($css_colour) . '; width: 20px; height: 20px; border-radius: 50%; margin-right: 5px;"></div>';
         $count++;
     }
 
@@ -79,7 +74,6 @@ if ($product->has_attribute($colour_attribute)) {
     }
 }
 ?>
-
 
                                     </div>
 
