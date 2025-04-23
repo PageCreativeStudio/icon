@@ -50,36 +50,36 @@ get_header(); ?>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
                                     <?php
-$attributes = $product->get_attributes();
 $max_to_show = 6;
 $count = 0;
 
-// Check if 'Colours' attribute exists (case-insensitive)
-foreach ($attributes as $attr_name => $attr_value) {
-    if (strtolower($attr_name) === 'colours') {
-        $colour_values = $attr_value->get_options();
-        $colour_values = array_map('trim', $colour_values);
+// Get 'Colours' attribute — WooCommerce usually uses 'pa_' prefix
+$colour_attribute = 'pa_colours';
 
-        foreach ($colour_values as $colour_name) {
-            if ($count >= $max_to_show)
-                break;
+if ($product->has_attribute($colour_attribute)) {
+    $terms = wc_get_product_terms($product->get_id(), $colour_attribute, ['fields' => 'names']);
+    $terms = array_map('trim', $terms);
 
-            // Clean up and sanitise for use in inline styles
-            $css_color = strtolower($colour_name);
-            $css_color = str_replace(['(', ')', '.', ','], '', $css_color); // basic clean-up
-
-            echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background:' . esc_attr($css_color) . ';"></div>';
-            $count++;
+    foreach ($terms as $colour_name) {
+        if ($count >= $max_to_show) {
+            break;
         }
 
-        if (count($colour_values) > $max_to_show) {
-            echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center" style="font-size:14px;">+</div>';
-        }
+        // Convert to lowercase CSS-friendly name
+        $css_colour = strtolower($colour_name);
+        $css_colour = str_replace(['(', ')', '.', ','], '', $css_colour); // basic clean-up
+        $css_colour = str_replace(' ', '', $css_colour); // remove spaces (e.g., 'light beige' becomes 'lightbeige')
 
-        break; // Stop loop once 'Colours' is found and processed
+        echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background-color:' . esc_attr($css_colour) . '; width: 20px; height: 20px; border-radius: 50%; margin-right: 5px;"></div>';
+        $count++;
+    }
+
+    if (count($terms) > $max_to_show) {
+        echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center" style="width:20px; height:20px; font-size:14px; background:#e0e0e0; border-radius:50%;">+</div>';
     }
 }
 ?>
+
 
                                     </div>
 
