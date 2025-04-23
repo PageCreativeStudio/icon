@@ -97,7 +97,7 @@ global $product;
                 </div>
 
                 <div class="colour-attributes borderbottom py-4 mt-1">
-                   <!-- <?php
+                    <?php
                     $terms = get_the_terms(get_the_ID(), 'pa_colour');
                     $product = wc_get_product(get_the_ID());
                     $variations = $product->get_available_variations();
@@ -142,7 +142,7 @@ global $product;
                         echo '</div>';
                         echo '<input type="hidden" name="variation_id" id="selected-variation-id" value="">';
                     }
-                    ?>-->
+                    ?>
                 </div>
                 
                 <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
