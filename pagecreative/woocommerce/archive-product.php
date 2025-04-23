@@ -64,13 +64,13 @@ if (!empty($terms) && !is_wp_error($terms)) {
         $colour_name = $term->name;
         $css_colour = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $colour_name));
 
-        echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background-color:' . esc_attr($css_colour) . '; width: 20px; height: 20px; border-radius: 50%; margin: 0 4px 4px 0;"></div>';
+        echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background-color:' . esc_attr($css_colour) . '; "></div>';
 
         $count++;
     }
 
     if (count($terms) > $max_to_show) {
-        echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center" style="width:20px; height:20px; font-size:14px; background:#e0e0e0; border-radius:50%;">+</div>';
+        echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center">+</div>';
     }
 }
 ?>
