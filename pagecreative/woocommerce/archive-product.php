@@ -48,7 +48,7 @@ get_header(); ?>
                                     <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
                                 </div>
 
-                                    <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
+                                    <div class="d-flex max-20 flex-wrap justify-content-center pb-1 pt-3">
                                         <?php
                                         $attributes = $product->get_attributes();
                                         $max_to_show = 6;
