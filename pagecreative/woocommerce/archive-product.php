@@ -49,7 +49,7 @@ get_header(); ?>
                                 </div>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
-                                        <!-- <?php
+                                        <?php
                                         $attributes = $product->get_attributes();
                                         $max_to_show = 6;
                                         $count = 0;
@@ -80,7 +80,7 @@ get_header(); ?>
                                                 echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center" style="font-size:14px;">+</div>';
                                             }
                                         }
-                                        ?>-->
+                                        ?>
                                     </div>
 
                                     <a href="<?php the_permalink(); ?>">
