@@ -430,55 +430,10 @@ jQuery(document).ready(function ($) {
 
 
 /// Quickquote drawer
-/// Quickquote drawer
 jQuery(document).ready(function ($) {
     $(document).on('click', '.quickquote', function () {
-        const productId = $(this).data('product-id');  // Use the product ID stored in the button
-        const productTitle = $(this).data('title');  // Use the product title for the drawer title
-
-        // Set the title of the drawer
-        $('.quote-title').text(productTitle);
-
-        // Example data for the clicked product, which you would fetch dynamically in a real scenario.
-        // Since you're not using server-side PHP, you'll need to gather this from a hidden element or data attributes.
-
-        const productData = {
-            title: productTitle,
-            sku: $('#product-sku-' + productId).text(),  // Assuming you're adding a hidden SKU element for each product
-            price_html: $('#product-price-' + productId).html(),  // Assuming you're adding a hidden price HTML for each product
-            colours: []
-        };
-
-        // Get colours/variations (example logic, adjust as needed)
-        $('.quickquote[data-product-id="' + productId + '"]').closest('.product-card').find('.color-variants-container .color-variant').each(function () {
-            const colourSlug = $(this).data('color');
-            const colourName = $(this).attr('title');  // Assuming the colour name is in the title
-            const colourCode = $(this).css('background-color');  // Use the background color for the actual colour
-            productData.colours.push({
-                slug: colourSlug,
-                name: colourName,
-                color: colourCode
-            });
-        });
-
-        // Now populate the drawer with the product data
-        $('.quickquote__opener .product-title').text(productData.title);
-        $('.quickquote__opener .product-sku').text(productData.sku);
-        $('.quickquote__opener .product-price').html(productData.price_html);
-
-        // Update the colour variants (if available)
-        const colourVariantsContainer = $('.quickquote__opener .color-variants-container');
-        colourVariantsContainer.empty();
-        
-        $.each(productData.colours, function (index, colour) {
-            colourVariantsContainer.append(
-                `<div class="color-variant mr-2 mb-2" style="background-color: ${colour.color};" data-color="${colour.slug}" title="${colour.name}">
-                    <span class="color-check" style="display: none; color: white;">✓</span>
-                </div>`
-            );
-        });
-
-        // Open the drawer
+        const title = $(this).data('title');
+        $('.quote-title').text(title);
         $('.quickquote__opener').addClass('active');
     });
 
