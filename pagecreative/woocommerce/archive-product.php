@@ -118,7 +118,7 @@ get_header(); ?>
                                     $description = wp_strip_all_tags(get_the_content());
                                     if (!empty($description)): ?>
                                         <p class="product-excerpt font-14 font-mb-12 text-gray mb-0 pb-1 pb-lg-1">
-                                            <?php echo wp_trim_words($description, 5, '...'); ?>
+                                            <?php echo wp_trim_words($description, 4, '...'); ?>
                                         </p>
                                     <?php endif; ?>
 
