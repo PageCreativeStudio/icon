@@ -435,19 +435,16 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '.quickquote', function () {
         const title = $(this).data('title');
         const product_id = $(this).data('product-id'); // Assuming you can pass product ID here
+        const price = $(this).data('price');
+        const sku = $(this).data('sku');
 
         // Set the title for the drawer
         $('.quote-title').text(title);
 
-        // Fetch product data via AJAX (if needed) or use data attributes
-        // Assuming you've set up custom data attributes in the button for price, SKU, etc.
-        const price = $(this).data('price');
-        const sku = $(this).data('sku');
-        
-        // Update the drawer content dynamically
-        $('.quickquote__opener .product-title').text(title);
-        $('.quickquote__opener .product-price').text(price);
-        $('.quickquote__opener .product-sku').text(sku);
+        // Dynamically update the content of the quickquote__opener without modifying its HTML structure
+        $('.quickquote__opener').find('.product-title').text(title);
+        $('.quickquote__opener').find('.product-price').text(price);
+        $('.quickquote__opener').find('.product-sku').text(sku);
 
         // Open the drawer
         $('.quickquote__opener').addClass('active');
