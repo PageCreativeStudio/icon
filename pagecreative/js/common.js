@@ -399,3 +399,33 @@ jQuery(document).ready(function ($) {
         $('.quickquote__opener').removeClass('active');
     });
 });
+
+
+/// collapsible filter
+$(document).ready(function () {
+    const headings = document.querySelectorAll(".megafilter-group h4");
+    const isMobile = () => window.innerWidth <= 989;
+    headings.forEach((heading) => {
+        heading.addEventListener("click", () => {
+            if (isMobile()) {
+                const ul = heading.nextElementSibling;
+                if (ul.tagName.toLowerCase() === "ul") {
+                    if (ul.classList.contains("open")) {
+                        ul.style.maxHeight = "0";
+                        ul.classList.remove("open");
+                        heading.classList.remove("active");
+                    } else {
+                        document.querySelectorAll(".megafilter-group ul.open").forEach((openUl) => {
+                            openUl.style.maxHeight = "0";
+                            openUl.classList.remove("open");
+                            openUl.previousElementSibling.classList.remove("active");
+                        });
+                        ul.style.maxHeight = `${ul.scrollHeight}px`;
+                        ul.classList.add("open");
+                        heading.classList.add("active");
+                    }
+                }
+            }
+        });
+    });
+});
