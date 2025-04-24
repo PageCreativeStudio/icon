@@ -1669,6 +1669,7 @@ button {
 .mobfilter.open {
 	right: 0;
 	opacity: 1;
+	transition: opacity 0.3s ease;
 }
 
 .mobfilter .searchandfilter h4 {
