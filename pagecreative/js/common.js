@@ -430,31 +430,36 @@ jQuery(document).ready(function ($) {
 
 
 /// Quickquote drawer
-/// Quickquote drawer
 jQuery(document).ready(function ($) {
     $(document).on('click', '.quickquote', function () {
-        // Get product data
-        const title = $(this).data('title');
-        const sku = $(this).data('sku');
-        const price = $(this).data('price');
-        const colours = $(this).data('colours');
+        // Get the product data from the clicked button
+        const productData = $(this).data();
 
-        // Update the drawer content
-        $('.quote-title').text(title);
-        $('.quickquote__opener .product-sku').text(sku);
-        $('.quickquote__opener .product-price').html(price);
-        $('.quickquote__opener .colour-variants-container').empty(); // Clear previous colour options
+        // Update the drawer with product details
+        $('.quote-title').text(productData.title);
+        $('.quickquote__opener .product-sku').text('SKU: ' + productData.sku);
+        $('.quickquote__opener .product-price').html(productData.price);
 
-        // Populate the colour variants (if available)
-        if (colours) {
-            const coloursArray = colours.split(', ');
+        // Clear previous colour variants
+        $('.quickquote__opener .colour-variants-container').empty();
+
+        // If colour variations exist, display them
+        if (productData.colours) {
+            const coloursArray = productData.colours.split(', ');
             coloursArray.forEach(function(colour) {
-                const colourHtml = `<div class="color-variant mr-2 mb-2" style="background-color: ${colour};" title="${colour}">
-                                        <span class="color-check" style="display: none; color: white;">✓</span>
-                                      </div>`;
+                const colourHtml = `
+                    <div class="color-variant mr-2 mb-2" 
+                         style="background-color: ${colour};" 
+                         title="${colour}">
+                        <span class="color-check" style="display: none; color: white;">✓</span>
+                    </div>`;
                 $('.quickquote__opener .colour-variants-container').append(colourHtml);
             });
         }
+
+        // Optionally: Handle product variations if needed (e.g., to update specific price based on selected variation)
+        const variations = productData.variations ? JSON.parse(productData.variations) : [];
+        // Additional logic can be added to handle specific variation selections
 
         // Show the drawer
         $('.quickquote__opener').addClass('active');

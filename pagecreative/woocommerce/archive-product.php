@@ -84,10 +84,14 @@ get_header(); ?>
                                             </div>
                                         </a>
                                         <span class="quickquote" 
-      data-title="<?php the_title(); ?>" 
+      data-id="<?php the_ID(); ?>"
+      data-title="<?php the_title(); ?>"
       data-sku="<?php echo esc_attr($product->get_sku()); ?>"
       data-price="<?php echo esc_attr($product->get_price_html()); ?>"
-      data-colours="<?php echo esc_attr(implode(', ', wp_list_pluck($terms, 'name'))); ?>">Quick Quote</span>
+      data-colours="<?php echo esc_attr(implode(', ', wp_list_pluck($terms, 'name'))); ?>"
+      data-variations='<?php echo json_encode($variations); ?>'>
+    Quick Quote
+</span>
 
                                     </div>
 
