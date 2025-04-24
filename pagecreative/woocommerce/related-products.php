@@ -38,7 +38,7 @@ if ($related_query->have_posts()):
                     </div>
 
                     <a href="<?php the_permalink(); ?>">
-                        <h3 class="font-17 font-mb-15 mb-0 pb-0 pb-lg-1 pt-2"><?php the_title(); ?></h3>
+                        <h3 class="font-17 font-mb-15 mb-0 pb-0 pb-lg-1 pt-4"><?php the_title(); ?></h3>
                     </a>
 
                     <?php
