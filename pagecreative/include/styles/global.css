@@ -1663,13 +1663,13 @@ button {
 	overflow: auto;
 	padding: 1.5rem 1rem;
 	box-shadow: 0px 0px 3px 100px #0000005e;
-	transition: right 0.3s ease;
+	transition: all 0.3s ease;
 }
 
 .mobfilter.open {
 	right: 0;
 	opacity: 1;
-	transition: opacity 0.3s ease;
+	transition: all 0.3s ease;
 }
 
 .mobfilter .searchandfilter h4 {
