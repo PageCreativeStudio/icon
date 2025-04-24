@@ -83,13 +83,7 @@ get_header(); ?>
                                                     alt="<?php the_title(); ?>" class="" loading="lazy">
                                             </div>
                                         </a>
-                                        <span class="quickquote" 
-      data-title="<?php the_title(); ?>" 
-      data-price="<?php echo esc_html($product->get_price_html()); ?>" 
-      data-sku="<?php echo esc_html($product->get_sku()); ?>"
-      data-product-id="<?php echo esc_attr($product->get_id()); ?>">
-    Quick Quote
-</span>
+                                        <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
                                     </div>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
