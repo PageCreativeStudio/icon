@@ -1800,7 +1800,7 @@ button {
 	.category__filter select {
 		display: block;
 		width: 100%;
-		padding: 17px 12px 12px 12px;
+		padding: 12px 12px 10px 12px;
 		color: black;
 		border-radius: 0;
 		font-size: 14px;
