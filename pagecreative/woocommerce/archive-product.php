@@ -29,7 +29,7 @@ get_header(); ?>
 
 <div class="shop__container container-fluid mx-auto px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5 ">
     <div class="bordertop mt-3 mt-lg-0">
-        <div class="d-lg-none d-flex flex-wrap justify-content-between pt-4 pt-lg-5">
+        <div class="d-lg-none d-flex flex-wrap justify-content-between pt-4">
             <div class="align-content-center">
                 <p class="text-black font-15 mb-0">Product Categories</p>
             </div>
@@ -46,7 +46,7 @@ get_header(); ?>
                 </a>
             </div>
         </div>
-        <div class="category__filter pb-3 pt-0 pt-lg-3 px-0 mb-3 mb-lg-0">
+        <div class="category__filter pb-3 pt-0 pt-lg-4 px-0 mb-3 mb-lg-0">
             <?php
             $filter_shortcode2 = '[searchandfilter id="1102"]';
             $filter_html = do_shortcode($filter_shortcode2);
