@@ -1520,9 +1520,6 @@ button {
 	flex-wrap: wrap;
 }
 
-.category__filter .sf-field-taxonomy-product_cat li input {
-	display: none;
-}
 
 .category__filter .sf-field-taxonomy-product_cat li label {
 	cursor: pointer;
@@ -1609,6 +1606,10 @@ button {
 /***  Shop Filter  ***/
 .category__filter .sf-field-taxonomy-product_cat {
 	display: block !important;
+}
+
+.category__filter .sf-field-taxonomy-product_cat li input {
+	display: none;
 }
 
 .category__filter form>ul>li {
