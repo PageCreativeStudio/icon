@@ -165,64 +165,22 @@ get_header(); ?>
     <div class="max-40 bg-white py-4 px-4">
         <span class="closedrawer">&times;</span>
         <div>
-            <?php
-            global $product;
-            $product_id = $product->get_id();
-            $variations = $product->is_type('variable') ? $product->get_available_variations() : [];
-            ?>
-
             <div class="borderbottom pb-3">
                 <div class="d-flex flex-wrap justify-content-between pb-0">
-                    <p class="font-15 font-mb-14 mb-0">Continental ICP-01</p>
-                    <p class="font-15 font-mb-14 mb-0"><?php echo esc_html($product->get_sku()); ?></p>
+                    <p class="font-15 font-mb-14 mb-0 product-sku"></p>
                 </div>
-                <h1 class="font-25 font-mb-20 mb-0"><?php the_title(); ?></h1>
-                <h2 class="font-18 product-price">
-                    <?php echo $product->get_price_html(); ?>
-                </h2>
+                <h1 class="font-25 font-mb-20 mb-0 quote-title"></h1>
+                <h2 class="font-18 product-price"></h2>
             </div>
 
-            <?php
-            $terms = get_the_terms($product_id, 'pa_colours');
-            $variation_data = [];
-            foreach ($variations as $variation) {
-                $attributes = $variation['attributes'];
-                if (isset($attributes['attribute_pa_colour'])) {
-                    $slug = $attributes['attribute_pa_colour'];
-                    $variation_data[$slug] = [
-                        'price_html' => $variation['price_html'],
-                        'display_price' => $variation['display_price'],
-                        'variation_id' => $variation['variation_id']
-                    ];
-                }
-            }
-            ?>
-
-            <?php if (!empty($terms)): ?>
-                <div class="colour-attributes borderbottom py-4 mt-1">
-                    <p class="text-black font-15 mb-0 pb-3">Choose a colour:</p>
-                    <div class="d-flex flex-wrap color-variants-container">
-                        <?php foreach ($terms as $term):
-                            $slug = $term->slug;
-                            $color = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $term->name));
-                            $data = $variation_data[$slug] ?? null;
-                            ?>
-                            <div class="color-variant mr-2 mb-2" data-color="<?php echo esc_attr($slug); ?>"
-                                data-price-html="<?php echo esc_attr($data['price_html'] ?? ''); ?>"
-                                data-price="<?php echo esc_attr($data['display_price'] ?? ''); ?>"
-                                data-variation-id="<?php echo esc_attr($data['variation_id'] ?? ''); ?>"
-                                style="background-color: <?php echo esc_attr($color); ?>;"
-                                title="<?php echo esc_attr($term->name); ?>">
-                                <span class="color-check" style="display: none; color: white;">✓</span>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                    <input type="hidden" name="variation_id" id="selected-variation-id" value="">
-                </div>
-            <?php endif; ?>
+            <div class="colour-attributes borderbottom py-4 mt-1">
+                <p class="text-black font-15 mb-0 pb-3">Choose a colour:</p>
+                <div class="d-flex flex-wrap colour-variants-container"></div>
+            </div>
         </div>
     </div>
 </div>
+
 
 <?php
 $shop_page_id = wc_get_page_id('shop');
