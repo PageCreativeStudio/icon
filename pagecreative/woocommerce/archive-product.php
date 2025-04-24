@@ -83,11 +83,15 @@ get_header(); ?>
                                                     alt="<?php the_title(); ?>" class="" loading="lazy">
                                             </div>
                                         </a>
-                                        <span class="quickquote" data-id="<?php echo $product->get_id(); ?>"
-                                            data-title="<?php the_title(); ?>"
-                                            data-sku="<?php echo esc_html($product->get_sku()); ?>"
-                                            data-price="<?php echo $product->get_price_html(); ?>"
-                                            data-colours="<?php echo json_encode($terms); ?>">Quick Quote</span>
+                                        <span class="quickquote" 
+    data-title="<?php the_title(); ?>"
+    data-product-id="<?php echo $product->get_id(); ?>"
+    data-sku="<?php echo esc_attr($product->get_sku()); ?>"
+    data-price="<?php echo esc_attr($product->get_price_html()); ?>"
+    data-colours="<?php echo esc_attr(json_encode($terms)); ?>">
+    Quick Quote
+</span>
+
                                     </div>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
