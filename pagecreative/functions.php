@@ -301,3 +301,12 @@ function get_google_reviews_count()
 
 	return 'N/A';
 }
+
+// Add this to your functions.php
+function check_quickview_parameter() {
+    if (isset($_GET['quickview']) && $_GET['quickview'] == 'true') {
+        // This tells WordPress to only output the content, not a full page
+        define('DOING_AJAX', true);
+    }
+}
+add_action('init', 'check_quickview_parameter');

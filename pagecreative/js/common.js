@@ -430,15 +430,38 @@ jQuery(document).ready(function ($) {
 
 
 /// Quickquote drawer
-jQuery(document).ready(function ($) {
-    $(document).on('click', '.quickquote', function () {
-        const title = $(this).data('title');
-        $('.quote-title').text(title);
+jQuery(document).ready(function($) {
+    // Store the original drawer content on page load
+    const drawerTemplate = $('.quickquote__opener').html();
+    
+    // When Quick Quote button is clicked
+    $(document).on('click', '.quickquote', function() {
+        // Get the product ID from the clicked button
+        const productID = $(this).data('product-id');
+        
+        // Make the drawer visible
         $('.quickquote__opener').addClass('active');
+        
+        // If the button doesn't have product ID, we don't need to do anything else
+        if (!productID) return;
+        
+        // Load the content for this specific product directly
+        $.get(window.location.origin + '?p=' + productID + '&quickview=true', function(response) {
+            // Extract only the drawer content from the response
+            const content = $(response).find('.quickquote__opener').html();
+            
+            // Update the drawer with this product's content
+            if (content) {
+                $('.quickquote__opener').html(content);
+            }
+        });
     });
-
-    $(document).on('click', '.closedrawer', function () {
+    
+    // Close drawer when clicking the close button
+    $(document).on('click', '.closedrawer', function() {
         $('.quickquote__opener').removeClass('active');
+        // Restore original template for next use
+        $('.quickquote__opener').html(drawerTemplate);
     });
 });
 
