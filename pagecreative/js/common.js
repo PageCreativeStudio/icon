@@ -432,51 +432,15 @@ jQuery(document).ready(function ($) {
 /// Quickquote drawer
 jQuery(document).ready(function ($) {
     $(document).on('click', '.quickquote', function () {
-        // Extract product data from the clicked button's data attributes
-        const productData = $(this).data();
-        
-        // Update drawer title, SKU, price
-        $('.quote-title').text(productData.title);
-        $('.product-sku').text('SKU: ' + productData.sku);
-        $('.product-price').html(productData.price);
-        
-        // Clear any existing colour variants in the drawer
-        $('.colour-variants-container').empty();
-        
-        // Get colour variants from product data and add them to the drawer
-        const colours = productData.colours ? productData.colours.split(', ') : [];
-        colours.forEach(function (colour) {
-            const colourHtml = `
-                <div class="color-variant mr-2 mb-2" style="background-color: ${colour};" title="${colour}">
-                    <span class="color-check" style="display: none; color: white;">✓</span>
-                </div>`;
-            $('.colour-variants-container').append(colourHtml);
-        });
-        
-        // Handle product variations (if any) for the drawer
-        if (productData.variations) {
-            const variations = JSON.parse(productData.variations);
-            // Example of handling price change based on variation selection
-            $('.colour-variants-container .color-variant').each(function () {
-                const colour = $(this).attr('title');
-                const variation = variations.find(variation => variation.attributes['attribute_pa_colour'] === colour);
-                if (variation) {
-                    $(this).data('variation-id', variation.variation_id);
-                    $(this).data('price', variation.display_price);
-                }
-            });
-        }
-        
-        // Show the drawer
+        const title = $(this).data('title');
+        $('.quote-title').text(title);
         $('.quickquote__opener').addClass('active');
     });
 
-    // Close drawer when close button is clicked
     $(document).on('click', '.closedrawer', function () {
         $('.quickquote__opener').removeClass('active');
     });
 });
-
 
 
 /// collapsible filter
