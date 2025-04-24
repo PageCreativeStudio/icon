@@ -83,12 +83,13 @@ get_header(); ?>
                                                     alt="<?php the_title(); ?>" class="" loading="lazy">
                                             </div>
                                         </a>
-                                        <span class="quickquote" data-title="<?php the_title(); ?>"
-                                            data-price="<?php echo esc_html($product->get_price_html()); ?>"
-                                            data-sku="<?php echo esc_html($product->get_sku()); ?>"
-                                            data-product-id="<?php echo esc_attr($product->get_id()); ?>">
-                                            Quick Quote
-                                        </span>
+                                        <span class="quickquote" 
+      data-title="<?php the_title(); ?>" 
+      data-price="<?php echo esc_html($product->get_price_html()); ?>" 
+      data-sku="<?php echo esc_html($product->get_sku()); ?>"
+      data-product-id="<?php echo esc_attr($product->get_id()); ?>">
+    Quick Quote
+</span>
                                     </div>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
@@ -161,12 +162,21 @@ get_header(); ?>
     <div class="max-40 bg-white py-4 px-4">
         <span class="closedrawer">&times;</span>
         <div>
+            <?php
+            global $product;
+            $product_id = $product->get_id();
+            $variations = $product->is_type('variable') ? $product->get_available_variations() : [];
+            ?>
+
             <div class="borderbottom pb-3">
                 <div class="d-flex flex-wrap justify-content-between pb-0">
-                    <p class="font-15 font-mb-14 mb-0 product-sku"></p>
+                    <p class="font-15 font-mb-14 mb-0">Continental ICP-01</p>
+                    <p class="font-15 font-mb-14 mb-0"><?php echo esc_html($product->get_sku()); ?></p>
                 </div>
-                <h1 class="font-25 font-mb-20 mb-0 product-title"></h1>
-                <h2 class="font-18 product-price"></h2>
+                <h1 class="font-25 font-mb-20 mb-0"><?php the_title(); ?></h1>
+                <h2 class="font-18 product-price">
+                    <?php echo $product->get_price_html(); ?>
+                </h2>
             </div>
 
             <?php
