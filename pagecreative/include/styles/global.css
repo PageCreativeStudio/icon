@@ -1625,7 +1625,7 @@ button {
 	border-bottom: solid 1px #dbdbdb;
 }
 
-.megafilter-group form ul {
+.megafilter-group form > ul li ul {
 	max-height: 0;
 	overflow: hidden;
 	text-align: left;
