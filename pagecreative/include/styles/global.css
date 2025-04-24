@@ -1822,6 +1822,7 @@ button {
 
 	.category__filter form>ul .sf-field-taxonomy-product_cat:nth-of-type(2) {
 		display: block;
+		width: 100%;
 	}
 	.category__filter form>ul .sf-field-taxonomy-product_cat:nth-of-type(2) label{
 		width: 100%;
