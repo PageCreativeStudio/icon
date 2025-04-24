@@ -83,18 +83,18 @@ global $product;
                 </div>
 
                 <?php
-$terms = get_the_terms($product_id, 'pa_colour'); // Fetching terms from attribute
+$terms = get_the_terms($product_id, 'pa_colour'); // This fetches attribute terms assigned to this product
 $variation_data = [];
 
-// Loop through variations and map data by attribute slug
+// Loop through all variations to match by attribute slug
 foreach ($variations as $variation) {
     $attributes = $variation['attributes'];
     if (isset($attributes['attribute_pa_colour'])) {
         $slug = $attributes['attribute_pa_colour'];
         $variation_data[$slug] = [
-            'price_html'     => $variation['price_html'],
-            'display_price'  => $variation['display_price'],
-            'variation_id'   => $variation['variation_id']
+            'price_html'    => $variation['price_html'],
+            'display_price' => $variation['display_price'],
+            'variation_id'  => $variation['variation_id']
         ];
     }
 }
@@ -105,10 +105,12 @@ foreach ($variations as $variation) {
         <p class="text-black font-15 mb-0 pb-2">Choose a colour:</p>
         <div class="d-flex flex-wrap color-variants-container">
             <?php foreach ($terms as $term):
-                // Use the term name or slug as a colour fallback if no meta colour is set
                 $slug = $term->slug;
-                $color = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $term->name));
+                $color = get_term_meta($term->term_id, 'color', true); // Pull the hex or CSS colour from meta
                 $data = $variation_data[$slug] ?? null;
+
+                // Only show if we have both colour and variation data
+                if (!$color) continue;
                 ?>
                 <div class="color-variant mr-2 mb-2"
                     data-color="<?php echo esc_attr($slug); ?>"
@@ -124,6 +126,7 @@ foreach ($variations as $variation) {
         <input type="hidden" name="variation_id" id="selected-variation-id" value="">
     </div>
 <?php endif; ?>
+
 
 
 
