@@ -1611,14 +1611,6 @@ button {
 	display: block !important;
 }
 
-.category__filter form>ul>li {
-	display: none;
-}
-
-.megafilter-group .sf-field-taxonomy-product_cat {
-	display: none;
-}
-
 .megafilter-group form>ul li h4 {
 	cursor: pointer;
 	position: relative;
