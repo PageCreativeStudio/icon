@@ -100,7 +100,7 @@ global $product;
 
                 <?php if (!empty($terms)): ?>
                     <div class="colour-attributes borderbottom py-4 mt-1">
-                        <p class="text-black font-15 mb-0 pb-2">Choose a colour:</p>
+                        <p class="text-black font-15 mb-0 pb-3">Choose a colour:</p>
                         <div class="d-flex flex-wrap color-variants-container">
                             <?php foreach ($terms as $term):
                                 $slug = $term->slug;
