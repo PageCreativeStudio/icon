@@ -403,7 +403,7 @@ jQuery(document).ready(function ($) {
 
 /// collapsible filter
 $(document).ready(function () {
-    const headings = document.querySelectorAll(".megafilter-group h4");
+    const headings = document.querySelectorAll(".megafilter-group form h4");
     const isMobile = () => window.innerWidth <= 989;
     headings.forEach((heading) => {
         heading.addEventListener("click", () => {
