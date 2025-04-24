@@ -36,68 +36,7 @@ global $product;
 
             </div>
 
-            <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0">
-                <div class="borderbottom pb-3">
-                    <div class="d-flex flex-wrap justify-content-between pb-0">
-                        <p class="font-15 font-mb-14 mb-0">Continental ICP-01</p>
-                        <p class="font-15 font-mb-14 mb-0">SKU25365</p>
-                    </div>
-                    <h1 class="font-30 font-mb-25 my-2 my-lg-3"><?php the_title(); ?></h1>
-                    <h2 class="font-18 product-price">
-                        <!--<?php
-                        $product = wc_get_product(get_the_ID());
-                        $variations = $product->get_available_variations();
-                        $min_price = false;
-                        foreach ($variations as $variation) {
-                            $variation_price = $variation['display_price'];
-                            if ($min_price === false || $variation_price < $min_price) {
-                                $min_price = $variation_price;
-                            }
-                        }
-
-                        if ($min_price !== false) {
-                            echo 'From £' . number_format($min_price, 2) . '/unit';
-                        } else {
-                            echo 'From £4.80/unit';
-                        }
-                        ?>-->
-                    </h2>
-                </div>
-
-                <div class="borderbottom py-4">
-                    <div class="inneritem">
-                        <p class="text-black font-15 mb-0 pb-2">Product description</p>
-                        <?php
-                        $product_description = get_the_content();
-
-                        if (!empty($product_description)) {
-                            echo '<div class="product-description font-14 py-1">';
-
-                            echo '<div class="short-description font-14 py-1">';
-                            $words = explode(' ', $product_description);
-                            $shortened = implode(' ', array_slice($words, 0, 54));
-                            echo $shortened;
-                            if (count($words) > 54) {
-                                echo '... ';
-                                echo '<button class="toggle-description font-14 underline d-block text-black p-0 mt-3" data-action="expand">Read more</button>';
-                            }
-                            echo '</div>';
-
-                            if (count($words) > 54) {
-                                echo '<div class="full-description py-1 font-14" style="display: none;">';
-                                echo $product_description;
-                                echo ' <button class="toggle-description font-14 underline d-block text-black p-0 mt-3" data-action="collapse">Read less</button>';
-                                echo '</div>';
-                            }
-
-                            echo '</div>';
-                        }
-                        ?>
-                    </div>
-                </div>
-
-
-            </div>
+         
 
         </div>
     </div>
