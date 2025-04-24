@@ -1802,9 +1802,6 @@ button {
 		transition: transform 0.3s ease-in;
 	}
 
-	.category__filter .searchandfilter {
-		display: none;
-	}
 
 	.category__filter select {
 		display: block;

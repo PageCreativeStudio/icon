@@ -429,55 +429,6 @@ $(document).ready(function () {
 });
 
 
-/// categrofilter mobile set 
-$(document).ready(function () {
-    function applyMobileDropdown() {
-        if (window.innerWidth <= 989) {
-            if ($(".category__filter .mobile-dropdown").length === 0) {
-                const radioButtons = $(".category__filter input[type='radio']");
-                const dropdown = $("<select>").addClass("mobile-dropdown");
-
-                // Build dropdown from radio buttons
-                radioButtons.each(function () {
-                    const label = $(this).next("label").text();
-                    const value = $(this).val();
-                    const selected = $(this).is(":checked") ? "selected" : "";
-                    dropdown.append(`<option value="${value}" ${selected}>${label}</option>`);
-                });
-
-                // Insert dropdown before the original radio list
-                $(".category__filter").prepend(dropdown);
-
-                // Hide the original radio list
-                radioButtons.closest("ul, .sf-field").hide();
-
-                // Sync dropdown selection to radio button click
-                dropdown.on("change", function () {
-                    const selectedValue = $(this).val();
-                    radioButtons.each(function () {
-                        if ($(this).val() === selectedValue) {
-                            $(this).prop("checked", true).trigger("change"); // triggers AJAX
-                        }
-                    });
-                });
-            }
-        } else {
-            // Remove mobile dropdown and show radio buttons on desktop
-            $(".category__filter .mobile-dropdown").remove();
-            $(".category__filter input[type='radio']").closest("ul, .sf-field").show();
-        }
-    }
-
-    applyMobileDropdown();
-
-    $(window).resize(function () {
-        applyMobileDropdown();
-    });
-});
-
-
-
-
 ///////////////////// Mobile boat filter
 jQuery(document).ready(function ($) {
     function isMobileScreen() {
