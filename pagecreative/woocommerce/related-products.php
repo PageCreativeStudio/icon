@@ -34,7 +34,6 @@ if ($related_query->have_posts()):
                                     loading="lazy">
                             </div>
                         </a>
-                        <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
                     </div>
 
                     <a href="<?php the_permalink(); ?>">
