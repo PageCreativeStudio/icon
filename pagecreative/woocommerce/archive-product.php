@@ -19,7 +19,7 @@ get_header(); ?>
         <div class="row pt-lg-3">
             <div class="col-12 col-lg-3 max-20 ">
                 <div class="megafilter-group">
-                    <h4 class="text-black font-18">Filter Products</h4>
+                    <h4 class="text-black font-20">Filter Products</h4>
                     <?php
                     $filter_shortcode = '[searchandfilter id="1102"]';
                     $filter_html = do_shortcode($filter_shortcode);

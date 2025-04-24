@@ -1499,15 +1499,15 @@ button {
 }
 
 .megafilter-group form>ul>li {
-	border-bottom: solid 1px #CCCCCC;
-	padding-bottom: 1rem;
-	margin-bottom: 0.7rem;
-
+    border-bottom: solid 1px #CCCCCC;
+    padding-bottom: 16px;
+    margin-bottom: 0px;
+    padding-top: 20px;
 }
 
 .searchandfilter h4 {
-	padding: 5px 0 4px;
-	font-size: 17px;
+    padding: 0px 0 4px;
+    font-size: 15px;
 }
 
 .searchandfilter ul li label {
@@ -1618,11 +1618,8 @@ button {
 	display: none;
 }
 .megafilter-group form > ul li h4{
-	margin-bottom: 11px !important;
-	cursor: pointer;
-	text-align: left;
-	position: relative;
-	border-bottom: solid 1px #dbdbdb;
+    cursor: pointer;
+    position: relative;
 }
 
 .megafilter-group form > ul li ul {
