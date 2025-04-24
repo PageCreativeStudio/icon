@@ -1604,13 +1604,6 @@ button {
 
 
 /***  Shop Filter  ***/
-.category__filter .sf-field-taxonomy-product_cat {
-	display: block !important;
-}
-
-.category__filter .sf-field-taxonomy-product_cat li input {
-	display: none;
-}
 
 .category__filter form>ul>li {
 	display: none;
@@ -1826,6 +1819,14 @@ button {
 		padding: 4px 0 2px 0;
 		max-width: 75px;
 	}
+
+	.category__filter form>ul .sf-field-taxonomy-product_cat:nth-of-type(2) {
+		display: block;
+	}
+
+	.category__filter form>ul .sf-field-taxonomy-product_cat:nth-of-type(1) {
+		display: none;
+	}
 }
 
 @media (min-width:991px) {
@@ -1839,5 +1840,13 @@ button {
 	.col-lg-55 {
 		flex: 0 0 45.83%;
 		max-width: 45.83%;
+	}
+
+	.category__filter form>ul .sf-field-taxonomy-product_cat:nth-of-type(1) {
+		display: block;
+	}
+
+	.category__filter form>ul .sf-field-taxonomy-product_cat:nth-of-type(2) {
+		display: none;
 	}
 }
