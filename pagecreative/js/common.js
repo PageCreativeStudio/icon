@@ -409,16 +409,18 @@ $(document).ready(function () {
         heading.addEventListener("click", () => {
             const ul = heading.nextElementSibling;
             if (ul.tagName.toLowerCase() === "ul") {
-                if (ul.classList.contains("open")) {
-                    ul.style.maxHeight = "0";
-                    ul.classList.remove("open");
-                    heading.classList.remove("active");
-                } else {
-                    document.querySelectorAll(".megafilter-group form > ul.open").forEach((openUl) => {
-                        openUl.style.maxHeight = "0";
-                        openUl.classList.remove("open");
-                        openUl.previousElementSibling.classList.remove("active");
-                    });
+                // Check if the clicked item is already open
+                const isOpen = ul.classList.contains("open");
+
+                // Close all open items
+                document.querySelectorAll(".megafilter-group form > ul.open").forEach((openUl) => {
+                    openUl.style.maxHeight = "0";
+                    openUl.classList.remove("open");
+                    openUl.previousElementSibling.classList.remove("active");
+                });
+
+                // If it wasn't open already, open the clicked item
+                if (!isOpen) {
                     ul.style.maxHeight = `${ul.scrollHeight}px`;
                     ul.classList.add("open");
                     heading.classList.add("active");
