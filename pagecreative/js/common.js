@@ -273,7 +273,7 @@ jQuery(document).ready(function ($) {
         responsive: {
             0: {
                 items: 1,
-                stagePadding: 30,
+                stagePadding: 10,
             },
             768: {
                 items: 2,
