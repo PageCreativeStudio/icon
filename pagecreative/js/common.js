@@ -431,35 +431,32 @@ $(document).ready(function () {
 
 /// categrofilter mobile set 
 
-$(document).ready(function() {
-    // Check if the screen width is under 989px (for mobile)
+$(document).ready(function () {
     function toggleDropdown() {
         if (window.innerWidth <= 989) {
-            // Convert radio buttons to a dropdown
-            const radioButtons = $(".category__filter input[type='radio']");
-            const dropdown = $("<select>").addClass("mobile-dropdown");
+            if ($(".category__filter select").length === 0) {
+                const radioButtons = $(".category__filter input[type='radio']");
+                const dropdown = $("<select>").addClass("mobile-dropdown");
 
-            radioButtons.each(function() {
-                const option = $("<option>")
-                    .attr("value", $(this).val())
-                    .text($(this).next("label").text());
-                dropdown.append(option);
-            });
+                radioButtons.each(function () {
+                    const option = $("<option>")
+                        .attr("value", $(this).val())
+                        .text($(this).next("label").text());
+                    dropdown.append(option);
+                });
 
-            // Append the dropdown and remove radio buttons
-            $(".category__filter").html(dropdown);
+                $(".category__filter").html(dropdown);
+            }
         } else {
-            // If it's a desktop, revert to radio buttons
-            const filterHtml = '[searchandfilter id="1102"]';
-            $(".category__filter").html(filterHtml);
+            if ($(".category__filter input[type='radio']").length === 0) {
+                const filterHtml = '[searchandfilter id="1102"]';
+                $(".category__filter").html(filterHtml);
+            }
         }
     }
 
-    // Initial check on load
     toggleDropdown();
-
-    // Check on window resize
-    $(window).resize(function() {
+    $(window).resize(function () {
         toggleDropdown();
     });
 });
