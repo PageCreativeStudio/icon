@@ -430,63 +430,38 @@ jQuery(document).ready(function ($) {
 
 
 /// Quickquote drawer
-jQuery(document).ready(function($) {
-    // When Quick Quote button is clicked
-    $(document).on('click', '.quickquote', function(e) {
-        e.preventDefault();
-        
-        // Get the product URL from the parent product container
-        const productLink = $(this).closest('.product').find('a.woocommerce-LoopProduct-link').attr('href');
-        
-        if (productLink) {
-            // Temporarily hide the drawer while loading
-            $('.quickquote__opener').removeClass('active');
-            
-            // Fetch the product page content
-            $.get(productLink, function(response) {
-                // Extract the product data from the response
-                const productTitle = $(response).find('.product_title').text();
-                const productSku = $(response).find('.sku').text();
-                const productPrice = $(response).find('.price').html();
-                
-                // Update the drawer with this product's data
-                $('.quickquote__opener .font-25').text(productTitle);
-                $('.quickquote__opener .font-15:eq(1)').text(productSku);
-                $('.quickquote__opener .product-price').html(productPrice);
-                
-                // If there are color variants, update them too
-                const colorVariants = $(response).find('.color-variants-container').html();
-                if (colorVariants) {
-                    $('.quickquote__opener .color-variants-container').html(colorVariants);
-                }
-                
-                // Show the drawer with updated content
-                $('.quickquote__opener').addClass('active');
+/// Quickquote drawer
+jQuery(document).ready(function ($) {
+    $(document).on('click', '.quickquote', function () {
+        // Get product data
+        const title = $(this).data('title');
+        const sku = $(this).data('sku');
+        const price = $(this).data('price');
+        const colours = $(this).data('colours');
+
+        // Update the drawer content
+        $('.quote-title').text(title);
+        $('.quickquote__opener .product-sku').text(sku);
+        $('.quickquote__opener .product-price').html(price);
+        $('.quickquote__opener .colour-variants-container').empty(); // Clear previous colour options
+
+        // Populate the colour variants (if available)
+        if (colours) {
+            const coloursArray = colours.split(', ');
+            coloursArray.forEach(function(colour) {
+                const colourHtml = `<div class="color-variant mr-2 mb-2" style="background-color: ${colour};" title="${colour}">
+                                        <span class="color-check" style="display: none; color: white;">✓</span>
+                                      </div>`;
+                $('.quickquote__opener .colour-variants-container').append(colourHtml);
             });
-        } else {
-            // If no product link found, just show the drawer with existing content
-            $('.quickquote__opener').addClass('active');
         }
+
+        // Show the drawer
+        $('.quickquote__opener').addClass('active');
     });
-    
-    // Close drawer when close button is clicked
-    $(document).on('click', '.closedrawer', function() {
+
+    $(document).on('click', '.closedrawer', function () {
         $('.quickquote__opener').removeClass('active');
-    });
-    
-    // Initialize color variant functionality
-    $(document).on('click', '.color-variant', function() {
-        $('.color-variant').removeClass('active').find('.color-check').hide();
-        $(this).addClass('active').find('.color-check').show();
-        
-        const priceHtml = $(this).data('price-html');
-        const variationId = $(this).data('variation-id');
-        
-        if (priceHtml) {
-            $('.product-price').html(priceHtml);
-        }
-        
-        $('#selected-variation-id').val(variationId || '');
     });
 });
 

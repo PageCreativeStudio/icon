@@ -83,7 +83,12 @@ get_header(); ?>
                                                     alt="<?php the_title(); ?>" class="" loading="lazy">
                                             </div>
                                         </a>
-                                        <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
+                                        <span class="quickquote" 
+      data-title="<?php the_title(); ?>" 
+      data-sku="<?php echo esc_attr($product->get_sku()); ?>"
+      data-price="<?php echo esc_attr($product->get_price_html()); ?>"
+      data-colours="<?php echo esc_attr(implode(', ', wp_list_pluck($terms, 'name'))); ?>">Quick Quote</span>
+
                                     </div>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
