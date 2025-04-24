@@ -83,47 +83,43 @@ global $product;
                 </div>
 
                 <?php
-$terms = get_the_terms($product_id, 'pa_colours'); // Fetching terms from attribute
-$variation_data = [];
-
-// Loop through variations and map data by attribute slug
-foreach ($variations as $variation) {
-    $attributes = $variation['attributes'];
-    if (isset($attributes['attribute_pa_colour'])) {
-        $slug = $attributes['attribute_pa_colour'];
-        $variation_data[$slug] = [
-            'price_html'     => $variation['price_html'],
-            'display_price'  => $variation['display_price'],
-            'variation_id'   => $variation['variation_id']
-        ];
-    }
-}
-?>
-
-<?php if (!empty($terms)): ?>
-    <div class="colour-attributes borderbottom py-4 mt-1">
-        <p class="text-black font-15 mb-0 pb-2">Choose a colour:</p>
-        <div class="d-flex flex-wrap color-variants-container">
-            <?php foreach ($terms as $term):
-                // Use the term name or slug as a colour fallback if no meta colour is set
-                $slug = $term->slug;
-                $color = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $term->name));
-                $data = $variation_data[$slug] ?? null;
+                $terms = get_the_terms($product_id, 'pa_colours');
+                $variation_data = [];
+                foreach ($variations as $variation) {
+                    $attributes = $variation['attributes'];
+                    if (isset($attributes['attribute_pa_colour'])) {
+                        $slug = $attributes['attribute_pa_colour'];
+                        $variation_data[$slug] = [
+                            'price_html' => $variation['price_html'],
+                            'display_price' => $variation['display_price'],
+                            'variation_id' => $variation['variation_id']
+                        ];
+                    }
+                }
                 ?>
-                <div class="color-variant mr-2 mb-2"
-                    data-color="<?php echo esc_attr($slug); ?>"
-                    data-price-html="<?php echo esc_attr($data['price_html'] ?? ''); ?>"
-                    data-price="<?php echo esc_attr($data['display_price'] ?? ''); ?>"
-                    data-variation-id="<?php echo esc_attr($data['variation_id'] ?? ''); ?>"
-                    style="background-color: <?php echo esc_attr($color); ?>;"
-                    title="<?php echo esc_attr($term->name); ?>">
-                    <span class="color-check" style="display: none; color: white;">✓</span>
-                </div>
-            <?php endforeach; ?>
-        </div>
-        <input type="hidden" name="variation_id" id="selected-variation-id" value="">
-    </div>
-<?php endif; ?>
+
+                <?php if (!empty($terms)): ?>
+                    <div class="colour-attributes borderbottom py-4 mt-1">
+                        <p class="text-black font-15 mb-0 pb-2">Choose a colour:</p>
+                        <div class="d-flex flex-wrap color-variants-container">
+                            <?php foreach ($terms as $term):
+                                $slug = $term->slug;
+                                $color = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $term->name));
+                                $data = $variation_data[$slug] ?? null;
+                                ?>
+                                <div class="color-variant mr-2 mb-2" data-color="<?php echo esc_attr($slug); ?>"
+                                    data-price-html="<?php echo esc_attr($data['price_html'] ?? ''); ?>"
+                                    data-price="<?php echo esc_attr($data['display_price'] ?? ''); ?>"
+                                    data-variation-id="<?php echo esc_attr($data['variation_id'] ?? ''); ?>"
+                                    style="background-color: <?php echo esc_attr($color); ?>;"
+                                    title="<?php echo esc_attr($term->name); ?>">
+                                    <span class="color-check" style="display: none; color: white;">✓</span>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <input type="hidden" name="variation_id" id="selected-variation-id" value="">
+                    </div>
+                <?php endif; ?>
 
 
 
