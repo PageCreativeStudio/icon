@@ -403,7 +403,7 @@ jQuery(document).ready(function ($) {
 
 /// collapsible filter
 $(document).ready(function () {
-    const headings = document.querySelectorAll(".megafilter-group form h4");
+    const headings = document.querySelectorAll(".megafilter-group form > ul li h4");
     const isMobile = () => window.innerWidth <= 989;
     headings.forEach((heading) => {
         heading.addEventListener("click", () => {
@@ -415,7 +415,7 @@ $(document).ready(function () {
                         ul.classList.remove("open");
                         heading.classList.remove("active");
                     } else {
-                        document.querySelectorAll(".megafilter-group form ul.open").forEach((openUl) => {
+                        document.querySelectorAll(".megafilter-group form > ul.open").forEach((openUl) => {
                             openUl.style.maxHeight = "0";
                             openUl.classList.remove("open");
                             openUl.previousElementSibling.classList.remove("active");
