@@ -1,13 +1,11 @@
 <?php
-global $product;
-
-// Get categories of current product
+global $product;t
 $product_cats = wc_get_product_term_ids($product->get_id(), 'product_cat');
 
 $args = array(
     'post_type' => 'product',
     'posts_per_page' => 12,
-    'post__not_in' => array($product->get_id()), // Exclude current product
+    'post__not_in' => array($product->get_id()), 
     'tax_query' => array(
         array(
             'taxonomy' => 'product_cat',
@@ -37,32 +35,6 @@ if ($related_query->have_posts()):
                             </div>
                         </a>
                         <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
-                    </div>
-
-                    <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
-                        <?php
-                        $max_to_show = 6;
-                        $count = 0;
-                        $terms = get_the_terms($related_product->get_id(), 'pa_colours');
-
-                        if (!empty($terms) && !is_wp_error($terms)) {
-                            foreach ($terms as $term) {
-                                if ($count >= $max_to_show)
-                                    break;
-
-                                $colour_name = $term->name;
-                                $css_colour = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $colour_name));
-
-                                echo '<div class="available-colors" title="' . esc_attr($colour_name) . '" style="background-color:' . esc_attr($css_colour) . ';"></div>';
-
-                                $count++;
-                            }
-
-                            if (count($terms) > $max_to_show) {
-                                echo '<div title="More Colours" class="d-flex more-colour align-items-center justify-content-center">+</div>';
-                            }
-                        }
-                        ?>
                     </div>
 
                     <a href="<?php the_permalink(); ?>">
