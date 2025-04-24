@@ -430,10 +430,47 @@ jQuery(document).ready(function ($) {
 
 
 /// Quickquote drawer
+/// Quickquote drawer
 jQuery(document).ready(function ($) {
     $(document).on('click', '.quickquote', function () {
+        // Get product details from data attributes
+        const productId = $(this).data('id');
         const title = $(this).data('title');
-        $('.quote-title').text(title);
+        const sku = $(this).data('sku');
+        const priceHtml = $(this).data('price');
+        const coloursData = $(this).data('colours'); // This is the JSON data
+
+        // Update drawer with product information
+        $('#quickquote-title').text(title);
+        $('#quickquote-sku').text(sku);
+        $('#quickquote-price').html(priceHtml);
+
+        // Update colours (you can loop over and show the available colours)
+        let coloursHtml = '<p class="text-black font-15 mb-0 pb-3">Choose a colour:</p>';
+        coloursData = JSON.parse(coloursData); // Parse the colours JSON
+        if (coloursData.length > 0) {
+            coloursHtml += '<div class="d-flex flex-wrap color-variants-container">';
+            $.each(coloursData, function (index, term) {
+                const colorSlug = term.slug;
+                const colorName = term.name;
+                const cssColor = colorSlug.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
+
+                coloursHtml += `
+                    <div class="color-variant mr-2 mb-2" 
+                         data-color="${colorSlug}" 
+                         style="background-color: ${cssColor};" 
+                         title="${colorName}">
+                         <span class="color-check" style="display: none; color: white;">✓</span>
+                    </div>
+                `;
+            });
+            coloursHtml += '</div>';
+        } else {
+            coloursHtml += '<p>No colours available</p>';
+        }
+        $('#quickquote-colours').html(coloursHtml);
+
+        // Open the drawer
         $('.quickquote__opener').addClass('active');
     });
 
@@ -441,6 +478,7 @@ jQuery(document).ready(function ($) {
         $('.quickquote__opener').removeClass('active');
     });
 });
+
 
 
 /// collapsible filter

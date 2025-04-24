@@ -83,7 +83,11 @@ get_header(); ?>
                                                     alt="<?php the_title(); ?>" class="" loading="lazy">
                                             </div>
                                         </a>
-                                        <span class="quickquote" data-title="<?php the_title(); ?>">Quick Quote</span>
+                                        <span class="quickquote" data-id="<?php echo $product->get_id(); ?>"
+                                            data-title="<?php the_title(); ?>"
+                                            data-sku="<?php echo esc_html($product->get_sku()); ?>"
+                                            data-price="<?php echo $product->get_price_html(); ?>"
+                                            data-colours="<?php echo json_encode($terms); ?>">Quick Quote</span>
                                     </div>
 
                                     <div class="d-flex flex-wrap justify-content-center pb-1 pt-3">
@@ -173,34 +177,6 @@ get_header(); ?>
                 </h2>
             </div>
 
-            <div class="borderbottom py-4">
-                <div class="inneritem">
-                    <p class="text-black font-15 mb-0 pb-2">Product description</p>
-                    <div class="product-description font-14 py-1">
-                        <div class="short-description font-14 py-1">
-                            <?php
-                            $content = wp_strip_all_tags(apply_filters('the_content', get_the_content()));
-                            $words = explode(' ', $content);
-                            $short = implode(' ', array_slice($words, 0, 54));
-                            echo esc_html($short);
-                            ?>
-                            <?php if (count($words) > 54): ?>
-                                ... <button class="toggle-description font-14 underline d-block text-black p-0 mt-3"
-                                    data-action="expand">Read more</button>
-                            <?php endif; ?>
-                        </div>
-
-                        <?php if (count($words) > 54): ?>
-                            <div class="full-description py-1 font-14" style="display: none;">
-                                <?php echo esc_html($content); ?>
-                                <button class="toggle-description font-14 underline d-block text-black p-0 mt-3"
-                                    data-action="collapse">Read less</button>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-
             <?php
             $terms = get_the_terms($product_id, 'pa_colours');
             $variation_data = [];
@@ -239,26 +215,6 @@ get_header(); ?>
                     <input type="hidden" name="variation_id" id="selected-variation-id" value="">
                 </div>
             <?php endif; ?>
-
-
-
-            <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
-                <?php if (have_rows('collaspsibles_repeater')): ?>
-                    <div class="acf-collapsibles">
-                        <?php while (have_rows('collaspsibles_repeater')):
-                            the_row(); ?>
-                            <div class="acf-toggle-item">
-                                <h3 class="toggle-header font-16"><?php echo esc_html(get_sub_field('title')); ?></h3>
-                                <div class="toggle-content">
-                                    <div class="pt-3 pb-4">
-                                        <?php echo get_sub_field('content'); ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endwhile; ?>
-                    </div>
-                <?php endif; ?>
-            </div>
         </div>
     </div>
 </div>
