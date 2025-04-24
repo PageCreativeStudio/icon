@@ -1675,9 +1675,9 @@ button {
 }
 
 .mobfilter .searchandfilter h4 {
-    cursor: pointer;
-    font-size: 17px;
-    padding: 10px 0 8px 0;
+	cursor: pointer;
+	font-size: 17px;
+	padding: 10px 0 8px 0;
 }
 
 
@@ -1814,13 +1814,20 @@ button {
 		border-radius: 0;
 		font-size: 14px;
 	}
-	.megafilter-group form>ul>li{
+
+	.megafilter-group form>ul>li {
 		padding-bottom: 8px;
 		margin-bottom: 0;
 		padding-top: 8px;
 		padding-left: 3px;
 	}
 
+	.quickquote {
+		bottom: 4px;
+		font-size: 10px;
+		padding: 4px 0 2px 0;
+		max-width: 75px;
+	}
 }
 
 @media (min-width:991px) {
