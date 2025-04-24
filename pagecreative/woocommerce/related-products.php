@@ -24,7 +24,7 @@ if ($related_query->have_posts()):
             $related_query->the_post();
             $related_product = wc_get_product(get_the_ID());
             ?>
-            <div class="col-12 pb-3">
+            <div class="col-12 pb-3 px-0">
                 <div class="productcard__container text-center">
 
                     <div class="d-block position-relative">

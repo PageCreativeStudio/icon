@@ -152,7 +152,7 @@ global $product;
 
 <section>
     <div class="container-fluid mx-auto px-md-4 pb-5 text-center">
-        <h2 class="text-black font-18 text-center">Similar Products</h2>
+        <h2 class="text-black font-18 text-center mb-0 pb-4">Similar Products</h2>
         <div class="row pb-lg-5">
             <?php
             set_query_var('product', $product);

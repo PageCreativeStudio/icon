@@ -16,11 +16,6 @@ get_header();
 while (have_posts()):
     the_post();
     wc_get_template_part('woocommerce/content', 'single-product');
-endwhile; // end of the loop
-
-// Trigger action after product content ends
-// do_action( 'woocommerce_after_main_content' );
-
-
+endwhile; 
 
 get_footer(); ?>
