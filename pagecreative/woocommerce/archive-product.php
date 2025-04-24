@@ -27,7 +27,7 @@ get_header(); ?>
                     ?>
                 </div>
             </div>
-            <div class="col-12 col-lg postsrow">
+            <div class="col-12 col-lg postsrow pl-lg-4">
                 <div class="row px-2 px-lg-0">
                     <?php if (have_posts()): ?>
                         <?php while (have_posts()):
