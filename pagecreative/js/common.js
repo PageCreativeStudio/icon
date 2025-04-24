@@ -404,26 +404,24 @@ jQuery(document).ready(function ($) {
 /// collapsible filter
 $(document).ready(function () {
     const headings = document.querySelectorAll(".megafilter-group form > ul li h4");
-    const isMobile = () => window.innerWidth <= 989;
+
     headings.forEach((heading) => {
         heading.addEventListener("click", () => {
-            if (isMobile()) {
-                const ul = heading.nextElementSibling;
-                if (ul.tagName.toLowerCase() === "ul") {
-                    if (ul.classList.contains("open")) {
-                        ul.style.maxHeight = "0";
-                        ul.classList.remove("open");
-                        heading.classList.remove("active");
-                    } else {
-                        document.querySelectorAll(".megafilter-group form > ul.open").forEach((openUl) => {
-                            openUl.style.maxHeight = "0";
-                            openUl.classList.remove("open");
-                            openUl.previousElementSibling.classList.remove("active");
-                        });
-                        ul.style.maxHeight = `${ul.scrollHeight}px`;
-                        ul.classList.add("open");
-                        heading.classList.add("active");
-                    }
+            const ul = heading.nextElementSibling;
+            if (ul.tagName.toLowerCase() === "ul") {
+                if (ul.classList.contains("open")) {
+                    ul.style.maxHeight = "0";
+                    ul.classList.remove("open");
+                    heading.classList.remove("active");
+                } else {
+                    document.querySelectorAll(".megafilter-group form > ul.open").forEach((openUl) => {
+                        openUl.style.maxHeight = "0";
+                        openUl.classList.remove("open");
+                        openUl.previousElementSibling.classList.remove("active");
+                    });
+                    ul.style.maxHeight = `${ul.scrollHeight}px`;
+                    ul.classList.add("open");
+                    heading.classList.add("active");
                 }
             }
         });
