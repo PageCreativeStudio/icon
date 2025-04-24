@@ -1656,7 +1656,7 @@ button {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 90%;
+    width: 80%;
     height: 100%;
     opacity: 0;
 	z-index: 999;
