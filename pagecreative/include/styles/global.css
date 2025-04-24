@@ -1652,11 +1652,10 @@ button {
 }
 
 .mobfilterbtn {
-	border: solid 1px;
 	gap: 10px;
 	display: inline-flex;
 	align-items: center;
-	padding: 5px 17px;
+	padding: 5px 2px;
 }
 
 .mobfilter {
@@ -1808,10 +1807,10 @@ button {
 	}
 
 	.category__filter select {
-        display: block;
-        width: 100%;
-        padding: 17px 12px 12px 12px;
-        color: black;
+		display: block;
+		width: 100%;
+		padding: 17px 12px 12px 12px;
+		color: black;
 	}
 
 }

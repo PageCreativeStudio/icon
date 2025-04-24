@@ -29,9 +29,9 @@ get_header(); ?>
 
 <div class="shop__container container-fluid mx-auto px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5 ">
     <div class="bordertop">
-        <div class="d-lg-none d-flex flex-wrap justify-content-between">
+        <div class="d-lg-none d-flex flex-wrap justify-content-between pt-4">
             <div class="">
-                <p class="text-black font-15">Product Categories</p>
+                <p class="text-black font-15 mb-0">Product Categories</p>
             </div>
             <div class="">
                 <a class="mobfilterbtn text-black font-15" href="#0">Show Filters
