@@ -430,7 +430,6 @@ $(document).ready(function () {
 
 
 /// categrofilter mobile set 
-
 $(document).ready(function () {
     function toggleDropdown() {
         if (window.innerWidth <= 989) {
@@ -479,30 +478,6 @@ jQuery(document).ready(function ($) {
             closeButton.addEventListener("click", function (e) {
                 e.preventDefault();
                 mobFilter.classList.remove("open");
-            });
-        }
-    }
-
-    if (isMobileScreen()) {
-        const headings = document.querySelectorAll('li[data-sf-field-name] h4');
-        if (headings.length > 0) {
-            headings.forEach((heading) => {
-                heading.addEventListener('click', () => {
-                    const currentUl = heading.nextElementSibling;
-                    document.querySelectorAll('li[data-sf-field-name] ul').forEach((ul) => {
-                        if (ul !== currentUl) {
-                            ul.style.display = 'none';
-                        }
-                    });
-                    if (currentUl.style.display === 'none' || !currentUl.style.display) {
-                        currentUl.style.display = 'block';
-                    } else {
-                        currentUl.style.display = 'none';
-                    }
-                });
-            });
-            document.querySelectorAll('li[data-sf-field-name] ul').forEach((ul) => {
-                ul.style.display = 'none';
             });
         }
     }

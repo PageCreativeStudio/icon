@@ -1576,7 +1576,7 @@ button {
 	color: white;
 	padding: 7px 0 4px 0;
 	max-width: 95px;
-	z-index: 999;
+	z-index: 99;
 	cursor: pointer;
 }
 
@@ -1590,7 +1590,7 @@ button {
 	background: #fff;
 	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
 	transition: right 0.4s ease;
-	z-index: 9999;
+	z-index: 999;
 }
 
 .quickquote__opener.active {
