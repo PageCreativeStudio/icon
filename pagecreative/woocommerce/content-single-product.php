@@ -83,6 +83,9 @@ global $product;
                 </div>
 
                 <?php
+                $product = wc_get_product(get_the_ID());
+                $product_id = $product->get_id();
+                $variations = $product->get_available_variations();
                 $terms = get_the_terms($product_id, 'pa_colour');
                 $variation_data = [];
 
@@ -104,15 +107,20 @@ global $product;
                         <p class="text-black font-15 mb-0 pb-2">Choose a colour:</p>
                         <div class="d-flex flex-wrap color-variants-container">
                             <?php foreach ($terms as $term):
-                                $color = get_term_meta($term->term_id, 'color', true) ?: $term->name;
                                 $slug = $term->slug;
+
+                                $css_colour = get_term_meta($term->term_id, 'color', true);
+                                if (empty($css_colour)) {
+                                    $css_colour = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $term->name));
+                                }
+
                                 $data = $variation_data[$slug] ?? null;
                                 ?>
                                 <div class="color-variant mr-2 mb-2" data-color="<?php echo esc_attr($slug); ?>"
                                     data-price-html="<?php echo esc_attr($data['price_html'] ?? ''); ?>"
                                     data-price="<?php echo esc_attr($data['display_price'] ?? ''); ?>"
                                     data-variation-id="<?php echo esc_attr($data['variation_id'] ?? ''); ?>"
-                                    style="background-color: <?php echo esc_attr($color); ?>;"
+                                    style="background-color: <?php echo esc_attr($css_colour); ?>;"
                                     title="<?php echo esc_attr($term->name); ?>">
                                     <span class="color-check" style="display: none; color: white;">✓</span>
                                 </div>
@@ -121,7 +129,6 @@ global $product;
                         <input type="hidden" name="variation_id" id="selected-variation-id" value="">
                     </div>
                 <?php endif; ?>
-
 
                 <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
                     <?php if (have_rows('collaspsibles_repeater')): ?>
