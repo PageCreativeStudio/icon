@@ -431,67 +431,50 @@ $(document).ready(function () {
 
 /// categrofilter mobile set 
 $(document).ready(function () {
-    function toggleDropdown() {
+    function applyMobileDropdown() {
         if (window.innerWidth <= 989) {
-            if ($(".category__filter select").length === 0) {
+            if ($(".category__filter .mobile-dropdown").length === 0) {
                 const radioButtons = $(".category__filter input[type='radio']");
                 const dropdown = $("<select>").addClass("mobile-dropdown");
 
+                // Build dropdown from radio buttons
                 radioButtons.each(function () {
-                    const option = $("<option>")
-                        .attr("value", $(this).val())
-                        .text($(this).next("label").text());
-                    dropdown.append(option);
+                    const label = $(this).next("label").text();
+                    const value = $(this).val();
+                    const selected = $(this).is(":checked") ? "selected" : "";
+                    dropdown.append(`<option value="${value}" ${selected}>${label}</option>`);
                 });
 
-                // Append the dropdown
-                $(".category__filter").html(dropdown);
+                // Insert dropdown before the original radio list
+                $(".category__filter").prepend(dropdown);
 
-                // Trigger filter when option selected
+                // Hide the original radio list
+                radioButtons.closest("ul, .sf-field").hide();
+
+                // Sync dropdown selection to radio button click
                 dropdown.on("change", function () {
                     const selectedValue = $(this).val();
-
-                    // Create a hidden form and submit like Search & Filter expects
-                    const form = $("<form>", {
-                        method: "get",
-                        action: window.location.href.split('?')[0], // keep the base URL only
+                    radioButtons.each(function () {
+                        if ($(this).val() === selectedValue) {
+                            $(this).prop("checked", true).trigger("change"); // triggers AJAX
+                        }
                     });
-
-                    // Add the filter value with the correct input name (update if needed)
-                    form.append(
-                        $("<input>", {
-                            type: "hidden",
-                            name: "sf_paged", // include if pagination needed
-                            value: "1",
-                        })
-                    );
-
-                    form.append(
-                        $("<input>", {
-                            type: "hidden",
-                            name: "category", // Update this to the correct filter name!
-                            value: selectedValue,
-                        })
-                    );
-
-                    $("body").append(form);
-                    form.submit();
                 });
             }
         } else {
-            if ($(".category__filter input[type='radio']").length === 0) {
-                const filterHtml = '[searchandfilter id="1102"]';
-                $(".category__filter").html(filterHtml);
-            }
+            // Remove mobile dropdown and show radio buttons on desktop
+            $(".category__filter .mobile-dropdown").remove();
+            $(".category__filter input[type='radio']").closest("ul, .sf-field").show();
         }
     }
 
-    toggleDropdown();
+    applyMobileDropdown();
 
     $(window).resize(function () {
-        toggleDropdown();
+        applyMobileDropdown();
     });
 });
+
 
 
 
