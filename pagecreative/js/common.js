@@ -280,20 +280,20 @@ jQuery(document).ready(function ($) {
                 stagePadding: 30,
             },
             989: {
-                items: 2,
+                items: 3,
                 stagePadding: 0,
             },
             1280: {
-                items: 3,
+                items: 4,
                 stagePadding: 35,
             },
             1380: {
-                items: 4,
+                items: 5,
                 stagePadding: 40,
                 center: true,
             },
             2000: {
-                items: 5,
+                items: 6,
                 stagePadding: 80,
                 center: true,
             }
