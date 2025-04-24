@@ -1651,6 +1651,29 @@ button {
 }
 
 
+/* Desktop: Show radio buttons */
+@media (min-width: 990px) {
+    .category__filter select {
+        display: none; /* Hide the dropdown on desktop */
+    }
+
+    .category__filter .searchandfilter {
+        display: block; /* Show the radio buttons */
+    }
+}
+
+/* Mobile: Show dropdown */
+@media (max-width: 989px) {
+    .category__filter .searchandfilter {
+        display: none; /* Hide the radio buttons on mobile */
+    }
+
+    .category__filter select {
+        display: block; /* Show the dropdown on mobile */
+        width: 100%;
+        padding: 10px;
+    }
+}
 
 
 @media (min-width:767px) {
