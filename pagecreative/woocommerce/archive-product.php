@@ -46,7 +46,7 @@ get_header(); ?>
                 </a>
             </div>
         </div>
-        <div class="category__filter py-3 px-0">
+        <div class="category__filter py-3 px-0 mb-3 mb-lg-0">
             <?php
             $filter_shortcode2 = '[searchandfilter id="1102"]';
             $filter_html = do_shortcode($filter_shortcode2);

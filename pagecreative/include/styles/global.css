@@ -1811,6 +1811,7 @@ button {
 		width: 100%;
 		padding: 17px 12px 12px 12px;
 		color: black;
+		border-radius: 0;
 	}
 
 }
