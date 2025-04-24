@@ -444,7 +444,39 @@ $(document).ready(function () {
                     dropdown.append(option);
                 });
 
+                // Append the dropdown
                 $(".category__filter").html(dropdown);
+
+                // Trigger filter when option selected
+                dropdown.on("change", function () {
+                    const selectedValue = $(this).val();
+
+                    // Create a hidden form and submit like Search & Filter expects
+                    const form = $("<form>", {
+                        method: "get",
+                        action: window.location.href.split('?')[0], // keep the base URL only
+                    });
+
+                    // Add the filter value with the correct input name (update if needed)
+                    form.append(
+                        $("<input>", {
+                            type: "hidden",
+                            name: "sf_paged", // include if pagination needed
+                            value: "1",
+                        })
+                    );
+
+                    form.append(
+                        $("<input>", {
+                            type: "hidden",
+                            name: "category", // Update this to the correct filter name!
+                            value: selectedValue,
+                        })
+                    );
+
+                    $("body").append(form);
+                    form.submit();
+                });
             }
         } else {
             if ($(".category__filter input[type='radio']").length === 0) {
@@ -455,10 +487,12 @@ $(document).ready(function () {
     }
 
     toggleDropdown();
+
     $(window).resize(function () {
         toggleDropdown();
     });
 });
+
 
 
 ///////////////////// Mobile boat filter
