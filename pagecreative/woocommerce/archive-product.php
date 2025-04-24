@@ -220,7 +220,7 @@ get_header(); ?>
 
                         <?php the_posts_navigation(); ?>
                     <?php else: ?>
-                        <p>No products found.</p>
+                        <p></p>
                     <?php endif; ?>
 
                 </div>
