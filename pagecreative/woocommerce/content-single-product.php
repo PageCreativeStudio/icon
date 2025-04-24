@@ -83,53 +83,39 @@ global $product;
                 </div>
 
                 <?php
-global $product; // Ensure WooCommerce product context
-
-if (!$product) {
-    $product = wc_get_product(get_the_ID());
-}
-$product_id = $product->get_id();
-$variations = $product->get_available_variations();
-$terms = get_the_terms($product_id, 'pa_colour');
-
+$terms = get_the_terms($product_id, 'pa_colour'); // Fetching terms from attribute
 $variation_data = [];
 
-if (!empty($variations)) {
-    foreach ($variations as $variation) {
-        $attributes = $variation['attributes'];
-        if (!empty($attributes['attribute_pa_colour'])) {
-            $slug = $attributes['attribute_pa_colour'];
-            $variation_data[$slug] = [
-                'price_html' => $variation['price_html'],
-                'display_price' => $variation['display_price'],
-                'variation_id' => $variation['variation_id']
-            ];
-        }
+// Loop through variations and map data by attribute slug
+foreach ($variations as $variation) {
+    $attributes = $variation['attributes'];
+    if (isset($attributes['attribute_pa_colour'])) {
+        $slug = $attributes['attribute_pa_colour'];
+        $variation_data[$slug] = [
+            'price_html'     => $variation['price_html'],
+            'display_price'  => $variation['display_price'],
+            'variation_id'   => $variation['variation_id']
+        ];
     }
 }
 ?>
 
-<?php if (!empty($terms) && !is_wp_error($terms)): ?>
+<?php if (!empty($terms)): ?>
     <div class="colour-attributes borderbottom py-4 mt-1">
         <p class="text-black font-15 mb-0 pb-2">Choose a colour:</p>
         <div class="d-flex flex-wrap color-variants-container">
             <?php foreach ($terms as $term):
+                // Use the term name or slug as a colour fallback if no meta colour is set
                 $slug = $term->slug;
-
-                // Try to get custom colour from meta or fallback to cleaned name
-                $css_colour = get_term_meta($term->term_id, 'color', true);
-                if (empty($css_colour)) {
-                    $css_colour = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $term->name));
-                }
-
+                $color = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $term->name));
                 $data = $variation_data[$slug] ?? null;
-            ?>
+                ?>
                 <div class="color-variant mr-2 mb-2"
                     data-color="<?php echo esc_attr($slug); ?>"
                     data-price-html="<?php echo esc_attr($data['price_html'] ?? ''); ?>"
                     data-price="<?php echo esc_attr($data['display_price'] ?? ''); ?>"
                     data-variation-id="<?php echo esc_attr($data['variation_id'] ?? ''); ?>"
-                    style="background-color: <?php echo esc_attr($css_colour); ?>;"
+                    style="background-color: <?php echo esc_attr($color); ?>;"
                     title="<?php echo esc_attr($term->name); ?>">
                     <span class="color-check" style="display: none; color: white;">✓</span>
                 </div>
