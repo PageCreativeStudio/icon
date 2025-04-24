@@ -430,46 +430,34 @@ jQuery(document).ready(function ($) {
 
 
 /// Quickquote drawer
+/// Quickquote drawer
 jQuery(document).ready(function ($) {
     $(document).on('click', '.quickquote', function () {
         const title = $(this).data('title');
-        const productId = $(this).data('product-id');
-        const sku = $(this).data('sku');
-        const price = $(this).data('price');
-        const colours = $(this).data('colours'); // this will be a JSON string, need to parse it
+        const product_id = $(this).data('product-id'); // Assuming you can pass product ID here
 
-        // Set the title in the drawer
+        // Set the title for the drawer
         $('.quote-title').text(title);
+
+        // Fetch product data via AJAX (if needed) or use data attributes
+        // Assuming you've set up custom data attributes in the button for price, SKU, etc.
+        const price = $(this).data('price');
+        const sku = $(this).data('sku');
         
-        // Set SKU and Price in the drawer
-        $('.quickquote__opener .sku').text(sku);
-        $('.quickquote__opener .product-price').html(price);
+        // Update the drawer content dynamically
+        $('.quickquote__opener .product-title').text(title);
+        $('.quickquote__opener .product-price').text(price);
+        $('.quickquote__opener .product-sku').text(sku);
 
-        // Set Colour options dynamically in the drawer
-        const colourData = JSON.parse(colours);
-        let colourOptions = '';
-        $.each(colourData, function(index, term) {
-            const colour = term.name.toLowerCase().replace(/[^a-z0-9]/gi, '');
-            colourOptions += `
-                <div class="color-variant mr-2 mb-2" 
-                    data-color="${colour}" 
-                    style="background-color: ${colour};"
-                    title="${term.name}">
-                    <span class="color-check" style="display: none; color: white;">✓</span>
-                </div>
-            `;
-        });
-        $('.quickquote__opener .color-variants-container').html(colourOptions);
-
-        // Show the drawer
+        // Open the drawer
         $('.quickquote__opener').addClass('active');
     });
 
+    // Close the drawer when the close button is clicked
     $(document).on('click', '.closedrawer', function () {
         $('.quickquote__opener').removeClass('active');
     });
 });
-
 
 
 /// collapsible filter
