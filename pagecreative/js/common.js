@@ -263,8 +263,8 @@ jQuery(document).ready(function ($) {
     $('.related__slider').owlCarousel({
         loop: true,
         nav: true,
-        margin: 15,
-        dots: true,
+        margin: 12,
+        dots: false,
         dotsEach: 3,
         navText: [
             '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" fill="none"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.03992 9.03138H23.29V6.89288H5.03992L10.0194 1.91017L8.50778 0.400391L2.01676 6.89074H1.90986V6.99766L0.947756 7.95999L1.90986 8.92231V9.02924H2.01676L2.23912 9.25164L8.50778 15.5217L10.0194 14.0098L5.03992 9.03138Z" fill="black"/> </svg>',

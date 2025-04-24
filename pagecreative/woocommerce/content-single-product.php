@@ -152,7 +152,7 @@ global $product;
 
 <section>
     <div class="container-fluid mx-auto px-md-4 pb-5">
-        <div class="row">
+        <div class="row pb-lg-5">
             <?php
             set_query_var('product', $product);
             get_template_part('woocommerce/related-products');
