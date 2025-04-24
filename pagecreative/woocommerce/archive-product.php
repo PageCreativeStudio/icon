@@ -6,9 +6,46 @@
 get_header(); ?>
 
 
+<div class="mobfilter bg-white">
+    <div class="text-right">
+        <a class="closefilter text-right d-inline-block mb-4" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M1 13L13 1M1 1L13 13" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </a>
+    </div>
+    <div class="d-grid filter-group">
+        <div class="megafilter-group">
+            <h4 class="text-black font-20">Filter Products</h4>
+            <?php
+            $filter_shortcode = '[searchandfilter id="1102"]';
+            $filter_html = do_shortcode($filter_shortcode);
+            echo $filter_html;
+            ?>
+        </div>
+    </div>
+</div>
 
 <div class="shop__container container-fluid mx-auto px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5 ">
     <div class="bordertop">
+        <div class="d-lg-none d-flex flex-wrap justify-content-between">
+            <div class="">
+                <p class="text-black font-15">Product Categories</p>
+            </div>
+            <div class="">
+                <a class="mobfilterbtn text-black font-15" href="#0">Show Filters
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"
+                            fill="none">
+                            <rect x="0.249756" y="0.109375" width="14" height="14" rx="7" fill="#333333" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7.83309 6.52604H10.7498V7.69271H7.83309V10.6094H6.66642V7.69271H3.74976V6.52604H6.66642V3.60938H7.83309V6.52604Z"
+                                fill="white" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
         <div class="category__filter py-3 px-0">
             <?php
             $filter_shortcode2 = '[searchandfilter id="1102"]';

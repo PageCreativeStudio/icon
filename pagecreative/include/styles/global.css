@@ -1651,6 +1651,36 @@ button {
 	transition: transform 0.3s ease-in;
 }
 
+.mobfilterbtn {
+	border: solid 1px;
+	gap: 10px;
+	display: inline-flex;
+	align-items: center;
+	padding: 5px 17px;
+}
+
+.mobfilter {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	padding: 2.5rem 1.3rem;
+	transition: right 0.3s ease;
+}
+
+.mobfilter.open {
+	right: 0;
+}
+
+.mobfilter .searchandfilter h4 {
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 16px;
+	padding: 10px 0 8px 0;
+}
+
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
@@ -1778,9 +1808,10 @@ button {
 	}
 
 	.category__filter select {
-		display: block;
-		width: 100%;
-		padding: 10px;
+        display: block;
+        width: 100%;
+        padding: 17px 12px 12px 12px;
+        color: black;
 	}
 
 }

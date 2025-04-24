@@ -460,3 +460,50 @@ $(document).ready(function () {
         toggleDropdown();
     });
 });
+
+
+///////////////////// Mobile boat filter
+jQuery(document).ready(function ($) {
+    function isMobileScreen() {
+        return window.matchMedia('(max-width: 989px)').matches;
+    }
+    if (isMobileScreen()) {
+        const mobFilter = document.querySelector(".mobfilter");
+        const filterButton = document.querySelector(".mobfilterbtn");
+        const closeButton = document.querySelector(".closefilter");
+        if (mobFilter && filterButton && closeButton) {
+            filterButton.addEventListener("click", function (e) {
+                e.preventDefault();
+                mobFilter.classList.add("open");
+            });
+            closeButton.addEventListener("click", function (e) {
+                e.preventDefault();
+                mobFilter.classList.remove("open");
+            });
+        }
+    }
+
+    if (isMobileScreen()) {
+        const headings = document.querySelectorAll('li[data-sf-field-name] h4');
+        if (headings.length > 0) {
+            headings.forEach((heading) => {
+                heading.addEventListener('click', () => {
+                    const currentUl = heading.nextElementSibling;
+                    document.querySelectorAll('li[data-sf-field-name] ul').forEach((ul) => {
+                        if (ul !== currentUl) {
+                            ul.style.display = 'none';
+                        }
+                    });
+                    if (currentUl.style.display === 'none' || !currentUl.style.display) {
+                        currentUl.style.display = 'block';
+                    } else {
+                        currentUl.style.display = 'none';
+                    }
+                });
+            });
+            document.querySelectorAll('li[data-sf-field-name] ul').forEach((ul) => {
+                ul.style.display = 'none';
+            });
+        }
+    }
+});
