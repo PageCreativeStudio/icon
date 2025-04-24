@@ -54,7 +54,7 @@ get_header(); ?>
             ?>
         </div>
         <div class="row pt-lg-3">
-            <div class="col-12 col-lg-3 max-20 ">
+            <div class="col-12 col-lg-3 max-20 d-none d-lg-block">
                 <div class="megafilter-group">
                     <h4 class="text-black font-20">Filter Products</h4>
                     <?php
