@@ -28,8 +28,8 @@ get_header(); ?>
 </div>
 
 <div class="shop__container container-fluid mx-auto px-md-4 pt-3 pb-4 pb-lg-5 mb-lg-5 ">
-    <div class="bordertop mt-3 mt-lg-4">
-        <div class="d-lg-none d-flex flex-wrap justify-content-between pt-4">
+    <div class="bordertop mt-3 mt-lg-0">
+        <div class="d-lg-none d-flex flex-wrap justify-content-between pt-4 pt-lg-5">
             <div class="align-content-center">
                 <p class="text-black font-15 mb-0">Product Categories</p>
             </div>
