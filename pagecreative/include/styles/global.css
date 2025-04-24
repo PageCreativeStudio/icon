@@ -1656,11 +1656,12 @@ button {
 	position: fixed;
 	top: 0;
 	right: -100%;
-	width: 100%;
+	width: 90%;
 	height: 100%;
 	z-index: 999;
 	overflow: auto;
 	padding: 1.5rem 1rem;
+	box-shadow: 0px 0px 3px 200px #0000005e;
 	transition: right 0.3s ease;
 }
 
