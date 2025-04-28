@@ -47,7 +47,7 @@ get_header(); ?>
         </div>
 
         <?php if ($total_case_studies > 4): ?>
-            <div id="loadMoreBtn" class="text-center mt-4 mb-5">
+            <div id="loadMoreBtn" class="text-center mt-4 mb-5 pb-4 pb-lg-5">
                 <button class="btnc border-0 bg-dark font-15 text-white " style="background:#E7E7E7">Load More Posts</button>
             </div>
         <?php endif; ?>
