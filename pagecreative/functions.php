@@ -302,3 +302,46 @@ function get_google_reviews_count()
 	return 'N/A';
 }
 
+// Ajax for loading more case-studies
+add_action('wp_ajax_load_more_posts', 'load_more_case_studies');
+add_action('wp_ajax_nopriv_load_more_posts', 'load_more_case_studies');
+
+function load_more_case_studies() {
+    $offset = isset($_POST['offset']) ? intval($_POST['offset']) : 0;
+
+    $args = array(
+        'post_type' => 'case-studies',
+        'posts_per_page' => 4,
+        'offset' => $offset,
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="col-12 col-lg-6 px-2 mb-5 mb-lg-5">
+                <a class="newsarea__link" href="<?php the_permalink(); ?>">
+                    <div class="newsarea__image-container">
+                        <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                            alt="<?php the_title(); ?>">
+                    </div>
+                    <h2 class="text-dark font-30 font-mb-25 mt-2 pt-4 pb-0 mb-1 max-40">
+                        <?php the_title(); ?>
+                    </h2>
+                    <?php if (get_field("sub_title")): ?>
+                        <h3 class="text-dark font-20 font-mb-18 pt-3 pb-0 mb-3 px-0 mx-0 max-40">
+                            <?php echo get_field('sub_title'); ?>
+                        </h3>
+                    <?php endif; ?>
+                    <p class="font-15 font-mb-14 max-40 py-2">
+                        <?php echo wp_trim_words(get_the_excerpt(), 18); ?>
+                    </p>
+                    <span class="text-sec font-13 underline">Read more</span>
+                </a>
+            </div>
+        <?php endwhile;
+    endif;
+
+    wp_reset_postdata();
+    wp_die();
+}
