@@ -1697,10 +1697,8 @@ button {
 	text-decoration: underline;
 	text-underline-offset: 4px;
 }
-.breadcrumbs span{
-	color: black;
-}
-.singlecs strong{
+
+.singlecontent strong{
 	font-weight: 200!important;
 }
 
