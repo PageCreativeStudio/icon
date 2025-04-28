@@ -13,7 +13,7 @@ get_header(); ?>
             $total_posts = wp_count_posts()->publish;
             $sticky_posts = get_option('sticky_posts');
             $latest_args = array(
-                'post_type' => 'post',
+                'post_type' => 'case-studies',
                 'posts_per_page' => 4,
                 'post__not_in' => $sticky_posts,
             );
