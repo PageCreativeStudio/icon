@@ -42,23 +42,57 @@
 
 	<?php wp_head(); ?>
 
+
+
 	<?php
 	if (is_singular('case-studies')) {
 		$bg_color = get_field('background_color');
-		if ($bg_color): ?>
+		if ($bg_color):
+			function hex2rgba($color, $opacity = 1)
+			{
+				$color = str_replace('#', '', $color);
+				if (strlen($color) == 6) {
+					$hex = [
+						$r = hexdec(substr($color, 0, 2)),
+						$g = hexdec(substr($color, 2, 2)),
+						$b = hexdec(substr($color, 4, 2))
+					];
+				} elseif (strlen($color) == 3) {
+					$hex = [
+						$r = hexdec(str_repeat(substr($color, 0, 1), 2)),
+						$g = hexdec(str_repeat(substr($color, 1, 1), 2)),
+						$b = hexdec(str_repeat(substr($color, 2, 1), 2))
+					];
+				} else {
+					return 'rgb(0,0,0)';
+				}
+				return 'rgba(' . $r . ',' . $g . ',' . $b . ',' . $opacity . ')';
+			}
+
+			$body_colour = hex2rgba($bg_color, 0.90);
+			$header_footer = hex2rgba($bg_color, 1);
+			?>
+
 			<style>
-				body.custom-cs-page,
+				body.custom-cs-page {
+					background-color:
+						<?php echo esc_attr($body_colour); ?>
+						!important;
+				}
+
 				body.custom-cs-page header,
 				body.custom-cs-page footer,
 				body.custom-cs-page .footercopyright {
 					background-color:
-						<?php echo esc_attr($bg_color); ?>
+						<?php echo esc_attr($header_footer); ?>
 						!important;
 				}
 			</style>
+
 		<?php endif;
 	}
 	?>
+
 </head>
 
 <body <?php body_class(); ?>>
