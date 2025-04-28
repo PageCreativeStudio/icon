@@ -155,10 +155,10 @@ global $product;
         <h2 class="text-black font-22 font-mb-18 text-center mb-0 pb-4 pb-lg-4 mb-lg-2">Similar Products</h2>
         <div class="row pb-lg-5 mx-lg-0">
             <?php
-            set_query_var('product', $product);
             get_template_part('woocommerce/related-products');
             ?>
         </div>
+    </div>
 </section>
 
 <?php get_template_part('template-parts/blocks/social-logos'); ?>
