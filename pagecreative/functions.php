@@ -305,7 +305,6 @@ function get_google_reviews_count()
 // Ajax for loading more case-studies
 add_action('wp_ajax_load_more_posts', 'load_more_case_studies');
 add_action('wp_ajax_nopriv_load_more_posts', 'load_more_case_studies');
-
 function load_more_case_studies() {
     $offset = isset($_POST['offset']) ? intval($_POST['offset']) : 0;
 
@@ -320,8 +319,8 @@ function load_more_case_studies() {
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post(); ?>
             <div class="col-12 col-lg-6 px-2 mb-5 mb-lg-5">
-                <a class="newsarea__link" href="<?php the_permalink(); ?>">
-                    <div class="newsarea__image-container">
+                <a class="postarea__link" href="<?php the_permalink(); ?>">
+                    <div class="postarea__image-container">
                         <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                             alt="<?php the_title(); ?>">
                     </div>

@@ -1683,7 +1683,9 @@ button {
 	font-size: 17px;
 	padding: 10px 0 8px 0;
 }
-
+.postarea img{
+	
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
