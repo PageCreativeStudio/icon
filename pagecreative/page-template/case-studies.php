@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<div class="container-fluid px-0 mx-auto text-center">
+<div class="container-fluid px-0 mx-auto text-left">
     <h2 class="bordertop borderbottom font-25 font-mb-22 mb-0 py-4">Case studies</h2>
     <?php
     $total_posts = wp_count_posts()->publish;
@@ -27,18 +27,12 @@ get_header(); ?>
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                                 alt="<?php the_title(); ?>">
                         </div>
-                        <p class="newsarea__catbtn bg-sec text-pri uppercase">
-                            <?php
-                            $categories = get_the_category();
-                            if (!empty($categories)) {
-                                $category_names = wp_list_pluck($categories, 'name');
-                                echo implode(', ', $category_names);
-                            }
-                            ?>
-                        </p>
                         <h2 class="text-dark font-18 mt-2 py-3 mb-0 mb-md-2 pr-3 pl-2 pr-md-5">
                             <?php the_title(); ?>
                         </h2>
+                        <p class="font-15">
+
+                        </p>
                         <span class="text-sec font-13 btnarrowsec ml-2">Read more</span>
                     </a>
                 </div>
