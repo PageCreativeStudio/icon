@@ -80,9 +80,15 @@ get_header(); ?>
 
         <?php wp_reset_postdata(); endif; ?>
 
-
-
-
+    <div>
+        <div class="max-50 mx-auto w-100 px-3 text-center">
+            <h1 class="text-dark font-mb-25 mb-0 pb-0 pt-0 max-20 mx-auto pt-3">Custom clothing done right </h1>
+            <p class="text-dark font-15 pt-2 pb-3 max-25 mx-auto mb-1">We make bespoke apparel for the world's best
+                brands.</p>
+            <a class="btnc bg-dark font-15 text-white mb-5" href="<?php echo home_url(); ?>/contact-us/">
+                Get a Quote </a>
+        </div>
+    </div>
 </div>
 
 <?php get_footer(); ?>
