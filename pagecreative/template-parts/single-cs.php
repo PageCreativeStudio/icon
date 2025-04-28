@@ -25,7 +25,7 @@ get_header(); ?>
                             </p>
                         <?php endif; ?>
                         <?php if (get_field("button_label")): ?>
-                            <a class="btnb bg-white font-15 text-center text-black px-4" href="<?php echo get_field('button_link'); ?>">
+                            <a class="btnb bg-white font-15 text-center text-black px-5" href="<?php echo get_field('button_link'); ?>">
                                 <?php echo get_field('button_label'); ?>
                             </a>
                         <?php endif; ?>
