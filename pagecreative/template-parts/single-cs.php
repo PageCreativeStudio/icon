@@ -53,6 +53,12 @@ get_header(); ?>
         </div>
     </section>
 
+    <?php
+    if (function_exists('yoast_breadcrumb')) {
+        yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+    }
+    ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->
 
 
