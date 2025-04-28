@@ -27,7 +27,7 @@ get_header(); ?>
                             <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                                 alt="<?php the_title(); ?>">
                         </div>
-                        <h2 class="text-dark font-30 font-mb-25 pt-4 pb-0 mb-2 max-40">
+                        <h2 class="text-dark font-30 font-mb-25 mt-2 pt-4 pb-0 mb-1 max-40">
                             <?php the_title(); ?>
                         </h2>
                         <?php if (get_field("sub_title")): ?>
