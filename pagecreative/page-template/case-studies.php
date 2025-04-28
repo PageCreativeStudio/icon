@@ -18,11 +18,11 @@ get_header(); ?>
     $latest_query = new WP_Query($latest_args);
     if ($latest_query->have_posts()):
         ?>
-        <div class="row pt-4" id="posts-container">
+        <div class="row pt-4 pb-3 pb-lg-4" id="posts-container">
             <?php while ($latest_query->have_posts()):
                 $latest_query->the_post(); ?>
-                <div class="col-12 col-lg-6 px-2 pb-4 pb-lg-0 mb-0 mb-lg-5">
-                    <a class="newsarea__link mx-1" href="<?php the_permalink(); ?>">
+                <div class="col-12 col-lg-6 px-2">
+                    <a class="newsarea__link" href="<?php the_permalink(); ?>">
                         <div class="newsarea__image-container">
                             <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                                 alt="<?php the_title(); ?>">
