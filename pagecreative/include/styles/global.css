@@ -1849,6 +1849,9 @@ button {
 	.category__filter form>ul .sf-field-taxonomy-product_cat:nth-of-type(1) {
 		display: none;
 	}
+	.postarea img {
+		max-height: 18rem;
+	}
 }
 
 @media (min-width:991px) {
