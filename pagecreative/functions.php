@@ -347,7 +347,7 @@ function load_more_case_studies() {
 
 
 function mytheme_add_body_classes($classes) {
-    if (is_singular('cs')) { // Assuming your post type is 'cs'
+    if (is_singular('case-studies')) { // Assuming your post type is 'cs'
         $classes[] = 'custom-cs-page';
     }
     return $classes;
