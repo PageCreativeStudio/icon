@@ -25,7 +25,7 @@ get_header(); ?>
                             </p>
                         <?php endif; ?>
                         <?php if (get_field("button_label")): ?>
-                            <a class="btnb bg-white font-15 text-center text-black" href="<?php echo get_field('button_link'); ?>">
+                            <a class="btnb bg-white font-15 text-center text-black px-4" href="<?php echo get_field('button_link'); ?>">
                                 <?php echo get_field('button_label'); ?>
                             </a>
                         <?php endif; ?>
@@ -35,7 +35,7 @@ get_header(); ?>
         </div>
         <div class="heroarea text-center d-block d-lg-none pb-5">
             <div class="max-50 text-center mx-auto w-100 px-3">
-                <h1 class="text-dark font-mb-25 mb-0 pb-0 pt-0 max-20 text-center mx-auto pt-3">
+                <h1 class="text-black font-mb-25 mb-0 pb-0 pt-0 max-20 text-center mx-auto pt-3">
                     <?php the_title(); ?>
                 </h1>
                 <?php if (get_field("sub_title")): ?>

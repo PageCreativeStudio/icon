@@ -1691,7 +1691,7 @@ button {
 }
 
 .singlecs .heromobile__image{
-	
+	height: 12rem;
 }
 @media (min-width:767px) {
 	.product-gallery .owl-next {
