@@ -47,15 +47,30 @@
 	<?php
 	if (is_singular('case-studies')) {
 		$bg_color = get_field('background_color');
-
 		if ($bg_color):
-			$r = isset($bg_color['rgba'][0]) ? $bg_color['rgba'][0] : 0;
-			$g = isset($bg_color['rgba'][1]) ? $bg_color['rgba'][1] : 0;
-			$b = isset($bg_color['rgba'][2]) ? $bg_color['rgba'][2] : 0;
-			$a = isset($bg_color['rgba'][3]) ? $bg_color['rgba'][3] : 1;
-			$body_colour = 'rgba(' . $r . ',' . $g . ',' . $b . ',' . (0.85) . ')';
-			$header_footer = 'rgba(' . $r . ',' . $g . ',' . $b . ',' . $a . ')';
+			function hex2rgba($color, $opacity = 1)
+			{
+				$color = str_replace('#', '', $color);
+				if (strlen($color) == 6) {
+					$hex = [
+						$r = hexdec(substr($color, 0, 2)),
+						$g = hexdec(substr($color, 2, 2)),
+						$b = hexdec(substr($color, 4, 2))
+					];
+				} elseif (strlen($color) == 3) {
+					$hex = [
+						$r = hexdec(str_repeat(substr($color, 0, 1), 2)),
+						$g = hexdec(str_repeat(substr($color, 1, 1), 2)),
+						$b = hexdec(str_repeat(substr($color, 2, 1), 2))
+					];
+				} else {
+					return 'rgb(0,0,0)';
+				}
+				return 'rgba(' . $r . ',' . $g . ',' . $b . ',' . $opacity . ')';
+			}
 
+			$body_colour = hex2rgba($bg_color, 0.80);
+			$header_footer = hex2rgba($bg_color, 1);
 			?>
 
 			<style>
@@ -77,7 +92,6 @@
 		<?php endif;
 	}
 	?>
-
 
 </head>
 
