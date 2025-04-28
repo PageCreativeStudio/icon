@@ -20,12 +20,12 @@ get_header(); ?>
                     <div class="max-50 mx-auto text-center w-100 px-3">
                         <h1 class="text-white font-35 mx-auto text-center font-mb-30 mb-0 pb-0 pt-0"><?php the_title(); ?></h1>
                         <?php if (get_field("sub_title")): ?>
-                            <p class="text-white font-15 pt-2 pb-3 max-25 mx-auto mb-1">
+                            <p class="text-white font-15 pt-2 text-center pb-3 max-25 mx-auto mb-1">
                                 <?php echo get_field('sub_title'); ?>
                             </p>
                         <?php endif; ?>
                         <?php if (get_field("button_label")): ?>
-                            <a class="btnb bg-white font-15 text-black" href="<?php echo get_field('button_link'); ?>">
+                            <a class="btnb bg-white font-15 text-center text-black" href="<?php echo get_field('button_link'); ?>">
                                 <?php echo get_field('button_label'); ?>
                             </a>
                         <?php endif; ?>
@@ -35,15 +35,15 @@ get_header(); ?>
         </div>
         <div class="heroarea text-center d-block d-lg-none pb-5">
             <div class="max-50 text-center mx-auto w-100 px-3">
-                <h1 class="text-dark font-mb-25 mb-0 pb-0 pt-0 max-20 mx-auto pt-3">
+                <h1 class="text-dark font-mb-25 mb-0 pb-0 pt-0 max-20 text-center mx-auto pt-3">
                     <?php the_title(); ?>
                 </h1>
                 <?php if (get_field("sub_title")): ?>
-                    <p class="text-dark font-15 pt-2 pb-3 max-25 mx-auto mb-1"><?php echo get_field('sub_title'); ?>
+                    <p class="text-dark font-15 pt-2 pb-3 max-25 text-center mx-auto mb-1"><?php echo get_field('sub_title'); ?>
                     </p>
                 <?php endif; ?>
                 <?php if (get_field("button_label")): ?>
-                    <a class="btnc bg-dark font-15 text-white mb-5" href="<?php echo get_field('button_link'); ?>">
+                    <a class="btnc bg-dark font-15 text-white text-center mb-5" href="<?php echo get_field('button_link'); ?>">
                         <?php echo get_field('button_label'); ?>
                     </a>
                 <?php endif; ?>

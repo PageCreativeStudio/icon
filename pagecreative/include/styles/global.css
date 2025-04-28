@@ -1686,8 +1686,8 @@ button {
 	padding: 10px 0 8px 0;
 }
 
-.singlecs .hero__image{
-
+.singlecs .hero__image {
+	height: 40rem;
 }
 
 @media (min-width:767px) {
@@ -1853,6 +1853,7 @@ button {
 	.category__filter form>ul .sf-field-taxonomy-product_cat:nth-of-type(1) {
 		display: none;
 	}
+
 	.postarea img {
 		max-height: 18rem;
 	}
