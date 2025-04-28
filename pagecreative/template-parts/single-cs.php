@@ -11,7 +11,7 @@ get_header(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <section class="singlecs pb-3 pb-lg-5">
+    <section class="singlecs pb-2">
         <div class="heroarea pb-5 d-none d-lg-block">
             <div class="heroarea__container position-relative d-block">
                 <img class="w-100 hero__image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
