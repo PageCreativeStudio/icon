@@ -561,6 +561,7 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
+	text-decoration: none;
 }
 
 /* Forms
