@@ -1700,6 +1700,7 @@ button {
 
 .singlecontent strong{
 	font-weight: 200!important;
+	color: black;
 }
 
 @media (min-width:767px) {
