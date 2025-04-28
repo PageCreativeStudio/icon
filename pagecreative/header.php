@@ -69,7 +69,7 @@
 				return 'rgba(' . $r . ',' . $g . ',' . $b . ',' . $opacity . ')';
 			}
 
-			$body_colour = hex2rgba($bg_color, 0.90);
+			$body_colour = hex2rgba($bg_color, 0.80);
 			$header_footer = hex2rgba($bg_color, 1);
 			?>
 
