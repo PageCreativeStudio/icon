@@ -27,14 +27,14 @@ get_header(); ?>
                             <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                                 alt="<?php the_title(); ?>">
                         </div>
-                        <h2 class="text-dark font-25 font-mb-22 pt-3 pb-0 mb-2">
+                        <h2 class="text-dark font-25 font-mb-22 pt-3 pb-0 mb-2 max-30">
                             <?php the_title(); ?>
                         </h2>
-                        <h3 class="text-dark font-20 font-mb-18 pt-3 pb-0 mb-2">
+                        <h3 class="text-dark font-22 font-mb-16 pt-3 pb-0 mb-3 px-0 mx-0 max-30">
                             <?php echo get_field('sub_title'); ?>
                         </h3>
-                        <p class="font-15">
-                            <?php echo wp_trim_words(get_the_excerpt(), 10); ?>
+                        <p class="font-15 font-mb-14 max-30">
+                            <?php echo wp_trim_words(get_the_excerpt(), 18); ?>
                         </p>
                         <span class="text-sec font-13 underline">Read more</span>
                     </a>
