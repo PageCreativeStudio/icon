@@ -1686,6 +1686,10 @@ button {
 	padding: 10px 0 8px 0;
 }
 
+.singlecs .hero__image{
+	
+}
+
 @media (min-width:767px) {
 	.product-gallery .owl-next {
 		margin-top: -9px;
