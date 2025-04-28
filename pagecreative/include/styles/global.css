@@ -1697,9 +1697,11 @@ button {
 	text-decoration: underline;
 	text-underline-offset: 4px;
 }
-
 .breadcrumbs span{
 	color: black;
+}
+.singlecs strong{
+	font-weight: 200!important;
 }
 
 @media (min-width:767px) {
