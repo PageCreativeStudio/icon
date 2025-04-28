@@ -31,7 +31,7 @@ get_header(); ?>
                             <?php the_title(); ?>
                         </h2>
                         <?php if (get_field("sub_title")): ?>
-                            <h3 class="text-dark font-20 font-mb-16 pt-3 pb-0 mb-3 px-0 mx-0 max-40">
+                            <h3 class="text-dark font-20 font-mb-18 pt-3 pb-0 mb-3 px-0 mx-0 max-40">
                                 <?php echo get_field('sub_title'); ?>
                             </h3>
                         <?php endif; ?>
