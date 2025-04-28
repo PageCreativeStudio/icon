@@ -48,8 +48,8 @@ get_header(); ?>
 
         <?php if ($total_case_studies > 4): ?>
             <div id="loadMoreBtn" class="text-center mt-4 mb-5 pb-4 pb-lg-5">
-                <div id="loader" style="display: none;" class="mt-3">Loading...</div>
                 <button class="btnc border-0 bg-dark font-15 text-white " style="background:#E7E7E7">Load More Posts</button>
+                <div id="loader" style="display: none;" class="mt-3 font-15 text-black">Loading...</div>
             </div>
         <?php endif; ?>
 
@@ -60,7 +60,7 @@ get_header(); ?>
             const loader = document.getElementById('loader');
 
             loadMoreBtn.addEventListener('click', function () {
-                loader.style.display = 'block'; // Show loader
+                loader.style.display = 'block';
 
                 fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
                     method: 'POST',
