@@ -345,8 +345,9 @@ function load_more_case_studies() {
     wp_die();
 }
 
+
 function mytheme_add_body_classes($classes) {
-    if (is_singular('case-studies')) {
+    if (is_singular('cs')) { // Assuming your post type is 'cs'
         $classes[] = 'custom-cs-page';
     }
     return $classes;

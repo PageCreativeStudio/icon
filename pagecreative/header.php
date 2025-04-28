@@ -43,7 +43,7 @@
 	<?php wp_head(); ?>
 
 	<?php
-	if (is_singular('cs')) {
+	if (is_singular('case-studies')) {
 		$bg_color = get_field('background_color');
 		if ($bg_color): ?>
 			<style>
