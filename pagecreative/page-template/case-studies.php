@@ -30,9 +30,12 @@ get_header(); ?>
                         <h2 class="text-dark font-30 font-mb-25 pt-4 pb-0 mb-2 max-40">
                             <?php the_title(); ?>
                         </h2>
-                        <h3 class="text-dark font-22 font-mb-16 pt-3 pb-0 mb-3 px-0 mx-0 max-40">
-                            <?php echo get_field('sub_title'); ?>
-                        </h3>
+                        <?php if (get_field("sub_title")): ?>
+                            <h3 class="text-dark font-22 font-mb-16 pt-3 pb-0 mb-3 px-0 mx-0 max-40">
+                                <?php echo get_field('sub_title'); ?>
+                            </h3>
+                        <?php endif; ?>
+
                         <p class="font-15 font-mb-14 max-40 py-2">
                             <?php echo wp_trim_words(get_the_excerpt(), 18); ?>
                         </p>
