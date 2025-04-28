@@ -48,6 +48,7 @@ get_header(); ?>
 
         <?php if ($total_case_studies > 4): ?>
             <div id="loadMoreBtn" class="text-center mt-4 mb-5 pb-4 pb-lg-5">
+                <div id="loader" style="display: none;" class="mt-3">Loading...</div>
                 <button class="btnc border-0 bg-dark font-15 text-white " style="background:#E7E7E7">Load More Posts</button>
             </div>
         <?php endif; ?>
@@ -55,8 +56,12 @@ get_header(); ?>
         <script>
             let offset = 4;
             const totalPosts = <?php echo $total_case_studies; ?>;
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const loader = document.getElementById('loader');
 
-            document.getElementById('loadMoreBtn').addEventListener('click', function () {
+            loadMoreBtn.addEventListener('click', function () {
+                loader.style.display = 'block'; // Show loader
+
                 fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
                     method: 'POST',
                     headers: {
@@ -66,16 +71,21 @@ get_header(); ?>
                 })
                     .then(response => response.text())
                     .then(data => {
+                        loader.style.display = 'none'; 
+
                         if (data.trim()) {
                             document.getElementById('posts-container').insertAdjacentHTML('beforeend', data);
                             offset += 4;
 
                             if (offset >= totalPosts) {
-                                document.getElementById('loadMoreBtn').style.display = 'none';
+                                loadMoreBtn.style.display = 'none';
                             }
+                        } else {
+                            loader.style.display = 'none';
                         }
                     });
             });
+
         </script>
 
         <?php wp_reset_postdata(); endif; ?>
