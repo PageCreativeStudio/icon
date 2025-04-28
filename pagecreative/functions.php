@@ -344,3 +344,11 @@ function load_more_case_studies() {
     wp_reset_postdata();
     wp_die();
 }
+
+function mytheme_add_body_classes($classes) {
+    if (is_singular('case-studies')) {
+        $classes[] = 'custom-cs-page';
+    }
+    return $classes;
+}
+add_filter('body_class', 'mytheme_add_body_classes');
