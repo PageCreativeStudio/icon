@@ -1870,6 +1870,10 @@ button {
 	.postarea img {
 		max-height: 18rem;
 	}
+
+	.singlecontent p{
+		font-size: 15px;
+	}
 }
 
 @media (min-width:991px) {
