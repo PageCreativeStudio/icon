@@ -70,7 +70,7 @@
 				<?php esc_html_e('Skip to content', 'pagecreative'); ?>
 			</a>
 
-			<header id="masthead" class="site-header mx-auto text-center pt-2 pt-lg-3 pb-2 pb-lg-4 px-md-4">
+			<header id="masthead" class="site-header mx-auto text-center pt-2 pt-lg-3 pb-2 pb-lg-3 px-md-4">
 				<div class="container-fluid mx-auto">
 					<div class="row py-3 py-lg-0">
 						<nav
