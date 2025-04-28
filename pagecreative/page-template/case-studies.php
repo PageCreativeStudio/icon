@@ -21,7 +21,7 @@ get_header(); ?>
         <div class="row pt-4" id="posts-container">
             <?php while ($latest_query->have_posts()):
                 $latest_query->the_post(); ?>
-                <div class="col-12 col-lg-6 px-2 mb-3 mb-lg-4">
+                <div class="col-12 col-lg-6 px-2 mb-4 mb-lg-5">
                     <a class="newsarea__link" href="<?php the_permalink(); ?>">
                         <div class="newsarea__image-container">
                             <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
