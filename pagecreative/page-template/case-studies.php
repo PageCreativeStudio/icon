@@ -8,16 +8,19 @@ get_header(); ?>
 <div class="container-fluid mx-auto px-md-4 mx-auto text-left">
     <h2 class="bordertop borderbottom font-22 font-mb-20 mb-lg-3 py-3">Case studies</h2>
     <?php
-    $total_posts = wp_count_posts()->publish;
+    // Count only 'case-studies' posts, not all posts
+    $total_case_studies = wp_count_posts('case-studies')->publish;
+
     $sticky_posts = get_option('sticky_posts');
     $latest_args = array(
         'post_type' => 'case-studies',
         'posts_per_page' => 4,
         'post__not_in' => $sticky_posts,
     );
+
     $latest_query = new WP_Query($latest_args);
-    if ($latest_query->have_posts()):
-        ?>
+
+    if ($latest_query->have_posts()): ?>
         <div class="row pt-4" id="posts-container">
             <?php while ($latest_query->have_posts()):
                 $latest_query->the_post(); ?>
@@ -35,7 +38,6 @@ get_header(); ?>
                                 <?php echo get_field('sub_title'); ?>
                             </h3>
                         <?php endif; ?>
-
                         <p class="font-15 font-mb-14 max-40 py-2">
                             <?php echo wp_trim_words(get_the_excerpt(), 18); ?>
                         </p>
@@ -45,16 +47,15 @@ get_header(); ?>
             <?php endwhile; ?>
         </div>
 
-        <?php if ($total_posts > 4): ?>
+        <?php if ($total_case_studies > 4): ?>
             <div id="loadMoreBtn" class="text-center mt-4 mb-5">
-                <button class="btna border-0 text-dark" style="background:#E7E7E7">Load More
-                    Posts</button>
+                <button class="btna border-0 text-dark" style="background:#E7E7E7">Load More Posts</button>
             </div>
         <?php endif; ?>
 
         <script>
-            let offset = 3;
-            const totalPosts = <?php echo $total_posts; ?>;
+            let offset = 4; // Start after initial 4 posts
+            const totalPosts = <?php echo $total_case_studies; ?>;
 
             document.getElementById('loadMoreBtn').addEventListener('click', function () {
                 fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
@@ -62,22 +63,28 @@ get_header(); ?>
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     },
-                    body: 'action=load_more_posts&offset=' + offset
+                    body: 'action=load_more_posts&offset=' + offset + '&post_type=case-studies'
                 })
                     .then(response => response.text())
                     .then(data => {
-                        if (data) {
+                        if (data.trim()) {
                             document.getElementById('posts-container').insertAdjacentHTML('beforeend', data);
                             offset += 4;
 
                             if (offset >= totalPosts) {
                                 document.getElementById('loadMoreBtn').style.display = 'none';
                             }
+                        } else {
+                            // No more posts
+                            document.getElementById('loadMoreBtn').style.display = 'none';
                         }
                     });
             });
         </script>
+
         <?php wp_reset_postdata(); endif; ?>
+
+
 
 </div>
 
