@@ -20,7 +20,7 @@ get_header(); ?>
     $latest_query = new WP_Query($latest_args);
 
     if ($latest_query->have_posts()): ?>
-        <div class="row pt-4" id="posts-container">
+        <div class="row pt-4 pt-lg-5" id="posts-container">
             <?php while ($latest_query->have_posts()):
                 $latest_query->the_post(); ?>
                 <div class="col-12 col-lg-6 px-2 mb-5 mb-lg-5">
