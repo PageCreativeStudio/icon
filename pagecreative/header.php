@@ -49,7 +49,8 @@
 			<style>
 				body.custom-cs-page,
 				body.custom-cs-page header,
-				body.custom-cs-page footer {
+				body.custom-cs-page footer,
+				body.custom-cs-page .footercopyright {
 					background-color:
 						<?php echo esc_attr($bg_color); ?>
 						!important;
