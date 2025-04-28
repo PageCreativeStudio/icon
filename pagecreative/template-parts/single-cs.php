@@ -17,7 +17,7 @@ get_header(); ?>
                 <img class="w-100 hero__image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                     alt="<?php the_title(); ?>">
                 <div class="heroarea__inner">
-                    <div class="max-50 mx-auto w-100 px-3">
+                    <div class="max-50 mx-auto text-center w-100 px-3">
                         <h1 class="text-white font-35 mx-auto text-center font-mb-30 mb-0 pb-0 pt-0"><?php the_title(); ?></h1>
                         <?php if (get_field("sub_title")): ?>
                             <p class="text-white font-15 pt-2 pb-3 max-25 mx-auto mb-1">
@@ -33,8 +33,8 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <div class="heroarea d-block d-lg-none pb-5">
-            <div class="max-50 mx-auto w-100 px-3">
+        <div class="heroarea text-center d-block d-lg-none pb-5">
+            <div class="max-50 text-center mx-auto w-100 px-3">
                 <h1 class="text-dark font-mb-25 mb-0 pb-0 pt-0 max-20 mx-auto pt-3">
                     <?php the_title(); ?>
                 </h1>
@@ -48,7 +48,7 @@ get_header(); ?>
                     </a>
                 <?php endif; ?>
             </div>
-            <img class="w-100 hero__image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+            <img class="w-100 hero__image text-center" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                 alt="<?php the_title(); ?>">
         </div>
     </section>
