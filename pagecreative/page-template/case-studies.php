@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<div class="container-fluid px-0 mx-auto text-left">
+<div class="container-fluid mx-auto px-md-4 mx-auto text-left">
     <h2 class="bordertop borderbottom font-25 font-mb-22 mb-0 py-4">Case studies</h2>
     <?php
     $total_posts = wp_count_posts()->publish;
@@ -18,7 +18,7 @@ get_header(); ?>
     $latest_query = new WP_Query($latest_args);
     if ($latest_query->have_posts()):
         ?>
-        <div class="row pt-3" id="posts-container">
+        <div class="row pt-4" id="posts-container">
             <?php while ($latest_query->have_posts()):
                 $latest_query->the_post(); ?>
                 <div class="col-12 col-lg-6 px-2 pb-4 pb-lg-0 mb-0 mb-lg-5">
@@ -27,13 +27,13 @@ get_header(); ?>
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                                 alt="<?php the_title(); ?>">
                         </div>
-                        <h2 class="text-dark font-18 mt-2 py-3 mb-0 mb-md-2 pr-3 pl-2 pr-md-5">
+                        <h2 class="text-dark font-18">
                             <?php the_title(); ?>
                         </h2>
                         <p class="font-15">
 
                         </p>
-                        <span class="text-sec font-13 btnarrowsec ml-2">Read more</span>
+                        <span class="text-sec font-13 underline">Read more</span>
                     </a>
                 </div>
             <?php endwhile; ?>
