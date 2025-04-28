@@ -137,8 +137,8 @@ get_header(); ?>
 
     <div>
         <div class="max-50 mx-auto w-100 px-3 text-center pb-4 pb-lg-5 pt-3 pt-lg-4">
-            <h1 class="text-black font-mb-25 mb-0 pb-0 pt-0 mx-auto pt-3">Custom clothing done right </h1>
-            <p class="text-black font-15 pt-2 pb-3 max-25 mx-auto mb-1">We make bespoke apparel for the world's best
+            <h1 class="text-black font-30 font-mb-25 mb-0 pb-0 pt-0 mx-auto pt-3">Custom clothing done right </h1>
+            <p class="text-black font-16 pt-2 pb-3 max-25 mx-auto mb-1">We make bespoke apparel for the world's best
                 brands.</p>
             <a class="btnc bg-dark font-15 text-white px-4 px-lg-5 mb-5" href="<?php echo home_url(); ?>/contact-us/">
                 Get a Quote </a>
