@@ -62,10 +62,10 @@ get_header(); ?>
     <div class="container-fluid max-50 mx-auto px-2">
         <?php
         if (function_exists('yoast_breadcrumb')) {
-            yoast_breadcrumb('<p id="breadcrumbs" class="mb-0 font-14 pb-2 mb-3">', '</p>');
+            yoast_breadcrumb('<p id="breadcrumbs" class="breadcrumbs mb-0 font-14 pb-2 mb-0">', '</p>');
         }
         ?>
-        <div class="singlecontent py-5">
+        <div class="singlecontent pb-5 pt-4">
             <?php the_content(); ?>
         </div>
     </div>

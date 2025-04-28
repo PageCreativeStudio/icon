@@ -1693,6 +1693,15 @@ button {
 .singlecs .heromobile__image{
 	height: 12rem;
 }
+.breadcrumbs a{
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+.breadcrumbs span{
+	color: black;
+}
+
 @media (min-width:767px) {
 	.product-gallery .owl-next {
 		margin-top: -9px;
