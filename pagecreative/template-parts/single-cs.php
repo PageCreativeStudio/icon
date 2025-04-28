@@ -14,8 +14,8 @@ get_header(); ?>
     <section class="pb-3 pb-lg-5">
         <div class="heroarea pb-5 d-none d-lg-block">
             <div class="heroarea__container position-relative d-block">
-                <img class="w-100 hero__image" src="<?php echo get_field('hero_image'); ?>"
-                    alt="<?php echo get_field('hero_title'); ?>">
+                <img class="w-100 hero__image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                    alt="<?php the_title(); ?>">
                 <div class="heroarea__inner">
                     <div class="max-50 mx-auto w-100 px-3">
                         <h1 class="text-white font-35 font-mb-30 mb-0 pb-0 pt-0"><?php the_title(); ?></h1>
@@ -48,8 +48,8 @@ get_header(); ?>
                     </a>
                 <?php endif; ?>
             </div>
-            <img class="w-100 hero__image" src="<?php echo get_field('hero_image'); ?>"
-                alt="<?php echo get_field('hero_title'); ?>">
+            <img class="w-100 hero__image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                alt="<?php the_title(); ?>">
         </div>
     </section>
 
