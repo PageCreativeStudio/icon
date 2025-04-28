@@ -1690,6 +1690,9 @@ button {
 	height: 40rem;
 }
 
+.singlecs .heromobile__image{
+	
+}
 @media (min-width:767px) {
 	.product-gallery .owl-next {
 		margin-top: -9px;
