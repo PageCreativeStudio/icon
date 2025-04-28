@@ -85,9 +85,7 @@ get_header(); ?>
                         }
                     });
             });
-
         </script>
-
         <?php wp_reset_postdata(); endif; ?>
 
     <div>
