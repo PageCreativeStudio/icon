@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <div class="container-fluid mx-auto px-md-4 mx-auto text-left">
-    <h2 class="bordertop borderbottom font-25 font-mb-22 mb-lg-3 py-3">Case studies</h2>
+    <h2 class="bordertop borderbottom font-22 font-mb-20 mb-lg-3 py-3">Case studies</h2>
     <?php
     $total_posts = wp_count_posts()->publish;
     $sticky_posts = get_option('sticky_posts');
