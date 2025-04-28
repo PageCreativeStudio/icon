@@ -30,8 +30,11 @@ get_header(); ?>
                         <h2 class="text-dark font-25 font-mb-22 pt-3 pb-0 mb-2">
                             <?php the_title(); ?>
                         </h2>
+                        <h3 class="text-dark font-20 font-mb-18 pt-3 pb-0 mb-2">
+                            <?php echo get_field('sub_title'); ?>
+                        </h3>
                         <p class="font-15">
-
+                            <?php echo wp_trim_words(get_the_excerpt(), 10); ?>
                         </p>
                         <span class="text-sec font-13 underline">Read more</span>
                     </a>
