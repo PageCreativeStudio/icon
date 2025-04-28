@@ -18,7 +18,7 @@ get_header(); ?>
                     alt="<?php the_title(); ?>">
                 <div class="heroarea__inner">
                     <div class="max-50 mx-auto w-100 px-3">
-                        <h1 class="text-white font-35 font-mb-30 mb-0 pb-0 pt-0"><?php the_title(); ?></h1>
+                        <h1 class="text-white font-35 mx-auto text-center font-mb-30 mb-0 pb-0 pt-0"><?php the_title(); ?></h1>
                         <?php if (get_field("sub_title")): ?>
                             <p class="text-white font-15 pt-2 pb-3 max-25 mx-auto mb-1">
                                 <?php echo get_field('sub_title'); ?>
