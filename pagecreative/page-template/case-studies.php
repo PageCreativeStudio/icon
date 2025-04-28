@@ -9,12 +9,9 @@ get_header(); ?>
     <h2 class="bordertop borderbottom font-22 font-mb-16 mb-lg-3 py-3 mt-lg-3">Case studies</h2>
     <?php
     $total_case_studies = wp_count_posts('case-studies')->publish;
-
-    $sticky_posts = get_option('sticky_posts');
     $latest_args = array(
         'post_type' => 'case-studies',
         'posts_per_page' => 4,
-        'post__not_in' => $sticky_posts,
     );
 
     $latest_query = new WP_Query($latest_args);
@@ -71,7 +68,7 @@ get_header(); ?>
                 })
                     .then(response => response.text())
                     .then(data => {
-                        loader.style.display = 'none'; 
+                        loader.style.display = 'none';
 
                         if (data.trim()) {
                             document.getElementById('posts-container').insertAdjacentHTML('beforeend', data);
