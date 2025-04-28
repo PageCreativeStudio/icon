@@ -73,7 +73,7 @@ get_header(); ?>
 
     <?php if (get_field("product_to_show")): ?>
         <section>
-            <div class="container-fluid mx-auto px-md-4 pb-5 text-center">
+            <div class="container-fluid mx-auto px-md-4 pb-3 text-center">
                 <h2 class="text-black font-22 font-mb-18 text-center mb-0 pb-4 pb-lg-4 mb-lg-2">Related Products</h2>
                 <div class="row pb-lg-5 mx-lg-0">
                     <?php
