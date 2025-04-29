@@ -1771,6 +1771,9 @@ button {
 .verticalcol img{
 	min-height: 27rem;
 }
+.d-inline-grid{
+	display: inline-grid;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
