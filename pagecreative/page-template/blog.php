@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<div class="postspage container-fluid mx-auto px-md-4 mx-auto text-left">
+<div class="postspage container-fluid mx-auto px-md-4 mx-auto text-left pt-lg-4">
     <div class="postcategory__filter d-flex flex-wrap gap-2 py-3 bordertop borderbottom" id="categoryFilter">
 
         <div class="d-none d-md-flex flex-wrap gap-2" id="categoryButtons">
