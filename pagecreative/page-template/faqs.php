@@ -11,7 +11,7 @@ get_header(); ?>
     <div class="row justify-content-between pb-lg-4 pt-5">
         <div class="col-12 col-lg-4 order-lg-1 order-2">
             <img class="w-100 h-100" src="<?php echo get_field('featured_image'); ?>" alt="Frequently Asked Questions">
-            <div class="font-15 singlecontent">
+            <div class="font-15 singlecontent bordertop pt-4 mt-5">
                 <?php echo get_field('content_editor'); ?>
             </div>
         </div>
