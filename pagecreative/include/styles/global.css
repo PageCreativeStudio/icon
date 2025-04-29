@@ -1774,6 +1774,9 @@ button {
 .d-inline-grid{
 	display: inline-grid;
 }
+.align-content-start{
+	align-content: start;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
