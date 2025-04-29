@@ -24,13 +24,13 @@ get_header(); ?>
                     class="underline" href="<?php echo home_url(); ?>/faqs/">FAQ</a>.
                 If you still can't find what you're after, get in touch.</p>
 
-            <span class="w-100 text-black bordertop pt-4">General enquiries</span>
+            <span class="w-100 text-black pt-5 mt-3">General enquiries</span>
             <p class="font-15 text-black pb-3 mb-0 pb-4">We're open Monday to Friday — 9am to 6pm</p>
 
             <a class="underline font-18 text-black" href="mailto:sales@iconprinting.com">sales@iconprinting.com</a>
             <a class="underline font-18 text-black" href="tel:+44 (0)207 1838431">+44 (0)207 183 8431</a>
 
-            <span class="w-100 bordertop pt-4">Social</span>
+            <span class="w-100 pt-4">Social</span>
             <a class="underline font-18 text-black arrowup" href="https://www.instagram.com/iconprinting/"
                 target="_blank">Instagram</a>
             <a class="underline font-18 text-black arrowup" href="https://www.facebook.com/iconprinting/"
@@ -38,10 +38,10 @@ get_header(); ?>
             <a class="underline font-18 text-black arrowup" href="https://x.com/iconprinting/"
                 target="_blank">Instagram</a>
 
-            <span class="w-100 bordertop text-black pt-4">Address</span>
+            <span class="w-100 text-black pt-4">Address</span>
             <p class="font-18 text-black mb-0">Unit 1, Ground Floor<br>
                 55 Dalston Lane</p>
-            <span class="w-100 bordertop text-black pt-4">London E8 2NG Meetings are strictly by appointment only</span>
+            <span class="w-100 text-black pt-4">London E8 2NG Meetings are strictly by appointment only</span>
 
         </div>
     </div>
