@@ -9,7 +9,7 @@
                         </span>
                     <?php endif; ?>
                     <?php if (get_field("two_col_title")): ?>
-                        <h2 class="text-black font-30 font-mb-20 my-0 pb-3 max-30">
+                        <h2 class="text-black font-30 font-mb-25 my-0 pb-3 max-30">
                             <?php echo get_field('two_col_title'); ?>
                         </h2>
                     <?php endif; ?>
