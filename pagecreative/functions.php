@@ -235,6 +235,16 @@ function my_custom_gutenberg_blocks()
 			'icon' => 'admin-users',
 			'keywords' => array('two columns', 'hero'),
 		));
+
+		acf_register_block_type(array(
+			'name' => 'hero-vertical',
+			'title' => __('Hero vertical', 'text-domain'),
+			'description' => __('Hero vertical column', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/vertical-hero.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('two columns', 'hero vertical'),
+		));
 	}
 }
 add_action('acf/init', 'my_custom_gutenberg_blocks');
