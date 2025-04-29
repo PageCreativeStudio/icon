@@ -471,6 +471,34 @@ $(document).ready(function () {
 });
 
 
+$(document).ready(function () {
+    const headings = document.querySelectorAll(".faq-item h3");
+
+    headings.forEach((heading) => {
+        heading.addEventListener("click", () => {
+            const ul = heading.nextElementSibling;
+            if (ul.tagName.toLowerCase() === "ul") {
+                if (ul.classList.contains("open")) {
+                    ul.style.maxHeight = "0";
+                    ul.classList.remove("open");
+                    heading.classList.remove("active");
+                } else {
+                    document.querySelectorAll(".faq-item .togglearea.open").forEach((openUl) => {
+                        openUl.style.maxHeight = "0";
+                        openUl.classList.remove("open");
+                        openUl.previousElementSibling.classList.remove("active");
+                    });
+                    ul.style.maxHeight = `${ul.scrollHeight}px`;
+                    ul.classList.add("open");
+                    heading.classList.add("active");
+                }
+            }
+        });
+    });
+});
+
+
+
 ///////////////////// Mobile boat filter
 jQuery(document).ready(function ($) {
     function isMobileScreen() {
