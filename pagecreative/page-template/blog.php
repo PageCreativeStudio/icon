@@ -6,7 +6,9 @@
 get_header(); ?>
 
 <div class="postarea container-fluid mx-auto px-md-4 mx-auto text-left">
-    <h2 class="bordertop borderbottom font-22 font-mb-16 mb-lg-3 py-3 mt-lg-3"></h2>
+    <div>
+        
+    </div>
     <?php
     $latest_args = array(
         'post_type' => 'post',
