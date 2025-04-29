@@ -14,7 +14,7 @@ get_header(); ?>
     <div class="row pb-4">
         <div class="col-12 col-lg-6 order-2 order-lg-1 pr-lg-5">
             <div class="stickytop">
-                <img class="w-100 h-100 mb-lg-4 mt-5 mt-lg-0"
+                <img class="w-100 h-100 mt-5 mt-lg-0"
                     src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="Contact icon printing">
             </div>
         </div>
