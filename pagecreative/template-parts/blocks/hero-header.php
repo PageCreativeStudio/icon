@@ -1,5 +1,5 @@
-<section class="pb-lg-4">
-    <div class="hero-header container-fluid mx-auto px-md-4 mx-auto pb-3 pb-lg-4">
+<section class="pb-5">
+    <div class="hero-header container-fluid mx-auto px-md-4 mx-auto pb-4 pb-lg-5">
         <div class="stickyrow row">
             <div class="col-12 col-lg-4 pr-lg-5 px-3 order-2 order-lg-1">
                 <div class="pt-3 pt-lg-3 mt-lg-2">
