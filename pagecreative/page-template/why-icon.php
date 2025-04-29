@@ -44,8 +44,8 @@ get_header(); ?>
     <?php get_template_part('template-parts/blocks/testimonials'); ?>
 </div>
 
-<div class="font-15 singlecontent bordertop pt-4 mt-5">
-    <p class="font-15 text-gray">
+<div class="font-15 singlecontent bordertop pt-4 mt-5 pb-5">
+    <p class="font-15 text-gray max-20 pt-2">
         <span class="text-black">Not finding what you're looking for?</span><br><br>
         Can't find what you're looking for or need some assistance? Call us on 0207 183 8431 or send us an email.
     </p>
