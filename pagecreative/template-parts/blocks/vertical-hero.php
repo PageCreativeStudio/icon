@@ -19,7 +19,7 @@
                                 <div class="pt-3 pt-lg-0">
                                     <?php if (get_sub_field("mini_title")): ?>
                                         <span class="font-14 font-mb-12 uppercase text-gray my-0 pb-3">
-                                            <?php echo get_sub_sub_field('mini_title'); ?>
+                                            <?php echo get_sub_field('mini_title'); ?>
                                         </span>
                                     <?php endif; ?>
                                     <?php if (get_sub_field("two_col_title")): ?>
@@ -29,7 +29,7 @@
                                     <?php endif; ?>
                                     <?php if (get_sub_field("two_col_sub_title")): ?>
                                         <h3 class="font-20 font-mb-18 text-black my-0 pb-3">
-                                            <?php echo get_sub_sub_field('two_col_sub_title'); ?>
+                                            <?php echo get_sub_field('two_col_sub_title'); ?>
                                         </h3>
                                     <?php endif; ?>
                                     <?php if (get_sub_field("two_col_description")): ?>
