@@ -7,7 +7,7 @@
                     <div class="verticalcol col-12 col-lg-6 pb-4 pb-lg-4">
                         <div class="row">
                             <div class="col-12">
-                                <div class="postarea__image-container h-100 pt-3 pt-lg-0">
+                                <div class="postarea__image-container h-100">
                                     <img class="w-100" src="<?php echo get_sub_field('two_col_image'); ?>"
                                         alt="<?php echo get_sub_field('two_col_title'); ?>">
                                     <?php if (get_sub_field("two_col_image_caption")): ?>
@@ -37,7 +37,7 @@
                                     <?php endif; ?>
                                     <?php if (get_sub_field("two_col_btn_title")): ?>
                                         <a href="<?php echo get_sub_field('two_col_btn_link'); ?>"
-                                            class="text-sec font-13 underline align-self-center my-0 pt-3"><?php echo get_sub_field('two_col_btn_title'); ?></a>
+                                            class="text-sec font-13 underline align-self-center my-0 pt-3 pb-3 pb-lg-0"><?php echo get_sub_field('two_col_btn_title'); ?></a>
                                     <?php endif; ?>
                                 </div>
                             </div>
