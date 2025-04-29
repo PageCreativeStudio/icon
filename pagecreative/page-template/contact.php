@@ -12,13 +12,13 @@ get_header(); ?>
 
 <div class="container-fluid mx-auto px-md-4 mx-auto text-left pb-5">
     <div class="row pb-4 pb-lg-5">
-        <div class="col-12 col-lg-6 order-2 order-lg-1 pr-lg-5">
+        <div class="col-12 col-lg-5 order-2 order-lg-1 pr-lg-5">
             <div class="stickytop">
                 <img class="w-100 h-100 mt-5 mt-lg-0"
                     src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="Contact icon printing">
             </div>
         </div>
-        <div class="col-12 col-lg-6 order-1 order-lg-2">
+        <div class="col-12 col-lg-7 order-1 order-lg-2">
             <div class="stickytop align-content-start d-inline-grid">
                 <h2 class="font-30 text-black font-mb-25 mb-0 pb-4">We're here to help</h2>
                 <p class="font-18 text-black pb-3 mb-2 max-35">You can find answers to the most comon enquiries on our
