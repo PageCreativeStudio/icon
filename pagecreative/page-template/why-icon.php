@@ -7,7 +7,7 @@ get_header(); ?>
 
 
 <div class="container-fluid mx-auto px-md-4 mx-auto text-left pb-5 pt-lg-4">
-    <h2 class="bordertop borderbottom font-18 font-mb-16 mb-lg-3 py-3 mt-lg-3">We just care a lot more</h2>
+    <h2 class="bordertop borderbottom font-18 font-mb-16 mb-lg-3 py-3">We just care a lot more</h2>
 </div>
 
 <div class="container-fluid mx-auto px-md-0 mx-auto">
