@@ -35,7 +35,7 @@ get_header(); ?>
     </div>
 </div>
 
-<div class="pt-5">
+<div class="pt-2 pt-lg-5">
     <?php get_template_part('template-parts/blocks/testimonials'); ?>
 </div>
 
