@@ -1764,7 +1764,9 @@ button {
 .justify-items-start{
     justify-items:start;
 }
-
+.verticalcol img{
+	height: 29rem;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
@@ -1808,6 +1810,10 @@ button {
 	.singlepost img{
 	    height: 14rem;
 	}
+	.verticalcol img{
+		height: 15rem;
+	}
+	
 }
 
 @media (max-width:991px) {
