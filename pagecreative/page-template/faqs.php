@@ -11,7 +11,7 @@ get_header(); ?>
     <div class="row justify-content-between pb-lg-4">
         <div class="col-12 col-lg-4 order-lg-1 order-2">
             <img class="w-100 h-100" src="<?php echo get_field('featured_image'); ?>" alt="Frequently Asked Questions">
-            <div class="font-15">
+            <div class="font-15 singlecontent">
                 <?php echo get_field('content_editor'); ?>
             </div>
         </div>
@@ -22,7 +22,9 @@ get_header(); ?>
                     <div class="faq-item">
                         <h3 class="borderbottom py-3 mb-0 font-18 font-mb-16"><?php echo get_sub_field('question'); ?></h3>
                         <div class="togglearea">
+                            <div class="py-2 px-2">
                             <?php echo get_sub_field('answer'); ?>
+                            </div>
                         </div>
                     </div>
                 <?php } ?>
