@@ -11,7 +11,7 @@ get_header(); ?>
 </div>
 
 <div class="container-fluid mx-auto px-md-4 mx-auto text-left pb-5">
-    <div class="row pb-4">
+    <div class="row pb-4 pb-lg-5">
         <div class="col-12 col-lg-6 order-2 order-lg-1 pr-lg-5">
             <div class="stickytop">
                 <img class="w-100 h-100 mt-5 mt-lg-0"
