@@ -20,7 +20,7 @@ get_header(); ?>
                 <?php while (have_rows('faqs_repeater')) {
                     the_row(); ?>
                     <div class="faq-item">
-                        <h3 class="borderbottom py-3 mb-0 font-18 font-mb-16 mb-lg-3"><?php echo get_sub_field('question'); ?>
+                        <h3 class="borderbottom py-3 mb-0 font-18 font-mb-16 mb-lg-3 pr-3"><?php echo get_sub_field('question'); ?>
                         </h3>
                         <div class="togglearea">
                             <div class="py-2 px-2">
