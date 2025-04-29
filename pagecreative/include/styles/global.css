@@ -64,7 +64,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-@font-face {
+ @font-face {
 	font-family: 'SuisseRegular';
 	src: url('../fonts/SuisseIntl-Regular.woff2') format('woff2'),
 		url('../fonts/SuisseIntl-Regular.woff') format('woff');
@@ -1033,6 +1033,18 @@ Custom CSS start here
 	max-width: 70rem;
 }
 
+.max-75 {
+	max-width: 75rem;
+}
+
+.max-80 {
+	max-width: 80rem;
+}
+
+.max-85 {
+	max-width: 85rem;
+}
+
 .font-200 {
 	font-weight: 200;
 }
@@ -1702,6 +1714,52 @@ button {
 	font-weight: 200!important;
 	color: black;
 }
+.postspage img{
+    height: 100%;
+}
+.postspage .postarea__link{
+    display: grid;
+    height: 100%;
+    align-content: space-between;
+}
+.postcategory__filter .catbtn.active{
+    background: black;
+    color: white;
+    transition:0.3s ease-in-out;
+}
+.postcategory__filter .catbtn{
+    padding: 3px 11px 1px;
+    margin-right: 5px;
+    color:black;
+    font-size:14px;
+    transition:0.3s ease-in-out;
+}
+.cat-select{
+    width: 100%;
+    height: 47px;
+    padding: 0px 8px;
+    background: #333333;
+    color: white;
+}
+.stickyrow img{
+    max-height: 31rem !important;
+    min-height: 31rem;
+}
+.pagination-btns .prev a{
+    padding: 16px 31px 13px;
+    color: #cfcfcf;
+    border: solid 1px #cfcfcf;
+    margin-right: 11px;
+}
+.pagination-btns .next a{
+    background: black;
+    color: white;
+    border:solid 1px black;
+    padding: 16px 31px 13px;
+}
+.justify-items-start{
+    justify-items:start;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
@@ -1712,6 +1770,12 @@ button {
 	.product-gallery .owl-prev {
 		margin-top: -9px;
 		left: -2.5rem;
+	}
+	.postspage img{
+	    height: 14.5rem;
+	}
+	.singlepost img{
+	    height: 32rem; 
 	}
 }
 
@@ -1729,6 +1793,15 @@ button {
 	.featured-image-arrows svg {
 		height: 29px;
 		width: 29px;
+	}
+	.postspage img{
+	    min-height: 10rem;
+	}
+	.postcategory__filter{
+	    border:0;
+	}
+	.singlepost img{
+	    height: 14rem;
 	}
 }
 

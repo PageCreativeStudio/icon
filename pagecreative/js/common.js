@@ -492,3 +492,51 @@ jQuery(document).ready(function ($) {
         }
     }
 });
+
+
+//////////posts categories filter
+jQuery(document).ready(function ($) {
+    const buttons = document.querySelectorAll('#categoryButtons .catbtn');
+    const select = document.getElementById('categorySelect');
+    const posts = document.querySelectorAll('.post-item');
+
+    function filterPosts(cat) {
+        posts.forEach(post => {
+            const postCats = post.getAttribute('data-cats').split(' ');
+            if (cat === 'all' || postCats.includes(cat)) {
+                post.style.display = '';
+            } else {
+                post.style.display = 'none';
+            }
+        });
+    }
+
+    // Handle desktop buttons
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const selectedCat = button.getAttribute('data-cat');
+            select.value = selectedCat; // sync dropdown
+            filterPosts(selectedCat);
+        });
+    });
+
+    // Handle mobile dropdown
+    if (select) {
+        select.addEventListener('change', () => {
+            const selectedCat = select.value;
+            filterPosts(selectedCat);
+            // update active class on buttons to match
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-cat') === selectedCat) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        });
+    }
+});
+
+
