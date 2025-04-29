@@ -6,7 +6,7 @@
 get_header(); ?>
 
 
-<div class="faqs container-fluid mx-auto px-md-4 mx-auto text-left pb-5">
+<div class="faqs container-fluid mx-auto px-md-4 mx-auto text-left py-5 mb-5">
     <h2 class="bordertop borderbottom font-20 font-mb-16 mb-lg-3 py-3 mt-lg-3">Frequently Asked Questions</h2>
     <div class="row justify-content-between pb-lg-4">
         <div class="col-12 col-lg-4 order-lg-1 order-2">
@@ -20,7 +20,7 @@ get_header(); ?>
                 <?php while (have_rows('faqs_repeater')) {
                     the_row(); ?>
                     <div class="faq-item">
-                        <h3 class=""><?php echo get_sub_field('question'); ?></h3>
+                        <h3 class="borderbottom py-3 mb-0 font-18 font-mb-16"><?php echo get_sub_field('question'); ?></h3>
                         <div class="togglearea">
                             <?php echo get_sub_field('answer'); ?>
                         </div>
