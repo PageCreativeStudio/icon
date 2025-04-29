@@ -1765,7 +1765,7 @@ button {
     justify-items:start;
 }
 .verticalcol img{
-	height: 29rem;
+	min-height: 27rem;
 }
 
 @media (min-width:767px) {
