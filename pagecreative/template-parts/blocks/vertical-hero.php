@@ -18,12 +18,12 @@
                             <div class="col-12">
                                 <div class="pt-3 pt-lg-0 max-45">
                                     <?php if (get_sub_field("mini_title")): ?>
-                                        <span class="font-14 font-mb-12 uppercase text-gray my-0 pb-3">
+                                        <span class="font-14 font-mb-12 uppercase text-gray mt-0 mb-1 pb-3">
                                             <?php echo get_sub_field('mini_title'); ?>
                                         </span>
                                     <?php endif; ?>
                                     <?php if (get_sub_field("two_col_title")): ?>
-                                        <h2 class="text-black font-30 font-mb-25 my-0 pb-3">
+                                        <h2 class="text-black font-30 font-mb-22 my-0 pb-3">
                                             <?php echo get_sub_field('two_col_title'); ?>
                                         </h2>
                                     <?php endif; ?>
