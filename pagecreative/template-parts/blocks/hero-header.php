@@ -20,8 +20,8 @@
                     <?php if (get_field("two_col_description")): ?>
                         <p class="font-15 text-black my-0 pb-3"><?php echo get_field('two_col_description'); ?></p>
                     <?php endif; ?>
-                    <?php if (get_field("mini_title")): ?>
-                        <a href="<?php echo get_field('two_col_btn_title'); ?>"
+                    <?php if (get_field("two_col_btn_title")): ?>
+                        <a href="<?php echo get_field('two_col_btn_link'); ?>"
                             class="text-sec font-13 underline align-self-center my-0 pt-3"><?php echo get_field('two_col_btn_title'); ?></a>
                     <?php endif; ?>
                 </div>
