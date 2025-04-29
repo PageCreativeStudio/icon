@@ -2,7 +2,7 @@
     <div class="hero-header container-fluid mx-auto px-md-4 mx-auto pb-4 pb-lg-5">
         <div class="stickyrow row">
             <div class="col-12 col-lg-4 pr-lg-5 px-3 order-2 order-lg-1">
-                <div class="pt-3 pt-lg-3 mt-lg-2">
+                <div class="pt-3 pt-lg-0">
                     <?php if (get_field("mini_title")): ?>
                         <span class="font-14 font-mb-12 uppercase text-gray my-0 pb-3">
                             <?php echo get_field('mini_title'); ?>
