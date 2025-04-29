@@ -476,20 +476,20 @@ $(document).ready(function () {
 
     headings.forEach((heading) => {
         heading.addEventListener("click", () => {
-            const ul = heading.nextElementSibling;
-            if (ul.tagName.toLowerCase() === "ul") {
-                if (ul.classList.contains("open")) {
-                    ul.style.maxHeight = "0";
-                    ul.classList.remove("open");
+            const toggleArea = heading.nextElementSibling;
+            if (toggleArea.classList.contains("togglearea")) {
+                if (toggleArea.classList.contains("open")) {
+                    toggleArea.style.maxHeight = "0";
+                    toggleArea.classList.remove("open");
                     heading.classList.remove("active");
                 } else {
-                    document.querySelectorAll(".faq-item .togglearea.open").forEach((openUl) => {
-                        openUl.style.maxHeight = "0";
-                        openUl.classList.remove("open");
-                        openUl.previousElementSibling.classList.remove("active");
+                    document.querySelectorAll(".faq-item .togglearea.open").forEach((openEl) => {
+                        openEl.style.maxHeight = "0";
+                        openEl.classList.remove("open");
+                        openEl.previousElementSibling.classList.remove("active");
                     });
-                    ul.style.maxHeight = `${ul.scrollHeight}px`;
-                    ul.classList.add("open");
+                    toggleArea.style.maxHeight = `${toggleArea.scrollHeight}px`;
+                    toggleArea.classList.add("open");
                     heading.classList.add("active");
                 }
             }

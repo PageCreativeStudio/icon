@@ -1633,7 +1633,8 @@ button {
 	display: none;
 }
 
-.megafilter-group form>ul li h4 {
+.megafilter-group form>ul li h4,
+.faq-item h3 {
 	cursor: pointer;
 	position: relative;
 }
