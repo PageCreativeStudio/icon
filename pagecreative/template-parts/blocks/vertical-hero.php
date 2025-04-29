@@ -28,7 +28,7 @@
                                         </h2>
                                     <?php endif; ?>
                                     <?php if (get_sub_field("two_col_sub_title")): ?>
-                                        <h3 class="font-20 font-mb-18 text-black my-0 pb-3">
+                                        <h3 class="font-20 font-mb-17 text-black my-0 pb-3">
                                             <?php echo get_sub_field('two_col_sub_title'); ?>
                                         </h3>
                                     <?php endif; ?>
