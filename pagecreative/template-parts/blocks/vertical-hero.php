@@ -23,7 +23,7 @@
                                         </span>
                                     <?php endif; ?>
                                     <?php if (get_sub_field("two_col_title")): ?>
-                                        <h2 class="text-black font-30 font-mb-22 my-0 pb-3">
+                                        <h2 class="text-black font-32 font-mb-22 my-0 pb-3">
                                             <?php echo get_sub_field('two_col_title'); ?>
                                         </h2>
                                     <?php endif; ?>
