@@ -27,15 +27,15 @@ get_header(); ?>
             <span class="w-100 bordertop pt-4 mt-3">General enquiries</span>
             <p class="font-15 text-black pb-3 mb-0 pb-4">We're open Monday to Friday — 9am to 6pm</p>
 
-            <a class="underline font-18 text-black" href="mailto:sales@iconprinting.com">sales@iconprinting.com</a>
-            <a class="underline font-18 text-black" href="tel:+44 (0)207 1838431">+44 (0)207 183 8431</a>
+            <a class="underline font-18 text-black d-inline-block mb-2" href="mailto:sales@iconprinting.com">sales@iconprinting.com</a>
+            <a class="underline font-18 text-black d-inline-block mb-2" href="tel:+44 (0)207 1838431">+44 (0)207 183 8431</a>
 
             <span class="w-100 pt-4 mt-lg-3">Social</span>
-            <a class="underline font-18 text-black arrowup" href="https://www.instagram.com/iconprinting/"
+            <a class="underline font-18 text-black arrowup d-inline-block mb-2" href="https://www.instagram.com/iconprinting/"
                 target="_blank">Instagram</a>
-            <a class="underline font-18 text-black arrowup" href="https://www.facebook.com/iconprinting/"
+            <a class="underline font-18 text-black arrowup d-inline-block mb-2" href="https://www.facebook.com/iconprinting/"
                 target="_blank">Facebook</a>
-            <a class="underline font-18 text-black arrowup" href="https://x.com/iconprinting/"
+            <a class="underline font-18 text-black arrowup d-inline-block mb-2" href="https://x.com/iconprinting/"
                 target="_blank">Instagram</a>
 
             <span class="w-100 pt-4 mt-lg-3">Address</span>
