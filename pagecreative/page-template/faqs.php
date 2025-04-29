@@ -26,7 +26,7 @@ get_header(); ?>
                                 <?php echo get_sub_field('question'); ?>
                             </h3>
                             <div class="togglearea">
-                                <div class="py-2 px-2">
+                                <div class="py-2 px-1">
                                     <?php echo get_sub_field('answer'); ?>
                                 </div>
                             </div>
