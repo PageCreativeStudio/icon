@@ -2,7 +2,7 @@
     <div class="hero-header container-fluid mx-auto px-md-4 mx-auto pb-4 pb-lg-5">
         <?php if (get_field('vertical_view')): ?>
             <!-- Show Vertical View -->
-            <div class="verticalrow row">
+            <div class="verticalrow">
                 <div class="col-12 col-lg-6">
                     <div class="row">
                         <div class="col-12">
