@@ -20,7 +20,7 @@ get_header(); ?>
 <div class="container-fluid mx-auto px-md-4">
     <div class="font-15 singlecontent bordertop pt-4 mt-5 pb-5">
         <p class="font-15 text-gray max-25 pt-2">
-            <span class="text-black">Not finding what you're looking for?</span><br><br>
+            <span class="text-black font-18">Not finding what you're looking for?</span><br><br>
             Can't find what you're looking for or need some assistance? Call us on 0207 183 8431 or send us an email.
         </p>
     </div>
