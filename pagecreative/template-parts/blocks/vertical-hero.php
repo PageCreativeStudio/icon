@@ -1,5 +1,5 @@
 <section class="pb-5">
-    <div class="hero-header container-fluid mx-auto px-md-4 mx-auto pb-4 pb-lg-5">
+    <div class="container-fluid mx-auto px-md-4 mx-auto pb-4 pb-lg-5">
         <div class="row">
             <?php if (have_rows('hero_column_repeater')) { ?>
                 <?php while (have_rows('hero_column_repeater')) {
