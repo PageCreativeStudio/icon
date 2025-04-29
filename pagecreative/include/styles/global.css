@@ -1201,16 +1201,16 @@ button {
 .arrowup::after {
 	content: "";
 	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%229%22%20height%3D%229%22%20viewBox%3D%220%200%209%209%22%20fill%3D%22none%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M7.54494%202.56639L1.50928%208.60205L0.801779%207.89455L6.83744%201.85889L3.54217%201.85721L3.54258%200.857807L7.83655%200.858364L7.87191%200.823009L7.90728%200.858384L8.54384%200.858572L8.54403%201.49513L8.57941%201.53051L8.54405%201.56586L8.5441%201.71298L8.54532%205.86054L7.54521%205.86024L7.54494%202.56639Z%22%20fill%3D%22%23333333%22%2F%3E%3C%2Fsvg%3E');
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 11px;
-	width: 11px;
-	position: absolute;
-	margin: 5px 0 0 0px;
-	transition: all 0.3s ease-in-out;
-	right: -18px;
-	top: 0px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 11px;
+    width: 11px;
+    position: absolute;
+    margin: 5px 0 0 0px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 12px;
+    top: 3px;
 }
 
 .btna {
