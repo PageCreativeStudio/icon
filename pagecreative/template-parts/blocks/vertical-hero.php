@@ -37,7 +37,7 @@
                                     <?php endif; ?>
                                     <?php if (get_sub_field("two_col_btn_title")): ?>
                                         <a href="<?php echo get_sub_field('two_col_btn_link'); ?>"
-                                            class="text-sec font-13 underline align-self-center my-0 pt-3 pb-3 pb-lg-0"><?php echo get_sub_field('two_col_btn_title'); ?></a>
+                                            class="text-sec font-13 underline align-self-center my-0 pt-3 d-inline-block mb-3 mb-lg-0"><?php echo get_sub_field('two_col_btn_title'); ?></a>
                                     <?php endif; ?>
                                 </div>
                             </div>
