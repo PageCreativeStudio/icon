@@ -1,10 +1,10 @@
 <section class="pb-5">
-    <div class="container-fluid mx-auto px-md-4 mx-auto pb-4 pb-lg-4">
+    <div class="container-fluid mx-auto px-md-4 mx-auto">
         <div class="row">
             <?php if (have_rows('hero_column_repeater')) { ?>
                 <?php while (have_rows('hero_column_repeater')) {
                     the_row(); ?>
-                    <div class="verticalcol col-12 col-lg-6">
+                    <div class="verticalcol col-12 col-lg-6 pb-4 pb-lg-4">
                         <div class="row">
                             <div class="col-12">
                                 <div class="postarea__image-container h-100">
