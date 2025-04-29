@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<div class="postarea container-fluid mx-auto px-md-4 mx-auto text-left pt-lg-4">
+<div class="postarea container-fluid mx-auto px-md-4 mx-auto text-left pt-3  pt-lg-4">
     <h2 class="bordertop borderbottom font-18 font-mb-16 mb-lg-3 py-3">Case studies</h2>
     <?php
     $total_case_studies = wp_count_posts('case-studies')->publish;

@@ -6,7 +6,7 @@
 get_header(); ?>
 
 
-<div class="faqs container-fluid mx-auto px-md-4 mx-auto text-left pb-5 pt-lg-4">
+<div class="faqs container-fluid mx-auto px-md-4 mx-auto text-left pb-5 pt-3 pt-lg-4">
     <h2 class="bordertop borderbottom font-18 font-mb-16 mb-lg-3 py-3">Frequently Asked Questions</h2>
     <div class="row justify-content-between pb-lg-4 pt-3 pt-lg-4">
         <div class="col-12 col-lg-4 order-lg-1 order-2 h-100">
