@@ -20,7 +20,7 @@ get_header(); ?>
         </div>
         <div class="col-12 col-lg-6 order-1 order-lg-2 align-content-start d-inline-grid">
             <h2 class="font-30 text-black font-mb-25 mb-0 pb-4">We're here to help</h2>
-            <p class="font-18 text-black pb-3 mb-0 max-30">You can find answers to the most comon enquiries on our <a
+            <p class="font-18 text-black pb-3 mb-0 max-35">You can find answers to the most comon enquiries on our <a
                     class="underline" href="<?php echo home_url(); ?>/faqs/">FAQ</a>.
                 If you still can't find what you're after, get in touch.</p>
 
