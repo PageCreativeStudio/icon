@@ -24,10 +24,10 @@ get_header(); ?>
                     class="underline" href="<?php echo home_url(); ?>/faqs/">FAQ</a>.
                 If you still can't find what you're after, get in touch.</p>
 
-            <span class="w-100 bordertop pt-4 mt-3">General enquiries</span>
+            <span class="w-100 bordertop pt-5 mt-4">General enquiries</span>
             <p class="font-16 text-black pb-3 mb-0 pb-4 pt-2">We're open Monday to Friday — 9am to 6pm</p>
 
-            <a class="underline font-18 text-black d-inline-block mb-2" href="mailto:sales@iconprinting.com">sales@iconprinting.com</a>
+            <a class="underline font-18 text-black d-inline-block mb-2 pt-2" href="mailto:sales@iconprinting.com">sales@iconprinting.com</a>
             <a class="underline font-18 text-black d-inline-block mb-2" href="tel:+44 (0)207 1838431">+44 (0)207 183 8431</a>
 
             <span class="w-100 pt-4 mt-lg-3 pb-2">Social</span>
