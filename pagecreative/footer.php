@@ -60,7 +60,7 @@
                         <?php while (have_rows('menu_repeater_3', 'options')) {
                             the_row(); ?>
                             <li class="pb-2 pb-lg-2"><a class="font-15 text-gray arrowup"
-                                    href="<?php echo get_sub_field('item_link'); ?>"><?php echo get_sub_field('menu_item'); ?></a>
+                                    href="<?php echo get_sub_field('item_link'); ?>" target="_blank"><?php echo get_sub_field('menu_item'); ?></a>
                             </li>
                         <?php } ?>
                     <?php } ?>
