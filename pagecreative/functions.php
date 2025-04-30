@@ -246,7 +246,7 @@ function my_custom_gutenberg_blocks()
 			'keywords' => array('two columns', 'hero vertical'),
 		));
 
-		
+
 		acf_register_block_type(array(
 			'name' => 'accordion-tabs',
 			'title' => __('Accordion tabs', 'text-domain'),
@@ -285,6 +285,16 @@ function my_custom_gutenberg_blocks()
 			'category' => 'layout',
 			'icon' => 'admin-users',
 			'keywords' => array('btn light', 'button'),
+		));
+
+		acf_register_block_type(array(
+			'name' => 'product-slider',
+			'title' => __('Product slider', 'text-domain'),
+			'description' => __('Select products to show in slider', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/product-slider.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('product carousel', 'product slider'),
 		));
 	}
 }
@@ -356,14 +366,15 @@ add_filter('single_template', 'custom_service_template');
 
 add_filter('template_include', 'load_custom_single_product_template', 99);
 
-function load_custom_single_product_template($template) {
-    if (is_singular('product')) {
-        $custom_template = get_stylesheet_directory() . '/woocommerce/single-product.php';
-        if (file_exists($custom_template)) {
-            return $custom_template;
-        }
-    }
-    return $template;
+function load_custom_single_product_template($template)
+{
+	if (is_singular('product')) {
+		$custom_template = get_stylesheet_directory() . '/woocommerce/single-product.php';
+		if (file_exists($custom_template)) {
+			return $custom_template;
+		}
+	}
+	return $template;
 }
 
 
