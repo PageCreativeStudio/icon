@@ -12,17 +12,24 @@
             if ($selected_products): ?>
                 <div class="related__slider owl-carousel owl-theme">
                     <?php foreach ($selected_products as $post):
+                        if (get_post_type($post) !== 'product')
+                            continue;
+                
                         setup_postdata($post);
                         $related_product = wc_get_product(get_the_ID());
+
+                        if (!$related_product)
+                            continue;
                         ?>
                         <div class="col-12 pb-3 px-0">
                             <div class="productcard__container text-center">
-
                                 <div class="d-block position-relative">
                                     <a href="<?php the_permalink(); ?>">
                                         <div class="product-image position-relative">
-                                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
-                                                loading="lazy">
+                                            <?php if (has_post_thumbnail()): ?>
+                                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
+                                                    loading="lazy">
+                                            <?php endif; ?>
                                         </div>
                                     </a>
                                 </div>
@@ -54,12 +61,12 @@
                                         /<span class="text-gray font-14">unit</span>
                                     </p>
                                 </a>
-
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
+
         </div>
 </section>
