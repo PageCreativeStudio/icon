@@ -19,7 +19,7 @@ get_header(); ?>
             $links = [];
             while ($services_query->have_posts()):
                 $services_query->the_post();
-                $links[] = '<a href="#service-' . $i . '" class="text-sec font-14">' . get_the_title() . '</a>';
+                $links[] = 'Services we provide: <a href="#service-' . $i . '" class="font-14">' . get_the_title() . '</a>';
                 $i++;
             endwhile;
             echo implode(' <span class="px-2">|</span> ', $links);
