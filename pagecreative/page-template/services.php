@@ -67,7 +67,7 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/blocks/social-logos'); ?>
 
-<div class="pt-2 pt-lg-5">
+<div class="pt-4 pt-lg-5">
     <?php get_template_part('template-parts/blocks/testimonials'); ?>
 </div>
 

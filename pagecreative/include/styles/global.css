@@ -1822,7 +1822,7 @@ button {
 	    height: 14rem;
 	}
 	.verticalcol img{
-		height: 15rem;
+		min-height: 19rem;
 	}
 	
 }
