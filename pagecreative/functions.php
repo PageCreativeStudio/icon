@@ -299,7 +299,7 @@ function my_custom_gutenberg_blocks()
 
 		acf_register_block_type(array(
 			'name' => 'text-editor',
-			'title' => __('Title with textarea', 'text-domain'),
+			'title' => __('Text editor', 'text-domain'),
 			'description' => __('textarea with title', 'text-domain'),
 			'render_template' => get_template_directory() . '/template-parts/blocks/text-editor.php',
 			'category' => 'layout',
