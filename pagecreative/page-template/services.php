@@ -32,7 +32,7 @@ get_header(); ?>
         </div>
 
         <div class="d-md-none mt-2">
-            <h2 class="font-18 text-black bordertop py-3 mb-0 mt-3"><span class="mt-2">Services we provide:</span></h2>
+            <h2 class="font-18 text-black bordertop py-3 mb-0 mt-0"><span class="mt-2 d-block">Services we provide:</span></h2>
             <select id="mobile-service-select" class="cat-select font-14">
                 <option value="">Select a service</option>
                 <?php
