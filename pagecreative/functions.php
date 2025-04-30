@@ -317,7 +317,7 @@ add_filter('template_include', 'load_custom_single_product_template', 99);
 
 function load_custom_single_product_template($template) {
     if (is_singular('product')) {
-        $custom_template = get_stylesheet_directory() . '/woocommerce/content-single-product.php';
+        $custom_template = get_stylesheet_directory() . '/woocommerce/single-product.php';
         if (file_exists($custom_template)) {
             return $custom_template;
         }
