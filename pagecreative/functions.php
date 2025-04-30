@@ -296,6 +296,16 @@ function my_custom_gutenberg_blocks()
 			'icon' => 'admin-users',
 			'keywords' => array('product carousel', 'product slider'),
 		));
+
+		acf_register_block_type(array(
+			'name' => 'text-editor',
+			'title' => __('Title with textarea', 'text-domain'),
+			'description' => __('textarea with title', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/text-editor.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('content', 'text editor'),
+		));
 	}
 }
 add_action('acf/init', 'my_custom_gutenberg_blocks');
