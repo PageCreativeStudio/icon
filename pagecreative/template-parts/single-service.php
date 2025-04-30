@@ -36,7 +36,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <div class="heroarea text-center d-block d-lg-none pb-5">
+        <div class="heroarea text-center d-block d-lg-none pb-3 pb-lg-4">
             <div class="max-50 text-center mx-auto w-100 px-3">
                 <h1 class="text-black font-mb-25 mb-0 pb-0 pt-0 max-20 text-center mx-auto pt-3">
                     <?php the_title(); ?>
