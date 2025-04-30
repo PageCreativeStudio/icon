@@ -1,4 +1,4 @@
-<section class="pb-5 pt-2 imagewithtext">
+<section class="pb-5 pt-0 imagewithtext">
     <div class="container-fluid w-100 mx-auto px-lg-4 mx-auto text-left pb-4 pb-lg-5">
         <div class="row">
             <div class="col-12 col-lg-6 pr-lg-5">
