@@ -9,7 +9,7 @@ global $product;
 ?>
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('custom-product', $product); ?>>
-    <div class="container-fluid mx-auto px-md-4 mb-lg-5">
+    <div class="container-fluid mx-auto px-md-4 mb-lg-5 pt-3 pt-lg-4">
         <div class="row">
             <div class="col-12 col-lg-6 max-50 pr-lg-5">
                 <div class="stickytop">
