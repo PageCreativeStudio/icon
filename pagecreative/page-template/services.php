@@ -34,8 +34,8 @@ get_header(); ?>
 
         <!-- Mobile view -->
         <div class="d-md-none mt-2">
-            <label for="mobile-service-select" class="font-14 font-weight-bold mb-2 d-block">Choose a service:</label>
-            <select id="mobile-service-select" class="form-control font-14">
+            <label for="mobile-service-select" class="font-14 font-weight-bold mb-2 d-block">Services we provide:</label>
+            <select id="mobile-service-select" class="cat-select font-14">
                 <option value="">Select a service</option>
                 <?php
                 $services_query = new WP_Query(array(
