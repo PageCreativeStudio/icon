@@ -568,3 +568,15 @@ jQuery(document).ready(function ($) {
 });
 
 
+document.getElementById('mobile-service-select').addEventListener('change', function () {
+    const targetId = this.value;
+    if (targetId) {
+        const target = document.getElementById(targetId);
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 60,
+                behavior: 'smooth'
+            });
+        }
+    }
+});
