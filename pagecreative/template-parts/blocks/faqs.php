@@ -1,4 +1,4 @@
-<section class="pb-5">
+<section class="pb-5 pt-2">
     <div class="faqs container-fluid max-50 mx-auto px-md-4 mx-auto text-left pb-4 pb-lg-4">
         <div class="row justify-content-between pb-lg-4">
             <div class="col-12 order-lg-2 order-1 pl-lg-4">
