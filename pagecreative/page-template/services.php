@@ -8,7 +8,6 @@ get_header(); ?>
 
 <div class="container-fluid mx-auto px-md-4 mx-auto text-left pb-4 pb-lg-5 pt-3 pt-lg-4">
     <div class="servicesfilter bordertop borderbottom mb-lg-3 py-3">
-
         <div class="d-none d-md-flex align-items-center flex-wrap">
             <span class="text-black pr-3">Services we provide:</span>
             <?php
@@ -73,13 +72,13 @@ get_header(); ?>
                     <div id="service-<?php echo $i; ?>" class="verticalcol col-12 col-lg-6 pb-4 pb-lg-5">
                         <div class="row">
                             <div class="col-12">
-                                <div class="postarea__image-container h-100">
+                                <a href="<?php the_permalink(); ?>" class="postarea__image-container h-100">
                                     <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
                                         alt="<?php the_title(); ?>">
                                     <?php if (get_field("image_caption")): ?>
                                         <p class="font-13 text-gray pt-3 mb-1 mb-lg-3"><?php echo get_field('image_caption'); ?></p>
                                     <?php endif; ?>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-12">
                                 <div class="pt-3 pt-lg-0 max-45">
