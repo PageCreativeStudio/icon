@@ -36,7 +36,7 @@ get_header(); ?>
                             </div>
                             <div class="col-12">
                                 <div class="pt-3 pt-lg-0 max-45">
-                                    <h2 class="text-black font-32 font-mb-22 mt-3 pb-3">
+                                    <h2 class="text-black font-32 font-mb-22 mt-2 pb-2">
                                         <?php the_title(); ?>
                                     </h2>
                                     <?php if (get_field("sub_title")): ?>
