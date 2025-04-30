@@ -326,6 +326,16 @@ function my_custom_gutenberg_blocks()
 			'icon' => 'admin-users',
 			'keywords' => array('image right', 'text with image'),
 		));
+
+		acf_register_block_type(array(
+			'name' => 'images-with-caption',
+			'title' => __('Images with captions', 'text-domain'),
+			'description' => __('Two images with caption', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/images-with-caption.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('images with caption', 'caption'),
+		));
 	}
 }
 add_action('acf/init', 'my_custom_gutenberg_blocks');
