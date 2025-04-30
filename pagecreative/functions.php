@@ -286,7 +286,7 @@ if (function_exists('acf_add_options_page')) {
 }
 
 
-function custom_product_template($single_template)
+function custom_cs_template($single_template)
 {
 	global $post;
 	if ($post->post_type == 'case-studies') {
@@ -297,8 +297,20 @@ function custom_product_template($single_template)
 	}
 	return $single_template;
 }
-add_filter('single_template', 'custom_product_template');
+add_filter('single_template', 'custom_cs_template');
 
+function custom_service_template($single_template)
+{
+	global $post;
+	if ($post->post_type == 'services') {
+		$custom_template = dirname(__FILE__) . '/template-parts/single-service.php';
+		if (file_exists($custom_template)) {
+			return $custom_template;
+		}
+	}
+	return $single_template;
+}
+add_filter('single_template', 'custom_service_template');
 
 
 function get_google_reviews_count()
