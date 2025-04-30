@@ -306,6 +306,26 @@ function my_custom_gutenberg_blocks()
 			'icon' => 'admin-users',
 			'keywords' => array('content', 'text editor'),
 		));
+
+		acf_register_block_type(array(
+			'name' => 'image-left',
+			'title' => __('Image on left content', 'text-domain'),
+			'description' => __('Image on left with content on right', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/image-left.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('image left', 'text with image'),
+		));
+
+		acf_register_block_type(array(
+			'name' => 'image-right',
+			'title' => __('Image on right content', 'text-domain'),
+			'description' => __('Image on right with content on left', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/image-right.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('image right', 'text with image'),
+		));
 	}
 }
 add_action('acf/init', 'my_custom_gutenberg_blocks');
