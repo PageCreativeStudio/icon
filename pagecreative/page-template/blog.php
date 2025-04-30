@@ -19,7 +19,8 @@ get_header(); ?>
         </div>
 
         <div class="d-md-none w-100 pt-1">
-            <h2 class="font-18 text-black bordertop py-3 mb-0 mt-3">Filter Blog Categories</h2>
+            <h2 class="font-18 text-black bordertop py-3 mb-0 mt-0"><span class="mt-2 d-block">Filter Blog
+                    Categories</span></h2>
             <select id="categorySelect" class="cat-select">
                 <option value="all">All</option>
                 <?php
@@ -36,14 +37,14 @@ get_header(); ?>
             <?php
             $sticky = get_option('sticky_posts');
             rsort($sticky);
-        
+
             $latest_query = new WP_Query(array(
                 'post__in' => array_slice($sticky, 0, 1), // only latest sticky
                 'ignore_sticky_posts' => 1,
                 'post_type' => 'post'
             ));
             $excluded_post_ids = !empty($sticky) ? array_slice($sticky, 0, 1) : array();
-        
+
             if ($latest_query->have_posts()):
                 while ($latest_query->have_posts()):
                     $latest_query->the_post();
