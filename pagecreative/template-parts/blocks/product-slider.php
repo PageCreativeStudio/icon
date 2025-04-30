@@ -1,61 +1,63 @@
 <section class="pt-3">
     <div class="container-fluid mx-auto px-md-4 pb-5 text-center">
-        <?php if (get_field("products_slider_title")): ?>
+        <?php if ($slider_title = get_field('products_slider_title')): ?>
             <h2 class="text-black font-22 font-mb-20 text-center mb-0 pb-4 pb-lg-4 mb-lg-2">
-                <?php echo get_field('products_slider_title'); ?>
+                <?php echo esc_html($slider_title); ?>
             </h2>
         <?php endif; ?>
+
         <div class="row pb-lg-5 mx-lg-0">
             <?php
             $selected_products = get_field('product_to_show');
 
-            if ($selected_products): ?>
+            if (!empty($selected_products)): ?>
                 <div class="related__slider owl-carousel owl-theme">
-                    <?php foreach ($selected_products as $post):
-                        if (get_post_type($post) !== 'product')
-                            continue;
-                
-                        setup_postdata($post);
-                        $related_product = wc_get_product(get_the_ID());
+                    <?php foreach ($selected_products as $product_post):
+                        if (!($product_post instanceof WP_Post)) continue;
+                        
+                        $product = wc_get_product($product_post->ID);
+                        if (!$product) continue;
 
-                        if (!$related_product)
-                            continue;
-                        ?>
+                        $product_id = $product->get_id();
+                        $product_title = get_the_title($product_id);
+                        $product_link = get_permalink($product_id);
+                        $product_image = get_the_post_thumbnail_url($product_id, 'medium');
+                        $product_description = wp_strip_all_tags(get_post_field('post_content', $product_id));
+                    ?>
                         <div class="col-12 pb-3 px-0">
                             <div class="productcard__container text-center">
+
                                 <div class="d-block position-relative">
-                                    <a href="<?php the_permalink(); ?>">
+                                    <a href="<?php echo esc_url($product_link); ?>">
                                         <div class="product-image position-relative">
-                                            <?php if (has_post_thumbnail()): ?>
-                                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
-                                                    loading="lazy">
+                                            <?php if ($product_image): ?>
+                                                <img src="<?php echo esc_url($product_image); ?>" alt="<?php echo esc_attr($product_title); ?>" loading="lazy">
+                                            <?php else: ?>
+                                                <img src="<?php echo wc_placeholder_img_src(); ?>" alt="No image available" loading="lazy">
                                             <?php endif; ?>
                                         </div>
                                     </a>
                                 </div>
 
-                                <a href="<?php the_permalink(); ?>">
-                                    <h3 class="font-17 font-mb-15 mb-0 pb-0 pb-lg-1 pt-3 mt-1"><?php the_title(); ?></h3>
+                                <a href="<?php echo esc_url($product_link); ?>">
+                                    <h3 class="font-17 font-mb-15 mb-0 pb-0 pb-lg-1 pt-3 mt-1"><?php echo esc_html($product_title); ?></h3>
                                 </a>
 
-                                <?php
-                                $description = wp_strip_all_tags(get_the_content());
-                                if (!empty($description)): ?>
+                                <?php if (!empty($product_description)): ?>
                                     <p class="product-excerpt font-14 font-mb-12 text-gray mb-0 pb-1 pb-lg-1">
-                                        <?php echo wp_trim_words($description, 4, '...'); ?>
+                                        <?php echo wp_trim_words($product_description, 6, '...'); ?>
                                     </p>
                                 <?php endif; ?>
 
-                                <a href="<?php the_permalink(); ?>">
+                                <a href="<?php echo esc_url($product_link); ?>">
                                     <p class="text-black font-15 font-mb-13">
                                         From
                                         <?php
-                                        if ($related_product->is_type('variable')) {
-                                            $prices = $related_product->get_variation_prices();
-                                            $min_price = min($prices['price']);
+                                        if ($product->is_type('variable')) {
+                                            $min_price = $product->get_variation_price('min', true);
                                             echo wc_price($min_price);
                                         } else {
-                                            echo $related_product->get_price_html();
+                                            echo $product->get_price_html();
                                         }
                                         ?>
                                         /<span class="text-gray font-14">unit</span>
@@ -65,8 +67,7 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <?php wp_reset_postdata(); ?>
             <?php endif; ?>
-
         </div>
+    </div>
 </section>
