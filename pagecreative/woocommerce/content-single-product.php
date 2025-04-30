@@ -64,113 +64,120 @@ global $product;
                                 <div class="short-description font-14 py-1">
                                     <?php
                                     $product = wc_get_product(get_the_ID());
-                                    $content = wp_strip_all_tags(apply_filters('the_content', $product->get_description()));
-
-                                    $words = explode(' ', $content);
+                                    $full_description = wp_strip_all_tags($product->get_description());
+                                    $words = explode(' ', $full_description);
                                     $short = implode(' ', array_slice($words, 0, 54));
-                                    echo esc_html($short);
                                     ?>
-                                    <?php if (count($words) > 54): ?>
-                                        ... <button class="toggle-description font-14 underline d-block text-black p-0 mt-3"
-                                            data-action="expand">Read more</button>
-                                    <?php endif; ?>
-                                </div>
 
-                                <?php if (count($words) > 54): ?>
-                                    <div class="full-description py-1 font-14" style="display: none;">
-                                        <?php echo esc_html($content); ?>
-                                        <button class="toggle-description font-14 underline d-block text-black p-0 mt-3"
-                                            data-action="collapse">Read less</button>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
-
-                    <?php
-                    $terms = get_the_terms($product_id, 'pa_colours');
-                    $variation_data = [];
-                    foreach ($variations as $variation) {
-                        $attributes = $variation['attributes'];
-                        if (isset($attributes['attribute_pa_colour'])) {
-                            $slug = $attributes['attribute_pa_colour'];
-                            $variation_data[$slug] = [
-                                'price_html' => $variation['price_html'],
-                                'display_price' => $variation['display_price'],
-                                'variation_id' => $variation['variation_id']
-                            ];
-                        }
-                    }
-                    ?>
-
-                    <?php if (!empty($terms)): ?>
-                        <div class="colour-attributes borderbottom py-4 mt-1">
-                            <p class="text-black font-15 mb-0 pb-3">Choose a colour:</p>
-                            <div class="d-flex flex-wrap color-variants-container">
-                                <?php foreach ($terms as $term):
-                                    $slug = $term->slug;
-                                    $color = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $term->name));
-                                    $data = $variation_data[$slug] ?? null;
-                                    ?>
-                                    <div class="color-variant mr-2 mb-2" data-color="<?php echo esc_attr($slug); ?>"
-                                        data-price-html="<?php echo esc_attr($data['price_html'] ?? ''); ?>"
-                                        data-price="<?php echo esc_attr($data['display_price'] ?? ''); ?>"
-                                        data-variation-id="<?php echo esc_attr($data['variation_id'] ?? ''); ?>"
-                                        style="background-color: <?php echo esc_attr($color); ?>;"
-                                        title="<?php echo esc_attr($term->name); ?>">
-                                        <span class="color-check" style="display: none; color: white;">✓</span>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                            <input type="hidden" name="variation_id" id="selected-variation-id" value="">
-                        </div>
-                    <?php endif; ?>
-
-
-
-                    <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
-                        <?php if (have_rows('collaspsibles_repeater')): ?>
-                            <div class="acf-collapsibles">
-                                <?php while (have_rows('collaspsibles_repeater')):
-                                    the_row(); ?>
-                                    <div class="acf-toggle-item">
-                                        <h3 class="toggle-header font-16"><?php echo esc_html(get_sub_field('title')); ?></h3>
-                                        <div class="toggle-content">
-                                            <div class="pt-3 pb-4">
-                                                <?php echo get_sub_field('content'); ?>
-                                            </div>
+                                    <div class="product-description font-14 py-1">
+                                        <div class="short-description font-14 py-1">
+                                            <?php echo esc_html($short); ?>
+                                            <?php if (count($words) > 54): ?>
+                                                ... <button
+                                                    class="toggle-description font-14 underline d-block text-black p-0 mt-3"
+                                                    data-action="expand">Read more</button>
+                                            <?php endif; ?>
                                         </div>
+
+                                        <?php if (count($words) > 54): ?>
+                                            <div class="full-description py-1 font-14" style="display: none;">
+                                                <?php echo esc_html($full_description); ?>
+                                                <button
+                                                    class="toggle-description font-14 underline d-block text-black p-0 mt-3"
+                                                    data-action="collapse">Read less</button>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
-                                <?php endwhile; ?>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php
+                        $terms = get_the_terms($product_id, 'pa_colours');
+                        $variation_data = [];
+                        foreach ($variations as $variation) {
+                            $attributes = $variation['attributes'];
+                            if (isset($attributes['attribute_pa_colour'])) {
+                                $slug = $attributes['attribute_pa_colour'];
+                                $variation_data[$slug] = [
+                                    'price_html' => $variation['price_html'],
+                                    'display_price' => $variation['display_price'],
+                                    'variation_id' => $variation['variation_id']
+                                ];
+                            }
+                        }
+                        ?>
+
+                        <?php if (!empty($terms)): ?>
+                            <div class="colour-attributes borderbottom py-4 mt-1">
+                                <p class="text-black font-15 mb-0 pb-3">Choose a colour:</p>
+                                <div class="d-flex flex-wrap color-variants-container">
+                                    <?php foreach ($terms as $term):
+                                        $slug = $term->slug;
+                                        $color = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $term->name));
+                                        $data = $variation_data[$slug] ?? null;
+                                        ?>
+                                        <div class="color-variant mr-2 mb-2" data-color="<?php echo esc_attr($slug); ?>"
+                                            data-price-html="<?php echo esc_attr($data['price_html'] ?? ''); ?>"
+                                            data-price="<?php echo esc_attr($data['display_price'] ?? ''); ?>"
+                                            data-variation-id="<?php echo esc_attr($data['variation_id'] ?? ''); ?>"
+                                            style="background-color: <?php echo esc_attr($color); ?>;"
+                                            title="<?php echo esc_attr($term->name); ?>">
+                                            <span class="color-check" style="display: none; color: white;">✓</span>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <input type="hidden" name="variation_id" id="selected-variation-id" value="">
                             </div>
                         <?php endif; ?>
+
+
+
+                        <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
+                            <?php if (have_rows('collaspsibles_repeater')): ?>
+                                <div class="acf-collapsibles">
+                                    <?php while (have_rows('collaspsibles_repeater')):
+                                        the_row(); ?>
+                                        <div class="acf-toggle-item">
+                                            <h3 class="toggle-header font-16"><?php echo esc_html(get_sub_field('title')); ?>
+                                            </h3>
+                                            <div class="toggle-content">
+                                                <div class="pt-3 pb-4">
+                                                    <?php echo get_sub_field('content'); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endwhile; ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
+
             </div>
-
         </div>
     </div>
-</div>
 
-<section>
-    <div class="container-fluid mx-auto px-md-4 pb-5 text-center">
-        <h2 class="text-black font-22 font-mb-18 text-center mb-0 pb-4 pb-lg-4 mb-lg-2">Similar Products</h2>
-        <div class="row pb-lg-5 mx-lg-0">
-            <?php
-            get_template_part('woocommerce/related-products');
-            ?>
+    <section>
+        <div class="container-fluid mx-auto px-md-4 pb-5 text-center">
+            <h2 class="text-black font-22 font-mb-18 text-center mb-0 pb-4 pb-lg-4 mb-lg-2">Similar Products</h2>
+            <div class="row pb-lg-5 mx-lg-0">
+                <?php
+                get_template_part('woocommerce/related-products');
+                ?>
+            </div>
         </div>
+    </section>
+
+    <?php get_template_part('template-parts/blocks/social-logos'); ?>
+
+    <div class="py-lg-3">
+        <?php get_template_part('template-parts/blocks/testimonials'); ?>
     </div>
-</section>
-
-<?php get_template_part('template-parts/blocks/social-logos'); ?>
-
-<div class="py-lg-3">
-    <?php get_template_part('template-parts/blocks/testimonials'); ?>
-</div>
 
 
-<!--<div id="product-<?php the_ID(); ?>" <?php wc_product_class('custom-product', $product); ?>>
+    <!--<div id="product-<?php the_ID(); ?>" <?php wc_product_class('custom-product', $product); ?>>
     <div class="container py-5">
         <div class="row">
         
