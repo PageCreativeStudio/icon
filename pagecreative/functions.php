@@ -313,6 +313,19 @@ function custom_service_template($single_template)
 add_filter('single_template', 'custom_service_template');
 
 
+add_filter('template_include', 'load_custom_single_product_template', 99);
+
+function load_custom_single_product_template($template) {
+    if (is_singular('product')) {
+        $custom_template = get_stylesheet_directory() . '/woocommerce/single-product.php';
+        if (file_exists($custom_template)) {
+            return $custom_template;
+        }
+    }
+    return $template;
+}
+
+
 function get_google_reviews_count()
 {
 	$api_key = 'AIzaSyAVTya-j7CmUz053hQr4O7KsaGcxrKb1bo';
