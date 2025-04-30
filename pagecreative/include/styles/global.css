@@ -1778,6 +1778,9 @@ button {
 .align-content-start{
 	align-content: start;
 }
+.imagewithtext img{
+	
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
