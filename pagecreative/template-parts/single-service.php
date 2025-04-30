@@ -22,7 +22,7 @@ get_header(); ?>
                             <?php the_title(); ?>
                         </h1>
                         <?php if (get_field("sub_title")): ?>
-                            <p class="text-white font-15 pt-2 text-center pb-3 max-25 mx-auto mb-1">
+                            <p class="text-white font-15 pt-2 text-center pb-3 max-35 mx-auto mb-1">
                                 <?php echo get_field('sub_title'); ?>
                             </p>
                         <?php endif; ?>
