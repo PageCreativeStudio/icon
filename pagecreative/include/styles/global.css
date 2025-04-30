@@ -1770,7 +1770,8 @@ button {
     justify-items:start;
 }
 .verticalcol img{
-	min-height: 27rem;
+	max-height: 37rem;
+    height: 33rem;
 }
 .d-inline-grid{
 	display: inline-grid;
@@ -1779,7 +1780,7 @@ button {
 	align-content: start;
 }
 .imagewithtext img{
-	
+
 }
 
 @media (min-width:767px) {
@@ -1826,7 +1827,8 @@ button {
 	    height: 14rem;
 	}
 	.verticalcol img{
-		min-height: 19rem;
+		max-height: 22rem;
+		min-height: 22rem;
 	}
 	
 }
