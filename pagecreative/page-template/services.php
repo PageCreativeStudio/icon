@@ -32,7 +32,8 @@ get_header(); ?>
         </div>
 
         <div class="d-md-none mt-2">
-            <h2 class="font-18 text-black bordertop py-3 mb-0 mt-0"><span class="mt-2 d-block">Services we provide:</span></h2>
+            <h2 class="font-18 text-black bordertop py-3 mb-0 mt-0"><span class="mt-2 d-block">Services we
+                    provide:</span></h2>
             <select id="mobile-service-select" class="cat-select font-14">
                 <option value="">Select a service</option>
                 <?php
@@ -76,7 +77,7 @@ get_header(); ?>
                                     <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
                                         alt="<?php the_title(); ?>">
                                     <?php if (get_field("image_caption")): ?>
-                                        <p class="font-13 text-gray pt-3"><?php echo get_field('image_caption'); ?></p>
+                                        <p class="font-13 text-gray pt-3 mb-1 mb-lg-3"><?php echo get_field('image_caption'); ?></p>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -91,7 +92,8 @@ get_header(); ?>
                                         </h3>
                                     <?php endif; ?>
                                     <?php if (get_field("description")): ?>
-                                        <p class="font-15 font-mb-14 text-black my-0 pb-2"><?php echo get_field('description'); ?></p>
+                                        <p class="font-15 font-mb-14 text-black my-0 pb-2"><?php echo get_field('description'); ?>
+                                        </p>
                                     <?php endif; ?>
                                     <a href="<?php the_permalink(); ?>"
                                         class="text-sec font-13 underline align-self-center my-0 pt-3 d-inline-block mb-3 mb-lg-0">

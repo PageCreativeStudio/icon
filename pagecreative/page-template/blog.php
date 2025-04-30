@@ -39,7 +39,7 @@ get_header(); ?>
             rsort($sticky);
 
             $latest_query = new WP_Query(array(
-                'post__in' => array_slice($sticky, 0, 1), // only latest sticky
+                'post__in' => array_slice($sticky, 0, 1), 
                 'ignore_sticky_posts' => 1,
                 'post_type' => 'post'
             ));
