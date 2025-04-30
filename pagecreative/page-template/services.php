@@ -14,12 +14,13 @@ get_header(); ?>
             'posts_per_page' => -1,
             'post_status' => 'publish'
         ));
+        '<span class="text-black">Services we provide: </span>'
         if ($services_query->have_posts()):
             $i = 1;
             $links = [];
             while ($services_query->have_posts()):
                 $services_query->the_post();
-                $links[] = 'Services we provide: <a href="#service-' . $i . '" class="font-14">' . get_the_title() . '</a>';
+                $links[] = '<a href="#service-' . $i . '" class="font-14">' . get_the_title() . '</a>';
                 $i++;
             endwhile;
             echo implode(' <span class="px-2">|</span> ', $links);
