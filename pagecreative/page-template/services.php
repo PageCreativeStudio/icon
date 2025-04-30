@@ -9,7 +9,6 @@ get_header(); ?>
 <div class="container-fluid mx-auto px-md-4 mx-auto text-left pb-5 pt-3 pt-lg-4">
     <div class="bordertop borderbottom mb-lg-3 py-3">
 
-        <!-- Desktop view -->
         <div class="d-none d-md-flex align-items-center flex-wrap">
             <span class="text-black pr-3">Services we provide:</span>
             <?php
@@ -32,9 +31,8 @@ get_header(); ?>
             ?>
         </div>
 
-        <!-- Mobile view -->
         <div class="d-md-none mt-2">
-            <label for="mobile-service-select" class="font-14 font-weight-bold mb-2 d-block">Services we provide:</label>
+            <h2 class="font-18 text-black bordertop py-3 mb-0 mt-3">Services we provide:</h2>
             <select id="mobile-service-select" class="cat-select font-14">
                 <option value="">Select a service</option>
                 <?php
