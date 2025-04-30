@@ -53,7 +53,7 @@ get_header(); ?>
                     </a>
                 <?php endif; ?>
             </div>
-            <img class="w-100 hero__image heromobile__image text-center"
+            <img class="w-100 hero__image heromobile__image text-center mt-2"
                 src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?php the_title(); ?>">
         </div>
     </section>
