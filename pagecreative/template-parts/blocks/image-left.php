@@ -8,7 +8,7 @@
                 <?php endif; ?>
             </div>
             <div class="col-12 col-lg-6 pt-3 pt-lg-0">
-                <div class="max-45">
+                <div class="max-45 stickytop">
                     <?php if (get_field("image_left_title")): ?>
                         <h2 class="font-25 font-mb-20 text-black my-0 pb-3">
                             <?php echo get_field('image_left_title'); ?>
