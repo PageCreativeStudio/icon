@@ -91,7 +91,7 @@ get_header(); ?>
                                         </h3>
                                     <?php endif; ?>
                                     <?php if (get_field("description")): ?>
-                                        <p class="font-15 text-black my-0 pb-2"><?php echo get_field('description'); ?></p>
+                                        <p class="font-15 font-mb-14 text-black my-0 pb-2"><?php echo get_field('description'); ?></p>
                                     <?php endif; ?>
                                     <a href="<?php the_permalink(); ?>"
                                         class="text-sec font-13 underline align-self-center my-0 pt-3 d-inline-block mb-3 mb-lg-0">
