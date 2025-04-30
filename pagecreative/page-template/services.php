@@ -14,7 +14,7 @@ get_header(); ?>
             'posts_per_page' => -1,
             'post_status' => 'publish'
         ));
-        '<span class="text-black">Services we provide: </span>'
+        '<span class="text-black">Services we provide: </span>';
         if ($services_query->have_posts()):
             $i = 1;
             $links = [];
