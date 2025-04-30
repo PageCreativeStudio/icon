@@ -425,7 +425,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: rgb(89, 89, 89);
+	color: #333;
 	font-family: 'SuisseRegular', sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
