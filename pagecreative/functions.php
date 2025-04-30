@@ -266,6 +266,26 @@ function my_custom_gutenberg_blocks()
 			'icon' => 'admin-users',
 			'keywords' => array('cta', 'call to action'),
 		));
+
+		acf_register_block_type(array(
+			'name' => 'btn-dark',
+			'title' => __('Button dark', 'text-domain'),
+			'description' => __('Button with dark background', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/btn-dark.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('btn dark', 'button'),
+		));
+
+		acf_register_block_type(array(
+			'name' => 'btn-light',
+			'title' => __('Button light', 'text-domain'),
+			'description' => __('Button with white backgdound', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/btn-light.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('btn light', 'button'),
+		));
 	}
 }
 add_action('acf/init', 'my_custom_gutenberg_blocks');
