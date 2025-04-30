@@ -7,23 +7,42 @@ get_header(); ?>
 
 
 <div class="container-fluid mx-auto px-md-4 mx-auto text-left pb-5 pt-3 pt-lg-4">
-    <h2 class="bordertop borderbottom font-18 font-mb-16 mb-lg-3 py-3">Contact</h2>
+    <div class="bordertop borderbottom mb-lg-3 py-3">
+        <?php
+        $services_query = new WP_Query(array(
+            'post_type' => 'services',
+            'posts_per_page' => -1,
+            'post_status' => 'publish'
+        ));
+        if ($services_query->have_posts()):
+            $i = 1;
+            $links = [];
+            while ($services_query->have_posts()):
+                $services_query->the_post();
+                $links[] = '<a href="#service-' . $i . '" class="text-sec font-14">' . get_the_title() . '</a>';
+                $i++;
+            endwhile;
+            echo implode(' <span class="px-2">|</span> ', $links);
+            wp_reset_postdata();
+        endif;
+        ?>
+    </div>
 </div>
 
 <section class="pb-5">
     <div class="container-fluid mx-auto px-md-4 mx-auto pb-2 pb-lg-4">
         <div class="row">
             <?php
-            $args = array(
+            $services_query = new WP_Query(array(
                 'post_type' => 'services',
                 'posts_per_page' => -1,
                 'post_status' => 'publish'
-            );
-            $services_query = new WP_Query($args);
+            ));
             if ($services_query->have_posts()):
+                $i = 1;
                 while ($services_query->have_posts()):
                     $services_query->the_post(); ?>
-                    <div class="verticalcol col-12 col-lg-6 pb-4 pb-lg-5">
+                    <div id="service-<?php echo $i; ?>" class="verticalcol col-12 col-lg-6 pb-4 pb-lg-5">
                         <div class="row">
                             <div class="col-12">
                                 <div class="postarea__image-container h-100">
@@ -55,7 +74,8 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                <?php endwhile;
+                    <?php $i++;
+                endwhile;
                 wp_reset_postdata();
             endif;
             ?>
