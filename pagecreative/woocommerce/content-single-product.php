@@ -63,7 +63,9 @@ global $product;
                             <div class="product-description font-14 py-1">
                                 <div class="short-description font-14 py-1">
                                     <?php
-                                    $content = wp_strip_all_tags(apply_filters('the_content', get_the_content()));
+                                    $product = wc_get_product(get_the_ID());
+                                    $content = wp_strip_all_tags(apply_filters('the_content', $product->get_description()));
+
                                     $words = explode(' ', $content);
                                     $short = implode(' ', array_slice($words, 0, 54));
                                     echo esc_html($short);
