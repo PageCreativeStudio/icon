@@ -256,6 +256,16 @@ function my_custom_gutenberg_blocks()
 			'icon' => 'admin-users',
 			'keywords' => array('faqs', 'accordion'),
 		));
+
+		acf_register_block_type(array(
+			'name' => 'cta',
+			'title' => __('Call to action', 'text-domain'),
+			'description' => __('Call to action', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/cta.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('cta', 'call to action'),
+		));
 	}
 }
 add_action('acf/init', 'my_custom_gutenberg_blocks');
