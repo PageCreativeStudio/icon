@@ -7,7 +7,7 @@ get_header(); ?>
 
 
 <div class="container-fluid mx-auto px-md-4 mx-auto text-left pb-5 pt-3 pt-lg-4">
-    <div class="bordertop borderbottom mb-lg-3 py-3">
+    <div class="servicesfilter bordertop borderbottom mb-lg-3 py-3">
 
         <div class="d-none d-md-flex align-items-center flex-wrap">
             <span class="text-black pr-3">Services we provide:</span>

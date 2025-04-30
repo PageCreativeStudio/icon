@@ -1815,7 +1815,8 @@ button {
 	.postspage img{
 	    min-height: 10rem;
 	}
-	.postcategory__filter{
+	.postcategory__filter,
+	.servicesfilter{
 	    border:0;
 	}
 	.singlepost img{
