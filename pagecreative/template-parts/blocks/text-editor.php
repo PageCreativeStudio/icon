@@ -8,7 +8,7 @@
                     </h3>
                 <?php endif; ?>
                 <?php if (get_field("text_editor_textarea")): ?>
-                    <div class="font-15 font-mb-14 text-black my-0 pb-2"><?php echo get_field('text_editor_textarea'); ?></div>
+                    <div class="font-15 font-mb-14 text-gray my-0 pb-2"><?php echo get_field('text_editor_textarea'); ?></div>
                 <?php endif; ?>
             </div>
         </div>

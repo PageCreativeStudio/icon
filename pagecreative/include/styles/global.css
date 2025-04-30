@@ -1786,6 +1786,10 @@ button {
 	max-height: 41rem;
     width: 100%;
 }
+.singlecontent .container-fluid{
+	padding-left:0!important;
+	padding-right:0!important;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {

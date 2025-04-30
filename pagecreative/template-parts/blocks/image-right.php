@@ -15,7 +15,7 @@
                         </h2>
                     <?php endif; ?>
                     <?php if (get_field("image_right_textarea")): ?>
-                        <div class="font-16 font-mb-15 text-black my-0 pb-2"><?php echo get_field('image_right_textarea'); ?>
+                        <div class="font-16 font-mb-15 text-gray my-0 pb-2"><?php echo get_field('image_right_textarea'); ?>
                         </div>
                     <?php endif; ?>
                 </div>
