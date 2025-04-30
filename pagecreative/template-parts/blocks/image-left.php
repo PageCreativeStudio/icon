@@ -10,12 +10,12 @@
             <div class="col-12 col-lg-6">
                 <div class="max-45">
                     <?php if (get_field("image_left_title")): ?>
-                        <h2 class="font-25 font-mb-18 text-black my-0 pb-3">
+                        <h2 class="font-25 font-mb-20 text-black my-0 pb-3">
                             <?php echo get_field('image_left_title'); ?>
                         </h2>
                     <?php endif; ?>
                     <?php if (get_field("image_left_textarea")): ?>
-                        <div class="font-15 font-mb-14 text-black my-0 pb-2"><?php echo get_field('image_left_textarea'); ?>
+                        <div class="font-16 font-mb-15 text-black my-0 pb-2"><?php echo get_field('image_left_textarea'); ?>
                         </div>
                     <?php endif; ?>
                 </div>
