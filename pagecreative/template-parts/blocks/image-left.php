@@ -7,7 +7,7 @@
                     <p class="font-13 text-gray pt-3 mb-1 mb-lg-3"><?php echo get_field('image_left_caption'); ?></p>
                 <?php endif; ?>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 pt-3 pt-lg-0">
                 <div class="max-45">
                     <?php if (get_field("image_left_title")): ?>
                         <h2 class="font-25 font-mb-20 text-black my-0 pb-3">
