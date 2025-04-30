@@ -8,7 +8,7 @@ get_header(); ?>
 
 <div class="container-fluid mx-auto px-md-4 mx-auto text-left pb-5 pt-3 pt-lg-4">
     <div class="bordertop borderbottom mb-lg-3 py-3">
-        <span class="text-black">Services we provide: </span>
+        <span class="text-black pr-3">Services we provide: </span>
         <?php
         $services_query = new WP_Query(array(
             'post_type' => 'services',
