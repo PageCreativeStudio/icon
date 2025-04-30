@@ -60,36 +60,29 @@ global $product;
                     <div class="borderbottom py-4">
                         <div class="inneritem">
                             <p class="text-black font-15 mb-0 pb-2">Product description</p>
+                            <?php
+                            $product = wc_get_product(get_the_ID());
+                            $full_description = wp_strip_all_tags($product->get_description());
+                            $words = explode(' ', $full_description);
+                            $short = implode(' ', array_slice($words, 0, 54));
+                            ?>
+
                             <div class="product-description font-14 py-1">
                                 <div class="short-description font-14 py-1">
-                                    <?php
-                                    $product = wc_get_product(get_the_ID());
-                                    $full_description = wp_strip_all_tags($product->get_description());
-                                    $words = explode(' ', $full_description);
-                                    $short = implode(' ', array_slice($words, 0, 54));
-                                    ?>
-
-                                    <div class="product-description font-14 py-1">
-                                        <div class="short-description font-14 py-1">
-                                            <?php echo esc_html($short); ?>
-                                            <?php if (count($words) > 54): ?>
-                                                ... <button
-                                                    class="toggle-description font-14 underline d-block text-black p-0 mt-3"
-                                                    data-action="expand">Read more</button>
-                                            <?php endif; ?>
-                                        </div>
-
-                                        <?php if (count($words) > 54): ?>
-                                            <div class="full-description py-1 font-14" style="display: none;">
-                                                <?php echo esc_html($full_description); ?>
-                                                <button
-                                                    class="toggle-description font-14 underline d-block text-black p-0 mt-3"
-                                                    data-action="collapse">Read less</button>
-                                            </div>
-                                        <?php endif; ?>
-                                    </div>
-
+                                    <?php echo esc_html($short); ?>
+                                    <?php if (count($words) > 54): ?>
+                                        ... <button class="toggle-description font-14 underline d-block text-black p-0 mt-3"
+                                            data-action="expand">Read more</button>
+                                    <?php endif; ?>
                                 </div>
+
+                                <?php if (count($words) > 54): ?>
+                                    <div class="full-description py-1 font-14" style="display: none;">
+                                        <?php echo esc_html($full_description); ?>
+                                        <button class="toggle-description font-14 underline d-block text-black p-0 mt-3"
+                                            data-action="collapse">Read less</button>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
 
