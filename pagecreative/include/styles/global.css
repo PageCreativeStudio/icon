@@ -1782,6 +1782,10 @@ button {
 .imagewithtext img{
 
 }
+.wp-block-image img{
+	max-height: 41rem;
+    width: 100%;
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
