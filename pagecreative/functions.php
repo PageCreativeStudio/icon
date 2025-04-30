@@ -245,6 +245,17 @@ function my_custom_gutenberg_blocks()
 			'icon' => 'admin-users',
 			'keywords' => array('two columns', 'hero vertical'),
 		));
+
+		
+		acf_register_block_type(array(
+			'name' => 'accordion-tabs',
+			'title' => __('Accordion tabs', 'text-domain'),
+			'description' => __('Collapsible faqs repeater', 'text-domain'),
+			'render_template' => get_template_directory() . '/template-parts/blocks/faqs.php',
+			'category' => 'layout',
+			'icon' => 'admin-users',
+			'keywords' => array('faqs', 'accordion'),
+		));
 	}
 }
 add_action('acf/init', 'my_custom_gutenberg_blocks');
