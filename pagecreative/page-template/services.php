@@ -20,43 +20,37 @@ get_header(); ?>
                 'post_status' => 'publish'
             );
             $services_query = new WP_Query($args);
-            if ($services_query->have_posts()) :
-                while ($services_query->have_posts()) : $services_query->the_post(); ?>
+            if ($services_query->have_posts()):
+                while ($services_query->have_posts()):
+                    $services_query->the_post(); ?>
                     <div class="verticalcol col-12 col-lg-6 pb-4 pb-lg-4">
                         <div class="row">
                             <div class="col-12">
                                 <div class="postarea__image-container h-100">
                                     <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
                                         alt="<?php the_title(); ?>">
-                                    <?php if (get_field("two_col_image_caption")): ?>
-                                        <p class="font-13 text-gray pt-3"><?php echo get_field('two_col_image_caption'); ?></p>
+                                    <?php if (get_field("image_caption")): ?>
+                                        <p class="font-13 text-gray pt-3"><?php echo get_field('image_caption'); ?></p>
                                     <?php endif; ?>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="pt-3 pt-lg-0 max-45">
-                                    <?php if (get_field("mini_title")): ?>
-                                        <span class="font-14 font-mb-12 uppercase text-gray mt-0 mb-1 pb-3">
-                                            <?php echo get_field('mini_title'); ?>
-                                        </span>
-                                    <?php endif; ?>
-                                    <h2 class="text-black font-32 font-mb-22 my-0 pb-3">
+                                    <h2 class="text-black font-32 font-mb-22 mt-3 pb-3">
                                         <?php the_title(); ?>
                                     </h2>
-                                    <?php if (get_field("two_col_sub_title")): ?>
+                                    <?php if (get_field("sub_title")): ?>
                                         <h3 class="font-20 font-mb-17 text-black my-0 pb-3">
-                                            <?php echo get_field('two_col_sub_title'); ?>
+                                            <?php echo get_field('sub_title'); ?>
                                         </h3>
                                     <?php endif; ?>
-                                    <?php if (get_field("two_col_description")): ?>
-                                        <p class="font-15 text-black my-0 pb-3"><?php echo get_field('two_col_description'); ?></p>
+                                    <?php if (get_field("description")): ?>
+                                        <p class="font-15 text-black my-0 pb-3"><?php echo get_field('description'); ?></p>
                                     <?php endif; ?>
-                                    <?php if (get_field("two_col_btn_title")): ?>
-                                        <a href="<?php echo get_field('two_col_btn_link'); ?>"
-                                            class="text-sec font-13 underline align-self-center my-0 pt-3 d-inline-block mb-3 mb-lg-0">
-                                            <?php echo get_field('two_col_btn_title'); ?>
-                                        </a>
-                                    <?php endif; ?>
+                                    <a href="<?php the_permalink(); ?>"
+                                        class="text-sec font-13 underline align-self-center my-0 pt-3 d-inline-block mb-3 mb-lg-0">
+                                        Read more
+                                    </a>
                                 </div>
                             </div>
                         </div>
