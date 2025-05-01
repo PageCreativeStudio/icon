@@ -81,7 +81,7 @@ get_header(); ?>
                         <?php if (have_rows('list_repeater_right')) { ?>
                             <?php while (have_rows('list_repeater_right')) {
                                 the_row(); ?>
-                                <li class="d-flex pb-1 mb-0 align-items-center"><img class="mr-2"
+                                <li class="d-flex pb-2 mb-0 align-items-center"><img class="mr-2"
                                         src="<?php echo get_sub_field('icon'); ?>"
                                         alt="<?php echo get_sub_field('text'); ?>"><?php echo get_sub_field('text'); ?></li>
 
