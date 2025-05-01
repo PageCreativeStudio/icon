@@ -36,8 +36,8 @@ get_header(); ?>
                         <li class="d-flex"><img src="" alt="">Multiple printing methods</li>
                     </ul>
                     <div class="d-flex flex-wrap align-content-center">
-                        <a href="" class="btnc bg-dark font-15 text-white mr-3 mb-0"></a>
-                        <a href="" class="btna mb-0"></a>
+                        <a href="#" class="btnc bg-dark font-15 text-white mr-3 mb-0">Our Services</a>
+                        <a href="" class="btna mb-0">Get a quote</a>
                     </div>
                 </div>
             </div>
