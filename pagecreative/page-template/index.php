@@ -180,4 +180,10 @@ get_header(); ?>
     </div>
 </section>
 
+<?php get_template_part('template-parts/blocks/case-studies'); ?>
+
+<div class="">
+    <?php get_template_part('template-parts/blocks/testimonials'); ?>
+</div>
+
 <?php get_footer(); ?>
