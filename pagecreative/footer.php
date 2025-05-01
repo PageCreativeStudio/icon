@@ -108,7 +108,7 @@
 <div class="footercopyright" style="background:#f3f3f3">
     <div class="py-2 py-lg-3 mx-0">
         <div class="col-12 max-60 mx-auto text-center py-1">
-            <p class="text-gray font-mb-12 font-13 mb-0"><?php echo get_field('copyright', 'options'); ?></h2>
+            <p class="text-gray font-mb-10 font-13 mb-0"><?php echo get_field('copyright', 'options'); ?></h2>
             </p>
         </div>
     </div>

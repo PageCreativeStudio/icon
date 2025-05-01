@@ -1895,16 +1895,21 @@ button {
 		object-fit: contain;
 	}
 
+	
+	.font-mb-10 {
+		font-size: 10px;
+	}
+	
+	.font-mb-12 {
+		font-size: 12px;
+	}
+
 	.font-mb-13 {
 		font-size: 13px !important;
 	}
 
 	.font-mb-14 {
 		font-size: 14px;
-	}
-
-	.font-mb-12 {
-		font-size: 12px;
 	}
 
 	.font-mb-15 {
