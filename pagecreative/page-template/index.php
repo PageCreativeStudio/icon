@@ -89,7 +89,7 @@ get_header(); ?>
                     </ul>
                     <div class="d-flex flex-wrap align-content-center mt-2">
                         <a href="<?php echo get_field('button_dark_link_1'); ?>"
-                            class="btnc bg-dark font-15 text-white mr-3 mb-0"><?php echo get_field('button_dark_label_1'); ?></a>
+                            class="btnc bg-dark font-15 text-white mr-3 mb-2 mb-sm-0"><?php echo get_field('button_dark_label_1'); ?></a>
                         <a href="<?php echo get_field('button_light_link_1'); ?>"
                             class="btna mb-0"><?php echo get_field('button_light_label_1'); ?></a>
                     </div>
