@@ -1805,7 +1805,7 @@ button {
 	    height: 32rem; 
 	}
 	.stickyrow img{
-		max-height: 38rem !important;
+		max-height: 40rem !important;
 		min-height: 29rem;
 	}
 }
