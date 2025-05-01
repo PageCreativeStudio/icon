@@ -1787,12 +1787,7 @@ button {
 	padding-left:0!important;
 	padding-right:0!important;
 }
-.twoimages img:nth-of-type(1){
 
-}
-.twoimages img:nth-of-type(2){
-	
-}
 .listicons img{
 	height: 20px;
     width: 20px;
@@ -1818,6 +1813,12 @@ button {
 	.stickyrow img{
 		max-height: 40rem !important;
 		min-height: 29rem;
+	}
+	.twoimages img:nth-of-type(1){
+		width:70%;
+	}
+	.twoimages img:nth-of-type(2){
+		width:30%
 	}
 }
 
@@ -1854,7 +1855,10 @@ button {
 		max-height: 24rem !important;
 		min-height: 16rem;
 	}
-	
+	.twoimages img:nth-of-type(1){
+		width:100%;
+	}
+
 }
 
 @media (max-width:991px) {

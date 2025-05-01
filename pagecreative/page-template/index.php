@@ -63,9 +63,9 @@ get_header(); ?>
         <div class="row">
             <div class="col-12 col-lg-6 pl-lg-4 twoimages order-1 order-lg-2 ">
                 <div class="d-flex">
-                    <img class="w-100" src="<?php echo get_field('image_right_1'); ?>"
+                    <img class="" src="<?php echo get_field('image_right_1'); ?>"
                         alt="<?php echo get_field('image_right_title'); ?>">
-                    <img class="w-100 d-none d-lg-flex" src="<?php echo get_field('image_right_2'); ?>"
+                    <img class="d-none d-lg-flex" src="<?php echo get_field('image_right_2'); ?>"
                         alt="<?php echo get_field('image_right_title'); ?>">
                 </div>
             </div>
