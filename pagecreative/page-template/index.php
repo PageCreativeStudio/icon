@@ -71,7 +71,7 @@ get_header(); ?>
             </div>
             <div class="col-12 col-lg-6 order-2 order-lg-1 pt-3 pt-lg-0 align-content-center">
                 <div class="max-45">
-                    <h2 class="font-30 font-mb-22 text-black my-0 pb-3">
+                    <h2 class="font-30 font-mb-22 text-black my-0 pt-3 pt-lg-1 pb-3">
                         <?php echo get_field('image_right_title'); ?>
                     </h2>
                     <p class="font-16 font-mb-15 text-gray my-0 pb-2">
