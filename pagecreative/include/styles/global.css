@@ -1750,10 +1750,7 @@ button {
     background: white;
     color: black;
 }
-.stickyrow img{
-    max-height: 31rem !important;
-    min-height: 31rem;
-}
+
 .pagination-btns .prev a{
     padding: 16px 31px 13px;
     color: #cfcfcf;
@@ -1807,6 +1804,10 @@ button {
 	.singlepost img{
 	    height: 32rem; 
 	}
+	.stickyrow img{
+		max-height: 38rem !important;
+		min-height: 29rem;
+	}
 }
 
 @media (max-width:767px) {
@@ -1837,6 +1838,10 @@ button {
 	.verticalcol img{
 		max-height: 22rem;
 		min-height: 22rem;
+	}
+	.stickyrow img{
+		max-height: 24rem !important;
+		min-height: 16rem;
 	}
 	
 }
