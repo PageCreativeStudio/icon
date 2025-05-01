@@ -1816,16 +1816,7 @@ button {
 		max-height: 40rem !important;
 		min-height: 29rem;
 	}
-	.twoimages img.twoimages__1{
-		width:60%;
-		max-height: 43rem;
-	}
-	.twoimages img.twoimages__2{
-        width: 40%;
-        align-self: end;
-        height: 85%;
-		max-height: 43rem;
-	}
+
 }
 
 @media (max-width:767px) {
@@ -1861,10 +1852,7 @@ button {
 		max-height: 24rem !important;
 		min-height: 16rem;
 	}
-	.twoimages img.twoimages__1{
-		width: 100%;
-        max-height: 26rem;
-	}
+	
 
 }
 
@@ -2014,6 +2002,10 @@ button {
 	.singlecontent p{
 		font-size: 15px;
 	}
+	.twoimages img.twoimages__1{
+		width: 100%;
+        max-height: 26rem;
+	}
 }
 
 @media (min-width:991px) {
@@ -2043,6 +2035,16 @@ button {
 
 	.postarea img {
 		max-height: 40rem;
+	}
+	.twoimages img.twoimages__1{
+		width:60%;
+		max-height: 43rem;
+	}
+	.twoimages img.twoimages__2{
+        width: 40%;
+        align-self: end;
+        height: 85%;
+		max-height: 43rem;
 	}
 
 }
