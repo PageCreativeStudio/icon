@@ -1796,6 +1796,9 @@ button {
 .gap-8{
 	gap: 10px;
 }
+.col__icon{
+	
+}
 @media (min-width:767px) {
 	.product-gallery .owl-next {
 		margin-top: -9px;

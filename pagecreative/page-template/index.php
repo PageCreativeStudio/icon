@@ -100,6 +100,23 @@ get_header(); ?>
 </section>
 
 
+<section class="pt-4 pt-lg-4">
+    <div class="container-fluid max-70 mx-auto px-md-4 pb-5 text-center">
+        <div class="row">
+            <?php if (have_rows('column_repeaters')) { ?>
+                <?php while (have_rows('column_repeaters')) {
+                    the_row(); ?>
+                    <div class="col-12 col-md-6 col-lg-4 text-center">
+                        <img class="col__icon" src="<?php echo get_sub_field('icon'); ?>" alt="<?php echo get_sub_field('text'); ?>">
+                        <p class="font-15 font-mb-14"><?php echo get_sub_field('text'); ?></p>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+
+
 <section class="pt-4 pt-lg-3 pb-0 pb-lg-0">
     <div class="container-fluid mx-auto px-md-4 pb-5 text-center">
         <?php if ($slider_title = get_field('products_slider_title')): ?>
