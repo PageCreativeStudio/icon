@@ -106,9 +106,9 @@ get_header(); ?>
             <?php if (have_rows('column_repeaters')) { ?>
                 <?php while (have_rows('column_repeaters')) {
                     the_row(); ?>
-                    <div class="col-12 col-md-6 col-lg-4 text-center">
+                    <div class="col-6 col-lg-3 text-center pb-3">
                         <img class="col__icon" src="<?php echo get_sub_field('icon'); ?>" alt="<?php echo get_sub_field('text'); ?>">
-                        <p class="font-15 font-mb-14"><?php echo get_sub_field('text'); ?></p>
+                        <p class="font-15 font-mb-14 max-15 mx-auto pt-2 "><?php echo get_sub_field('text'); ?></p>
                     </div>
                 <?php } ?>
             <?php } ?>
