@@ -11,10 +11,10 @@ get_header(); ?>
 
 <section class="pb-3 pb-lg-5">
     <div class="heroarea pb-5 d-none d-lg-block">
-        <div class="heroarea__container position-relative d-block">
+        <div class="heroarea__container position-relative d-block text-center">
             <img class="w-100 hero__image" src="<?php echo get_field('hero_image'); ?>"
                 alt="<?php echo get_field('hero_title'); ?>">
-            <div class="heroarea__inner">
+            <div class="heroarea__inner text-center">
                 <div class="max-50 mx-auto w-100 px-3">
                     <?php if (get_field("hero_title")): ?>
                         <h1 class="text-white font-35 font-mb-30 mb-0 pb-0 pt-0"><?php echo get_field('hero_title'); ?></h1>
