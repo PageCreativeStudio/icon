@@ -64,7 +64,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- @font-face {
+@font-face {
 	font-family: 'SuisseRegular';
 	src: url('../fonts/SuisseIntl-Regular.woff2') format('woff2'),
 		url('../fonts/SuisseIntl-Regular.woff') format('woff');
@@ -1201,16 +1201,16 @@ button {
 .arrowup::after {
 	content: "";
 	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%229%22%20height%3D%229%22%20viewBox%3D%220%200%209%209%22%20fill%3D%22none%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M7.54494%202.56639L1.50928%208.60205L0.801779%207.89455L6.83744%201.85889L3.54217%201.85721L3.54258%200.857807L7.83655%200.858364L7.87191%200.823009L7.90728%200.858384L8.54384%200.858572L8.54403%201.49513L8.57941%201.53051L8.54405%201.56586L8.5441%201.71298L8.54532%205.86054L7.54521%205.86024L7.54494%202.56639Z%22%20fill%3D%22%23333333%22%2F%3E%3C%2Fsvg%3E');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 11px;
-    width: 11px;
-    position: absolute;
-    margin: 5px 0 0 0px;
-    transition: all 0.3s ease-in-out;
-    margin-left: 12px;
-    top: 3px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 11px;
+	width: 11px;
+	position: absolute;
+	margin: 5px 0 0 0px;
+	transition: all 0.3s ease-in-out;
+	margin-left: 12px;
+	top: 3px;
 }
 
 .btna {
@@ -1710,95 +1710,111 @@ button {
 	height: 40rem;
 }
 
-.singlecs .heromobile__image{
+.singlecs .heromobile__image {
 	height: 12rem;
 }
-.breadcrumbs a{
+
+.breadcrumbs a {
 	text-decoration: underline;
 	text-underline-offset: 4px;
 }
 
-.singlecontent strong{
-	font-weight: 200!important;
+.singlecontent strong {
+	font-weight: 200 !important;
 	color: black;
 }
-.postspage img{
-    height: 100%;
-}
-.postspage .postarea__link{
-    display: grid;
-    height: 100%;
-    align-content: space-between;
-}
-.postcategory__filter .catbtn.active{
-    background: black;
-    color: white;
-    transition:0.3s ease-in-out;
-}
-.postcategory__filter .catbtn{
-    padding: 3px 11px 1px;
-    margin-right: 5px;
-    color:black;
-    font-size:14px;
-    transition:0.3s ease-in-out;
-}
-.cat-select{
-	width: 100%;
-    height: 44px;
-    font-size: 15px;
-    padding: 0px 8px;
-    background: white;
-    color: black;
+
+.postspage img {
+	height: 100%;
 }
 
-.pagination-btns .prev a{
-    padding: 16px 31px 13px;
-    color: #cfcfcf;
-    border: solid 1px #cfcfcf;
-    margin-right: 11px;
+.postspage .postarea__link {
+	display: grid;
+	height: 100%;
+	align-content: space-between;
 }
-.pagination-btns .next a{
-    background: black;
-    color: white;
-    border:solid 1px black;
-    padding: 16px 31px 13px;
+
+.postcategory__filter .catbtn.active {
+	background: black;
+	color: white;
+	transition: 0.3s ease-in-out;
 }
-.justify-items-start{
-    justify-items:start;
+
+.postcategory__filter .catbtn {
+	padding: 3px 11px 1px;
+	margin-right: 5px;
+	color: black;
+	font-size: 14px;
+	transition: 0.3s ease-in-out;
 }
-.verticalcol img{
+
+.cat-select {
+	width: 100%;
+	height: 44px;
+	font-size: 15px;
+	padding: 0px 8px;
+	background: white;
+	color: black;
+}
+
+.pagination-btns .prev a {
+	padding: 16px 31px 13px;
+	color: #cfcfcf;
+	border: solid 1px #cfcfcf;
+	margin-right: 11px;
+}
+
+.pagination-btns .next a {
+	background: black;
+	color: white;
+	border: solid 1px black;
+	padding: 16px 31px 13px;
+}
+
+.justify-items-start {
+	justify-items: start;
+}
+
+.verticalcol img {
 	max-height: 37rem;
-    height: 33rem;
+	height: 33rem;
 }
-.d-inline-grid{
+
+.d-inline-grid {
 	display: inline-grid;
 }
-.align-content-start{
+
+.align-content-start {
 	align-content: start;
 }
-.imagewithtext img{
 
-}
-.wp-block-image img{
+.imagewithtext img {}
+
+.wp-block-image img {
 	max-height: 41rem;
-    width: 100%;
-}
-.singlecontent .container-fluid{
-	padding-left:0!important;
-	padding-right:0!important;
+	width: 100%;
 }
 
-.listicons img{
-	height: 20px;
-    width: 20px;
-    object-fit: contain;
+.singlecontent .container-fluid {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
-.gap-8{
+
+.listicons img {
+	height: 20px;
+	width: 20px;
+	object-fit: contain;
+}
+
+.gap-8 {
 	gap: 10px;
 }
-.col__icon{
-	
+
+.col__icon {
+	height: 21px;
+	width: 21px;
 }
+
 @media (min-width:767px) {
 	.product-gallery .owl-next {
 		margin-top: -9px;
@@ -1809,13 +1825,16 @@ button {
 		margin-top: -9px;
 		left: -2.5rem;
 	}
-	.postspage img{
-	    height: 14.5rem;
+
+	.postspage img {
+		height: 14.5rem;
 	}
-	.singlepost img{
-	    height: 32rem; 
+
+	.singlepost img {
+		height: 32rem;
 	}
-	.stickyrow img{
+
+	.stickyrow img {
 		max-height: 40rem !important;
 		min-height: 29rem;
 	}
@@ -1837,25 +1856,30 @@ button {
 		height: 29px;
 		width: 29px;
 	}
-	.postspage img{
-	    min-height: 10rem;
+
+	.postspage img {
+		min-height: 10rem;
 	}
+
 	.postcategory__filter,
-	.servicesfilter{
-	    border:0;
+	.servicesfilter {
+		border: 0;
 	}
-	.singlepost img{
-	    height: 14rem;
+
+	.singlepost img {
+		height: 14rem;
 	}
-	.verticalcol img{
+
+	.verticalcol img {
 		max-height: 22rem;
 		min-height: 22rem;
 	}
-	.stickyrow img{
+
+	.stickyrow img {
 		max-height: 24rem !important;
 		min-height: 16rem;
 	}
-	
+
 
 }
 
@@ -1885,7 +1909,7 @@ button {
 	.font-mb-16 {
 		font-size: 16px;
 	}
-	
+
 	.font-mb-17 {
 		font-size: 17px;
 	}
@@ -2002,13 +2026,14 @@ button {
 		max-height: 18rem;
 	}
 
-	.singlecontent p{
+	.singlecontent p {
 		font-size: 15px;
 	}
+
 	.twoimages img.twoimages__1,
-	.twoimages img.twoimages__2{
+	.twoimages img.twoimages__2 {
 		width: 100%;
-        max-height: 26rem;
+		max-height: 26rem;
 	}
 }
 
@@ -2040,14 +2065,16 @@ button {
 	.postarea img {
 		max-height: 40rem;
 	}
-	.twoimages img.twoimages__1{
-		width:60%;
+
+	.twoimages img.twoimages__1 {
+		width: 60%;
 		max-height: 43rem;
 	}
-	.twoimages img.twoimages__2{
-        width: 40%;
-        align-self: end;
-        height: 85%;
+
+	.twoimages img.twoimages__2 {
+		width: 40%;
+		align-self: end;
+		height: 85%;
 		max-height: 43rem;
 	}
 
