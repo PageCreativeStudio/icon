@@ -1815,10 +1815,12 @@ button {
 		min-height: 29rem;
 	}
 	.twoimages img:nth-of-type(1){
-		width:70%;
+		width:60%;
 	}
 	.twoimages img:nth-of-type(2){
-		width:30%
+		width: 40%;
+        align-self: end;
+        height: 100%;
 	}
 }
 
