@@ -33,8 +33,8 @@ get_header(); ?>
             </div>
         </div>
     </div>
-    <div class="heroarea d-block d-lg-none pb-5">
-        <div class="max-50 mx-auto w-100 px-3">
+    <div class="heroarea d-block d-lg-none pb-5 text-center">
+        <div class="max-50 mx-auto w-100 px-3 text-center">
             <?php if (get_field("hero_title")): ?>
                 <h1 class="text-dark font-mb-25 mb-0 pb-0 pt-0 max-20 mx-auto pt-3"><?php echo get_field('hero_title'); ?>
                 </h1>
