@@ -100,7 +100,7 @@ get_header(); ?>
 </section>
 
 
-<section class="pt-4 pt-lg-4">
+<section class="pt-4 pt-lg-4 pb-lg-4">
     <div class="container-fluid max-70 mx-auto px-md-4 pb-4 pb-lg-5 text-center">
         <div class="row">
             <?php if (have_rows('column_repeaters')) { ?>
