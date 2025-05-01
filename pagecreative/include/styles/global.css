@@ -1813,6 +1813,7 @@ button {
 .col__icon {
 	height: 21px;
 	width: 21px;
+	object-fit: contain;
 }
 
 @media (min-width:767px) {
