@@ -62,7 +62,7 @@ get_header(); ?>
     <div class="container-fluid w-100 mx-auto px-lg-4 mx-auto text-left pb-4 pb-lg-5">
         <div class="row">
             <div class="col-12 col-lg-6 pl-lg-4 twoimages order-1 order-lg-2 ">
-                <div class="d-flex h-100">
+                <div class="d-flex">
                     <img class="" src="<?php echo get_field('image_right_1'); ?>"
                         alt="<?php echo get_field('image_right_title'); ?>">
                     <img class="d-none d-lg-flex" src="<?php echo get_field('image_right_2'); ?>"
@@ -71,7 +71,7 @@ get_header(); ?>
             </div>
             <div class="col-12 col-lg-6 order-2 order-lg-1 pt-3 pt-lg-0 align-content-center">
                 <div class="max-45">
-                    <h2 class="font-30 font-mb-22 text-black my-0 pt-3 pt-lg-1 pb-3">
+                    <h2 class="font-30 font-mb-22 text-black my-0 pb-3">
                         <?php echo get_field('image_right_title'); ?>
                     </h2>
                     <p class="font-16 font-mb-15 text-gray my-0 pb-2">
