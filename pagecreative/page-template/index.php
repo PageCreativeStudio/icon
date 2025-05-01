@@ -87,9 +87,9 @@ get_header(); ?>
                             <?php } ?>
                         <?php } ?>
                     </ul>
-                    <div class="d-flex flex-wrap align-content-center mt-2">
+                    <div class="d-flex flex-wrap align-content-center mt-2 gap-8">
                         <a href="<?php echo get_field('button_dark_link_1'); ?>"
-                            class="btnc bg-dark font-15 text-white mr-3"><?php echo get_field('button_dark_label_1'); ?></a>
+                            class="btnc bg-dark font-15 text-white"><?php echo get_field('button_dark_label_1'); ?></a>
                         <a href="<?php echo get_field('button_light_link_1'); ?>"
                             class="btna mb-0"><?php echo get_field('button_light_label_1'); ?></a>
                     </div>
