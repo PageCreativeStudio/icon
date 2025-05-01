@@ -180,6 +180,48 @@ get_header(); ?>
     </div>
 </section>
 
+<section class="pb-4 pb-lg-5 pt-0 imageswith__text">
+    <div class="container-fluid w-100 mx-auto px-lg-4 mx-auto text-left pb-4 pb-lg-5">
+        <div class="row">
+            <div class="col-12 col-lg-6 pl-lg-4 twoimages">
+                <div class="d-flex h-100">
+                    <img class="" src="<?php echo get_field('image_left_1'); ?>"
+                        alt="<?php echo get_field('image_left_title'); ?>">
+                    <img class="d-none d-lg-flex" src="<?php echo get_field('image_left_2'); ?>"
+                        alt="<?php echo get_field('image_left_title'); ?>">
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 pt-3 pt-lg-0 align-content-center">
+                <div class="max-45">
+                    <h2 class="font-30 font-mb-22 text-black my-0 pt-3 pt-lg-1 pb-3">
+                        <?php echo get_field('image_left_title'); ?>
+                    </h2>
+                    <p class="font-16 font-mb-15 text-gray my-0 pb-2">
+                        <?php echo get_field('image_left_description'); ?>
+                    </p>
+                    <ul class="mx-0 mt-1 px-0 py-3 listicons">
+                        <?php if (have_rows('list_repeater_left')) { ?>
+                            <?php while (have_rows('list_repeater_left')) {
+                                the_row(); ?>
+                                <li class="d-flex pb-2 mb-0 align-items-center"><img class="mr-2"
+                                        src="<?php echo get_sub_field('icon'); ?>"
+                                        alt="<?php echo get_sub_field('text'); ?>"><?php echo get_sub_field('text'); ?></li>
+
+                            <?php } ?>
+                        <?php } ?>
+                    </ul>
+                    <div class="d-flex flex-wrap align-content-center mt-2 gap-8">
+                        <a href="<?php echo get_field('button_dark_link_2'); ?>"
+                            class="btnc bg-dark font-15 text-white"><?php echo get_field('button_dark_label_2'); ?></a>
+                        <a href="<?php echo get_field('button_light_link_2'); ?>"
+                            class="btna mb-0"><?php echo get_field('button_light_label_2'); ?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="pb-5">
     <div class="container-fluid px-0 mx-auto mx-0 text-center pb-3 pb-lg-4">
         <h2 class="font-18 font-mb-18 text-black mb-0 pb-0">Case Studies</h2>
