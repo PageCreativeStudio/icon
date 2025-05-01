@@ -9,7 +9,7 @@ get_header(); ?>
     <?php the_content(); ?>
 </div>-->
 
-<section class="pb-3 pb-lg-5">
+<section class="pb-1 pb-lg-5">
     <div class="heroarea pb-5 d-none d-lg-block">
         <div class="heroarea__container position-relative d-block text-center">
             <img class="w-100 hero__image" src="<?php echo get_field('hero_image'); ?>"
