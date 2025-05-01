@@ -1794,7 +1794,9 @@ button {
 	
 }
 .listicons img{
-	
+	height: 24px;
+    width: 24px;
+    object-fit: contain;
 }
 
 @media (min-width:767px) {

@@ -80,8 +80,8 @@ get_header(); ?>
                     <?php if (have_rows('list_repeater_right')) { ?>
                         <?php while (have_rows('list_repeater_right')) {
                             the_row(); ?>
-                            <ul class="m-0 p-0 listicons">
-                                <li class="d-flex"><img src="<?php echo get_sub_field('icon'); ?>"
+                            <ul class="m-0 px-0 py-2 listicons">
+                                <li class="d-flex pb-2 align-items-center"><img src="<?php echo get_sub_field('icon'); ?>"
                                         alt="<?php echo get_sub_field('text'); ?>"><?php echo get_sub_field('text'); ?></li>
                             </ul>
                         <?php } ?>
