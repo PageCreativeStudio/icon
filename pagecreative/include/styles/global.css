@@ -2002,7 +2002,8 @@ button {
 	.singlecontent p{
 		font-size: 15px;
 	}
-	.twoimages img.twoimages__1{
+	.twoimages img.twoimages__1,
+	.twoimages img.twoimages__2{
 		width: 100%;
         max-height: 26rem;
 	}

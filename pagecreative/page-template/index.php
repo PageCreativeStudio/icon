@@ -100,8 +100,8 @@ get_header(); ?>
 </section>
 
 
-<section class="pt-3">
-    <div class="container-fluid mx-auto px-md-4 pb-4 text-center">
+<section class="pt-3 pb-3 pb-lg-0">
+    <div class="container-fluid mx-auto px-md-4 pb-5 text-center">
         <?php if ($slider_title = get_field('products_slider_title')): ?>
             <h2 class="text-black font-22 font-mb-20 text-center mb-0 pb-4 pb-lg-4 mb-lg-2">
                 <?php echo esc_html($slider_title); ?>
@@ -180,7 +180,7 @@ get_header(); ?>
     </div>
 </section>
 
-<section class="pb-4 pb-lg-5 pt-0 imageswith__text">
+<section class="pb-5 pb-lg-5 pt-0 imageswith__text">
     <div class="container-fluid w-100 mx-auto px-lg-4 mx-auto text-left pb-4 pb-lg-5">
         <div class="row">
             <div class="col-12 col-lg-6 pr-lg-5 twoimages">
