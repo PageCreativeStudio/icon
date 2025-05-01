@@ -1073,6 +1073,10 @@ Custom CSS start here
 	font-weight: 800;
 }
 
+.font-12 {
+	font-size: 12px;
+}
+
 .font-13 {
 	font-size: 13px !important;
 }
