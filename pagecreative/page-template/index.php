@@ -13,10 +13,13 @@ get_header(); ?>
     <div class="container-fluid w-100 mx-auto px-lg-4 mx-auto text-left pb-4 pb-lg-5">
         <div class="row">
             <div class="col-12 col-lg-6 pl-lg-4 twoimages order-1 order-lg-2 ">
-                <img class="w-100" src="https://pagedev.co.uk/clients/icon/wp-content/uploads/2025/05/Container.png"
-                    alt="<?php echo get_field('image_right_title'); ?>">
-                <img class="w-100 d-none d-lg-flex" src="https://pagedev.co.uk/clients/icon/wp-content/uploads/2025/05/Container.png"
-                    alt="<?php echo get_field('image_right_title'); ?>">
+                <div class="d-flex">
+                    <img class="w-100" src="https://pagedev.co.uk/clients/icon/wp-content/uploads/2025/05/05308efe-fd0a-4ff8-a65f-16446aacd241_Look1_6928129.jpg.png"
+                        alt="<?php echo get_field('image_right_title'); ?>">
+                    <img class="w-100 d-none d-lg-flex"
+                        src="https://pagedev.co.uk/clients/icon/wp-content/uploads/2025/05/05308efe-fd0a-4ff8-a65f-16446aacd241_Look1_6928129.jpg.png"
+                        alt="<?php echo get_field('image_right_title'); ?>">
+                </div>
             </div>
             <div class="col-12 col-lg-6 order-2 order-lg-1 pt-3 pt-lg-0 align-content-center">
                 <div class="max-45">
