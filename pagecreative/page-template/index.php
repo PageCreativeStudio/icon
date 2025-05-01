@@ -77,7 +77,7 @@ get_header(); ?>
                     <p class="font-16 font-mb-15 text-gray my-0 pb-2">
                         <?php echo get_field('image_right_description'); ?>
                     </p>
-                    <ul class="m-0 px-0 py-2 listicons">
+                    <ul class="m-0 px-0 py-3 listicons">
                         <?php if (have_rows('list_repeater_right')) { ?>
                             <?php while (have_rows('list_repeater_right')) {
                                 the_row(); ?>
