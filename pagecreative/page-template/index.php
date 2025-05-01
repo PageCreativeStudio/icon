@@ -100,7 +100,7 @@ get_header(); ?>
 </section>
 
 
-<section class="pt-3 pb-3 pb-lg-0">
+<section class="pt-3 pb-0 pb-lg-0">
     <div class="container-fluid mx-auto px-md-4 pb-5 text-center">
         <?php if ($slider_title = get_field('products_slider_title')): ?>
             <h2 class="text-black font-22 font-mb-20 text-center mb-0 pb-4 pb-lg-4 mb-lg-2">
