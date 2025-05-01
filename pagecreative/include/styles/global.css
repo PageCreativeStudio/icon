@@ -1793,6 +1793,9 @@ button {
 .twoimages img:nth-of-type(2){
 	
 }
+.listicons img{
+	
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
