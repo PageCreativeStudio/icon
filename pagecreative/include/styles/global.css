@@ -1794,7 +1794,7 @@ button {
     object-fit: contain;
 }
 .gap-8{
-	gap: 8px;
+	gap: 10px;
 }
 @media (min-width:767px) {
 	.product-gallery .owl-next {
