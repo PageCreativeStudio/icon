@@ -77,15 +77,17 @@ get_header(); ?>
                     <p class="font-16 font-mb-15 text-gray my-0 pb-2">
                         <?php echo get_field('image_right_description'); ?>
                     </p>
-                    <?php if (have_rows('list_repeater_right')) { ?>
-                        <?php while (have_rows('list_repeater_right')) {
-                            the_row(); ?>
-                            <ul class="m-0 px-0 py-2 listicons">
-                                <li class="d-flex pb-0 mb-0 align-items-center"><img class="mr-2" src="<?php echo get_sub_field('icon'); ?>"
+                    <ul class="m-0 px-0 py-2 listicons">
+                        <?php if (have_rows('list_repeater_right')) { ?>
+                            <?php while (have_rows('list_repeater_right')) {
+                                the_row(); ?>
+                                <li class="d-flex pb-1 mb-0 align-items-center"><img class="mr-2"
+                                        src="<?php echo get_sub_field('icon'); ?>"
                                         alt="<?php echo get_sub_field('text'); ?>"><?php echo get_sub_field('text'); ?></li>
-                            </ul>
+
+                            <?php } ?>
                         <?php } ?>
-                    <?php } ?>
+                    </ul>
                     <div class="d-flex flex-wrap align-content-center mt-3">
                         <a href="<?php echo get_field('button_dark_link_1'); ?>"
                             class="btnc bg-dark font-15 text-white mr-3 mb-0"><?php echo get_field('button_dark_label_1'); ?></a>
@@ -146,7 +148,8 @@ get_header(); ?>
 
                                 <a href="<?php echo esc_url($product_link); ?>">
                                     <h3 class="font-17 font-mb-15 mb-0 pb-0 pb-lg-1 pt-3 mt-1">
-                                        <?php echo esc_html($product_title); ?></h3>
+                                        <?php echo esc_html($product_title); ?>
+                                    </h3>
                                 </a>
 
                                 <?php if (!empty($product_description)): ?>
