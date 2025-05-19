@@ -76,8 +76,8 @@ do_action('woocommerce_before_edit_account_form');
 			do_action('woocommerce_edit_account_form_fields');
 			?>
 
-			<fieldset class="pt-4 pt-lg-5">
-				<legend class="text-black font-16">Password:</legend>
+			<fieldset">
+				<legend class="text-black font-16 pt-5">Password:</legend>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label
