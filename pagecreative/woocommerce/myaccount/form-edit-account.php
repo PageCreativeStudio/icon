@@ -138,6 +138,7 @@ do_action('woocommerce_before_edit_account_form');
 	</div>
 
 	<div class="col-12 col-lg-6 pl-lg-6 pt-5 pt-lg-0">
+		<h2 class="font-25 font-mb-22 text-black text-left mb-0 pb-4">Payment Method:</h2>
 		<?php
 		defined('ABSPATH') || exit;
 
