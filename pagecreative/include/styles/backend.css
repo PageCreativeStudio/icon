@@ -406,7 +406,7 @@
 
 .woocommerce-Input::placeholder{
     color: #B2B2B2 !important;
-    font-size: 23px !important;
+    font-size: 21px !important;
 }
 .woocommerce-EditAccountForm {
     display: grid;
