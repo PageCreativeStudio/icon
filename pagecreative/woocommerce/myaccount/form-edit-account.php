@@ -113,7 +113,7 @@ do_action('woocommerce_before_edit_account_form');
 				<button type="submit"
 					class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"
 					name="save_account_details"
-					value="<?php esc_attr_e('Save changes', 'woocommerce'); ?>"><?php esc_html_e('Save changes', 'woocommerce'); ?></button>
+					value="<?php esc_attr_e('Save', 'woocommerce'); ?>"><?php esc_html_e('Save', 'woocommerce'); ?></button>
 				<input type="hidden" name="action" value="save_account_details" />
 			</p>
 
