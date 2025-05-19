@@ -16,6 +16,16 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    $(document).on('change', '.print-area-checkbox', function () {
+        var $printArea = $(this).closest('.print-area');
+        if ($(this).is(':checked')) {
+            $printArea.addClass('active');
+        } else {
+            $printArea.removeClass('active');
+        }
+    });
+
+
     // Use $(document).on for print-technique change as well
     $(document).on('change', '.print-technique', function () {
         var areaKey = $(this).closest('.print-technique-section').attr('id').replace('technique_', '');
@@ -52,41 +62,21 @@ jQuery(document).ready(function ($) {
     });
 });
 
-jQuery(document).ready(function ($) {
-    $('.print-area-checkbox').on('change', function () {
-        var $printArea = $(this).closest('.print-area');
-        if ($(this).is(':checked')) {
-            $printArea.addClass('active');
-        } else {
-            $printArea.removeClass('active');
-        }
-    });
-
-});
 
 jQuery(document).ready(function ($) {
     $(document).on('click', '.quickquote', function () {
         const $btn = $(this);
-
-        // Extract data attributes
         const title = $btn.data('title');
         const sku = $btn.data('sku');
         const price = $btn.data('price');
         const productId = $btn.data('product-id');
 
-        // Fill in content
         $('#drawer-product-title').text(title);
         $('#drawer-product-sku').text(sku);
-        $('#drawer-product-name').text(title); // H1 inside drawer
+        $('#drawer-product-name').text(title);
         $('#drawer-product-price').text(price);
-
-        // Open drawer
         $('#quickquoteDrawer').addClass('active');
-
-        // Show loading text
         $('.custom-fields-wrapper').html('<p>Loading custom options…</p>');
-
-        // Load custom fields via AJAX
         $.ajax({
             type: 'POST',
             url: ajaxurl,
