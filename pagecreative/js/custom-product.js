@@ -1,4 +1,50 @@
 jQuery(document).ready(function ($) {
+    $(document).on('click', '.quickquote', function () {
+        const $btn = $(this);
+
+        // Extract data attributes
+        const title = $btn.data('title');
+        const sku = $btn.data('sku');
+        const price = $btn.data('price');
+        const productId = $btn.data('product-id');
+
+        // Fill in content
+        $('#drawer-product-title').text(title);
+        $('#drawer-product-sku').text(sku);
+        $('#drawer-product-name').text(title); // H1 inside drawer
+        $('#drawer-product-price').text(price);
+
+        // Open drawer
+        $('#quickquoteDrawer').addClass('active');
+
+        // Show loading text
+        $('.custom-fields-wrapper').html('<p>Loading custom options…</p>');
+
+        // Load custom fields via AJAX
+        $.ajax({
+            type: 'POST',
+            url: ajaxurl,
+            data: {
+                action: 'load_custom_fields',
+                product_id: productId
+            },
+            success: function (response) {
+                $('.custom-fields-wrapper').html(response);
+            },
+            error: function () {
+                $('.custom-fields-wrapper').html('<p>Failed to load options.</p>');
+            }
+        });
+    });
+
+    // Close drawer on click
+    $(document).on('click', '.closedrawer', function () {
+        $('#quickquoteDrawer').removeClass('active');
+    });
+});
+
+
+jQuery(document).ready(function ($) {
     // Show/hide technique sections based on print area checkboxes
     $('.print-area-checkbox').on('change', function () {
         var areaKey = $(this).data('area');
@@ -65,68 +111,3 @@ jQuery(document).ready(function ($) {
 
 });
 
-jQuery(document).ready(function ($) {
-    function initCustomFields() {
-        // Put here all JS initialization needed for the shortcode content,
-        // e.g., re-bind buttons, plugins, event handlers inside .custom-fields-wrapper
-
-        // Example: Rebind click handlers for buttons inside the shortcode
-        $('.custom-fields-wrapper .your-button-class').off('click').on('click', function () {
-            // Your button logic here
-        });
-
-        // Example: Re-initialise plugins if any (e.g., Select2, datepickers)
-        // $('.custom-fields-wrapper select').select2();
-        // $('.custom-fields-wrapper .datepicker').datepicker();
-
-        // Add any other initialisation your shortcode content needs
-    }
-
-    $(document).on('click', '.quickquote', function () {
-        const $btn = $(this);
-
-        // Extract data attributes
-        const title = $btn.data('title');
-        const sku = $btn.data('sku');
-        const price = $btn.data('price');
-        const productId = $btn.data('product-id');
-
-        // Fill in content
-        $('#drawer-product-title').text(title);
-        $('#drawer-product-sku').text(sku);
-        $('#drawer-product-name').text(title); // H1 inside drawer
-        $('#drawer-product-price').text(price);
-
-        // Open drawer
-        $('#quickquoteDrawer').addClass('active');
-
-        // Show loading text
-        $('.custom-fields-wrapper').html('<p>Loading custom options…</p>');
-
-        // Load custom fields via AJAX
-        $.ajax({
-            type: 'POST',
-            url: ajaxurl,
-            data: {
-                action: 'load_custom_fields',
-                product_id: productId
-            },
-            success: function (response) {
-                $('.custom-fields-wrapper').html(response);
-                // Initialise buttons and other JS inside loaded content
-                initCustomFields();
-            },
-            error: function () {
-                $('.custom-fields-wrapper').html('<p>Failed to load options.</p>');
-            }
-        });
-    });
-
-    // Close drawer on click
-    $(document).on('click', '.closedrawer', function () {
-        $('#quickquoteDrawer').removeClass('active');
-    });
-
-    // Optionally initialise on page load if shortcode content is present initially
-    initCustomFields();
-});
