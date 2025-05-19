@@ -15,25 +15,25 @@
  * @version 3.5.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 /**
  * My Account navigation.
  *
  * @since 2.6.0
  */
-do_action( 'woocommerce_account_navigation' ); ?>
+do_action('woocommerce_account_navigation'); ?>
 
 
 <div class="w-100 container-fluid max-100 mx-auto px-2 px-md-4 mx-auto text-left pb-5">
-	<?php
-		/**
-		 * My Account content.
-		 *
-		 * @since 2.6.0
-		 */
-		do_action( 'woocommerce_account_content' );
-	?>
+    <?php
+    /**
+     * My Account content.
+     *
+     * @since 2.6.0
+     */
+    do_action('woocommerce_account_content');
+    ?>
 </div>
 
 
@@ -41,8 +41,10 @@ do_action( 'woocommerce_account_navigation' ); ?>
 <section class="pt-5 pt-lg-5 pb-0 pb-lg-0">
     <div class="container-fluid max-100 mx-auto px-2 px-md-4 pb-5 text-left">
         <div class="font-15 singlecontent bordertop pt-4 mt-5">
-                <p class="font-16 pt-3 max-25 "><strong>Not finding what you’re looking for? </strong></p>
-                <p class="max-25">Can’t find what you’re looking for or need some assistance? Call us on&nbsp;<strong>0207 183 8431</strong>&nbsp;or&nbsp;send us an email.</p>
+            <p class="font-18 pt-3 max-25 pb-2"><strong class="font-18">Not finding what you're looking for? </strong>
+            </p>
+            <p class="max-25">Can't find what you're looking for or need some assistance? Call us on&nbsp;<strong>0207
+                    183 8431</strong>&nbsp;or&nbsp;send us an email.</p>
         </div>
     </div>
 </section>
@@ -58,18 +60,20 @@ do_action( 'woocommerce_account_navigation' ); ?>
             <?php
             $args = array(
                 'post_type' => 'product',
-                'posts_per_page' => -1,   
+                'posts_per_page' => -1,
                 'post_status' => 'publish',
             );
 
             $query = new WP_Query($args);
 
-            if ($query->have_posts()) : ?>
+            if ($query->have_posts()): ?>
                 <div class="related__slider owl-carousel owl-theme">
-                    <?php while ($query->have_posts()) : $query->the_post();
+                    <?php while ($query->have_posts()):
+                        $query->the_post();
                         // Get product details
                         $product = wc_get_product(get_the_ID());
-                        if (!$product) continue;
+                        if (!$product)
+                            continue;
 
                         $product_id = $product->get_id();
                         $product_title = get_the_title($product_id);
@@ -124,7 +128,8 @@ do_action( 'woocommerce_account_navigation' ); ?>
                         </div>
                     <?php endwhile; ?>
                 </div>
-            <?php endif; wp_reset_postdata(); ?>
+            <?php endif;
+            wp_reset_postdata(); ?>
         </div>
     </div>
 </section>-->
