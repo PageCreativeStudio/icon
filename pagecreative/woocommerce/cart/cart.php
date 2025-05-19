@@ -155,7 +155,7 @@ do_action('woocommerce_before_cart'); ?>
         </form>
       </div>
       <div class="col-12 col-lg-4 order-1 order-lg-2 pb-4">
-        <div class="stickytop">
+        <div class="stickytop pt-2">
           <?php
           /**
            * Cart collaterals hook.
