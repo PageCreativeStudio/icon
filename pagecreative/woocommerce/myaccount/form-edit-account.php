@@ -25,7 +25,7 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_before_edit_account_form');
 ?>
 
-<div class="">
+<div class="pb-4">
 	<div class="borderbottom font-18 font-mb-16 mb-lg-3 py-3">
 		<div class="d-flex flex-wrap justify-content-between">
 			<div>
