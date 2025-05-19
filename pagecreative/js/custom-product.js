@@ -16,17 +16,6 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    // Toggle .active class on .print-area when checkbox is changed
-    $('.print-area-checkbox').on('change', function () {
-        var $printArea = $(this).closest('.print-area');
-        if ($(this).is(':checked')) {
-            $printArea.addClass('active');
-        } else {
-            $printArea.removeClass('active');
-        }
-    });
-
-
 
     // Show/hide technique options based on selected technique
     $('.print-technique').on('change', function () {

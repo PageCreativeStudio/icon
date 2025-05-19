@@ -588,3 +588,14 @@ document.getElementById('mobile-service-select').addEventListener('change', func
 
 
 
+//// Woocommerce
+
+// Toggle .active class on .print-area when checkbox is changed
+$('.print-area-checkbox').on('change', function () {
+    var $printArea = $(this).closest('.print-area');
+    if ($(this).is(':checked')) {
+        $printArea.addClass('active');
+    } else {
+        $printArea.removeClass('active');
+    }
+});
