@@ -25,12 +25,11 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_before_edit_account_form');
 ?>
 
-<div class="container-fluid mx-auto max-100 px-3 px-lg-4 mx-auto text-left pt-3 pt-lg-5">
+<div class="">
 	<div class="borderbottom font-18 font-mb-16 mb-lg-3 py-3">
 		<div class="d-flex flex-wrap justify-content-between">
 			<div>
-				<h2 class="text-black font-25 font-mb-20"> Your Completed Quotes <span class="font-13">
-						(<?php echo count(WC()->cart->get_cart()); ?> items) </span> </h2>
+				<h2 class="text-black font-25 font-mb-20"> Account Settings </h2>
 			</div>
 			<div class="d-none d-lg-block">
 				<p class="font-16 mb-0">Need Help? 0207 183 8431 </p>
