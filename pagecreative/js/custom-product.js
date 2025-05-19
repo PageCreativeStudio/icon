@@ -17,13 +17,20 @@ jQuery(document).ready(function ($) {
     });
 
 
-    // Show/hide technique options based on selected technique
     $('.print-technique').on('change', function () {
         var areaKey = $(this).closest('.print-technique-section').attr('id').replace('technique_', '');
         var techniqueKey = $(this).val().toLowerCase().replace(/\s+/g, '');
         $('.technique-options', '#technique_' + areaKey).hide();
-        $('#options_' + areaKey + '_' + techniqueKey).show();
+        var $options = $('#options_' + areaKey + '_' + techniqueKey).show();
+        $('input[type="radio"]:checked', $options).closest('label').addClass('active');
     });
+
+    $(document).on('change', '.technique-options input[type="radio"]', function () {
+        var $group = $(this).closest('.options-list');
+        $('label', $group).removeClass('active');
+        $(this).closest('label').addClass('active');
+    });
+
 
     // Trigger change events on page load to ensure correct visibility
     //  $('.print-area-checkbox').trigger('change');
