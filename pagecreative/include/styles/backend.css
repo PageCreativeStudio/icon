@@ -291,8 +291,7 @@
     transform: translate(-50%, -50%);
 }
 .form-group:focus{
-    border: 0 !important;;
-    outline: 0 !important;;
+    box-shadow: none;
 }
 
 /* Textarea */
