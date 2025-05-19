@@ -55,7 +55,7 @@ do_action('woocommerce_before_edit_account_form');
 					name="account_display_name" id="account_display_name"
 					aria-describedby="account_display_name_description"
 					value="<?php echo esc_attr($user->display_name); ?>" aria-required="true" /> <span
-					id="account_display_name_description"><em><?php esc_html_e('This will be how your name will be displayed in the account section and in reviews', 'woocommerce'); ?></em></span>
+					id="account_display_name_description"><!--<em><?php esc_html_e('This will be how your name will be displayed in the account section and in reviews', 'woocommerce'); ?></em>--></span>
 			</p>
 			<div class="clear"></div>
 
@@ -77,7 +77,7 @@ do_action('woocommerce_before_edit_account_form');
 			?>
 
 			<fieldset>
-				<legend><?php esc_html_e('Password change', 'woocommerce'); ?></legend>
+				<legend class="text-black font-16">Password:</legend>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label

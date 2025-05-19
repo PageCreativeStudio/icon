@@ -399,9 +399,9 @@
 
 .woocommerce label {
     margin-bottom: 0;
-    color: #B2B2B2;
-    font-size: 13px;
-    padding-top: 17px;
+    color: #B2B2B2 !important;
+    font-size: 13px !important;
+    padding-top: 17px !important;
 }
 
 
