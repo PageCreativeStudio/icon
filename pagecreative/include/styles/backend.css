@@ -368,7 +368,8 @@
 
 .woocommerce-Button,
 .woocommerce-button,
-.checkout-button {
+.checkout-button,
+.woocommerce .button {
     background-color: black !important;
     border-radius: 0 !important;
     font-weight: 200 !important;
