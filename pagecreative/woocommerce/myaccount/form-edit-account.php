@@ -27,7 +27,7 @@ do_action('woocommerce_before_edit_account_form');
 
 <div class="pb-4">
 	<div class="borderbottom font-18 font-mb-16 mb-lg-3 py-3">
-		<div class="d-flex flex-wrap justify-content-between">
+		<div class="d-flex flex-wrap justify-content-between pb-lg-4">
 			<div>
 				<h2 class="text-black font-25 font-mb-20"> Account Settings </h2>
 			</div>
@@ -39,8 +39,8 @@ do_action('woocommerce_before_edit_account_form');
 	</div>
 </div>
 
-<div class="row">
-	<div class="col-12 col-lg-6 pr-lg-6">
+<div class="row justify-content-between">
+	<div class="col-12 col-lg-6">
 		<h2 class="text-black font-20 mb-0 pb-4">Personal Details:</h2>
 		<form class="woocommerce-EditAccountForm edit-account" action="" method="post" <?php do_action('woocommerce_edit_account_form_tag'); ?>>
 
@@ -137,7 +137,7 @@ do_action('woocommerce_before_edit_account_form');
 
 	</div>
 
-	<div class="col-12 col-lg-6 pl-lg-6 pt-5 pt-lg-0">
+	<div class="col-12 col-lg-5 pt-5 pt-lg-0">
 		<h2 class="text-black font-20 mb-0 pb-4">Payment Method:</h2>
 		<?php
 		defined('ABSPATH') || exit;
