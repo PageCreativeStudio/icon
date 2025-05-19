@@ -25,6 +25,21 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_before_edit_account_form');
 ?>
 
+<div class="container-fluid mx-auto max-100 px-3 px-lg-4 mx-auto text-left pt-3 pt-lg-5">
+	<div class="borderbottom font-18 font-mb-16 mb-lg-3 py-3">
+		<div class="d-flex flex-wrap justify-content-between">
+			<div>
+				<h2 class="text-black font-25 font-mb-20"> Your Completed Quotes <span class="font-13">
+						(<?php echo count(WC()->cart->get_cart()); ?> items) </span> </h2>
+			</div>
+			<div class="d-none d-lg-block">
+				<p class="font-16 mb-0">Need Help? 0207 183 8431 </p>
+				<a href="mailto:sales@iconprinting.com" class="font-15 mb-0">sales@iconprinting.com</a>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="row">
 	<div class="col-12 col-lg-6">
 
@@ -43,8 +58,8 @@ do_action('woocommerce_before_edit_account_form');
 				<label for="account_last_name"><?php esc_html_e('Last name', 'woocommerce'); ?>&nbsp;<span
 						class="required" aria-hidden="true">*</span></label>
 				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_last_name"
-					id="account_last_name" autocomplete="family-name"
-					value="<?php echo esc_attr($user->last_name); ?>" aria-required="true" />
+					id="account_last_name" autocomplete="family-name" value="<?php echo esc_attr($user->last_name); ?>"
+					aria-required="true" />
 			</p>
 			<div class="clear"></div>
 
@@ -83,7 +98,8 @@ do_action('woocommerce_before_edit_account_form');
 					<!--<label
 						for="password_current"><?php esc_html_e('Current password (leave blank to leave unchanged)', 'woocommerce'); ?></label>-->
 					<input type="password" class="woocommerce-Input woocommerce-Input--password input-text"
-						name="password_current" id="password_current" autocomplete="off" placeholder="Current Password"/>
+						name="password_current" id="password_current" autocomplete="off"
+						placeholder="Current Password" />
 				</p>
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<!--<label
@@ -96,28 +112,28 @@ do_action('woocommerce_before_edit_account_form');
 					<input type="password" class="woocommerce-Input woocommerce-Input--password input-text"
 						name="password_2" id="password_2" placeholder="Confirm new password" autocomplete="off" />
 				</p>
-			</fieldset>
-			<div class="clear"></div>
+				</fieldset>
+				<div class="clear"></div>
 
-			<?php
-			/**
-			 * My Account edit account form.
-			 *
-			 * @since 2.6.0
-			 */
-			do_action('woocommerce_edit_account_form');
-			?>
+				<?php
+				/**
+				 * My Account edit account form.
+				 *
+				 * @since 2.6.0
+				 */
+				do_action('woocommerce_edit_account_form');
+				?>
 
-			<p class="pt-3">
-				<?php wp_nonce_field('save_account_details', 'save-account-details-nonce'); ?>
-				<button type="submit"
-					class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"
-					name="save_account_details"
-					value="<?php esc_attr_e('Save', 'woocommerce'); ?>"><?php esc_html_e('Save', 'woocommerce'); ?></button>
-				<input type="hidden" name="action" value="save_account_details" />
-			</p>
+				<p class="pt-3">
+					<?php wp_nonce_field('save_account_details', 'save-account-details-nonce'); ?>
+					<button type="submit"
+						class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"
+						name="save_account_details"
+						value="<?php esc_attr_e('Save', 'woocommerce'); ?>"><?php esc_html_e('Save', 'woocommerce'); ?></button>
+					<input type="hidden" name="action" value="save_account_details" />
+				</p>
 
-			<?php do_action('woocommerce_edit_account_form_end'); ?>
+				<?php do_action('woocommerce_edit_account_form_end'); ?>
 		</form>
 
 	</div>
