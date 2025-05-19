@@ -464,9 +464,6 @@ ul li.is-active a {
 .contentshow p {
     font-size: 13px;
 }
-.p-Tabs-panel form > div{
-    display: block;
-}
 
 @media screen and (min-width:989px) {
     .cart-item-controls {
