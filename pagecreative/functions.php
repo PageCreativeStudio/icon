@@ -550,23 +550,3 @@ function allow_inline_svg_for_all($tags, $context) {
     return $tags;
 }
 add_filter('wp_kses_allowed_html', 'allow_inline_svg_for_all', 10, 2);
-
-add_filter('wc_stripe_elements_options', 'custom_stripe_element_styles');
-function custom_stripe_element_styles($options) {
-    $options['style'] = [
-        'base' => [
-            'color' => '#000000',
-            'backgroundColor' => '#ffffff',
-            'fontSize' => '16px',
-            'fontFamily' => 'Helvetica, Arial, sans-serif',
-            '::placeholder' => [
-                'color' => '#999999'
-            ]
-        ],
-        'invalid' => [
-            'color' => '#cc0000',
-            'iconColor' => '#cc0000'
-        ]
-    ];
-    return $options;
-}
