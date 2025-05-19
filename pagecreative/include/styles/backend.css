@@ -465,12 +465,6 @@ ul li.is-active a {
     font-size: 13px;
 }
 
-.Input, .p-FauxInput{
-    background-color: #ffffff!important;
-    border-radius: 0!important;
-    border: solid 1px #bbbbbb!important;
-    box-shadow: none!important;
-}
 
 @media screen and (min-width:989px) {
     .cart-item-controls {

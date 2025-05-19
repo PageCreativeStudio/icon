@@ -526,7 +526,6 @@ function load_custom_fields_callback() {
 
 
 function allow_inline_svg_for_all($tags, $context) {
-    // Only modify for specific contexts if needed
     if (in_array($context, ['post', 'data', 'default'], true)) {
         $tags['svg'] = [
             'xmlns'    => true,
@@ -552,3 +551,26 @@ function allow_inline_svg_for_all($tags, $context) {
 }
 add_filter('wp_kses_allowed_html', 'allow_inline_svg_for_all', 10, 2);
 
+add_filter('wc_stripe_elements_options', 'custom_stripe_element_styles');
+function custom_stripe_element_styles($options) {
+    $options['style'] = [
+        'base' => [
+            'color' => '#000000',
+            'backgroundColor' => '#ffffff',
+            'border' => '1px solid #bbbbbb',
+            'borderRadius' => '0',
+            'fontSize' => '16px',
+            'padding' => '10px',
+            'boxShadow' => 'none',
+            '::placeholder' => [
+                'color' => '#aaaaaa'
+            ]
+        ],
+        'invalid' => [
+            'color' => '#cc0000',
+            'iconColor' => '#cc0000'
+        ]
+    ];
+
+    return $options;
+}
