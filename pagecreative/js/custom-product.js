@@ -46,3 +46,14 @@ jQuery(document).ready(function ($) {
 
 });
 
+jQuery(document).ready(function ($) {
+    $('.print-area-checkbox').on('change', function () {
+        var $printArea = $(this).closest('.print-area');
+        if ($(this).is(':checked')) {
+            $printArea.addClass('active');
+        } else {
+            $printArea.removeClass('active');
+        }
+    });
+
+});
