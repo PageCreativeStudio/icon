@@ -40,7 +40,7 @@ do_action('woocommerce_before_edit_account_form');
 </div>
 
 <div class="row">
-	<div class="col-12 col-lg-6">
+	<div class="col-12 col-lg-6 pr-lg-6">
 
 		<form class="woocommerce-EditAccountForm edit-account" action="" method="post" <?php do_action('woocommerce_edit_account_form_tag'); ?>>
 
