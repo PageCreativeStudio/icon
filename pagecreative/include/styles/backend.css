@@ -464,6 +464,12 @@ ul li.is-active a {
 .contentshow p {
     font-size: 13px;
 }
+.wc-stripe-elements-field {
+    border: 1px solid #bbbbbb;
+    border-radius: 0;
+    background: #ffffff;
+    padding: 10px;
+}
 
 
 @media screen and (min-width:989px) {

@@ -557,13 +557,10 @@ function custom_stripe_element_styles($options) {
         'base' => [
             'color' => '#000000',
             'backgroundColor' => '#ffffff',
-            'border' => '1px solid #bbbbbb',
-            'borderRadius' => '0',
             'fontSize' => '16px',
-            'padding' => '10px',
-            'boxShadow' => 'none',
+            'fontFamily' => 'Helvetica, Arial, sans-serif',
             '::placeholder' => [
-                'color' => '#aaaaaa'
+                'color' => '#999999'
             ]
         ],
         'invalid' => [
@@ -571,6 +568,5 @@ function custom_stripe_element_styles($options) {
             'iconColor' => '#cc0000'
         ]
     ];
-
     return $options;
 }
