@@ -41,7 +41,7 @@ do_action('woocommerce_before_edit_account_form');
 
 <div class="row">
 	<div class="col-12 col-lg-6 pr-lg-6">
-
+		<h2 class="text-black font-20 mb-0 pb-4">Personal Details:</h2>
 		<form class="woocommerce-EditAccountForm edit-account" action="" method="post" <?php do_action('woocommerce_edit_account_form_tag'); ?>>
 
 			<?php do_action('woocommerce_edit_account_form_start'); ?>
@@ -91,7 +91,7 @@ do_action('woocommerce_before_edit_account_form');
 			?>
 
 			<fieldset">
-				<legend class="text-black font-18 pt-5 mt-lg-4">Password:</legend>
+				<legend class="text-black font-20 pt-5 mt-lg-4">Password:</legend>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<!--<label
@@ -138,7 +138,7 @@ do_action('woocommerce_before_edit_account_form');
 	</div>
 
 	<div class="col-12 col-lg-6 pl-lg-6 pt-5 pt-lg-0">
-		<h2 class="font-25 font-mb-22 text-black text-left mb-0 pb-4">Payment Method:</h2>
+		<h2 class="text-black font-20 mb-0 pb-4">Payment Method:</h2>
 		<?php
 		defined('ABSPATH') || exit;
 
@@ -157,7 +157,8 @@ do_action('woocommerce_before_edit_account_form');
 						<?php foreach (wc_get_account_payment_methods_columns() as $column_id => $column_name): ?>
 							<th
 								class="woocommerce-PaymentMethod woocommerce-PaymentMethod--<?php echo esc_attr($column_id); ?> payment-method-<?php echo esc_attr($column_id); ?>">
-								<span class="nobr"><?php echo esc_html($column_name); ?></span></th>
+								<span class="nobr"><?php echo esc_html($column_name); ?></span>
+							</th>
 						<?php endforeach; ?>
 					</tr>
 				</thead>
