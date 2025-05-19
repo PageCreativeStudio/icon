@@ -177,7 +177,7 @@ do_action('woocommerce_before_cart'); ?>
 <section class="pt-5 pt-lg-5 pb-0 pb-lg-0">
   <div class="container-fluid max-100 mx-auto px-2 px-lg-4 pb-5 text-left">
     <div class="font-15 singlecontent bordertop pt-4 mt-5">
-      <p class="font-16 pt-3 max-25 "><strong>Not finding what you’re looking for? </strong></p>
+      <p class="font-18 pt-3 max-25 pb-2"><strong>Not finding what you’re looking for? </strong></p>
       <p class="max-25">Can’t find what you’re looking for or need some assistance? Call us on&nbsp;<strong>0207 183
           8431</strong>&nbsp;or&nbsp;send us an email.</p>
     </div>
