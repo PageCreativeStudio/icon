@@ -290,7 +290,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.form-control:focus{
+
+.form-control:focus {
     box-shadow: none;
 }
 
@@ -310,7 +311,7 @@
 .custom-product-fields .upload-buttons {
     display: flex;
     gap: 10px;
-    margin-top:34px;
+    margin-top: 34px;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -388,8 +389,16 @@
 
 .woocommerce form .form-row .input-text {
     border-radius: 0;
-    padding: 11px 9px 10px 9px;
+    padding: 11px 0px 10px 0px;
     font-size: 15px;
+    border: none;
+    border-bottom: solid 1px #d1d1d1;
+}
+
+
+
+.woocommerce-EditAccountForm {
+    display: grid;
 }
 
 fieldset {
