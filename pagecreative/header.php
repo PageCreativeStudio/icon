@@ -137,7 +137,7 @@
 							<div class="d-flex flex-wrap justify-content-end align-items-center">
 								<a class="mr-3" href="<?php echo home_url(); ?>/my-account/">Sign in</a>
 								<a class="btna mr-3" href="#">Get a quote</a>
-								<a class="cartbtn" href="<?php echo home_url(); ?>/cart">
+								<a class="cartbtn" href="<?php echo home_url(); ?>/checkout/">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25"
 										fill="none">
 										<g clip-path="url(#clip0_491_131)">
@@ -165,7 +165,7 @@
 							<div class="row px-3 pt-2 mx-0">
 								<div class="col-9 pb-2 mob_logo align-self-center px-0 close-on-sliding-active">
 									<div class="d-flex flex-wrap">
-										<a class="cartbtn" href="<?php echo home_url(); ?>/cart">
+										<a class="cartbtn" href="<?php echo home_url(); ?>/checkout/">
 											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25"
 												viewBox="0 0 26 25" fill="none">
 												<g clip-path="url(#clip0_491_131)">

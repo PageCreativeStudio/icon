@@ -1045,6 +1045,15 @@ Custom CSS start here
 	max-width: 85rem;
 }
 
+.max-90 {
+	max-width: 90rem;
+}
+
+.max-100 {
+	max-width: 100rem;
+}
+
+
 .font-200 {
 	font-weight: 200;
 }
@@ -1394,7 +1403,13 @@ button {
 /***    Woocommerce   **/
 .product-template-default .navigation.post-navigation,
 .product-template-default .entry-footer,
-.product-template-default .entry-header {
+.product-template-default .entry-header,
+.woocommerce-account .entry-header,
+.woocommerce-account .entry-footer,
+.woocommerce-checkout .entry-header,
+.woocommerce-checkout .entry-footer,
+.woocommerce-cart .entry-header,
+.woocommerce-cart .entry-footer{
 	display: none;
 }
 
@@ -1616,6 +1631,7 @@ button {
 	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
 	transition: right 0.4s ease;
 	z-index: 999;
+	overflow:auto;
 }
 
 .quickquote__opener.active {
@@ -1623,11 +1639,11 @@ button {
 }
 
 .closedrawer {
-	right: 1rem;
-	position: absolute;
-	top: 14px;
-	font-size: 33px;
-	cursor: pointer;
+    left: 1rem;
+    position: absolute;
+    top: -1px;
+    font-size: 33px;
+    cursor: pointer;
 }
 
 
@@ -1819,6 +1835,56 @@ button {
 	width: 21px;
 	object-fit: contain;
 }
+._form-content input[type="text"]{
+    padding: 10px 12px !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    background: transparent !important;
+    
+}
+._form_7 {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: 'SuisseRegular' !important;
+}
+._form_7 ._form-branding{
+    display:none!important;
+}
+._form_7 ._submit{
+    margin: 0 0 0 !important;
+    font-size: 22px !important;
+    height: 0px;
+    position: absolute;
+    right: 8px;
+    top:0px;
+}
+._form_7 ._inline-style{
+    margin:0!important;
+}
+._form_7 ._form-label{
+    display:none!important;
+}
+._form_7 ._form_element{
+    width:100%!important;
+}
+._form_7 ._form-content{
+    max-width: 18rem !important;
+    position: relative !important;
+    display: inline-flex;
+    width: 100%;
+}
+._form_7 ._button-wrapper{
+    position: absolute !important;
+    margin: 0 !important;
+    right: 0 !important;
+}
+._form_7 ._form-thank-you{
+     font-family: 'SuisseRegular' !important;
+    font-size: 15px !important;
+    text-align: left !important;
+    color: #0b985c !important  
+}
 
 @media (min-width:767px) {
 	.product-gallery .owl-next {
@@ -1958,15 +2024,26 @@ button {
 		padding: 12px 24px 11px 24px;
 	}
 
-	.footermenu h2 {
+	.footermenu h2{
 		margin-bottom: 11px !important;
 		cursor: pointer;
 		text-align: left;
 		position: relative;
 		border-bottom: solid 1px #dbdbdb;
 	}
-
-	.footermenu ul {
+	
+	.clicktoshow{
+        cursor: pointer;
+        text-align: left;
+        width: 100% !important;
+        max-width: 100%;
+        display: block;
+	}
+    .contentshow.open{
+        margin-bottom:12px;
+    }
+	.footermenu ul,
+	.contentshow{
 		max-height: 0;
 		overflow: hidden;
 		text-align: left;
@@ -1974,7 +2051,8 @@ button {
 		padding: 0;
 	}
 
-	.footermenu h2::after {
+	.footermenu h2::after,
+	.clicktoshow::after{
 		content: "";
 		background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211%22%20height%3D%2211%22%20viewBox%3D%220%200%2011%2011%22%20fill%3D%22none%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M6.20833%204.36296H10.375V6.02962H6.20833V10.1963H4.54167V6.02962H0.375V4.36296H4.54167V0.196289H6.20833V4.36296Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E');
 		position: absolute;
@@ -1988,7 +2066,8 @@ button {
 		transition: transform 0.3s ease-in;
 	}
 
-	.footermenu h2.active::after {
+	.footermenu h2.active::after,
+	.clicktoshow.active::after{
 		transform: rotate(135deg);
 		transition: transform 0.3s ease-in;
 	}

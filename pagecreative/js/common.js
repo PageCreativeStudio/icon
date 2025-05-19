@@ -189,8 +189,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ///// Footer collapsible menu
 $(document).ready(function () {
+    // Footer menu toggle (mobile only)
     const headings = document.querySelectorAll(".footermenu h2");
     const isMobile = () => window.innerWidth <= 989;
+
     headings.forEach((heading) => {
         heading.addEventListener("click", () => {
             if (isMobile()) {
@@ -214,7 +216,24 @@ $(document).ready(function () {
             }
         });
     });
+
+    // Custom toggle for .clicktoshow and .contentshow
+    $(".clicktoshow").on("click", function () {
+        const content = $(this).next(".contentshow");
+
+        if (content.hasClass("open")) {
+            content.removeClass("open").css("maxHeight", "0");
+            $(this).removeClass("active");
+        } else {
+            // Close any other open .contentshow elements if needed
+            // $(".contentshow.open").removeClass("open").css("maxHeight", "0");
+
+            content.addClass("open").css("maxHeight", content[0].scrollHeight + "px");
+            $(this).addClass("active");
+        }
+    });
 });
+
 
 
 jQuery(document).ready(function ($) {
@@ -429,20 +448,6 @@ jQuery(document).ready(function ($) {
 });
 
 
-/// Quickquote drawer
-jQuery(document).ready(function ($) {
-    $(document).on('click', '.quickquote', function () {
-        const title = $(this).data('title');
-        $('.quote-title').text(title);
-        $('.quickquote__opener').addClass('active');
-    });
-
-    $(document).on('click', '.closedrawer', function () {
-        $('.quickquote__opener').removeClass('active');
-    });
-});
-
-
 /// collapsible filter
 $(document).ready(function () {
     const headings = document.querySelectorAll(".megafilter-group form > ul li h4");
@@ -580,3 +585,6 @@ document.getElementById('mobile-service-select').addEventListener('change', func
         }
     }
 });
+
+
+

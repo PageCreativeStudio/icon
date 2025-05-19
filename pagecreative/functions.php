@@ -487,9 +487,68 @@ function load_more_case_studies()
 
 function mytheme_add_body_classes($classes)
 {
-	if (is_singular('case-studies')) { // Assuming your post type is 'cs'
+	if (is_singular('case-studies')) {
 		$classes[] = 'custom-cs-page';
 	}
 	return $classes;
 }
 add_filter('body_class', 'mytheme_add_body_classes');
+
+
+
+// Drawer shortcode handler
+add_action('wp_footer', function () {
+    ?>
+    <script type="text/javascript">
+        var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+    </script>
+    <?php
+}, 100);
+
+add_action('wp_ajax_load_custom_fields', 'load_custom_fields_callback');
+add_action('wp_ajax_nopriv_load_custom_fields', 'load_custom_fields_callback');
+function load_custom_fields_callback() {
+    $product_id = isset($_POST['product_id']) ? absint($_POST['product_id']) : 0;
+
+    if ($product_id > 0) {
+        global $product;
+        $product = wc_get_product($product_id);
+        if ($product) {
+            echo do_shortcode('[custom_product_fields]');
+        } else {
+            echo '<p>Invalid product.</p>';
+        }
+    } else {
+        echo '<p>No product ID provided.</p>';
+    }
+    wp_die();
+}
+
+
+function allow_inline_svg_for_all($tags, $context) {
+    // Only modify for specific contexts if needed
+    if (in_array($context, ['post', 'data', 'default'], true)) {
+        $tags['svg'] = [
+            'xmlns'    => true,
+            'width'    => true,
+            'height'   => true,
+            'viewBox'  => true,
+            'fill'     => true,
+            'stroke'   => true,
+            'stroke-width' => true,
+            'class'    => true,
+            'aria-hidden' => true,
+        ];
+        $tags['path'] = [
+            'd'            => true,
+            'fill'         => true,
+            'stroke'       => true,
+            'stroke-width' => true,
+            'fill-rule'    => true,
+        ];
+    }
+
+    return $tags;
+}
+add_filter('wp_kses_allowed_html', 'allow_inline_svg_for_all', 10, 2);
+

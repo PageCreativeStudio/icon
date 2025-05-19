@@ -12,7 +12,7 @@ global $product;
     <div class="container-fluid mx-auto px-md-4 mb-lg-5 pt-3 pt-lg-4">
         <div class="row">
             <div class="col-12 col-lg-6 max-50 pr-lg-5">
-                <div class="stickytop">
+                <div class="">
                     <?php
                     set_query_var('product', $product);
                     get_template_part('woocommerce/image-gallery');
@@ -38,7 +38,7 @@ global $product;
 
             </div>
 
-            <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0">
+            <div class="col-12 col-lg pl-lg-5 pt-3 pt-lg-0 pb-5 pb-lg-5">
                 <div>
                     <?php
                     global $product;
@@ -87,64 +87,27 @@ global $product;
                         </div>
                     </div>
 
-                    <?php
-                    $terms = get_the_terms($product_id, 'pa_colours');
-                    $variation_data = [];
-                    foreach ($variations as $variation) {
-                        $attributes = $variation['attributes'];
-                        if (isset($attributes['attribute_pa_colour'])) {
-                            $slug = $attributes['attribute_pa_colour'];
-                            $variation_data[$slug] = [
-                                'price_html' => $variation['price_html'],
-                                'display_price' => $variation['display_price'],
-                                'variation_id' => $variation['variation_id']
-                            ];
-                        }
-                    }
-                    ?>
-
-                    <?php if (!empty($terms)): ?>
-                        <div class="colour-attributes borderbottom py-4 mt-1">
-                            <p class="text-black font-15 mb-0 pb-3">Choose a colour:</p>
-                            <div class="d-flex flex-wrap color-variants-container">
-                                <?php foreach ($terms as $term):
-                                    $slug = $term->slug;
-                                    $color = strtolower(str_replace(['(', ')', '.', ',', ' '], '', $term->name));
-                                    $data = $variation_data[$slug] ?? null;
-                                    ?>
-                                    <div class="color-variant mr-2 mb-2" data-color="<?php echo esc_attr($slug); ?>"
-                                        data-price-html="<?php echo esc_attr($data['price_html'] ?? ''); ?>"
-                                        data-price="<?php echo esc_attr($data['display_price'] ?? ''); ?>"
-                                        data-variation-id="<?php echo esc_attr($data['variation_id'] ?? ''); ?>"
-                                        style="background-color: <?php echo esc_attr($color); ?>;"
-                                        title="<?php echo esc_attr($term->name); ?>">
-                                        <span class="color-check" style="display: none; color: white;">✓</span>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                            <input type="hidden" name="variation_id" id="selected-variation-id" value="">
-                        </div>
-                    <?php endif; ?>
-
-
-
-                    <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
-                        <?php if (have_rows('collaspsibles_repeater')): ?>
-                            <div class="acf-collapsibles">
-                                <?php while (have_rows('collaspsibles_repeater')):
-                                    the_row(); ?>
-                                    <div class="acf-toggle-item">
-                                        <h3 class="toggle-header font-16"><?php echo esc_html(get_sub_field('title')); ?></h3>
-                                        <div class="toggle-content">
-                                            <div class="pt-3 pb-4">
-                                                <?php echo get_sub_field('content'); ?>
+                    <?php echo do_shortcode('[custom_product_fields]'); ?>
+                
+                    <?php if(get_field("collaspsibles_repeater")) : ?>
+                        <div class="product__toggle py-5 d-block d-lg-none mb-4 mb-lg-0">
+                            <?php if (have_rows('collaspsibles_repeater')): ?>
+                                <div class="acf-collapsibles">
+                                    <?php while (have_rows('collaspsibles_repeater')):
+                                        the_row(); ?>
+                                        <div class="acf-toggle-item">
+                                            <h3 class="toggle-header font-16"><?php echo esc_html(get_sub_field('title')); ?></h3>
+                                            <div class="toggle-content">
+                                                <div class="pt-3 pb-4">
+                                                    <?php echo get_sub_field('content'); ?>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                <?php endwhile; ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
+                                    <?php endwhile; ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
 
