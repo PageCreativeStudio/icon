@@ -589,3 +589,11 @@ document.getElementById('mobile-service-select').addEventListener('change', func
 
 
 //// Woocommerce
+jQuery(document).on('change', '.print-area-checkbox', function () {
+    var $printArea = jQuery(this).closest('.print-area');
+    if (jQuery(this).is(':checked')) {
+        $printArea.addClass('active');
+    } else {
+        $printArea.removeClass('active');
+    }
+});
