@@ -65,14 +65,47 @@ jQuery(document).ready(function ($) {
 
 });
 
-jQuery(document).on('click', '.quickquote', function () {
-    const $btn = jQuery(this);
-    jQuery('#drawer-product-title').text($btn.data('title'));
-    jQuery('#drawer-product-sku').text($btn.data('sku'));
-    jQuery('#drawer-product-price').text($btn.data('price'));
-    jQuery('#quickquoteDrawer').addClass('active');
-});
+jQuery(document).ready(function ($) {
+    $(document).on('click', '.quickquote', function () {
+        const $btn = $(this);
 
-jQuery(document).on('click', '.closedrawer', function () {
-    jQuery('#quickquoteDrawer').removeClass('active');
+        // Extract data attributes
+        const title = $btn.data('title');
+        const sku = $btn.data('sku');
+        const price = $btn.data('price');
+        const productId = $btn.data('product-id');
+
+        // Fill in content
+        $('#drawer-product-title').text(title);
+        $('#drawer-product-sku').text(sku);
+        $('#drawer-product-name').text(title); // H1 inside drawer
+        $('#drawer-product-price').text(price);
+
+        // Open drawer
+        $('#quickquoteDrawer').addClass('active');
+
+        // Show loading text
+        $('.custom-fields-wrapper').html('<p>Loading custom options…</p>');
+
+        // Load custom fields via AJAX
+        $.ajax({
+            type: 'POST',
+            url: ajaxurl,
+            data: {
+                action: 'load_custom_fields',
+                product_id: productId
+            },
+            success: function (response) {
+                $('.custom-fields-wrapper').html(response);
+            },
+            error: function () {
+                $('.custom-fields-wrapper').html('<p>Failed to load options.</p>');
+            }
+        });
+    });
+
+    // Close drawer on click
+    $(document).on('click', '.closedrawer', function () {
+        $('#quickquoteDrawer').removeClass('active');
+    });
 });
