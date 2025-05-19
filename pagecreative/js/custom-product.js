@@ -66,6 +66,22 @@ jQuery(document).ready(function ($) {
 });
 
 jQuery(document).ready(function ($) {
+    function initCustomFields() {
+        // Put here all JS initialization needed for the shortcode content,
+        // e.g., re-bind buttons, plugins, event handlers inside .custom-fields-wrapper
+
+        // Example: Rebind click handlers for buttons inside the shortcode
+        $('.custom-fields-wrapper .your-button-class').off('click').on('click', function () {
+            // Your button logic here
+        });
+
+        // Example: Re-initialise plugins if any (e.g., Select2, datepickers)
+        // $('.custom-fields-wrapper select').select2();
+        // $('.custom-fields-wrapper .datepicker').datepicker();
+
+        // Add any other initialisation your shortcode content needs
+    }
+
     $(document).on('click', '.quickquote', function () {
         const $btn = $(this);
 
@@ -97,6 +113,8 @@ jQuery(document).ready(function ($) {
             },
             success: function (response) {
                 $('.custom-fields-wrapper').html(response);
+                // Initialise buttons and other JS inside loaded content
+                initCustomFields();
             },
             error: function () {
                 $('.custom-fields-wrapper').html('<p>Failed to load options.</p>');
@@ -108,4 +126,7 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '.closedrawer', function () {
         $('#quickquoteDrawer').removeClass('active');
     });
+
+    // Optionally initialise on page load if shortcode content is present initially
+    initCustomFields();
 });
