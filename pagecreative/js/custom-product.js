@@ -64,3 +64,15 @@ jQuery(document).ready(function ($) {
     });
 
 });
+
+jQuery(document).on('click', '.quickquote', function () {
+    const $btn = jQuery(this);
+    jQuery('#drawer-product-title').text($btn.data('title'));
+    jQuery('#drawer-product-sku').text($btn.data('sku'));
+    jQuery('#drawer-product-price').text($btn.data('price'));
+    jQuery('#quickquoteDrawer').addClass('active');
+});
+
+jQuery(document).on('click', '.closedrawer', function () {
+    jQuery('#quickquoteDrawer').removeClass('active');
+});
