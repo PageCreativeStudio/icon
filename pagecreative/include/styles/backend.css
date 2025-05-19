@@ -389,13 +389,20 @@
 
 .woocommerce input,
 .woocommerce-Input {
-    border-radius: 0!important;
-    padding: 11px 0px 10px 0px!important;
-    font-size: 15px!important;
-    border: none!important;
-    border-bottom: solid 1px #d1d1d1!important;
+    border-radius: 0 !important;
+    padding: 3px 0px 2px 0px !important;
+    font-size: 23px !important;
+    border: none !important;
+    border-bottom: solid 1px #d1d1d1 !important;
+    color: black !important;
 }
 
+.woocommerce label {
+    margin-bottom: 0;
+    color: #B2B2B2;
+    font-size: 13px;
+    padding-top: 17px;
+}
 
 
 .woocommerce-EditAccountForm {
