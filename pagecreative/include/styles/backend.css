@@ -326,13 +326,13 @@
     transition: all 0.3s ease;
     background-color: black;
     color: #fff;
+    margin-top: 0 !important;
     border-color: black;
 }
 
 .custom-product-fields .upload-buttons .upload-button {
     background-color: #000;
     color: #fff;
-    border: none;
 }
 
 .custom-product-fields .upload-buttons .skip-button {
