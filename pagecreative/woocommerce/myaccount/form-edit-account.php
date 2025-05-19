@@ -26,8 +26,8 @@ do_action('woocommerce_before_edit_account_form');
 ?>
 
 <div class="pb-4">
-	<div class="borderbottom font-18 font-mb-16 mb-lg-3 py-3">
-		<div class="d-flex flex-wrap justify-content-between pb-lg-4">
+	<div class="borderbottom font-18 font-mb-16 mb-lg-4 py-3">
+		<div class="d-flex flex-wrap justify-content-between">
 			<div>
 				<h2 class="text-black font-25 font-mb-20"> Account Settings </h2>
 			</div>
