@@ -465,6 +465,13 @@ ul li.is-active a {
     font-size: 13px;
 }
 
+.Input{
+    background-color: #ffffff;
+    border-radius: 0;
+    border: solid 1px #bbbbbb;
+    box-shadow: none;
+}
+
 @media screen and (min-width:989px) {
     .cart-item-controls {
         position: absolute;
