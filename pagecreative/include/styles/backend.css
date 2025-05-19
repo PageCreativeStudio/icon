@@ -1,21 +1,23 @@
 /* Custom Product Fields for WooCommerce */
-.custom-product-fields{
-    color:black;
+.custom-product-fields {
+    color: black;
 }
 
-.custom-product-fields label{
-    font-size:14px;
+.custom-product-fields label {
+    font-size: 14px;
 }
 
 .custom-product-fields h4 {
     font-size: 15px;
     margin: 23px 0 17px;
 }
+
 .custom-product-fields .color-swatches {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
+
 .custom-product-fields .color-swatch {
     width: 34px;
     height: 34px;
@@ -24,13 +26,16 @@
     position: relative;
     border: solid 1px #e3e3e3;
 }
+
 .custom-product-fields .color-swatch input {
     display: none;
 }
-.custom-product-fields .color-swatch input:checked + .swatch-circle::after {
+
+.custom-product-fields .color-swatch input:checked+.swatch-circle::after {
     content: "✔";
     padding-top: 2px;
-    color: #00C853;;
+    color: #00C853;
+    ;
     font-weight: 300;
     font-size: 16px;
     position: absolute;
@@ -99,8 +104,8 @@
     object-fit: contain;
 }
 
-.text-green{
-    color:#0B985C;
+.text-green {
+    color: #0B985C;
 }
 
 .custom-product-fields .print-area label {
@@ -117,16 +122,16 @@
     margin-left: -10px;
 }
 
-.active__print .print-area{
+.active__print .print-area {
     width: 100%;
-    max-width: 6rem!important;
+    max-width: 6rem !important;
     padding: 7px;
     margin: 0;
     height: 6.5rem;
 }
 
 .custom-product-fields .print-area input[type="checkbox"],
-.active__print .print-area input[type="checkbox"]{
+.active__print .print-area input[type="checkbox"] {
     appearance: none;
     width: 16px;
     height: 16px;
@@ -134,24 +139,23 @@
     border-radius: 3px;
     position: relative;
     cursor: pointer;
-    display:none;
+    display: none;
 }
 
-.custom-product-fields .print-area.active input{
-    display:block;
+.custom-product-fields .print-area.active input {
+    display: block;
 }
 
-.active__print .print-area input{
-    display:block!important;
+.active__print .print-area input {
+    display: block !important;
 }
 
 .print-area.active,
-.active__print .print-area{
+.active__print .print-area {
     border: solid 2px #0b985c;
 }
 
-.custom-product-fields .print-area input[type="checkbox"]:checked
-{
+.custom-product-fields .print-area input[type="checkbox"]:checked {
     position: absolute;
     background-color: #0b985c;
     top: 50%;
@@ -164,7 +168,7 @@
     width: 30px;
 }
 
-.active__print .print-area input[type="checkbox"]{
+.active__print .print-area input[type="checkbox"] {
     position: absolute;
     background-color: #0b985c;
     top: 50%;
@@ -178,7 +182,7 @@
 }
 
 .custom-product-fields .print-area input[type="checkbox"]:checked::after,
-.active__print .print-area input[type="checkbox"]::after{
+.active__print .print-area input[type="checkbox"]::after {
     content: "✔";
     color: #fff;
     font-size: 10px;
@@ -201,7 +205,7 @@
 }*/
 
 .custom-product-fields .print-technique-buttons label {
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 .custom-product-fields .print-technique-buttons input[type="radio"] {
@@ -221,7 +225,7 @@
     transition: all 0.3s ease;
 }
 
-.custom-product-fields .print-technique-buttons input[type="radio"]:checked + span {
+.custom-product-fields .print-technique-buttons input[type="radio"]:checked+span {
     background-color: black;
     color: #fff;
     border-color: black;
@@ -244,9 +248,9 @@
 }
 
 
-.custom-product-fields .technique-options label.active{
-    background:black;
-    color:white;
+.custom-product-fields .technique-options label.active {
+    background: black;
+    color: white;
 }
 
 
@@ -305,6 +309,8 @@
     display: flex;
     gap: 10px;
     margin-top: 27px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .custom-product-fields .upload-buttons button,
@@ -342,11 +348,13 @@
 .custom-product-fields .upload-buttons .skip-button:hover {
     background-color: #f0f0f0;
 }
+
 .woocommerce form .form-row,
-.woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme{
-    display:block;
+.woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme {
+    display: block;
 }
-.woocommerce-account .addresses .title .edit{
+
+.woocommerce-account .addresses .title .edit {
     float: none;
     text-decoration: underline;
     text-underline-offset: 5px;
@@ -355,9 +363,10 @@
     margin-top: 15px;
     font-size: 14px;
 }
+
 .woocommerce-Button,
 .woocommerce-button,
-.checkout-button{
+.checkout-button {
     background-color: black !important;
     border-radius: 0 !important;
     font-weight: 200 !important;
@@ -365,83 +374,96 @@
     padding: 19px 31px 17px 31px !important;
     margin: 14px 0px 5px 0px !important;
 }
-.checkout-button{
+
+.checkout-button {
     width: 100%;
 }
-.cart_totals{
+
+.cart_totals {
     border: 1px solid #E1E1E1;
 }
 
-.woocommerce form .form-row .input-text{
+.woocommerce form .form-row .input-text {
     border-radius: 0;
     padding: 11px 9px 10px 9px;
     font-size: 15px;
 }
-fieldset{
-    padding:0;
+
+fieldset {
+    padding: 0;
 }
-em{
+
+em {
     font-size: 12px;
     margin-top: 5px;
     display: inline-block;
 }
-legend{
-    padding-top:1.5rem;
+
+legend {
+    padding-top: 1.5rem;
 }
+
 .woocommerce form .form-row label {
     font-size: 14px;
     color: black;
     padding: 10px 0 0px 0;
 }
 
-.woocommerce form .form-row-first{
+.woocommerce form .form-row-first {
     width: 50%;
 }
 
-ul li.is-active a{
+ul li.is-active a {
     text-decoration: underline;
     text-underline-offset: 5px;
 }
-.quickquote__opener .print-area{
-    max-width: 23%;  
-}
-.woocommerce p{
-    font-size:14px;
-    color:black;
-    margin-bottom:0;
-}
-.variation span{
-    color:var(--gray);
+
+.quickquote__opener .print-area {
+    max-width: 23%;
 }
 
-.cart-item img{
+.woocommerce p {
+    font-size: 14px;
+    color: black;
+    margin-bottom: 0;
+}
+
+.variation span {
+    color: var(--gray);
+}
+
+.cart-item img {
     background: #f8f9f5;
 }
-.variation-item:last-of-type{
-    border:none;
+
+.variation-item:last-of-type {
+    border: none;
 }
-.form-group .form-control{
+
+.form-group .form-control {
     color: black;
     background-color: transparent;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0;
     height: 45px;
-    font-size: 14px;  
+    font-size: 14px;
 }
 
-.shop_table.shop_table_responsive{
+.shop_table.shop_table_responsive {
     display: none;
 }
-.woocommerce-cart .wc-proceed-to-checkout{
-    padding:0;
-}
-.contentshow p{
-    font-size: 13px;  
+
+.woocommerce-cart .wc-proceed-to-checkout {
+    padding: 0;
 }
 
-@media screen and (min-width:989px){
-    .cart-item-controls{
+.contentshow p {
+    font-size: 13px;
+}
+
+@media screen and (min-width:989px) {
+    .cart-item-controls {
         position: absolute;
         right: -2rem;
         display: grid;
@@ -450,11 +472,13 @@ ul li.is-active a{
         justify-items: right;
         gap: 15px 0;
     }
-    .clicktoshow{
+
+    .clicktoshow {
         width: 10rem;
         margin: 0;
     }
-    .contentshow{
+
+    .contentshow {
         width: 18rem;
         align-content: center;
         margin: 0;
@@ -463,25 +487,29 @@ ul li.is-active a{
 
 }
 
-@media screen and (max-width:989px){
-    .cart-item-controls{
+@media screen and (max-width:989px) {
+    .cart-item-controls {
         position: absolute;
         display: flex;
         gap: 0px 14px;
         bottom: 0;
     }
-    .cart-item .borderbottom{
+
+    .cart-item .borderbottom {
         border-bottom: dotted 1px #cccccc;
     }
-    .print-area{
-        max-width: 29%!important;
+
+    .print-area {
+        max-width: 29% !important;
         margin-bottom: 29px;
     }
-    .custom-product-fields .print-areas{
+
+    .custom-product-fields .print-areas {
         gap: 11px;
     }
-    .cart-item img{
+
+    .cart-item img {
         max-width: 10rem;
-        margin-bottom: 1rem; 
+        margin-bottom: 1rem;
     }
 }
