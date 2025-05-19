@@ -108,10 +108,10 @@ do_action('woocommerce_before_edit_account_form');
 			do_action('woocommerce_edit_account_form');
 			?>
 
-			<p>
+			<p class="pt-3">
 				<?php wp_nonce_field('save_account_details', 'save-account-details-nonce'); ?>
 				<button type="submit"
-					class="woocommerce-Button mt-5 d-inline-block button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"
+					class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"
 					name="save_account_details"
 					value="<?php esc_attr_e('Save changes', 'woocommerce'); ?>"><?php esc_html_e('Save changes', 'woocommerce'); ?></button>
 				<input type="hidden" name="action" value="save_account_details" />
