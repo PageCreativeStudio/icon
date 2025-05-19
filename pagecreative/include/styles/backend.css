@@ -387,7 +387,7 @@
     border: 1px solid #E1E1E1;
 }
 
-.woocommerce form .form-row .input-text {
+.woocommerce input {
     border-radius: 0;
     padding: 11px 0px 10px 0px;
     font-size: 15px;
