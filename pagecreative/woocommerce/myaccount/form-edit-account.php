@@ -32,7 +32,7 @@ do_action('woocommerce_before_edit_account_form');
 				<h2 class="text-black font-25 font-mb-20"> Account Settings </h2>
 			</div>
 			<div class="d-none d-lg-block">
-				<p class="font-16 mb-0">Need Help? 0207 183 8431 </p>
+				<p class="font-16 mb-0"><span class="font-17">Need Help?</span> 0207 183 8431 </p>
 				<a href="mailto:sales@iconprinting.com" class="font-15 mb-0">sales@iconprinting.com</a>
 			</div>
 		</div>
