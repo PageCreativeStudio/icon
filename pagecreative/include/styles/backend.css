@@ -465,11 +465,11 @@ ul li.is-active a {
     font-size: 13px;
 }
 
-.Input{
-    background-color: #ffffff;
-    border-radius: 0;
-    border: solid 1px #bbbbbb;
-    box-shadow: none;
+.Input, .p-FauxInput{
+    background-color: #ffffff!important;
+    border-radius: 0!important;
+    border: solid 1px #bbbbbb!important;
+    box-shadow: none!important;
 }
 
 @media screen and (min-width:989px) {
