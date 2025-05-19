@@ -1,13 +1,13 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     // Show/hide technique sections based on print area checkboxes
-    $('.print-area-checkbox').on('change', function() {
+    $('.print-area-checkbox').on('change', function () {
         var areaKey = $(this).data('area');
         var techniqueSection = $('#technique_' + areaKey);
         if ($(this).is(':checked')) {
             techniqueSection.show();
         } else {
             techniqueSection.hide();
-              // Clear selected print technique
+            // Clear selected print technique
             $('input[name="print_techniques[' + areaKey + ']"]', techniqueSection).prop('checked', false);
             // Clear selected technique options for all techniques in this section
             $('.technique-options input[type="radio"]', techniqueSection).prop('checked', false);
@@ -16,19 +16,20 @@ jQuery(document).ready(function($) {
         }
     });
 
+    // Toggle .active class on .print-area when checkbox is changed
     $('.print-area-checkbox').on('change', function () {
-        var parentPrintArea = $(this).closest('.print-area');
-
+        var $printArea = $(this).closest('.print-area');
         if ($(this).is(':checked')) {
-            $('.print-area').removeClass('active'); // Remove from all
-            parentPrintArea.addClass('active');     // Add to clicked one
+            $printArea.addClass('active');
         } else {
-            parentPrintArea.removeClass('active');  // Remove if unchecked
+            $printArea.removeClass('active');
         }
     });
 
+
+
     // Show/hide technique options based on selected technique
-    $('.print-technique').on('change', function() {
+    $('.print-technique').on('change', function () {
         var areaKey = $(this).closest('.print-technique-section').attr('id').replace('technique_', '');
         var techniqueKey = $(this).val().toLowerCase().replace(/\s+/g, '');
         $('.technique-options', '#technique_' + areaKey).hide();
@@ -36,11 +37,11 @@ jQuery(document).ready(function($) {
     });
 
     // Trigger change events on page load to ensure correct visibility
-  //  $('.print-area-checkbox').trigger('change');
-  //  $('.print-technique').trigger('change');
+    //  $('.print-area-checkbox').trigger('change');
+    //  $('.print-technique').trigger('change');
 
     // Show upload button when a print area is selected
-    $('.print-area-checkbox').on('change', function() {
+    $('.print-area-checkbox').on('change', function () {
         if ($('.print-area-checkbox:checked').length > 0) {
             $('.upload-button').show();
         } else {
@@ -50,7 +51,7 @@ jQuery(document).ready(function($) {
     });
 
     // Trigger file input click when upload button is clicked
-    $('.upload-button').on('click', function() {
+    $('.upload-button').on('click', function () {
         $('#logo-upload').click();
     });
 
