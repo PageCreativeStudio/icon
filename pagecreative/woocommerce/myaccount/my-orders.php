@@ -160,7 +160,7 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 											echo '<p>' . esc_html__('No quote details available.', 'woocommerce') . '</p>';
 										endif;
 									else:
-										echo '<p>' . .download-details('No quote details available.', 'woocommerce') . '</p>';
+										echo '<p>' . esc_html__('No quote details available.', 'woocommerce') . '</p>';
 									endif;
 									?>
 								</div>
