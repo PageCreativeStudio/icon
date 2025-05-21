@@ -53,13 +53,15 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 			?>
 			<div class="woocommerce-order-card">
 				<div class="order-header">
-					Payment Status: <span class="payment-status <?php echo esc_attr($payment_status === 'PAID' ? 'paid' : 'pending'); ?>">
+					Payment Status: <span
+						class="payment-status text-ter <?php echo esc_attr($payment_status === 'PAID' ? 'paid' : 'pending'); ?>">
 						<?php echo esc_html($payment_status); ?>
-					</span> | 
-					<span>Order no: <?php echo esc_html($order_id); ?></span> | 
-					<span>Shipping Status: <?php echo esc_html($shipping_status); ?></span> | 
-					<span>Tracking Number: <a href="https://example.com/track?number=<?php echo esc_attr($tracking); ?>"
-							target="_blank"><?php echo esc_html($tracking); ?></a></span>
+					</span> |
+					<span>Order no: <span class="text-ter"><?php echo esc_html($order_id); ?></span></span> |
+					<span>Shipping Status: <span class="text-ter"><?php echo esc_html($shipping_status); ?></span></span> |
+					<span>Tracking Number: <span class="text-ter"><a
+								href="https://example.com/track?number=<?php echo esc_attr($tracking); ?>"
+								target="_blank"><?php echo esc_html($tracking); ?></a></span></span>
 				</div>
 				<div class="order-content">
 					<?php foreach ($items as $item_id => $item):
@@ -199,35 +201,22 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 		}
 
 		.woocommerce-order-card {
-			border: 1px solid #ddd;
-			border-radius: 5px;
-			padding: 15px;
-			background: #fff;
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			border: 1px solid #E1E1E1;
+			border-radius: 10px;
+			padding: 0;
 		}
 
 		.order-header {
 			display: flex;
 			gap: 15px;
 			flex-wrap: wrap;
-			background: #2c2c2c;
+			background: #333333;
 			color: #fff;
-			padding: 10px;
-			border-radius: 5px 5px 0 0;
-			margin: -15px -15px 15px -15px;
-		}
-
-		.payment-status {
-			padding: 5px 10px;
-			border-radius: 3px;
-		}
-
-		.payment-status.paid {
-			color: var(--ter);
-		}
-
-		.payment-status.pending {
-			color: #ff9800;
+			padding: 16px 14px 14px;
+			border-radius: 10px 10px 0 0;
+			align-items: center;
+			font-size: 14px;
+			letter-spacing: 0.2px;
 		}
 
 		.order-content {

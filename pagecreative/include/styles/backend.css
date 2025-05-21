@@ -513,6 +513,9 @@ ul li.is-active a {
     right: 0;
 }
 
+.text-ter{
+    color: var(--ter);
+}
 @media screen and (min-width:989px) {
     .cart-item-controls {
         position: absolute;
