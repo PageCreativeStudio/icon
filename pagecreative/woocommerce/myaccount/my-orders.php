@@ -18,7 +18,7 @@ $has_orders = $args['has_orders'];
 
 do_action('woocommerce_before_account_orders', $has_orders); ?>
 
-<div class="container-fluid mx-auto max-100 px-0 text-left pt-0 pt-lg-0 pb-5 pb-lg-0">
+<div class="container-fluid mx-auto max-100 px-0 text-left pt-0 pt-lg-0 pb-5 pb-lg-5">
 	<div class="borderbottom font-18 font-mb-16 mb-lg-0 py-3">
 		<div class="d-flex flex-wrap justify-content-between">
 			<div>
