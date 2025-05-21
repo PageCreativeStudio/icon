@@ -54,6 +54,7 @@ if ($has_orders): ?>
                                 <span id="select-all-orders"></span>
 
                                 <input type="checkbox" name="selected_orders[]"
+                                    data-total="<?php echo esc_attr($order->get_total()); ?>"
                                     value="<?php echo esc_attr($order->get_id()); ?>" class="order-checkbox" />
                                 <label class="text-white mb-0">Add item for payment</label>
                             </div>
@@ -96,7 +97,7 @@ if ($has_orders): ?>
                                     <div class="col-12 col-lg-6 quote-details borderbottom px-0 pb-3 pb-lg-5">
                                         <span
                                             class="font-22 font-mb-20 text-black pt-3 pb-2"><?php echo esc_html($item->get_name()); ?></span>
-                                        <p class="font-15 pt-1 text-black borderbottom pb-2"><span class="font-16">Product Details:</span></p>
+                                        <p class="font-15 pt-1 text-black borderbottom pb-2">Product Details:</p>
 
                                         <?php
                                         if ($quote_data && is_array($quote_data)) {
@@ -244,63 +245,29 @@ if ($has_orders): ?>
                 <?php endif; ?>
             </div>
             <div class="col-12 col-lg-4 order-1 order-lg-2 pb-4 pt-lg-5">
-                <div class="actions stickytop cart_totals bg-lightgray br-10 px-3 px-lg-5 py-4 py-lg-5 mt-lg-4">
+                <div
+                    class="overview-sidebar actions stickytop cart_totals bg-lightgray br-10 px-3 px-lg-5 py-4 py-lg-5 mt-lg-4">
                     <h2 class="font-25 font-mb-22">Overview</h2>
-                    <?php
-                    // Initialise totals
-                    $selected_orders_total = 0;
-                    $selected_orders_shipping = 0;
-                    $selected_orders_vat = 0;
-                
-                    if (!empty($customer_orders)) {
-                        foreach ($customer_orders as $order) {
-                            // Only count if order is pending payment
-                            if ($order->has_status('pending')) {
-                                $selected_orders_total += (float) $order->get_subtotal();
-                                $selected_orders_shipping += (float) $order->get_shipping_total();
-                                $selected_orders_vat += (float) $order->get_total_tax();
-                            }
-                        }
-                    }
-                
-                    $grand_total = $selected_orders_total + $selected_orders_shipping + $selected_orders_vat;
-                    ?>
-                
-                    <?php if ($grand_total > 0): ?>
-                        <div class="quote-totals font-15 text-black mb-3">
-                
-                            <div class="d-flex flex-wrap justify-content-between pb-2">
-                                <span class="text-black font-15 mb-0">Total (Items):</span>
-                                <span class="text-black font-15 mb-0" id="total-subtotal"><?php echo wc_price($selected_orders_total); ?></span>
-                            </div>
-                
-                            <div class="d-flex flex-wrap justify-content-between pb-2">
-                                <span class="text-black font-15 mb-0">Delivery:</span>
-                                <span class="text-black font-15 mb-0" id="total-shipping"><?php echo wc_price($selected_orders_shipping); ?></span>
-                            </div>
-                
-                            <div class="d-flex flex-wrap justify-content-between pb-2">
-                                <span class="text-black font-15 mb-0">VAT:</span>
-                                <span class="text-black font-15 mb-0" id="total-vat"><?php echo wc_price($selected_orders_vat); ?></span>
-                            </div>
-                
-                            <div class="d-flex flex-wrap justify-content-between pb-2 border-top pt-2">
-                                <span class="text-black font-16 mb-0">Grand Total:</span>
-                                <span class="text-black font-16 mb-0" id="grand-total"><?php echo wc_price($grand_total); ?></span>
-                            </div>
-                
-                        </div>
-                    <?php else: ?>
-                        <div class="text-muted mb-3">No pending payments found.</div>
-                    <?php endif; ?>
-                
+
+                    <p><strong>Total products cost</strong> <span id="overview-items"><?php echo wc_price(0); ?></span></p>
+                    <p><strong>Artwork check</strong> <span id="overview-artwork"><?php echo wc_price(0); ?></span></p>
+                    <p><strong>Delivery option (14 days)</strong> <span
+                            id="overview-delivery"><?php echo wc_price(0); ?></span></p>
+                    <p><strong>Subtotal</strong> <span id="overview-subtotal"><?php echo wc_price(0); ?></span></p>
+                    <p><strong>VAT</strong> <span id="overview-vat"><?php echo wc_price(0); ?></span></p>
+                    <p><strong>Grand Total</strong> <span id="overview-grand-total"><?php echo wc_price(0); ?></span></p>
+                    <p>Have a coupon? <a href="#">Click here to enter your code</a></p>
+                    <input type="text" class="coupon-input" placeholder="Enter coupon here">
+                    <input type="hidden" id="selected-order-ids" name="selected_orders[]">
+
                     <div class="text-end">
-                        <button type="submit" class="button w-100 text-center" name="pay_selected_orders" id="pay-selected-orders" <?php echo $grand_total > 0 ? '' : 'disabled'; ?>>
+                        <button type="submit" class="button w-100 text-center" name="pay_selected_orders"
+                            id="pay-selected-orders" <?php echo $grand_total > 0 ? '' : 'disabled'; ?>>
                             <?php esc_html_e('Pay Now', 'woocommerce'); ?>
                         </button>
                     </div>
                 </div>
-        </div>
+            </div>
     </form>
 
 <?php else: ?>
