@@ -24,7 +24,7 @@ do_action( 'woocommerce_before_account_navigation' );
 
 <div class="container-fluid mx-auto max-100 px-2 px-md-4 mx-auto text-left pb-5 pt-3 pt-lg-4" aria-label="<?php esc_html_e( 'Account pages', 'woocommerce' ); ?>">
     <div class="bordertop borderbottom font-18 font-mb-16 mb-lg-3 py-3">
-        <ul class="d-flex flex-wrap">
+        <ul class="accountnavigation d-flex flex-wrap">
     		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
     			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?> pl-2 pr-2">
     				<a class="pr-2" href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>" <?php echo wc_is_current_account_menu_item( $endpoint ) ? 'aria-current="page"' : ''; ?>>
