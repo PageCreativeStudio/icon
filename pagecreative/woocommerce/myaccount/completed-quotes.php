@@ -96,7 +96,7 @@ if ($has_orders): ?>
                                     <div class="col-12 col-lg-6 quote-details borderbottom px-0 pb-3 pb-lg-5">
                                         <span
                                             class="font-22 font-mb-20 text-black pt-3 pb-2"><?php echo esc_html($item->get_name()); ?></span>
-                                        <p class="font-15 pt-1 text-black borderbottom pb-2">Product Details:</p>
+                                        <p class="font-15 pt-1 text-black borderbottom pb-2"><span class="font-16">Product Details:</span></p>
 
                                         <?php
                                         if ($quote_data && is_array($quote_data)) {
