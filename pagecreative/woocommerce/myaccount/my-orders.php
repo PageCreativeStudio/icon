@@ -53,8 +53,8 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 			?>
 			<div class="woocommerce-order-card">
 				<div class="order-header">
-					<span class="payment-status <?php echo esc_attr($payment_status === 'PAID' ? 'paid' : 'pending'); ?>">
-						Payment Status: <?php echo esc_html($payment_status); ?>
+					Payment Status: <span class="payment-status <?php echo esc_attr($payment_status === 'PAID' ? 'paid' : 'pending'); ?>">
+						<?php echo esc_html($payment_status); ?>
 					</span> | 
 					<span>Order no: <?php echo esc_html($order_id); ?></span> | 
 					<span>Shipping Status: <?php echo esc_html($shipping_status); ?></span> | 
