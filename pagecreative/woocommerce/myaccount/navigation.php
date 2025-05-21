@@ -25,7 +25,7 @@ do_action('woocommerce_before_account_navigation');
 <div class="container-fluid mx-auto max-100 px-2 px-md-4 mx-auto text-left pb-5 pt-3 pt-lg-4"
 	aria-label="<?php esc_html_e('Account pages', 'woocommerce'); ?>">
 	<div class="bordertop borderbottom font-18 font-mb-16 mb-lg-3 pt-3 pb-1">
-		<ul class="accountnavigation d-grid d-md-flex flex-wrap pr-md-4">
+		<ul class="accountnavigation d-grid d-md-flex flex-wrap pr-md-5 mr-md-4">
 			<?php foreach (wc_get_account_menu_items() as $endpoint => $label): ?>
 				<?php if ('customer-logout' === $endpoint): ?>
 					<li class="<?php echo wc_get_account_menu_item_classes($endpoint); ?> pl-2 pr-2 custom-logout">
