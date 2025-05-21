@@ -53,8 +53,7 @@ if ($has_orders): ?>
                             <div class="order__checkbox">
                                 <span id="select-all-orders"></span>
 
-                                <input type="checkbox" name="selected_orders[]"
-                                    data-total="<?php echo esc_attr($order->get_total()); ?>"
+                                <input type="checkbox" name="selected_orders[]" data-total="<?php echo esc_attr($order->get_total()); ?>"
                                     value="<?php echo esc_attr($order->get_id()); ?>" class="order-checkbox" />
                                 <label class="text-white mb-0">Add item for payment</label>
                             </div>
@@ -245,29 +244,26 @@ if ($has_orders): ?>
                 <?php endif; ?>
             </div>
             <div class="col-12 col-lg-4 order-1 order-lg-2 pb-4 pt-lg-5">
-                <div
-                    class="overview-sidebar actions stickytop cart_totals bg-lightgray br-10 px-3 px-lg-5 py-4 py-lg-5 mt-lg-4">
+                <div class="overview-sidebar actions stickytop cart_totals bg-lightgray br-10 px-3 px-lg-5 py-4 py-lg-5 mt-lg-4">
                     <h2 class="font-25 font-mb-22">Overview</h2>
+                   
+                <p><strong>Total products cost</strong> <span id="overview-items"><?php echo wc_price(0); ?></span></p>
+                <p><strong>Artwork check</strong> <span id="overview-artwork"><?php echo wc_price(0); ?></span></p>
+                <p><strong>Delivery option (14 days)</strong> <span id="overview-delivery"><?php echo wc_price(0); ?></span></p>
+                <p><strong>Subtotal</strong> <span id="overview-subtotal"><?php echo wc_price(0); ?></span></p>
+                <p><strong>VAT</strong> <span id="overview-vat"><?php echo wc_price(0); ?></span></p>
+                <p><strong>Grand Total</strong> <span id="overview-grand-total"><?php echo wc_price(0); ?></span></p>
+                <p>Have a coupon? <a href="#">Click here to enter your code</a></p>
+                <input type="text" class="coupon-input" placeholder="Enter coupon here">
+                <input type="hidden" id="selected-order-ids" name="selected_orders[]">
 
-                    <p><strong>Total products cost</strong> <span id="overview-items"><?php echo wc_price(0); ?></span></p>
-                    <p><strong>Artwork check</strong> <span id="overview-artwork"><?php echo wc_price(0); ?></span></p>
-                    <p><strong>Delivery option (14 days)</strong> <span
-                            id="overview-delivery"><?php echo wc_price(0); ?></span></p>
-                    <p><strong>Subtotal</strong> <span id="overview-subtotal"><?php echo wc_price(0); ?></span></p>
-                    <p><strong>VAT</strong> <span id="overview-vat"><?php echo wc_price(0); ?></span></p>
-                    <p><strong>Grand Total</strong> <span id="overview-grand-total"><?php echo wc_price(0); ?></span></p>
-                    <p>Have a coupon? <a href="#">Click here to enter your code</a></p>
-                    <input type="text" class="coupon-input" placeholder="Enter coupon here">
-                    <input type="hidden" id="selected-order-ids" name="selected_orders[]">
-
-                    <div class="text-end">
-                        <button type="submit" class="button w-100 text-center" name="pay_selected_orders"
-                            id="pay-selected-orders" <?php echo $grand_total > 0 ? '' : 'disabled'; ?>>
+                  <div class="text-end">
+                        <button type="submit" class="button w-100 text-center" name="pay_selected_orders" id="pay-selected-orders" <?php echo $grand_total > 0 ? '' : 'disabled'; ?>>
                             <?php esc_html_e('Pay Now', 'woocommerce'); ?>
                         </button>
                     </div>
                 </div>
-            </div>
+        </div>
     </form>
 
 <?php else: ?>

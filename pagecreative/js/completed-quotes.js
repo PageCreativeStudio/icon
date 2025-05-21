@@ -1,45 +1,62 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const selectAllCheckbox = document.getElementById('select-all-orders');
+document.addEventListener('DOMContentLoaded', function () {
     const orderCheckboxes = document.querySelectorAll('.order-checkbox');
-    const payButton = document.getElementById('pay-selected-orders');
+    const proceedPaymentButton = document.getElementById('pay-selected-orders');
+    const overviewItems = document.getElementById('overview-items');
+    const overviewDelivery = document.getElementById('overview-delivery');
+    const overviewVat = document.getElementById('overview-vat');
+    const overviewGrandTotal = document.getElementById('overview-grand-total');
+    const overviewArtwork = document.getElementById('overview-artwork');
+    const overviewSubtotal = document.getElementById('overview-subtotal');
+    const selectedOrderIdsInput = document.getElementById('selected-order-ids');
 
-    // Check if required elements exist
-    if (!selectAllCheckbox || !orderCheckboxes.length || !payButton) {
-        console.log('Completed Quotes script: Required elements not found.');
-        return;
+    // Function to format number as currency
+    function formatCurrency(amount) {
+        return '£' + parseFloat(amount).toFixed(2);
     }
 
-    console.log('Completed Quotes script loaded successfully.');
+    // Function to calculate and update totals
+    function updateTotals() {
+        let totalItems = 0;
+        let totalDelivery = 0;
+        let totalVat = 0;
 
-    // Enable/disable Pay Now button based on selection
-    function updatePayButton() {
-        const atLeastOneSelected = Array.from(orderCheckboxes).some(checkbox => checkbox.checked);
-        payButton.disabled = !atLeastOneSelected;
-    }
-
-    // Select All checkbox functionality
-    selectAllCheckbox.addEventListener('change', function() {
         orderCheckboxes.forEach(checkbox => {
-            checkbox.checked = selectAllCheckbox.checked;
+            if (checkbox.checked) {
+                totalItems += parseFloat(checkbox.dataset.total || 0);
+                totalDelivery += parseFloat(checkbox.dataset.shipping || 0);
+                totalVat += parseFloat(checkbox.dataset.tax || 0);
+            }
         });
-        updatePayButton();
-    });
 
-    // Individual checkbox change
+        const grandTotal = totalItems + totalDelivery + totalVat;
+
+        overviewItems.textContent = formatCurrency(totalItems);
+        overviewDelivery.textContent = formatCurrency(totalDelivery);
+        overviewVat.textContent = formatCurrency(totalVat);
+        overviewGrandTotal.textContent = formatCurrency(grandTotal);
+        overviewArtwork.textContent = formatCurrency(0); // Static for now
+        overviewSubtotal.textContent = formatCurrency(totalItems);
+
+        // Enable/disable Proceed To Payment button based on selection
+        proceedPaymentButton.disabled = !Array.from(orderCheckboxes).some(checkbox => checkbox.checked);
+    }
+
+    // Handle individual checkbox changes
     orderCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            // Uncheck "Select All" if any individual checkbox is deselected
-            if (!this.checked) {
-                selectAllCheckbox.checked = false;
-            }
-            // Check "Select All" if all individual checkboxes are selected
-            if (Array.from(orderCheckboxes).every(checkbox => checkbox.checked)) {
-                selectAllCheckbox.checked = true;
-            }
-            updatePayButton();
+        checkbox.addEventListener('change', () => {
+            updateTotals();
         });
     });
 
-    // Initial state
-    updatePayButton();
+    // Handle Proceed To Payment button click
+    proceedPaymentButton.addEventListener('click', function (e) {
+        const selectedOrders = Array.from(orderCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.dataset.orderId);
+        selectedOrderIdsInput.value = selectedOrders.join(',');
+        this.form.submit();
+    });
+
+    // Initialize totals on page load
+    updateTotals();
 });
