@@ -54,10 +54,10 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 			<div class="woocommerce-order-card">
 				<div class="order-header">
 					<span class="payment-status <?php echo esc_attr($payment_status === 'PAID' ? 'paid' : 'pending'); ?>">
-						<?php echo esc_html($payment_status); ?>
-					</span>
-					<span>Order no: <?php echo esc_html($order_id); ?></span>
-					<span>Shipping Status: <?php echo esc_html($shipping_status); ?></span>
+						Payment Status: <?php echo esc_html($payment_status); ?>
+					</span> | 
+					<span>Order no: <?php echo esc_html($order_id); ?></span> | 
+					<span>Shipping Status: <?php echo esc_html($shipping_status); ?></span> | 
 					<span>Tracking Number: <a href="https://example.com/track?number=<?php echo esc_attr($tracking); ?>"
 							target="_blank"><?php echo esc_html($tracking); ?></a></span>
 				</div>
@@ -80,10 +80,7 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 						?>
 
 
-
-
 						<div class="order-item">
-
 							<div class="col-12 col-md-2 product-thumbnail align-self-start">
 								<?php
 								echo $product_permalink
@@ -226,13 +223,11 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 		}
 
 		.payment-status.paid {
-			background: #ffeb3b;
-			color: #000;
+			color: var(--ter);
 		}
 
 		.payment-status.pending {
-			background: #ff9800;
-			color: #fff;
+			color: #ff9800;
 		}
 
 		.order-content {
