@@ -167,7 +167,7 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 							</div>
 						</div>
 					<?php endforeach; ?>
-					<div class="order-total">
+					<div class="order-total py-4 px-3 px-lg-4">
 						<span>Total <?php echo wp_kses_post($total); ?></span>
 						<a href="<?php echo esc_url($order->get_view_order_url()); ?>" class="download-details">Download Order
 							Details</a>
