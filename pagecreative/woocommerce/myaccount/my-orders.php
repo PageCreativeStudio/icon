@@ -160,7 +160,7 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 											echo '<p>' . esc_html__('No quote details available.', 'woocommerce') . '</p>';
 										endif;
 									else:
-										echo '<p>' . esc_html__('No quote details available.', 'woocommerce') . '</p>';
+										echo '<p>' . .download-details('No quote details available.', 'woocommerce') . '</p>';
 									endif;
 									?>
 								</div>
@@ -262,16 +262,6 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 			text-align: right;
 		}
 
-		.download-details {
-			display: block;
-			margin-top: 5px;
-			color: #0073aa;
-			text-decoration: none;
-		}
-
-		.download-details:hover {
-			text-decoration: underline;
-		}
 	</style>
 
 <?php else: ?>
