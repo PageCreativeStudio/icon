@@ -1,4 +1,5 @@
 jQuery(document).ready(function ($) {
+    var x=123;
     // Show/hide technique sections based on print area checkboxes
     $(document).on('change', '.print-area-checkbox', function () {
         var areaKey = $(this).data('area');
@@ -60,11 +61,8 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '.upload-button', function () {
         $('#logo-upload').click();
     });
-});
 
-
-jQuery(document).ready(function ($) {
-    $(document).on('click', '.quickquote', function () {
+      $(document).on('click', '.quickquote', function () {
         const $btn = $(this);
         const title = $btn.data('title');
         const sku = $btn.data('sku');
@@ -97,4 +95,7 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '.closedrawer', function () {
         $('#quickquoteDrawer').removeClass('active');
     });
+
 });
+
+

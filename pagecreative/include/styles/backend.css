@@ -387,7 +387,7 @@
     border: 1px solid #E1E1E1;
 }
 
-.woocommerce input,
+.woocommerce .edit-account input,
 .woocommerce-Input {
     border-radius: 0 !important;
     padding: 10px 0px 9px 0px !important;
@@ -397,14 +397,14 @@
     color: black !important;
 }
 
-.woocommerce label {
+.woocommerce .edit-account label {
     margin-bottom: 0;
     color: #B2B2B2 !important;
     font-size: 13px !important;
     padding-top: 17px !important;
 }
 
-.woocommerce-Input::placeholder {
+.edit-account .woocommerce-Input::placeholder {
     color: #B2B2B2 !important;
     font-size: 21px !important;
 }
@@ -456,7 +456,8 @@ ul li.is-active a {
     color: var(--gray);
 }
 
-.cart-item img {
+.cart-item img,
+.woocommerce-orders-table img{
     background: #f8f9f5;
 }
 
@@ -485,6 +486,25 @@ ul li.is-active a {
 .contentshow p {
     font-size: 13px;
 }
+.borderaround{
+    border:solid 1px #CCCCCC;
+}
+.woocommerce-orders-table {
+    position:relative;
+}
+.woocommerce-orders-table .order__checkbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    font-size: 15px;
+    padding: 9px 18px 8px 18px;
+    border-radius: 10px 0 10px;
+}
+.quote-data-list.d-flex{
+    gap: 5px 0;
+    padding-top: 5px !important;
+}
 
 @media screen and (min-width:989px) {
     .cart-item-controls {
@@ -508,16 +528,24 @@ ul li.is-active a {
         margin: 0;
         padding: 8px 0px;
     }
-
+    .woocommerce-orders-table img{
+        width: 100%;
+        max-width: 10rem;
+        max-height: 10rem;
+        object-fit: contain;
+    }
 }
 
 @media screen and (max-width:989px) {
+    .totalprice{
+        
+    }
 
-    .woocommerce input,
-    .woocommerce-Input {
+    .woocommerce .edit-account input,
+    .edit-account .woocommerce-Input {
         font-size: 17px !important;
     }
-    .woocommerce-Input::placeholder {
+    .edit-account .woocommerce-Input::placeholder {
         font-size: 17px !important;
     }
 
@@ -542,7 +570,8 @@ ul li.is-active a {
         gap: 11px;
     }
 
-    .cart-item img {
+    .cart-item img,
+    .woocommerce-orders-table img{
         max-width: 10rem;
         margin-bottom: 1rem;
     }

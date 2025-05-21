@@ -1,95 +1,260 @@
 <?php
 /**
- * My Orders - Deprecated
+ * Orders
  *
- * @deprecated 2.6.0 this template file is no longer used. My Account shortcode uses orders.php.
+ * Shows orders on the 'my-orders' endpoint with a custom card layout for Processing and Completed orders, including quote_data.
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/orders.php.
+ *
+ * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
+ * @version 9.5.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
-$my_orders_columns = apply_filters(
-	'woocommerce_my_account_my_orders_columns',
-	array(
-		'order-number'  => esc_html__( 'Order', 'woocommerce' ),
-		'order-date'    => esc_html__( 'Date', 'woocommerce' ),
-		'order-status'  => esc_html__( 'Status', 'woocommerce' ),
-		'order-total'   => esc_html__( 'Total', 'woocommerce' ),
-		'order-actions' => '&nbsp;',
-	)
-);
+$customer_orders = $args['customer_orders'];
+$has_orders = $args['has_orders'];
 
-$customer_orders = get_posts(
-	apply_filters(
-		'woocommerce_my_account_my_orders_query',
-		array(
-			'numberposts' => $order_count,
-			'meta_key'    => '_customer_user',
-			'meta_value'  => get_current_user_id(),
-			'post_type'   => wc_get_order_types( 'view-orders' ),
-			'post_status' => array_keys( wc_get_order_statuses() ),
-		)
-	)
-);
+do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
-if ( $customer_orders ) : ?>
 
-	<h2><?php echo apply_filters( 'woocommerce_my_account_my_orders_title', esc_html__( 'Recent orders', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
+<?php if ( $has_orders ) : ?>
 
-	<table class="shop_table shop_table_responsive my_account_orders">
+	<h2><?php esc_html_e( 'My Orders', 'woocommerce' ); ?> (<?php echo esc_html( count( $customer_orders ) ); ?> items)</h2>
 
-		<thead>
-			<tr>
-				<?php foreach ( $my_orders_columns as $column_id => $column_name ) : ?>
-					<th class="<?php echo esc_attr( $column_id ); ?>"><span class="nobr"><?php echo esc_html( $column_name ); ?></span></th>
-				<?php endforeach; ?>
-			</tr>
-		</thead>
+	<div class="woocommerce-orders-cards">
+		<?php
+		foreach ( $customer_orders as $customer_order ) {
+			$order      = wc_get_order( $customer_order ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+			$order_id   = $order->get_order_number();
+			$status     = $order->get_status();
+			$total      = $order->get_formatted_order_total();
+			$tracking   = get_post_meta( $order->get_id(), 'tracking_number', true ) ?: 'N/A';
+			$payment_status = $order->get_payment_method_title() ? 'PAID' : 'PENDING';
+			$shipping_status = $status === 'completed' ? 'Shipped' : 'Processing';
+			$items      = $order->get_items();
+			?>
+			<div class="woocommerce-order-card">
+				<div class="order-header">
+					<span class="payment-status <?php echo esc_attr( $payment_status === 'PAID' ? 'paid' : 'pending' ); ?>">
+						<?php echo esc_html( $payment_status ); ?>
+					</span>
+					<span>Order no: <?php echo esc_html( $order_id ); ?></span>
+					<span>Shipping Status: <?php echo esc_html( $shipping_status ); ?></span>
+					<span>Tracking Number: <a href="https://example.com/track?number=<?php echo esc_attr( $tracking ); ?>" target="_blank"><?php echo esc_html( $tracking ); ?></a></span>
+				</div>
+				<div class="order-content">
+					<?php foreach ( $items as $item_id => $item ) :
+						
+						  if (!is_a($item, 'WC_Order_Item_Product')) {
+                            continue;
+                        }
 
-		<tbody>
-			<?php
-			foreach ( $customer_orders as $customer_order ) :
-				$order      = wc_get_order( $customer_order ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-				$item_count = $order->get_item_count();
-				?>
-				<tr class="order">
-					<?php foreach ( $my_orders_columns as $column_id => $column_name ) : ?>
-						<td class="<?php echo esc_attr( $column_id ); ?>" data-title="<?php echo esc_attr( $column_name ); ?>">
-							<?php if ( has_action( 'woocommerce_my_account_my_orders_column_' . $column_id ) ) : ?>
-								<?php do_action( 'woocommerce_my_account_my_orders_column_' . $column_id, $order ); ?>
+                        $product = $item->get_product();
 
-							<?php elseif ( 'order-number' === $column_id ) : ?>
-								<a href="<?php echo esc_url( $order->get_view_order_url() ); ?>">
-									<?php echo _x( '#', 'hash before order number', 'woocommerce' ) . $order->get_order_number(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-								</a>
+                        if (!$product) {
+                            continue;
+                        }
 
-							<?php elseif ( 'order-date' === $column_id ) : ?>
-								<time datetime="<?php echo esc_attr( $order->get_date_created()->date( 'c' ) ); ?>"><?php echo esc_html( wc_format_datetime( $order->get_date_created() ) ); ?></time>
+                        $thumbnail = $product->get_image();
+                        $product_permalink = get_permalink($product->get_id());
+						$quote_data = get_post_meta($item->get_id(), 'quote_data', true);
+                        ?>
 
-							<?php elseif ( 'order-status' === $column_id ) : ?>
-								<?php echo esc_html( wc_get_order_status_name( $order->get_status() ) ); ?>
+                      
 
-							<?php elseif ( 'order-total' === $column_id ) : ?>
-								<?php
-								/* translators: 1: formatted order total 2: total order items */
-								printf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), $order->get_formatted_order_total(), $item_count ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-								?>
 
-							<?php elseif ( 'order-actions' === $column_id ) : ?>
-								<?php
-								$actions = wc_get_account_orders_actions( $order );
+						<div class="order-item">
+						
+							  <div class="col-12 col-md-2 product-thumbnail align-self-start">
+                            <?php
+                            echo $product_permalink
+                                ? '<a href="' . esc_url($product_permalink) . '">' . $thumbnail . '</a>'
+                                : $thumbnail;
+                            ?>
+                        </div>
+							<div class="order-details">
+								<h3><?php echo esc_html( $item->get_name() ); ?></h3>
+								<p>Product Details: <a href="#" class="toggle-details">show details</a></p>
+								<div class="quote-details" style="display: none;">
+									<?php if ( $quote_data && is_array( $quote_data ) ) :
+										$item_data = [];
+										$colour = $quote_data['colour'] ?? '';
+										$size_quantities = $quote_data['size_quantities'] ?? [];
+										$print_areas = $quote_data['print_areas'] ?? [];
+										$print_techniques = $quote_data['print_techniques'] ?? [];
+										$technique_options = $quote_data['technique_options'] ?? [];
 
-								if ( ! empty( $actions ) ) {
-									foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-										echo '<a href="' . esc_url( $action['url'] ) . '" class="button ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
-									}
-								}
-								?>
-							<?php endif; ?>
-						</td>
+										if ( !empty( $colour ) ) {
+											$item_data[] = [
+												'key' => __( 'Material Colour', 'your-text-domain' ),
+												'value' => esc_html( $colour ),
+											];
+										}
+
+										if ( !empty( $size_quantities ) && is_array( $size_quantities ) ) {
+											$sizes = [];
+											foreach ( $size_quantities as $size => $quantity ) {
+												if ( $quantity > 0 ) {
+													$sizes[] = esc_html( $size . ': ' . $quantity );
+												}
+											}
+											if ( !empty( $sizes ) ) {
+												$item_data[] = [
+													'key' => __( 'Print Quantity', 'your-text-domain' ),
+													'value' => implode( ', ', $sizes ),
+												];
+											}
+										}
+
+										if ( !empty( $print_areas ) && !empty( $print_techniques ) ) {
+											$print_details = [];
+											foreach ( $print_areas as $print_area ) {
+												$print_area_key = strtolower( $print_area );
+												if ( !isset( $print_techniques[$print_area_key] ) ) continue;
+												$print_technique = $print_techniques[$print_area_key];
+												$print_technique_key = strtolower( $print_technique );
+												$current_technique_options = $technique_options[$print_area_key][$print_technique_key] ?? '';
+												$print_details[] = esc_html( "$print_area: $print_technique" . ( $current_technique_options ? " ($current_technique_options)" : '' ) );
+											}
+											if ( !empty( $print_details ) ) {
+												$item_data[] = [
+													'key' => __( 'Print Details', 'woocommerce' ),
+													'value' => implode( ', ', $print_details ),
+												];
+											}
+										}
+
+										if ( !empty( $quote_data['logo_url'] ) ) {
+											$item_data[] = [
+												'key' => __( 'Logo', 'your-text-domain' ),
+												'value' => '<a href="' . esc_url( $quote_data['logo_url'] ) . '" target="_blank">' . __( 'View Logo', 'your-text-domain' ) . '</a>',
+											];
+										}
+
+										if ( !empty( $item_data ) ) :
+											echo '<ul>';
+											foreach ( $item_data as $data ) {
+												echo '<li><strong>' . esc_html( $data['key'] ) . ':</strong> ' . wp_kses_post( $data['value'] ) . '</li>';
+											}
+											echo '</ul>';
+										else :
+											echo '<p>' . esc_html__( 'No quote details available.', 'woocommerce' ) . '</p>';
+										endif;
+									else :
+										echo '<p>' . esc_html__( 'No quote details available.', 'woocommerce' ) . '</p>';
+									endif;
+									?>
+								</div>
+							</div>
+						</div>
 					<?php endforeach; ?>
-				</tr>
-			<?php endforeach; ?>
-		</tbody>
-	</table>
+					<div class="order-total">
+						<span>Total <?php echo wp_kses_post( $total ); ?></span>
+						<a href="<?php echo esc_url( $order->get_view_order_url() ); ?>" class="download-details">Download Order Details</a>
+					</div>
+				</div>
+			</div>
+			<?php
+		}
+		?>
+	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			document.querySelectorAll('.toggle-details').forEach(function(link) {
+				link.addEventListener('click', function(e) {
+					e.preventDefault();
+					const details = this.parentElement.querySelector('.quote-details');
+					details.style.display = details.style.display === 'block' ? 'none' : 'block';
+					this.textContent = details.style.display === 'block' ? 'hide details' : 'show details';
+				});
+			});
+		});
+	</script>
+
+	<style>
+		.woocommerce-orders-cards {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			margin-top: 20px;
+		}
+		.woocommerce-order-card {
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			padding: 15px;
+			background: #fff;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+		.order-header {
+			display: flex;
+			gap: 15px;
+			flex-wrap: wrap;
+			background: #2c2c2c;
+			color: #fff;
+			padding: 10px;
+			border-radius: 5px 5px 0 0;
+			margin: -15px -15px 15px -15px;
+		}
+		.payment-status {
+			padding: 5px 10px;
+			border-radius: 3px;
+		}
+		.payment-status.paid {
+			background: #ffeb3b;
+			color: #000;
+		}
+		.payment-status.pending {
+			background: #ff9800;
+			color: #fff;
+		}
+		.order-content {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
+		.order-item {
+			display: flex;
+			gap: 15px;
+			align-items: center;
+		}
+		.order-image {
+			width: 100px;
+			height: auto;
+		}
+		.order-details h3 {
+			margin: 0 0 5px;
+			font-size: 1.2em;
+		}
+		.quote-details ul {
+			list-style: none;
+			padding: 0;
+			margin: 5px 0 0;
+		}
+		.quote-details li {
+			margin-bottom: 5px;
+		}
+		.order-total {
+			margin-left: auto;
+			text-align: right;
+		}
+		.download-details {
+			display: block;
+			margin-top: 5px;
+			color: #0073aa;
+			text-decoration: none;
+		}
+		.download-details:hover {
+			text-decoration: underline;
+		}
+	</style>
+
+<?php else : ?>
+
+	<?php wc_print_notice( esc_html__( 'No processing or completed orders found.', 'woocommerce' ) . ' <a class="woocommerce-Button wc-forward button" href="' . esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ) . '">' . esc_html__( 'Browse products', 'woocommerce' ) . '</a>', 'notice' ); ?>
+
 <?php endif; ?>
+
+<?php do_action( 'woocommerce_after_account_orders', $has_orders ); ?>

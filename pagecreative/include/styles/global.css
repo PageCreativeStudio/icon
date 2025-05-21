@@ -515,13 +515,10 @@ ol {
 	list-style: decimal;
 }
 
-dt {
-	font-weight: 700;
+dt{
+    font-weight:200;
 }
 
-dd {
-	margin: 0 1.5em 1.5em;
-}
 
 /* Make sure embeds and iframes fit their containers. */
 embed,
