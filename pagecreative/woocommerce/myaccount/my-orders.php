@@ -171,7 +171,7 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 						<span class="font-18">Total <?php echo wp_kses_post($total); ?></span>
 						<a href="<?php echo esc_url($order->get_view_order_url()); ?>"
 							class="download-details text-black font-14">
-							<svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
 								<path
 									d="M3.07812 16.7676V19.0176C3.07812 19.6143 3.31518 20.1866 3.73713 20.6086C4.15909 21.0305 4.73139 21.2676 5.32812 21.2676H18.8281C19.4249 21.2676 19.9972 21.0305 20.4191 20.6086C20.8411 20.1866 21.0781 19.6143 21.0781 19.0176V16.7676M16.5781 12.2676L12.0781 16.7676M12.0781 16.7676L7.57812 12.2676M12.0781 16.7676V3.26758"
 									stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -262,6 +262,16 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 			text-align: right;
 		}
 
+		.download-details {
+			display: block;
+			margin-top: 5px;
+			color: #0073aa;
+			text-decoration: none;
+		}
+
+		.download-details:hover {
+			text-decoration: underline;
+		}
 	</style>
 
 <?php else: ?>
