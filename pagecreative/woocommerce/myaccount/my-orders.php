@@ -59,9 +59,9 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
 					</span> |
 					<span>Order no: <span class="text-ter"><?php echo esc_html($order_id); ?></span></span> |
 					<span>Shipping Status: <span class="text-ter"><?php echo esc_html($shipping_status); ?></span></span> |
-					<span>Tracking Number: <span class="text-ter"><a
-								href="https://example.com/track?number=<?php echo esc_attr($tracking); ?>"
-								target="_blank"><?php echo esc_html($tracking); ?></a></span></span>
+					<span>Tracking Number: <a class="text-ter"
+							href="https://example.com/track?number=<?php echo esc_attr($tracking); ?>"
+							target="_blank"><?php echo esc_html($tracking); ?></a></span>
 				</div>
 				<div class="order-content">
 					<?php foreach ($items as $item_id => $item):
