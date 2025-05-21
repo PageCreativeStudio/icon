@@ -508,8 +508,8 @@ ul li.is-active a {
     gap: 5px 0;
     padding-top: 5px !important;
 }
-.accountnavigation li:nth-last-child(){
-
+.accountnavigation li:last-child{
+    
 }
 
 @media screen and (min-width:989px) {
